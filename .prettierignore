@@ -1,0 +1,11 @@
+node_modules
+dist
+.next
+.build
+pnpm-lock.yaml
+go.sum
+go.work.sum
+*.go
+docs/product-brief.txt
+.next-dev
+**/next-env.d.ts

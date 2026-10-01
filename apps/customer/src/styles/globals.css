@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.mobile-app {
+  min-height: 100dvh;
+  padding-top: max(32px, env(safe-area-inset-top));
+  padding-bottom: max(32px, env(safe-area-inset-bottom));
+}
+.desktop-notice {
+  display: none;
+}
+@media (min-width: 768px) {
+  .mobile-app {
+    display: none !important;
+  }
+  .desktop-notice {
+    display: block;
+    max-width: 600px;
+    padding: 96px 24px;
+    margin: auto;
+  }
+  .desktop-notice > p:first-child {
+    color: #7cff00;
+    font-weight: 800;
+  }
+}

@@ -1,0 +1,74 @@
+name: rbc-go
+services:
+  customer:
+    build:
+      context: .
+      dockerfile: apps/customer/Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8081/api/v1}
+    ports: ['127.0.0.1:5183:8080']
+    restart: unless-stopped
+  admin:
+    build:
+      context: .
+      dockerfile: apps/admin/Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8081/api/v1}
+    ports: ['127.0.0.1:5184:8080']
+    restart: unless-stopped
+  website:
+    build:
+      context: .
+      dockerfile: apps/website/Dockerfile
+      args:
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:5185}
+        NEXT_PUBLIC_CUSTOMER_URL: ${NEXT_PUBLIC_CUSTOMER_URL:-http://localhost:5183}
+        SEO_ALLOW_INDEXING: ${SEO_ALLOW_INDEXING:-false}
+    ports: ['127.0.0.1:5185:5185']
+    restart: unless-stopped
+  api:
+    build:
+      context: ./apps/api
+    env_file: ./apps/api/.env
+    environment:
+      API_PORT: '8081'
+      DATABASE_URL: postgresql://postgres:postgres@database:5432/rbc_go
+      REDIS_URL: redis://redis:6379
+    ports: ['127.0.0.1:8081:8081']
+    depends_on:
+      database: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://localhost:8081/health']
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+  database:
+    image: postgres:17-alpine
+    ports: ['127.0.0.1:5435:5432']
+    environment:
+      POSTGRES_DB: rbc_go
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes: ['database_data:/var/lib/postgresql/data']
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d rbc_go']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+  redis:
+    image: redis:7-alpine
+    ports: ['127.0.0.1:6380:6379']
+    command: redis-server --appendonly yes
+    volumes: ['redis_data:/data']
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+volumes:
+  database_data:
+  redis_data:

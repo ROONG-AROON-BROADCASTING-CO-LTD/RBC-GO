@@ -1,0 +1,1414 @@
+Design a complete high-fidelity UX/UI system for a mobile-first web application called “RBC GO”, an electric bicycle and electric scooter rental platform.
+
+Use the uploaded RBC GO logo as the exact brand reference.
+Do NOT redesign, distort, replace, reinterpret, or change the RBC GO logo.
+
+The application is a mobile web app designed primarily for smartphone users.
+
+==================================================
+PRODUCT CONCEPT
+==================================================
+
+RBC GO is an electric mobility rental platform.
+
+The main user flow is:
+
+1. User opens the RBC GO web app.
+2. User signs in using phone number + OTP or another supported login method.
+3. User has an RBC GO system wallet / digital card.
+4. User must top up money into the wallet before using a vehicle.
+5. User can view nearby electric bicycles and electric scooters.
+6. User selects a vehicle or scans the QR code attached to the vehicle.
+7. The system verifies:
+   - Vehicle availability
+   - Battery level
+   - User wallet balance
+   - Vehicle ID
+8. User confirms unlocking the vehicle.
+9. Vehicle becomes active and the trip starts.
+10. During the ride, the user sees:
+   - Ride duration
+   - Current cost
+   - Distance traveled
+   - Vehicle battery
+   - Remaining range
+   - Current location
+   - Live route
+11. User ends the trip.
+12. The system deducts the rental fee from the RBC GO wallet.
+13. User receives a trip summary and receipt.
+14. User can review previous trips, payments, wallet transactions, and profile settings.
+
+The UX should make this flow extremely easy to understand even for first-time users.
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+Create a premium, modern electric mobility design system inspired by the uploaded RBC GO branding.
+
+Primary visual style:
+
+- Mobile-first
+- Dark mode
+- Black / near-black background
+- Dark charcoal cards
+- Dark green gradient surfaces
+- Neon lime green / electric green as the primary accent
+- White primary typography
+- Soft gray secondary typography
+- Very limited red color only for warnings, errors, emergencies, or destructive actions
+- Green color represents:
+  - Active
+  - Available
+  - Success
+  - Battery
+  - Primary CTA
+  - Eco-friendly status
+
+Visual feeling:
+
+- Clean
+- Premium
+- Modern
+- Reliable
+- Technology-driven
+- Sustainable
+- Urban mobility
+- Easy to use
+- Production-ready
+
+Avoid:
+
+- Excessive sci-fi appearance
+- Gaming UI
+- Too much neon glow
+- Excessive reflections
+- Overly complex layouts
+- Cluttered dashboards
+- Tiny text
+- Too many gradients
+- AI-generated-looking compositions
+- Inconsistent components
+
+Use subtle green lighting and glow only for important states and actions.
+
+==================================================
+DESIGN SYSTEM CONSISTENCY
+==================================================
+
+All screens MUST look like they belong to exactly the same application.
+
+Maintain strict consistency across:
+
+- Logo placement
+- Header height
+- Typography
+- Font scale
+- Card radius
+- Button radius
+- Icon design
+- Spacing
+- Grid system
+- Shadows
+- Green accent color
+- Dark surface colors
+- Form fields
+- Status badges
+- Bottom navigation
+- CTA style
+- Vehicle cards
+- Map markers
+
+Use approximately:
+
+Primary green:
+#7CFF00 or similar electric lime green inspired by the RBC GO logo.
+
+Dark background:
+#050706
+
+Card surface:
+#111513
+
+Secondary card:
+#171C19
+
+Border:
+subtle green-gray or dark gray.
+
+Primary text:
+#FFFFFF
+
+Secondary text:
+#A6ADA8
+
+Error / Emergency:
+#FF4D55
+
+Use accessible contrast.
+
+==================================================
+TYPOGRAPHY
+==================================================
+
+Use a modern sans-serif typeface appropriate for Thai mobile applications.
+
+Typography hierarchy should include:
+
+- Large page title
+- Section title
+- Card title
+- Main numeric values
+- Body
+- Caption
+- Status label
+
+Large numerical data such as wallet balance, rental cost, battery percentage, and timer should be highly visible.
+
+Thai text should feel natural and readable.
+
+==================================================
+MOBILE DEVICE
+==================================================
+
+Design for a modern large smartphone similar to an iPhone Pro Max.
+
+Use realistic mobile screen proportions.
+
+Portrait orientation.
+
+Aspect ratio approximately 9:16.
+
+When presenting the UI as a concept mockup:
+show the interface inside a realistic modern smartphone frame placed on a clean white or light gray studio background.
+
+The application itself must remain dark.
+
+==================================================
+GLOBAL HEADER
+==================================================
+
+For logged-in screens, create a consistent RBC GO header.
+
+Include when appropriate:
+
+- RBC GO logo
+- Notification button
+- User profile avatar
+
+Do not make the logo unnecessarily large.
+
+Use the main content as the visual priority.
+
+==================================================
+BOTTOM NAVIGATION
+==================================================
+
+Use a persistent bottom navigation for core logged-in screens.
+
+Navigation items:
+
+1. หน้าหลัก
+2. วอลเล็ต
+3. สแกน
+4. ทริปของฉัน
+5. โปรไฟล์
+
+Make “สแกน” visually prominent because scanning a vehicle is the main action.
+
+Use a larger green center Scan button.
+
+Only highlight the currently active navigation tab.
+
+==================================================
+SCREEN 01 — WELCOME / LOGIN
+==================================================
+
+Design a Welcome / Login screen.
+
+Include:
+
+RBC GO logo.
+
+Main Thai headline:
+“ยินดีต้อนรับสู่ RBC GO”
+
+Supporting message:
+“เติมเงินเข้าระบบ แล้วสแกนรถ เพื่อเริ่มใช้งานได้ทันที”
+
+Show realistic RBC GO electric bicycle and electric scooter imagery.
+
+Show three benefits:
+
+“เติมเงินสะดวก”
+“สแกนแล้วขี่ได้ทันที”
+“เดินทางสะอาด”
+
+Create phone-number authentication.
+
+Include:
+
+Country:
+Thailand +66
+
+Input:
+“เบอร์โทรศัพท์ของคุณ”
+
+Primary CTA:
+“ขอรหัส OTP”
+
+Alternative login:
+“เข้าสู่ระบบด้วย Google”
+
+Terms checkbox:
+
+“ฉันยอมรับ ข้อกำหนดการใช้งาน และ นโยบายความเป็นส่วนตัว”
+
+Include Thai language selector.
+
+Keep onboarding simple.
+
+==================================================
+SCREEN 02 — OTP VERIFICATION
+==================================================
+
+Create an OTP verification screen.
+
+Title:
+“ยืนยันเบอร์โทรศัพท์”
+
+Message:
+“กรอกรหัส OTP ที่ส่งไปยัง 08X-XXX-XXXX”
+
+Six OTP input boxes.
+
+Countdown:
+“ส่งรหัสอีกครั้งได้ใน 00:45”
+
+CTA:
+“ยืนยันรหัส OTP”
+
+Link:
+“เปลี่ยนเบอร์โทรศัพท์”
+
+Add clear success and error states.
+
+==================================================
+SCREEN 03 — HOME DASHBOARD
+==================================================
+
+Create the main Home Dashboard.
+
+Include:
+
+Greeting:
+“สวัสดีครับ”
+
+Small eco statistic such as:
+“ลดคาร์บอนแล้ว 12.5 kg CO₂”
+
+Wallet card.
+
+Label:
+“ยอดเงินในวอลเล็ต”
+
+Example:
+“320.00 บาท”
+
+CTA:
+“เติมเงิน”
+
+Main large CTA:
+
+“สแกน QR เพื่อเริ่มใช้งาน”
+
+Make this the strongest action on the page.
+
+Quick actions:
+
+- เติมเงิน
+- บัตรของฉัน
+- ประวัติการใช้งาน
+- ช่วยเหลือ
+
+Nearby vehicle preview.
+
+Include small map.
+
+Show:
+
+- User location
+- Electric bicycle markers
+- Electric scooter markers
+
+Nearby vehicle cards:
+
+Electric bicycle
+120 เมตร
+Battery 100%
+
+Electric scooter
+250 เมตร
+Battery 90%
+
+==================================================
+SCREEN 04 — VEHICLE MAP
+==================================================
+
+Create a full Nearby Vehicles Map screen.
+
+Search:
+
+“ค้นหาสถานที่ สถานี หรือโซนใกล้คุณ”
+
+Filters:
+
+ทั้งหมด
+จักรยานไฟฟ้า
+สกู๊ตเตอร์ไฟฟ้า
+พร้อมใช้งาน
+
+Display a dark map.
+
+Show:
+
+- Current user location
+- RBC GO stations
+- E-bike markers
+- E-scooter markers
+- Available vehicle markers
+- Unavailable vehicle markers
+
+Add battery indicators where useful.
+
+Example:
+60%
+85%
+90%
+
+Controls:
+
+- Current location
+- Map layers
+- Navigation
+
+Create a draggable bottom sheet.
+
+Title:
+
+“ยานพาหนะใกล้คุณ”
+
+Example station:
+
+“สถานี สยามสแควร์ ซอย 7”
+
+“เดิน 3 นาที (220 เมตร)”
+
+“จักรยานไฟฟ้า 6 คัน”
+
+“สกู๊ตเตอร์ไฟฟ้า 4 คัน”
+
+Also show other stations.
+
+==================================================
+SCREEN 05 — VEHICLE DETAIL
+==================================================
+
+Create a Vehicle Detail screen.
+
+Title:
+“รายละเอียดรถ”
+
+Show a large realistic RBC GO electric bicycle or scooter image.
+
+Vehicle example:
+
+“จักรยานไฟฟ้า RBC GO”
+
+Vehicle ID:
+RBC-EB-4587
+
+Status:
+“พร้อมใช้งาน”
+
+Information cards:
+
+Battery:
+90%
+
+Estimated range:
+45 กม.
+
+Rental price:
+2.5 บาท/นาที
+
+Minimum:
+10 นาที
+
+Location:
+
+“BTS อโศก”
+
+“ถนนสุขุมวิท เขตวัฒนา กรุงเทพฯ”
+
+“120 เมตร จากตำแหน่งของคุณ”
+
+Include a mini map.
+
+Actions:
+
+Primary:
+“จองรถ”
+
+Secondary:
+“นำทางไปที่รถ”
+
+Secondary:
+“สแกนเพื่อปลดล็อก”
+
+Usage rules:
+
+- สวมหมวกกันน็อก
+- ขับขี่ในพื้นที่ที่อนุญาต
+- จอดในพื้นที่ RBC GO
+- ไม่ซ้อนผู้โดยสาร
+
+==================================================
+SCREEN 06 — RESERVATION CONFIRMATION
+==================================================
+
+Create a reservation confirmation screen or bottom sheet.
+
+Display:
+
+Vehicle ID
+Vehicle type
+Location
+Battery
+Reservation countdown
+
+Example:
+
+“จองรถสำเร็จ”
+
+“รถจะถูกจองไว้ให้คุณ 10 นาที”
+
+Countdown:
+09:42
+
+Actions:
+
+“นำทางไปที่รถ”
+
+“ยกเลิกการจอง”
+
+“สแกนเพื่อปลดล็อก”
+
+==================================================
+SCREEN 07 — WALLET / MY CARD
+==================================================
+
+Create the wallet and digital card screen.
+
+Title:
+“วอลเล็ต / บัตรของฉัน”
+
+Show a premium digital RBC GO card.
+
+Include:
+
+RBC GO branding
+
+Card number:
+RBC 0001 2345 6789
+
+Status:
+“ใช้งานอยู่”
+
+QR button:
+“แตะดู QR”
+
+Wallet balance:
+
+“ยอดเงินในวอลเล็ต”
+
+“320.00 บาท”
+
+CTA:
+“เติมเงิน”
+
+Show transaction shortcut.
+
+==================================================
+SCREEN 08 — TOP UP WALLET
+==================================================
+
+Create the top-up flow.
+
+Section:
+“เลือกจำนวนเงินที่ต้องการเติม”
+
+Presets:
+
+100 บาท
+200 บาท
+300 บาท
+500 บาท
+1,000 บาท
+
+Allow custom amount.
+
+Input:
+“ระบุจำนวนเงิน”
+
+Limits:
+
+ขั้นต่ำ 100 บาท
+สูงสุด 5,000 บาท
+
+Payment methods:
+
+- บัตรเครดิต / เดบิต
+- พร้อมเพย์
+- TrueMoney Wallet
+- ช่องทางอื่นๆ
+
+Add secure payment indicator.
+
+Primary CTA example:
+
+“เติมเงิน 200 บาท”
+
+Information message:
+
+“หลังจากเติมเงินสำเร็จ สามารถสแกนรถเพื่อเริ่มใช้งานได้ทันที”
+
+Show recent top-ups.
+
+Example:
+
+เติมเงิน 200 บาท
++200.00 บาท
+สำเร็จ
+
+==================================================
+SCREEN 09 — TOP UP SUCCESS
+==================================================
+
+Create a payment success screen.
+
+Large green success icon.
+
+Title:
+“เติมเงินสำเร็จ”
+
+Amount:
+“200.00 บาท”
+
+New balance:
+“520.00 บาท”
+
+Payment method:
+“พร้อมเพย์”
+
+Transaction reference.
+
+Actions:
+
+“สแกนรถเพื่อเริ่มใช้งาน”
+
+“กลับสู่หน้าวอลเล็ต”
+
+==================================================
+SCREEN 10 — QR SCANNER
+==================================================
+
+Create the QR Scanner interface.
+
+Title:
+
+“สแกน QR เพื่อปลดล็อกรถ”
+
+Subtitle:
+
+“สแกน QR Code บนตัวรถ RBC GO เพื่อเริ่มใช้งานได้ทันที”
+
+Make the main portion look like a realistic camera interface.
+
+Show a QR label attached to an RBC GO electric bike or scooter.
+
+Include:
+
+- Large scan frame
+- Green corner brackets
+- Horizontal scan line
+- Flashlight
+- Close button
+- Manual code entry
+
+Manual option:
+“ใส่รหัสด้วยตนเอง”
+
+Detected vehicle card:
+
+Vehicle:
+RBCG001234
+
+Location:
+สุขุมวิท 26
+
+Status:
+“ตรวจสอบแล้ว”
+
+Battery:
+90%
+
+Wallet:
+320.00 บาท
+
+CTA:
+
+“ปลดล็อกรถ และเริ่มใช้งาน”
+
+Warning:
+
+“กรุณาตรวจสอบเลขรถให้ตรงกับรถที่คุณใช้งาน”
+
+==================================================
+SCREEN 11 — INSUFFICIENT BALANCE
+==================================================
+
+Design an insufficient wallet balance state.
+
+Message:
+
+“ยอดเงินไม่เพียงพอ”
+
+Display:
+
+Wallet balance:
+20.00 บาท
+
+Estimated minimum required:
+50.00 บาท
+
+Primary CTA:
+“เติมเงิน”
+
+Secondary:
+“ยกเลิก”
+
+Make this state clear without feeling alarming.
+
+==================================================
+SCREEN 12 — UNLOCKING VEHICLE
+==================================================
+
+Design a loading state after user confirms unlock.
+
+Title:
+“กำลังปลดล็อกรถ”
+
+Vehicle:
+RBCG001234
+
+Use animated-style loading indicator.
+
+Steps:
+
+ตรวจสอบบัญชี
+ตรวจสอบรถ
+เชื่อมต่อรถ
+ปลดล็อกรถ
+
+Display successful steps with green check icons.
+
+==================================================
+SCREEN 13 — UNLOCK SUCCESS
+==================================================
+
+Create an unlock success state.
+
+Large green success icon.
+
+Title:
+“ปลดล็อกรถสำเร็จ”
+
+Message:
+“รถพร้อมใช้งานแล้ว”
+
+Show:
+
+Vehicle
+Battery
+Current balance
+
+CTA:
+“เริ่มการเดินทาง”
+
+Include brief safety reminder.
+
+==================================================
+SCREEN 14 — RIDE IN PROGRESS
+==================================================
+
+Create the main active ride screen.
+
+Title:
+“กำลังใช้งาน”
+
+Subtitle:
+“ขับขี่อย่างปลอดภัย เดินทางสู่อนาคตที่ดีกว่า”
+
+Large trip timer:
+
+00:24:18
+
+Status:
+“กำลังขับขี่”
+
+Current cost:
+24.00 บาท
+
+Metrics:
+
+Distance:
+5.2 กม.
+
+Average speed:
+18 กม./ชม.
+
+Vehicle:
+
+จักรยานไฟฟ้า RBC GO
+
+Vehicle ID:
+RBC1234
+
+Battery:
+90%
+
+Remaining range:
+45–55 กม.
+
+Include live map.
+
+Show route.
+
+Main controls:
+
+“พักการใช้งาน”
+Subtitle:
+“ล็อครถชั่วคราว”
+
+Large primary button:
+“จบการใช้งาน”
+
+Subtitle:
+“คืนรถและสรุปค่าใช้จ่าย”
+
+Emergency:
+“ขอความช่วยเหลือ”
+
+Subtitle:
+“เหตุฉุกเฉิน 24 ชม.”
+
+Safety message:
+
+“ขับขี่ปลอดภัย สวมหมวกกันน็อก”
+
+==================================================
+SCREEN 15 — PAUSE / TEMPORARY LOCK
+==================================================
+
+Create a temporary lock state.
+
+Title:
+“พักการใช้งาน”
+
+Message:
+“รถถูกล็อกชั่วคราว”
+
+Timer continues.
+
+Display current trip cost.
+
+Actions:
+
+“ปลดล็อกและขี่ต่อ”
+
+“จบการใช้งาน”
+
+Clearly communicate that rental charges may continue while paused.
+
+==================================================
+SCREEN 16 — END RIDE CONFIRMATION
+==================================================
+
+Create an End Ride confirmation screen.
+
+Title:
+“ต้องการจบการใช้งานหรือไม่?”
+
+Show parking requirements.
+
+Include a parking zone indicator.
+
+Instructions:
+
+“กรุณาจอดรถในพื้นที่ RBC GO”
+
+“ตรวจสอบว่ารถตั้งอยู่ในตำแหน่งที่ปลอดภัย”
+
+“ล็อกรถก่อนจบทริป”
+
+Primary CTA:
+“ยืนยันจบการใช้งาน”
+
+Secondary:
+“ขี่ต่อ”
+
+==================================================
+SCREEN 17 — PARKING VALIDATION
+==================================================
+
+Create a parking validation screen.
+
+Show map and valid parking area.
+
+Status example:
+
+“อยู่ในพื้นที่จอดรถที่กำหนด”
+
+Use green confirmation.
+
+Invalid state should say:
+
+“ไม่สามารถจบทริปที่ตำแหน่งนี้ได้”
+
+Provide route to nearest parking area.
+
+==================================================
+SCREEN 18 — TRIP COMPLETED
+==================================================
+
+Create a successful trip completion screen.
+
+Large glowing green check.
+
+Title:
+“จบการใช้งานแล้ว”
+
+Subtitle:
+“ขอบคุณที่ใช้บริการ RBC GO”
+
+Show trip route:
+
+Start:
+BTS อโศก
+14:20
+
+End:
+สวนเบญจกิติ
+14:45
+
+Trip duration:
+25 นาที
+
+Distance:
+6.8 กม.
+
+Parking:
+จอดรถสำเร็จ
+
+Total fare:
+
+68.00 บาท
+
+Payment:
+
+RBC GO Wallet
+68.00 บาท
+
+Environmental benefit:
+
+“คุณช่วยลดการปล่อย CO₂”
+
+1.2 kg CO₂
+
+Include tree equivalent.
+
+Rating section:
+
+“ให้คะแนนการใช้งานครั้งนี้”
+
+Five stars.
+
+Actions:
+
+- แจ้งปัญหาการใช้งาน
+- ดาวน์โหลดใบเสร็จ
+- แชร์ทริปนี้
+
+Main CTA:
+
+“กลับสู่หน้าหลัก”
+
+==================================================
+SCREEN 19 — TRIP HISTORY
+==================================================
+
+Create the full Trip History page.
+
+Title:
+
+“ประวัติการใช้งาน”
+
+Subtitle:
+
+“ดูรายการเดินทางทั้งหมดของคุณ”
+
+Monthly summary:
+
+“สรุปการใช้งานเดือนนี้”
+
+Trips:
+18 ครั้ง
+
+Total spending:
+420.00 บาท
+
+Filters:
+
+ทั้งหมด
+เสร็จสมบูรณ์
+มีปัญหา
+
+History cards should display:
+
+- Date
+- Time
+- Vehicle
+- Duration
+- Distance
+- Cost
+- Status
+- Receipt
+
+Example:
+
+12 เม.ย. 2567
+18:24 น.
+
+สกู๊ตเตอร์ไฟฟ้า
+25 นาที
+6.8 กม.
+
+65.00 บาท
+
+เสร็จสมบูรณ์
+
+CTA:
+“ดูใบเสร็จรับเงิน”
+
+==================================================
+SCREEN 20 — TRIP DETAIL / RECEIPT
+==================================================
+
+Create a detailed trip receipt.
+
+Include:
+
+Trip ID
+Vehicle ID
+Start time
+End time
+Duration
+Distance
+Rate
+Total fare
+Wallet deduction
+Tax if applicable
+Payment reference
+
+Actions:
+
+“ดาวน์โหลดใบเสร็จ”
+
+“แชร์ใบเสร็จ”
+
+“แจ้งปัญหา”
+
+==================================================
+SCREEN 21 — WALLET TRANSACTION HISTORY
+==================================================
+
+Create transaction history.
+
+Filters:
+
+ทั้งหมด
+เติมเงิน
+ค่าเช่ารถ
+คืนเงิน
+
+Show positive transactions in green.
+
+Example:
+
++200.00 บาท
+เติมเงิน
+
+Negative transaction:
+
+-68.00 บาท
+ค่าบริการจักรยานไฟฟ้า
+
+Include date and status.
+
+==================================================
+SCREEN 22 — NOTIFICATIONS
+==================================================
+
+Create notification center.
+
+Types:
+
+- การชำระเงิน
+- การใช้งานรถ
+- โปรโมชั่น
+- การแจ้งเตือนระบบ
+- ข่าวสาร RBC GO
+
+Each notification card should contain:
+
+Icon
+Title
+Description
+Timestamp
+Read/unread state
+
+==================================================
+SCREEN 23 — PROFILE
+==================================================
+
+Create the user profile screen.
+
+Show:
+
+Avatar
+
+Name:
+“คุณธนภัทร ใจดี”
+
+Member ID:
+RBC12345678
+
+Verification:
+“ยืนยันตัวตนแล้ว”
+
+CTA:
+“แก้ไขโปรไฟล์”
+
+Profile information:
+
+Phone
+Email
+Emergency contact
+
+==================================================
+SCREEN 24 — PAYMENT METHODS
+==================================================
+
+Create Payment Methods management screen.
+
+Show:
+
+Credit / Debit Card
+VISA •••• 4587
+Status:
+ใช้งานอยู่
+
+PromptPay
+081-234-5678
+Status:
+เชื่อมต่อแล้ว
+
+CTA:
+“เพิ่มวิธีการชำระเงิน”
+
+Support deleting or choosing default method.
+
+==================================================
+SCREEN 25 — SETTINGS
+==================================================
+
+Create settings.
+
+Sections:
+
+การแจ้งเตือน
+
+Options:
+- การชำระและการใช้งาน
+- ข่าวสารและโปรโมชั่น
+- ประกาศสำคัญ
+
+Other settings:
+
+ภาษา
+ความเป็นส่วนตัว
+ตำแหน่ง
+ความปลอดภัย
+
+Use toggle controls.
+
+==================================================
+SCREEN 26 — HELP CENTER
+==================================================
+
+Create Help Center.
+
+Title:
+“ศูนย์ช่วยเหลือ”
+
+Options:
+
+- คำถามที่พบบ่อย FAQ
+- วิธีใช้งาน RBC GO
+- วิธีเติมเงิน
+- วิธีสแกนรถ
+- ปัญหาการปลดล็อก
+- ปัญหาการชำระเงิน
+- ปัญหารถ
+- ติดต่อทีมงาน RBC GO
+
+Show search field:
+
+“ค้นหาคำถามหรือปัญหา”
+
+==================================================
+SCREEN 27 — REPORT VEHICLE ISSUE
+==================================================
+
+Create an issue reporting flow.
+
+Title:
+“แจ้งปัญหาการใช้งาน”
+
+Categories:
+
+- รถเปิดไม่ได้
+- เบรกมีปัญหา
+- ยางมีปัญหา
+- รถเสียหาย
+- QR Code ใช้งานไม่ได้
+- ปัญหาอื่นๆ
+
+Allow photo upload.
+
+Text area:
+
+“รายละเอียดเพิ่มเติม”
+
+CTA:
+“ส่งรายงาน”
+
+==================================================
+SCREEN 28 — EMERGENCY SUPPORT
+==================================================
+
+Create an emergency help page.
+
+Use red accents carefully.
+
+Title:
+“ขอความช่วยเหลือฉุกเฉิน”
+
+Options:
+
+“โทรศูนย์ช่วยเหลือ RBC GO”
+
+“แจ้งอุบัติเหตุ”
+
+“แจ้งรถเสียระหว่างทาง”
+
+“แชร์ตำแหน่งปัจจุบัน”
+
+Make emergency actions extremely clear and easy to access.
+
+==================================================
+SCREEN 29 — EMPTY STATES
+==================================================
+
+Create useful empty states for:
+
+- No nearby vehicle
+- No trip history
+- No transactions
+- No notifications
+- No saved payment method
+
+Use simple icons and helpful CTA buttons.
+
+Example:
+
+“ไม่พบรถใกล้คุณ”
+
+CTA:
+“ดูพื้นที่ใกล้เคียง”
+
+==================================================
+SCREEN 30 — ERROR STATES
+==================================================
+
+Create consistent error states for:
+
+- QR scan failed
+- Vehicle unavailable
+- Vehicle offline
+- Payment failed
+- Internet connection lost
+- GPS unavailable
+- Camera permission denied
+- Wallet service temporarily unavailable
+
+Use clear Thai messages.
+
+Always provide a useful next action.
+
+Example:
+
+“ไม่สามารถเชื่อมต่อรถได้”
+
+Actions:
+
+“ลองอีกครั้ง”
+
+“เลือกรถคันอื่น”
+
+==================================================
+VEHICLE DESIGN
+==================================================
+
+When showing RBC GO vehicles:
+
+Use realistic modern electric bicycles and electric scooters.
+
+Main vehicle colors:
+
+- Black
+- Charcoal
+- Neon lime green details
+
+Add subtle RBC GO branding.
+
+Electric bicycle characteristics:
+
+- Compact urban design
+- Battery
+- Basket when appropriate
+- Front and rear lights
+- Strong city commuter appearance
+
+Electric scooter:
+
+- Black body
+- Green stem/accent
+- Integrated light
+- Urban rental design
+
+Avoid unrealistic futuristic vehicles.
+
+==================================================
+MAP DESIGN
+==================================================
+
+Use a clean dark map.
+
+Vehicle markers:
+
+Green bicycle marker:
+Available e-bike.
+
+Green scooter marker:
+Available e-scooter.
+
+Gray marker:
+Unavailable.
+
+Blue circular marker:
+User position.
+
+Show parking zones clearly.
+
+Do not overload map labels.
+
+==================================================
+UX PRINCIPLES
+==================================================
+
+Prioritize:
+
+1. Scan to ride
+2. Wallet balance
+3. Vehicle availability
+4. Vehicle battery
+5. Current trip status
+6. End trip
+7. Emergency help
+
+Users should understand the main action within 2–3 seconds.
+
+Buttons should be easy to tap with one hand.
+
+Important CTA buttons should have a minimum comfortable mobile touch area.
+
+Use clear confirmation before destructive or financial actions.
+
+Do not hide critical information behind unnecessary menus.
+
+==================================================
+OUTPUT REQUIREMENTS
+==================================================
+
+Generate a COMPLETE UX/UI mobile application concept, not only one screen.
+
+Create the screens as a consistent design set.
+
+All pages must use exactly the same visual system.
+
+Show each screen separately, not merged into one collage.
+
+Do not combine multiple mobile screens into one phone.
+
+One screen = one individual mobile mockup.
+
+Keep the full phone visible.
+
+Do not crop the smartphone frame.
+
+Use consistent phone size and presentation angle.
+
+Prefer straight front-facing phone mockups.
+
+Use clean light gray or white background outside the device.
+
+Use high fidelity production-quality UI.
+
+All text should be readable.
+
+Use Thai language for application UI.
+
+Use English only where appropriate for:
+RBC GO
+vehicle IDs
+payment providers
+technical terms.
+
+Do not invent a different brand.
+
+Do not replace the RBC GO identity.
+
+The final result should feel like a real commercial electric mobility product that could be implemented as a responsive mobile web app.
