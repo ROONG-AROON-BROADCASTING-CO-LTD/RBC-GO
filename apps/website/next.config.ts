@@ -1,8 +1,9 @@
 import type { NextConfig } from 'next';
-const config: NextConfig = {
+const nextConfig: NextConfig = {
   output: 'standalone',
-  transpilePackages: ['@stackbuild/ui'],
-  distDir: process.env.NODE_ENV === 'development' ? '.next-dev' : '.next',
-  watchOptions: { pollIntervalMs: 1000 },
+  images: {
+    localPatterns: [{ pathname: '/**' }],
+    unoptimized: true,
+  },
 };
-export default config;
+export default nextConfig;

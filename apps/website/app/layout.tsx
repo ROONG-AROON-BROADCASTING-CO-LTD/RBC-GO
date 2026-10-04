@@ -1,34 +1,53 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
-import { description, indexable, siteUrl } from '../src/lib/site';
-import './globals.css';
+import localFont from 'next/font/local';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { WebsiteThemeProvider } from './WebsiteThemeProvider';
+import { indexable, siteUrl } from './site';
+
+const inter = localFont({
+  src: './fonts/Inter-VariableFont_opsz,wght.ttf',
+  variable: '--font-inter',
+  display: 'swap',
+});
+const kanit = localFont({
+  src: [
+    { path: './fonts/Kanit-Regular.ttf', weight: '400' },
+    { path: './fonts/Kanit-SemiBold.ttf', weight: '600' },
+    { path: './fonts/Kanit-Bold.ttf', weight: '700' },
+  ],
+  variable: '--font-kanit',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: 'RBC GO | เช่าจักรยานไฟฟ้าและสกู๊ตเตอร์ไฟฟ้า',
-    template: '%s | RBC GO',
+    default: 'RBC GO | รถไฟฟ้าเพื่อการเดินทางในเมือง',
+    template: 'RBC GO | %s',
   },
-  description,
-  openGraph: {
-    type: 'website',
-    locale: 'th_TH',
-    siteName: 'RBC GO',
-    title: 'RBC GO',
-    description,
-    url: siteUrl,
-  },
-  twitter: { card: 'summary_large_image', title: 'RBC GO', description },
   robots: { index: indexable, follow: indexable },
+  icons: {
+    icon: '/favicon.ico?v=2',
+    shortcut: '/favicon.ico?v=2',
+    apple: '/images/rbc-go-logo.jpeg?v=2',
+  },
 };
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: '#050706',
 };
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="th">
-      <body>{children}</body>
+    <html lang="th" className={`${inter.variable} ${kanit.variable}`}>
+      <body>
+        <AppRouterCacheProvider>
+          <WebsiteThemeProvider>{children}</WebsiteThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }

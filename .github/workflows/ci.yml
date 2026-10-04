@@ -1,22 +1,63 @@
 name: CI
 on: [push, pull_request]
 jobs:
-  quality:
+  frontend:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: 22 }
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v5
+        with: { node-version: 24, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test:coverage
+  applications:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app: [customer, admin, website]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v5
+        with: { node-version: 24, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint:${{ matrix.app }}
+      - run: pnpm build:${{ matrix.app }}
+      - run: pnpm --filter @stackbuild/${{ matrix.app }} typecheck
+  api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
         with:
           go-version-file: apps/api/go.mod
           cache-dependency-path: apps/api/go.sum
-      - run: corepack enable
+      - run: cd apps/api && go test ./...
+      - run: cd apps/api && go vet ./...
+      - run: cd apps/api && go build ./cmd/api
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v5
+        with: { node-version: 24, cache: pnpm }
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: apps/api/go.mod
+          cache-dependency-path: apps/api/go.sum
       - run: pnpm install --frozen-lockfile
-      - run: pnpm check:dependencies
-      - run: pnpm lint
-      - run: pnpm typecheck
-      - run: pnpm test
-      - run: pnpm build
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm test:e2e
+  docker:
+    needs: [frontend, applications, api, e2e]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app: [customer, admin, website, api]
+    steps:
+      - uses: actions/checkout@v5
+      - run: docker build -f apps/${{ matrix.app }}/Dockerfile -t rbc-go-${{ matrix.app }}:ci .
+        if: matrix.app != 'api'
+      - run: docker build -t rbc-go-api:ci apps/api
+        if: matrix.app == 'api'

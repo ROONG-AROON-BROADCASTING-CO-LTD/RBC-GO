@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { tokens } from './tokens';
 export { tokens } from './tokens';
+export { ArrowRightIcon } from './components/icons/ArrowRightIcon';
 const theme = createTheme({
   palette: {
     mode: 'dark',

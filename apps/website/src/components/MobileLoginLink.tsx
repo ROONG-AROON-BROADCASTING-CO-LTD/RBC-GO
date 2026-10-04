@@ -1,7 +1,13 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { isMobilePhone } from './mobile-device';
-export function MobileLoginLink({ href }: { href: string }) {
+export function MobileLoginLink({
+  href,
+  label = 'เข้าสู่ระบบ RBC GO',
+}: {
+  href: string;
+  label?: string;
+}) {
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
     const viewport = window.matchMedia(
@@ -21,7 +27,7 @@ export function MobileLoginLink({ href }: { href: string }) {
   }, []);
   return mobile ? (
     <a className="mobile-login" href={href}>
-      เข้าสู่ระบบ RBC GO
+      {label}
     </a>
   ) : null;
 }

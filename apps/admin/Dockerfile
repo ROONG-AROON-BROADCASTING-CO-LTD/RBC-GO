@@ -7,6 +7,6 @@ ARG VITE_API_URL=http://localhost:8081/api/v1
 ENV VITE_API_URL=$VITE_API_URL
 RUN pnpm build:admin
 FROM nginx:alpine
-COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY docker/nginx-spa.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/apps/admin/dist /usr/share/nginx/html
 EXPOSE 8080

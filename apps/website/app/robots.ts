@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { indexable, siteUrl } from '../src/lib/site';
+import { indexable, siteUrl } from './site';
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {

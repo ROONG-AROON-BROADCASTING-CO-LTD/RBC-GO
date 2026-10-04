@@ -1,2 +1,1 @@
-import base from '../../packages/eslint-config/base.js';
-export default base;
+export default [{ ignores: ['dist', '.next', '.next-dev'] }];

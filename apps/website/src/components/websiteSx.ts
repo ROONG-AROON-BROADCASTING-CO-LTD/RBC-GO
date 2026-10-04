@@ -1,0 +1,3284 @@
+// Public website styles owned by the website component boundary.
+// Keep the ordered sx array: later responsive rules intentionally override earlier rules.
+import type { SxProps, Theme } from '@mui/material/styles';
+
+export const websiteSx: SxProps<Theme> = [
+  {
+    '& .icon': {
+      display: 'inline-block',
+      width: '26px',
+      height: '26px',
+      flexShrink: '0',
+      background: 'currentColor',
+      maskImage: 'var(--icon-url)',
+      maskSize: 'contain',
+      maskRepeat: 'no-repeat',
+      maskPosition: 'center',
+      verticalAlign: 'middle',
+    },
+  },
+  {
+    '& .animated-arrow': {
+      background: 'none',
+      maskImage: 'none',
+      WebkitMaskImage: 'none',
+    },
+  },
+  {
+    '& .animated-arrow svg': {
+      display: 'block',
+      width: '100%',
+      height: '100%',
+    },
+  },
+  {
+    '& main, & .site-header, & .site-footer': {
+      maxWidth: '1440px',
+      margin: 'auto',
+    },
+  },
+  {
+    '& .site-header': {
+      position: 'sticky',
+      top: '0',
+      zIndex: '40',
+      height: '72px',
+      padding: '12px clamp(24px, 5vw, 82px)',
+      background: '#000',
+      display: 'grid',
+      gridTemplateColumns: 'minmax(0, 1fr) auto minmax(0, 1fr)',
+      alignItems: 'center',
+      gap: '30px',
+    },
+  },
+  {
+    '& .brand': {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '11px',
+      fontSize: '25px',
+      fontWeight: '800',
+      letterSpacing: '-0.06em',
+      whiteSpace: 'nowrap',
+    },
+  },
+  {
+    '& .brand-name': {
+      display: 'inline-block',
+      fontFamily: 'var(--font-inter), Arial, sans-serif',
+    },
+  },
+  {
+    '& .brand-logo': {
+      display: 'block',
+      width: '42px',
+      height: '42px',
+      objectFit: 'cover',
+      borderRadius: '50%',
+      boxShadow: '0 0 18px rgb(78 255 0 / 18%)',
+    },
+  },
+  {
+    '& .desktop-nav': {
+      display: 'flex',
+      gap: 'clamp(20px, 2.3vw, 42px)',
+      fontSize: '15px',
+      gridColumn: '2',
+      whiteSpace: 'nowrap',
+    },
+  },
+  {
+    '& .desktop-nav a': {
+      color: '#ddd',
+    },
+  },
+  {
+    '& .desktop-nav a:hover, & .desktop-nav a[aria-current]': {
+      color: 'var(--lime)',
+    },
+  },
+  {
+    '& .header-right': {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '18px',
+      gridColumn: '3',
+      justifySelf: 'end',
+    },
+  },
+  {
+    '& .locale-switch': {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '5px',
+      minHeight: '40px',
+      padding: '0 12px',
+      border: '1px solid rgb(226 227 222 / 55%)',
+      borderRadius: '10px',
+      background: 'rgb(255 255 255 / 3%)',
+      fontSize: '12px',
+      color: '#9e9f98',
+      cursor: 'pointer',
+      lineHeight: '1',
+      transition:
+        'background 180ms ease,\n    border-color 180ms ease,\n    color 180ms ease',
+    },
+  },
+  {
+    '& .locale-switch .active': {
+      color: 'white',
+      fontWeight: '700',
+    },
+  },
+  {
+    '& .locale-switch i': {
+      color: '#51554c',
+      fontStyle: 'normal',
+    },
+  },
+  {
+    '& .locale-switch:hover': {
+      borderColor: 'white',
+      background: 'white',
+      color: 'rgb(23 20 17 / 56%)',
+    },
+  },
+  {
+    '& .locale-switch:hover .active': {
+      color: '#171411',
+    },
+  },
+  {
+    '& .locale-switch:hover i': {
+      color: 'rgb(23 20 17 / 38%)',
+    },
+  },
+  {
+    '& .button': {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '24px',
+      border: '0',
+      borderRadius: '50px',
+      padding: '17px 29px',
+      fontSize: '17px',
+      fontWeight: '600',
+      transition: 'opacity 0.15s ease,\n    box-shadow 0.15s ease',
+    },
+  },
+  {
+    '& .button.lime': {
+      background: 'var(--lime)',
+      color: '#0b1003',
+    },
+  },
+  {
+    '& .button.dark': {
+      background: '#080b06',
+      color: 'var(--lime)',
+    },
+  },
+  {
+    '& .button .icon': {
+      width: '23px',
+      height: '23px',
+    },
+  },
+  {
+    '& .button:hover': {
+      opacity: '0.88',
+      boxShadow: '0 8px 20px rgb(0 0 0 / 18%)',
+    },
+  },
+  {
+    '& .header-start': {
+      minHeight: '40px',
+      padding: '9px 16px',
+      borderRadius: '10px',
+      fontSize: '13px',
+    },
+  },
+  {
+    '& .menu-toggle, & .mobile-menu': {
+      display: 'none',
+    },
+  },
+  {
+    '& .page-intro h1': {
+      fontSize: 'clamp(72px, 8.35vw, 120px)',
+      lineHeight: '1.04',
+      letterSpacing: '-0.048em',
+    },
+  },
+  {
+    '& .page-intro p': {
+      fontSize: '26px',
+      color: '#f0f1eb',
+      marginTop: '30px',
+    },
+  },
+  {
+    '& .eyebrow': {
+      display: 'block',
+      color: 'var(--lime)',
+      fontSize: '17px',
+      letterSpacing: '0.1em',
+      textTransform: 'uppercase',
+      marginBottom: '28px',
+    },
+  },
+  {
+    '& .page-content': {
+      padding: '52px 80px 65px',
+    },
+  },
+  {
+    '& .home-hero': {
+      position: 'relative',
+      minHeight: 'min(760px, calc(100svh - 72px))',
+      margin: '0 24px',
+      overflow: 'hidden',
+      borderRadius: '14px',
+      display: 'flex',
+      alignItems: 'end',
+    },
+  },
+  {
+    '& .home-hero > img': {
+      objectFit: 'cover',
+      objectPosition: 'center',
+    },
+  },
+  {
+    '& .home-hero-overlay': {
+      position: 'absolute',
+      inset: '0',
+      background:
+        'linear-gradient(\n    90deg,\n    rgb(5 7 6 / 92%) 0%,\n    rgb(5 7 6 / 65%) 42%,\n    rgb(5 7 6 / 10%) 100%\n  )',
+    },
+  },
+  {
+    '& .home-hero-content': {
+      position: 'relative',
+      zIndex: '1',
+      maxWidth: '820px',
+      padding: '64px',
+    },
+  },
+  {
+    '& .home-hero h1': {
+      fontSize: 'clamp(58px, 5vw, 76px)',
+      fontWeight: '400',
+      lineHeight: '1.1',
+      letterSpacing: '-0.05em',
+    },
+  },
+  {
+    '& .home-hero p': {
+      maxWidth: '515px',
+      marginTop: '30px',
+      fontSize: 'clamp(16px, 1.25vw, 20px)',
+      lineHeight: '1.75',
+    },
+  },
+  {
+    '& .home-hero-actions': {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: '15px',
+      marginTop: '38px',
+    },
+  },
+  {
+    '& .round-arrow': {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '60px',
+      height: '60px',
+      background: 'var(--lime)',
+      color: '#101707',
+      borderRadius: '50%',
+      border: '0',
+      flexShrink: '0',
+    },
+  },
+  {
+    '& .round-arrow .icon': {
+      width: '29px',
+      height: '29px',
+    },
+  },
+  {
+    '& .round-arrow:hover': {
+      background: '#ebffa4',
+    },
+  },
+  {
+    '& .fleet-hero': {
+      position: 'relative',
+      height: 'calc(100svh - 72px)',
+      minHeight: '740px',
+      maxHeight: '1328px',
+      margin: '0 24px',
+      overflow: 'hidden',
+      borderRadius: '12px',
+    },
+  },
+  {
+    '& .fleet-photo': {
+      position: 'absolute',
+      top: '0',
+      bottom: '0',
+      overflow: 'hidden',
+      borderRadius: '12px',
+    },
+  },
+  {
+    '& .fleet-photo img': {
+      objectFit: 'cover',
+    },
+  },
+  {
+    '& .bike-photo': {
+      left: '0',
+      width: '73%',
+      background: '#0b0d0a',
+    },
+  },
+  {
+    '& .bike-photo img': {
+      objectPosition: '72% center',
+    },
+  },
+  {
+    '& .scooter-photo': {
+      right: '0',
+      width: '25.8%',
+    },
+  },
+  {
+    '& .scooter-photo img': {
+      objectPosition: '55% center',
+    },
+  },
+  {
+    '& .fleet-intro': {
+      position: 'absolute',
+      zIndex: '1',
+      top: '30px',
+      left: '58px',
+      maxWidth: '65%',
+    },
+  },
+  {
+    '& .fleet-intro h1': {
+      fontSize: 'clamp(85px, 9.8vw, 141px)',
+      lineHeight: '0.97',
+      letterSpacing: '-0.055em',
+      maxWidth: '850px',
+    },
+  },
+  {
+    '& .fleet-intro > p': {
+      fontSize: '26px',
+      marginTop: '20px',
+      color: 'white',
+    },
+  },
+  {
+    '& .segmented': {
+      display: 'inline-flex',
+      border: '1px solid #62675b',
+      borderRadius: '50px',
+      padding: '5px',
+      marginTop: '30px',
+      background: '#080a08b3',
+    },
+  },
+  {
+    '& .segmented button': {
+      border: '0',
+      borderRadius: '50px',
+      background: 'none',
+      minWidth: '173px',
+      padding: '15px 22px',
+      fontSize: '18px',
+    },
+  },
+  {
+    "& .segmented button[aria-pressed='true']": {
+      background: 'var(--lime)',
+      color: '#080a08',
+      fontWeight: '600',
+    },
+  },
+  {
+    '& .fleet-features': {
+      padding: '0',
+      margin: '65px 0 0',
+      listStyle: 'none',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '23px',
+    },
+  },
+  {
+    '& .fleet-features li': {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '24px',
+      fontSize: '19px',
+    },
+  },
+  {
+    '& .fleet-features .icon': {
+      color: 'var(--lime)',
+      width: '39px',
+      height: '39px',
+    },
+  },
+  {
+    '& .fleet-caption': {
+      position: 'absolute',
+      bottom: '30px',
+      zIndex: '1',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '25px',
+      background: '#080a08bf',
+      padding: '20px',
+      borderRadius: '8px',
+    },
+  },
+  {
+    '& .caption-bike': {
+      left: '38px',
+      width: 'calc(73% - 72px)',
+    },
+  },
+  {
+    '& .caption-scooter': {
+      right: '20px',
+      width: 'calc(25.8% - 40px)',
+    },
+  },
+  {
+    '& .fleet-caption > div': {
+      maxWidth: '370px',
+    },
+  },
+  {
+    '& .fleet-caption h2': {
+      fontSize: '26px',
+    },
+  },
+  {
+    '& .fleet-caption p': {
+      fontSize: '19px',
+      marginTop: '8px',
+      color: '#f5f7ef',
+    },
+  },
+  {
+    '& .fleet-caption .round-arrow': {
+      marginLeft: 'auto',
+    },
+  },
+  {
+    '& .caption-scooter .round-arrow': {
+      width: '52px',
+      height: '52px',
+    },
+  },
+  {
+    '& .illustration-note': {
+      fontSize: '12px',
+      padding: '16px 65px',
+      color: '#92988a',
+    },
+  },
+  {
+    '& .mobile-login': {
+      display: 'inline-flex',
+      background: 'var(--lime)',
+      color: '#101600',
+      fontWeight: '600',
+      borderRadius: '50px',
+      padding: '14px 24px',
+      marginTop: '20px',
+    },
+  },
+  {
+    '& .fleet-details': {
+      display: 'flex',
+      justifyContent: 'space-between',
+      padding: '35px 65px',
+      background: 'var(--surface)',
+      margin: '20px 24px',
+    },
+  },
+  {
+    '& .fleet-details h2': {
+      fontSize: '32px',
+      marginBottom: '15px',
+    },
+  },
+  {
+    '& .fleet-details .eyebrow': {
+      fontSize: '13px',
+      marginBottom: '12px',
+    },
+  },
+  {
+    '& .fleet-details p': {
+      maxWidth: '720px',
+    },
+  },
+  {
+    '& .icon-button': {
+      border: '0',
+      background: 'none',
+      display: 'inline-grid',
+      placeItems: 'center',
+      width: '44px',
+      height: '44px',
+    },
+  },
+  {
+    '& .lower-home': {
+      padding: '60px 65px 0',
+    },
+  },
+  {
+    '& .section-heading': {
+      display: 'flex',
+      alignItems: 'end',
+      justifyContent: 'space-between',
+      gap: '25px',
+      marginBottom: '30px',
+    },
+  },
+  {
+    '& .section-heading .eyebrow': {
+      marginBottom: '14px',
+      fontSize: '15px',
+    },
+  },
+  {
+    '& .section-heading h2': {
+      fontSize: '42px',
+      lineHeight: '1.12',
+    },
+  },
+  {
+    '& .section-heading p': {
+      fontSize: '17px',
+      marginTop: '12px',
+    },
+  },
+  {
+    '& .inline-link': {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '18px',
+      color: 'var(--lime)',
+      fontSize: '16px',
+      textDecoration: 'underline',
+      textUnderlineOffset: '5px',
+    },
+  },
+  {
+    '& .inline-link .round-arrow': {
+      width: '50px',
+      height: '50px',
+    },
+  },
+  {
+    '& .ride-tiles': {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: '22px',
+    },
+  },
+  {
+    '& .ride-tile': {
+      display: 'block',
+      position: 'relative',
+      height: '400px',
+      borderRadius: '13px',
+      overflow: 'hidden',
+    },
+  },
+  {
+    '& .ride-tile img': {
+      objectFit: 'cover',
+      objectPosition: 'center 70%',
+      transition: 'transform 0.3s',
+    },
+  },
+  {
+    '& .ride-tile:hover img': {
+      transform: 'scale(1.025)',
+    },
+  },
+  {
+    '& .ride-tile.scooter img': {
+      objectPosition: '50% 60%',
+    },
+  },
+  {
+    '& .tile-caption': {
+      position: 'absolute',
+      left: '20px',
+      right: '20px',
+      bottom: '20px',
+      padding: '20px',
+      background: '#080a08bc',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: '25px',
+      borderRadius: '7px',
+    },
+  },
+  {
+    '& .tile-caption h3': {
+      fontSize: '23px',
+    },
+  },
+  {
+    '& .tile-caption p': {
+      fontSize: '16px',
+      color: 'white',
+      maxWidth: '350px',
+      marginTop: '6px',
+    },
+  },
+  {
+    '& .tile-caption .round-arrow': {
+      width: '45px',
+      height: '45px',
+    },
+  },
+  {
+    '& .round-arrow.outline': {
+      border: '1px solid var(--lime)',
+      background: 'none',
+      color: 'var(--lime)',
+    },
+  },
+  {
+    '& .journey-section': {
+      padding: '50px 0 60px',
+    },
+  },
+  {
+    '& .journey-columns': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gap: '38px',
+    },
+  },
+  {
+    '& .journey-columns article': {
+      minWidth: '0',
+      borderRight: '1px solid var(--line)',
+      paddingRight: '25px',
+    },
+  },
+  {
+    '& .journey-columns article:last-child': {
+      border: '0',
+      paddingRight: '0',
+    },
+  },
+  {
+    '& .journey-title': {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '15px',
+    },
+  },
+  {
+    '& .number': {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '48px',
+      height: '48px',
+      background: 'var(--lime)',
+      color: '#0c1105',
+      fontSize: '26px',
+      fontWeight: '600',
+      borderRadius: '50%',
+      flexShrink: '0',
+    },
+  },
+  {
+    '& .journey-title .icon': {
+      color: 'var(--lime)',
+      width: '49px',
+      height: '49px',
+    },
+  },
+  {
+    '& .journey-title h3': {
+      fontSize: '28px',
+      letterSpacing: '-0.025em',
+    },
+  },
+  {
+    '& .journey-columns p': {
+      fontSize: '19px',
+      marginTop: '17px',
+      maxWidth: '340px',
+      lineHeight: '1.4',
+      color: '#e2e4dc',
+    },
+  },
+  {
+    '& .lower-home .journey-columns p': {
+      paddingLeft: '63px',
+      fontSize: '16px',
+    },
+  },
+  {
+    '& .lower-home .journey-title .number': {
+      width: '39px',
+      height: '39px',
+      fontSize: '22px',
+    },
+  },
+  {
+    '& .lower-home .journey-title h3': {
+      fontSize: '23px',
+    },
+  },
+  {
+    '& .lower-home .journey-title .icon': {
+      width: '39px',
+      height: '39px',
+    },
+  },
+  {
+    '& .with-phones': {
+      marginTop: '62px',
+    },
+  },
+  {
+    '& .with-phones .journey-columns': {
+      gap: '42px',
+    },
+  },
+  {
+    '& .with-phones .journey-columns article': {
+      paddingRight: '35px',
+    },
+  },
+  {
+    '& .with-phones .journey-title h3': {
+      fontSize: '30px',
+    },
+  },
+  {
+    '& .phone-art': {
+      width: '100%',
+      marginTop: '36px',
+      overflow: 'hidden',
+      height: '660px',
+      borderRadius: '45px 45px 0 0',
+    },
+  },
+  {
+    '& .phone-art img': {
+      display: 'block',
+      width: '100%',
+      height: 'auto',
+    },
+  },
+  {
+    '& .demo-note': {
+      fontSize: '12px !important',
+      marginTop: '18px',
+      color: '#8b9284 !important',
+    },
+  },
+  {
+    '& .safety-note': {
+      display: 'flex',
+      gap: '25px',
+      alignItems: 'center',
+      borderTop: '1px solid var(--line)',
+      paddingTop: '35px',
+      marginTop: '35px',
+    },
+  },
+  {
+    '& .safety-note > .icon': {
+      width: '44px',
+      height: '44px',
+      color: 'var(--lime)',
+    },
+  },
+  {
+    '& .safety-note h2': {
+      fontSize: '22px',
+      marginBottom: '12px',
+    },
+  },
+  {
+    '& .safety-note p': {
+      fontSize: '15px',
+      maxWidth: '840px',
+    },
+  },
+  {
+    '& .safety-note .mobile-login': {
+      flexShrink: '0',
+    },
+  },
+  {
+    '& .pricing-content': {
+      paddingBottom: '55px',
+    },
+  },
+  {
+    '& .pricing-grid': {
+      display: 'grid',
+      gridTemplateColumns: '58% 42%',
+      gap: '0',
+      marginTop: '60px',
+    },
+  },
+  {
+    '& .pricing-list': {
+      borderRight: '1px solid var(--line)',
+      paddingRight: '65px',
+    },
+  },
+  {
+    '& .pricing-list article': {
+      display: 'flex',
+      alignItems: 'start',
+      gap: '28px',
+      marginBottom: '35px',
+    },
+  },
+  {
+    '& .pricing-list article:last-child': {
+      margin: '0',
+    },
+  },
+  {
+    '& .pricing-list .icon': {
+      color: 'var(--lime)',
+      width: '56px',
+      height: '56px',
+    },
+  },
+  {
+    '& .pricing-list h3': {
+      fontSize: '26px',
+      letterSpacing: '-0.025em',
+    },
+  },
+  {
+    '& .pricing-list p': {
+      fontSize: '19px',
+      marginTop: '12px',
+      lineHeight: '1.4',
+      maxWidth: '510px',
+    },
+  },
+  {
+    '& .rate-notice': {
+      display: 'flex',
+      gap: '25px',
+      background: 'var(--surface)',
+      borderRadius: '26px',
+      marginLeft: '50px',
+      padding: '40px',
+      alignSelf: 'start',
+    },
+  },
+  {
+    '& .rate-notice > .icon': {
+      width: '60px',
+      height: '60px',
+      color: 'var(--lime)',
+    },
+  },
+  {
+    '& .rate-notice h2': {
+      fontSize: '34px',
+      lineHeight: '1.05',
+    },
+  },
+  {
+    '& .rate-notice p': {
+      fontSize: '18px',
+      lineHeight: '1.5',
+      marginTop: '36px',
+    },
+  },
+  {
+    '& .rate-notice small': {
+      display: 'block',
+      fontSize: '17px',
+      marginTop: '25px',
+    },
+  },
+  {
+    '& .river-banner': {
+      height: '365px',
+      position: 'relative',
+      overflow: 'hidden',
+    },
+  },
+  {
+    '& .river-banner img': {
+      objectFit: 'cover',
+    },
+  },
+  {
+    '& .river-banner > div': {
+      position: 'absolute',
+      left: '80px',
+      bottom: '40px',
+      background: '#080a089e',
+      padding: '15px 20px',
+      borderRadius: '5px',
+    },
+  },
+  {
+    '& .river-banner h2': {
+      fontSize: '38px',
+      lineHeight: '1.08',
+    },
+  },
+  {
+    '& .river-banner p': {
+      fontSize: '20px',
+      marginTop: '10px',
+      color: 'white',
+    },
+  },
+  {
+    '& .about-hero': {
+      height: '1020px',
+      position: 'relative',
+      overflow: 'hidden',
+    },
+  },
+  {
+    '& .about-hero > img': {
+      objectFit: 'cover',
+      objectPosition: 'right 58%',
+    },
+  },
+  {
+    '& .about-copy': {
+      position: 'relative',
+      zIndex: '1',
+      padding: '40px 80px',
+      maxWidth: '1050px',
+    },
+  },
+  {
+    '& .about-copy h1': {
+      fontSize: '108px',
+      lineHeight: '1.04',
+      letterSpacing: '-0.045em',
+    },
+  },
+  {
+    '& .about-copy .eyebrow': {
+      marginBottom: '30px',
+    },
+  },
+  {
+    '& .about-lead': {
+      fontSize: '26px',
+      marginTop: '28px',
+      color: '#f6f7f0',
+      maxWidth: '900px',
+    },
+  },
+  {
+    '& .about-narrative': {
+      maxWidth: '560px',
+      marginTop: '75px',
+      padding: '16px 20px 16px 0',
+      background: '#080a083d',
+    },
+  },
+  {
+    '& .about-narrative p': {
+      fontSize: '23px',
+      lineHeight: '1.55',
+      marginBottom: '27px',
+      color: '#e0e0d8',
+    },
+  },
+  {
+    '& .mission-link': {
+      fontSize: '20px',
+      marginTop: '12px',
+      fontWeight: '600',
+    },
+  },
+  {
+    '& .mission-link .round-arrow': {
+      width: '62px',
+      height: '62px',
+    },
+  },
+  {
+    '& .about-benefits': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gap: '30px',
+      padding: '50px 70px 55px',
+    },
+  },
+  {
+    '& .about-benefits article': {
+      display: 'flex',
+      gap: '26px',
+      borderRight: '1px solid var(--line)',
+      paddingRight: '25px',
+    },
+  },
+  {
+    '& .about-benefits article:last-child': {
+      border: '0',
+    },
+  },
+  {
+    '& .about-benefits .icon': {
+      width: '57px',
+      height: '57px',
+      color: 'var(--lime)',
+    },
+  },
+  {
+    '& .about-benefits h3': {
+      fontSize: '23px',
+      fontWeight: '600',
+    },
+  },
+  {
+    '& .about-benefits p': {
+      fontSize: '18px',
+      marginTop: '14px',
+    },
+  },
+  {
+    '& .help-page': {
+      paddingBottom: '65px',
+    },
+  },
+  {
+    '& .help-page .page-intro': {
+      marginBottom: '35px',
+    },
+  },
+  {
+    '& .help-content': {
+      width: '100%',
+    },
+  },
+  {
+    '& .search': {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '20px',
+      background: 'var(--surface)',
+      borderRadius: '50px',
+      padding: '15px 24px',
+    },
+  },
+  {
+    '& .search .icon': {
+      color: 'var(--lime)',
+      width: '32px',
+      height: '32px',
+    },
+  },
+  {
+    '& .search input': {
+      background: 'none',
+      border: '0',
+      color: 'white',
+      width: '100%',
+      fontSize: '19px',
+      padding: '8px 0',
+    },
+  },
+  {
+    '& .help-content > h2': {
+      fontSize: '27px',
+      letterSpacing: '-0.025em',
+      margin: '27px 0 17px',
+    },
+  },
+  {
+    '& .faq-list details': {
+      borderTop: '1px solid var(--line)',
+      padding: '23px 17px',
+    },
+  },
+  {
+    '& .faq-list details:last-child': {
+      borderBottom: '1px solid var(--line)',
+    },
+  },
+  {
+    '& .faq-list summary': {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: '25px',
+      fontSize: '22px',
+      color: '#d9dcd2',
+      cursor: 'pointer',
+      listStyle: 'none',
+    },
+  },
+  {
+    '& .faq-list summary::-webkit-details-marker': {
+      display: 'none',
+    },
+  },
+  {
+    '& .faq-list summary .icon': {
+      color: 'var(--lime)',
+      width: '24px',
+      height: '24px',
+      transition: 'transform 0.2s',
+    },
+  },
+  {
+    '& .faq-list details[open] summary .icon': {
+      transform: 'rotate(90deg)',
+    },
+  },
+  {
+    '& .faq-list details p': {
+      fontSize: '19px',
+      lineHeight: '1.5',
+      marginTop: '20px',
+      maxWidth: '1050px',
+    },
+  },
+  {
+    '& .faq-list small': {
+      display: 'block',
+      color: 'var(--lime)',
+      fontSize: '13px',
+      marginTop: '15px',
+    },
+  },
+  {
+    '& .empty-state': {
+      padding: '30px',
+    },
+  },
+  {
+    '& .help-callout': {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '22px',
+      marginTop: '38px',
+      background: 'var(--surface)',
+      padding: '28px',
+      borderRadius: '18px',
+    },
+  },
+  {
+    '& .help-callout > .icon': {
+      width: '60px',
+      height: '60px',
+      color: 'var(--lime)',
+    },
+  },
+  {
+    '& .help-callout h2': {
+      fontSize: '28px',
+      letterSpacing: '-0.025em',
+    },
+  },
+  {
+    '& .help-callout p': {
+      fontSize: '18px',
+      marginTop: '10px',
+    },
+  },
+  {
+    '& .help-callout .button': {
+      marginLeft: 'auto',
+      flexShrink: '0',
+    },
+  },
+  {
+    '& .closing-cta': {
+      position: 'relative',
+      background: 'var(--lime)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      overflow: 'hidden',
+      padding: '48px 65px',
+      minHeight: '200px',
+      gap: '40px',
+    },
+  },
+  {
+    '& .closing-cta > img': {
+      objectFit: 'cover',
+      objectPosition: 'right bottom',
+      zIndex: '0',
+    },
+  },
+  {
+    '& .closing-cta h2': {
+      position: 'relative',
+      fontSize: '45px',
+      color: '#090f02',
+      lineHeight: '1.03',
+      zIndex: '1',
+    },
+  },
+  {
+    '& .closing-cta .button': {
+      position: 'relative',
+      zIndex: '1',
+      minWidth: '240px',
+    },
+  },
+  {
+    '& .site-footer': {
+      padding: '45px 65px 25px',
+    },
+  },
+  {
+    '& .footer-grid': {
+      display: 'grid',
+      gridTemplateColumns: '1.2fr 1fr 1fr 1.1fr 0.85fr',
+      gap: '35px',
+    },
+  },
+  {
+    '& .footer-grid > .brand': {
+      fontSize: '35px',
+    },
+  },
+  {
+    '& .footer-grid > .brand .brand-logo': {
+      width: '88px',
+      height: '88px',
+    },
+  },
+  {
+    '& .footer-grid p': {
+      fontSize: '17px',
+      marginTop: '20px',
+    },
+  },
+  {
+    '& .footer-grid nav': {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '14px',
+      alignItems: 'start',
+    },
+  },
+  {
+    '& .footer-grid h3': {
+      fontSize: '19px',
+      letterSpacing: '-0.015em',
+      fontWeight: '600',
+      marginBottom: '10px',
+    },
+  },
+  {
+    '& .footer-grid nav a, & .footer-grid nav button': {
+      fontSize: '16px',
+      color: '#cdd0c5',
+      border: '0',
+      background: 'none',
+      padding: '0',
+      textAlign: 'left',
+    },
+  },
+  {
+    '& .footer-grid nav a:hover, & .footer-grid nav button:hover': {
+      color: 'var(--lime)',
+    },
+  },
+  {
+    '& .footer-grid .active-language': {
+      color: 'var(--lime)',
+      textDecoration: 'underline',
+      textUnderlineOffset: '4px',
+    },
+  },
+  {
+    '& .footer-grid nav span': {
+      display: 'inline-block',
+      marginLeft: '22px',
+      color: '#ddd',
+    },
+  },
+  {
+    '& .footer-bottom': {
+      borderTop: '1px solid var(--line)',
+      paddingTop: '20px',
+      marginTop: '36px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      fontSize: '12px',
+      color: '#92988a',
+    },
+  },
+  {
+    '& .info-dialog': {
+      background: '#171b14',
+      color: 'white',
+      border: '1px solid #626e52',
+      borderRadius: '20px',
+      width: 'min(560px, calc(100vw - 40px))',
+      padding: '48px 35px',
+    },
+  },
+  {
+    '& .info-dialog::backdrop': {
+      background: '#000b',
+    },
+  },
+  {
+    '& .info-dialog h2': {
+      fontSize: '32px',
+      lineHeight: '1.15',
+    },
+  },
+  {
+    '& .info-dialog p': {
+      margin: '24px 0 28px',
+      fontSize: '17px',
+    },
+  },
+  {
+    '& .dialog-close': {
+      position: 'absolute',
+      right: '15px',
+      top: '10px',
+    },
+  },
+  {
+    '& .skip-link': {
+      position: 'fixed',
+      top: '-100px',
+      left: '20px',
+      zIndex: '20',
+      padding: '15px',
+      background: 'var(--lime)',
+      color: 'black',
+    },
+  },
+  {
+    '& .skip-link:focus': {
+      top: '10px',
+    },
+  },
+  {
+    '& .sr-only': {
+      position: 'absolute',
+      width: '1px',
+      height: '1px',
+      padding: '0',
+      overflow: 'hidden',
+      clip: 'rect(0, 0, 0, 0)',
+      whiteSpace: 'nowrap',
+    },
+  },
+  {
+    "html[lang='th'] & h1, html[lang='th'] & h2, html[lang='th'] & h3": {
+      letterSpacing: '-0.025em',
+    },
+  },
+  {
+    "html[lang='th'] & .fleet-intro h1": {
+      fontSize: 'clamp(70px, 8vw, 115px)',
+      lineHeight: '1.14',
+    },
+  },
+  {
+    "html[lang='th'] & .page-intro h1, html[lang='th'] & .about-copy h1": {
+      fontSize: '96px',
+      lineHeight: '1.18',
+    },
+  },
+  {
+    "html[lang='th'] & .desktop-nav": {
+      gap: '24px',
+    },
+  },
+  {
+    "html[lang='th'] & .about-narrative": {
+      maxWidth: '650px',
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .site-header': {
+        paddingInline: 'clamp(24px, 5vw, 82px)',
+        gap: '20px',
+        height: '72px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .brand': {
+        fontSize: '31px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .desktop-nav': {
+        fontSize: '14px',
+        gap: '22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .header-right': {
+        gap: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .locale-switch': {
+        fontSize: '14px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .header-start': {
+        padding: '13px 20px',
+        fontSize: '13px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .page-content': {
+        paddingInline: '55px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .fleet-hero': {
+        minHeight: '720px',
+        height: 'calc(100svh - 72px)',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .fleet-intro': {
+        left: '38px',
+        top: '25px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .fleet-intro h1': {
+        fontSize: '100px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .fleet-intro > p': {
+        fontSize: '21px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .segmented button': {
+        minWidth: '135px',
+        fontSize: '15px',
+        padding: '12px 18px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .fleet-features': {
+        marginTop: '45px',
+        gap: '17px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .fleet-features li': {
+        fontSize: '16px',
+        gap: '18px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .fleet-features .icon': {
+        width: '32px',
+        height: '32px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .fleet-caption h2': {
+        fontSize: '22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .fleet-caption p': {
+        fontSize: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .caption-bike': {
+        left: '20px',
+        width: 'calc(73% - 40px)',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .caption-scooter': {
+        right: '12px',
+        width: 'calc(25.8% - 24px)',
+        padding: '15px',
+        flexWrap: 'wrap',
+        gap: '12px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .caption-scooter .round-arrow': {
+        margin: '0',
+        width: '43px',
+        height: '43px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .page-intro h1': {
+        fontSize: '90px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .page-intro p': {
+        fontSize: '22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .journey-columns p': {
+        fontSize: '16px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .with-phones .journey-columns': {
+        gap: '25px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .with-phones .journey-columns article': {
+        paddingRight: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .with-phones .journey-title h3': {
+        fontSize: '25px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .number': {
+        width: '40px',
+        height: '40px',
+        fontSize: '23px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .phone-art': {
+        height: '520px',
+        borderRadius: '35px 35px 0 0',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .pricing-grid': {
+        gridTemplateColumns: '55% 45%',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .pricing-list': {
+        paddingRight: '30px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .pricing-list article': {
+        gap: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .pricing-list h3': {
+        fontSize: '22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .pricing-list p': {
+        fontSize: '16px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .rate-notice': {
+        marginLeft: '30px',
+        padding: '28px',
+        gap: '16px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .rate-notice > .icon': {
+        width: '42px',
+        height: '42px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .rate-notice h2': {
+        fontSize: '29px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .rate-notice p': {
+        fontSize: '16px',
+        marginTop: '24px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .about-hero': {
+        height: '950px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .about-copy': {
+        paddingInline: '55px',
+        maxWidth: '900px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .about-copy h1': {
+        fontSize: '90px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .about-lead': {
+        fontSize: '23px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .about-narrative': {
+        maxWidth: '480px',
+        marginTop: '65px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .about-narrative p': {
+        fontSize: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .about-benefits': {
+        padding: '40px 45px',
+        gap: '22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .about-benefits article': {
+        gap: '18px',
+        paddingRight: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .about-benefits .icon': {
+        width: '42px',
+        height: '42px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .about-benefits h3': {
+        fontSize: '18px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .about-benefits p': {
+        fontSize: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .lower-home': {
+        paddingInline: '45px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .section-heading h2': {
+        fontSize: '34px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .ride-tile': {
+        height: '330px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .journey-title': {
+        gap: '12px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .lower-home .journey-title h3': {
+        fontSize: '19px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .lower-home .journey-title .icon': {
+        width: '30px',
+        height: '30px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .lower-home .journey-columns p': {
+        paddingLeft: '50px',
+        fontSize: '14px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .closing-cta': {
+        padding: '40px 45px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .closing-cta h2': {
+        fontSize: '36px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .site-footer': {
+        paddingInline: '40px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .footer-grid': {
+        gap: '25px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .footer-grid nav a, & .footer-grid nav button': {
+        fontSize: '13px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .footer-grid h3': {
+        fontSize: '16px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      '& .footer-grid p': {
+        fontSize: '14px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 1100px)': {
+      "html[lang='th'] & .page-intro h1, html[lang='th'] & .about-copy h1": {
+        fontSize: '75px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .home-hero': {
+        minHeight: '640px',
+        margin: '0',
+        borderRadius: '0',
+        alignItems: 'end',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .home-hero-overlay': {
+        background:
+          'linear-gradient(\n      0deg,\n      rgb(5 7 6 / 94%) 0%,\n      rgb(5 7 6 / 58%) 55%,\n      rgb(5 7 6 / 6%) 100%\n    )',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .home-hero-content': {
+        padding: '32px 22px 42px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .home-hero h1': {
+        fontSize: 'clamp(46px, 10vw, 64px)',
+        lineHeight: '1.1',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .home-hero p': {
+        fontSize: '15px',
+        lineHeight: '1.65',
+        marginTop: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .home-hero-actions': {
+        marginTop: '26px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .site-header': {
+        height: '72px',
+        padding: '12px 24px',
+        gap: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .brand': {
+        fontSize: '22px',
+        gap: '9px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .brand-logo': {
+        width: '42px',
+        height: '42px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .desktop-nav, & .header-start': {
+        display: 'none',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .header-right': {
+        gap: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .locale-switch': {
+        fontSize: '12px',
+        gap: '9px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .menu-toggle': {
+        display: 'grid',
+        placeItems: 'center',
+        background: 'none',
+        border: '1px solid var(--line)',
+        borderRadius: '9px',
+        width: '40px',
+        height: '40px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .menu-toggle .icon': {
+        width: '23px',
+        height: '23px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .mobile-menu': {
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'absolute',
+        top: '74px',
+        left: '15px',
+        right: '15px',
+        background: '#151b12',
+        zIndex: '10',
+        border: '1px solid #48533c',
+        borderRadius: '14px',
+        padding: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .mobile-menu > a:not(.mobile-login)': {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        borderBottom: '1px solid var(--line)',
+        padding: '15px 0',
+        fontSize: '17px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .mobile-menu .mobile-login': {
+        justifyContent: 'center',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .button': {
+        padding: '14px 22px',
+        fontSize: '14px',
+        gap: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .button .icon': {
+        width: '21px',
+        height: '21px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .page-content': {
+        padding: '35px 22px 45px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .page-intro h1': {
+        fontSize: 'clamp(42px, 10.3vw, 76px)',
+        lineHeight: '1.04',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .page-intro p': {
+        fontSize: '17px',
+        marginTop: '23px',
+        lineHeight: '1.45',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .eyebrow': {
+        fontSize: '11px',
+        marginBottom: '22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-hero': {
+        margin: '0 12px',
+        minHeight: '860px',
+        height: 'auto',
+        borderRadius: '12px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .bike-photo': {
+        width: '100%',
+        height: '860px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .bike-photo img': {
+        objectPosition: '68% center',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .scooter-photo': {
+        width: '100%',
+        height: '860px',
+        opacity: '0',
+        transition: 'opacity 0.25s',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .selected-scooter .scooter-photo': {
+        opacity: '1',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .selected-scooter .bike-photo': {
+        opacity: '0',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .selected-scooter .scooter-photo img': {
+        objectPosition: 'center',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-intro': {
+        top: '24px',
+        left: '20px',
+        right: '20px',
+        maxWidth: 'none',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-intro h1': {
+        fontSize: 'clamp(53px, 14vw, 92px)',
+        lineHeight: '0.98',
+        maxWidth: '100%',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-intro > p': {
+        fontSize: '17px',
+        marginTop: '16px',
+        maxWidth: '290px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .selected-scooter .fleet-intro': {
+        background: '#080a089c',
+        padding: '15px',
+        borderRadius: '10px',
+        left: '12px',
+        right: '12px',
+        top: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .selected-scooter .fleet-features': {
+        display: 'none',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .segmented': {
+        marginTop: '23px',
+        padding: '4px',
+        maxWidth: '100%',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .segmented button': {
+        minWidth: '130px',
+        padding: '12px 16px',
+        fontSize: '13px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-features': {
+        marginTop: '30px',
+        gap: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-features li': {
+        fontSize: '13px',
+        gap: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-features .icon': {
+        width: '29px',
+        height: '29px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-caption': {
+        bottom: '22px',
+        left: '18px',
+        right: '18px',
+        width: 'auto',
+        padding: '19px',
+        gap: '15px',
+        flexWrap: 'nowrap',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-caption h2': {
+        fontSize: '22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-caption p': {
+        fontSize: '14px',
+        maxWidth: '230px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-caption .round-arrow': {
+        width: '46px',
+        height: '46px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .caption-scooter': {
+        display: 'none',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .selected-scooter .caption-bike': {
+        display: 'none',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .selected-scooter .caption-scooter': {
+        display: 'flex',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .illustration-note': {
+        padding: '15px 22px',
+        fontSize: '10px',
+        lineHeight: '1.5',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .mobile-login': {
+        fontSize: '13px',
+        padding: '12px 19px',
+        marginTop: '18px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-details': {
+        padding: '25px 20px',
+        margin: '15px 12px',
+        gap: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-details h2': {
+        fontSize: '26px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .fleet-details p': {
+        fontSize: '14px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .lower-home': {
+        padding: '40px 22px 0',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .section-heading': {
+        alignItems: 'start',
+        gap: '15px',
+        marginBottom: '22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .section-heading h2': {
+        fontSize: '27px',
+        maxWidth: '240px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .section-heading .eyebrow': {
+        fontSize: '10px',
+        marginBottom: '12px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .section-heading p': {
+        fontSize: '13px',
+        maxWidth: '240px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .inline-link': {
+        fontSize: '11px',
+        gap: '8px',
+        whiteSpace: 'normal',
+        flexShrink: '0',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .section-heading .inline-link': {
+        maxWidth: '110px',
+        alignItems: 'start',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .inline-link .round-arrow': {
+        width: '33px',
+        height: '33px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .inline-link .icon': {
+        width: '18px',
+        height: '18px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .ride-tiles': {
+        gridTemplateColumns: '1fr',
+        gap: '16px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .ride-tile': {
+        height: '300px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .tile-caption': {
+        left: '14px',
+        right: '14px',
+        bottom: '14px',
+        padding: '16px',
+        gap: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .tile-caption h3': {
+        fontSize: '21px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .tile-caption p': {
+        fontSize: '13px',
+        maxWidth: '245px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .tile-caption .round-arrow': {
+        width: '38px',
+        height: '38px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .journey-section': {
+        padding: '40px 0',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .journey-columns': {
+        gridTemplateColumns: '1fr',
+        gap: '27px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .journey-columns article': {
+        borderRight: '0',
+        padding: '0 0 25px',
+        borderBottom: '1px solid var(--line)',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .journey-columns article:last-child': {
+        borderBottom: '0',
+        paddingBottom: '0',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .journey-title': {
+        gap: '14px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .journey-title h3': {
+        fontSize: '24px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .number': {
+        width: '37px',
+        height: '37px',
+        fontSize: '21px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .journey-columns p': {
+        fontSize: '15px',
+        maxWidth: '100%',
+        marginTop: '13px',
+        lineHeight: '1.5',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .lower-home .journey-columns p': {
+        paddingLeft: '50px',
+        fontSize: '14px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .lower-home .journey-title h3': {
+        fontSize: '22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .lower-home .journey-title .icon': {
+        width: '35px',
+        height: '35px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .with-phones': {
+        marginTop: '36px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .with-phones .journey-columns': {
+        gap: '35px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .with-phones .journey-columns article': {
+        padding: '0 0 25px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .with-phones .journey-title h3': {
+        fontSize: '25px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .phone-art': {
+        maxWidth: '280px',
+        height: '460px',
+        margin: '22px auto 0',
+        borderRadius: '35px 35px 0 0',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .demo-note': {
+        fontSize: '10px !important',
+        lineHeight: '1.5',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .safety-note': {
+        alignItems: 'start',
+        gap: '15px',
+        flexWrap: 'wrap',
+        paddingTop: '25px',
+        marginTop: '28px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .safety-note > .icon': {
+        width: '33px',
+        height: '33px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .safety-note > div': {
+        width: 'calc(100% - 48px)',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .safety-note h2': {
+        fontSize: '20px',
+        lineHeight: '1.2',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .safety-note p': {
+        fontSize: '13px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .safety-note .mobile-login': {
+        marginLeft: '48px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .pricing-grid': {
+        gridTemplateColumns: '1fr',
+        marginTop: '38px',
+        gap: '30px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .pricing-list': {
+        border: '0',
+        padding: '0',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .pricing-list article': {
+        gap: '20px',
+        marginBottom: '30px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .pricing-list .icon': {
+        width: '39px',
+        height: '39px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .pricing-list h3': {
+        fontSize: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .pricing-list p': {
+        fontSize: '14px',
+        marginTop: '9px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .rate-notice': {
+        margin: '0',
+        padding: '28px',
+        gap: '20px',
+        borderRadius: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .rate-notice > .icon': {
+        width: '39px',
+        height: '39px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .rate-notice h2': {
+        fontSize: '27px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .rate-notice p': {
+        fontSize: '14px',
+        marginTop: '22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .rate-notice small': {
+        fontSize: '13px',
+        marginTop: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .river-banner': {
+        height: '275px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .river-banner > div': {
+        left: '20px',
+        right: '20px',
+        bottom: '20px',
+        padding: '16px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .river-banner h2': {
+        fontSize: '28px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .river-banner p': {
+        fontSize: '14px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-hero': {
+        height: '920px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-hero > img': {
+        objectPosition: '60% center',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-copy': {
+        padding: '35px 22px',
+        maxWidth: '100%',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-copy h1': {
+        fontSize: 'clamp(42px, 10.3vw, 76px)',
+        lineHeight: '1.05',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-copy .eyebrow': {
+        marginBottom: '22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-lead': {
+        fontSize: '17px',
+        lineHeight: '1.5',
+        marginTop: '25px',
+        maxWidth: '330px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-narrative': {
+        maxWidth: '295px',
+        marginTop: '65px',
+        padding: '17px',
+        background: '#080a08ba',
+        borderRadius: '8px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-narrative p': {
+        fontSize: '15px',
+        lineHeight: '1.6',
+        marginBottom: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-narrative p:last-child': {
+        marginBottom: '0',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .mission-link': {
+        fontSize: '15px',
+        marginTop: '25px',
+        gap: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .mission-link .round-arrow': {
+        width: '44px',
+        height: '44px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .mission-link .icon': {
+        width: '24px',
+        height: '24px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-benefits': {
+        gridTemplateColumns: '1fr',
+        padding: '32px 22px',
+        gap: '25px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-benefits article': {
+        border: '0',
+        padding: '0',
+        gap: '23px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-benefits .icon': {
+        width: '42px',
+        height: '42px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-benefits h3': {
+        fontSize: '19px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .about-benefits p': {
+        fontSize: '14px',
+        marginTop: '8px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .help-page .page-intro': {
+        marginBottom: '28px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .search': {
+        gap: '15px',
+        padding: '12px 19px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .search .icon': {
+        width: '25px',
+        height: '25px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .search input': {
+        fontSize: '14px',
+        padding: '7px 0',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .help-content > h2': {
+        fontSize: '20px',
+        margin: '23px 0 14px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .faq-list details': {
+        padding: '20px 5px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .faq-list summary': {
+        fontSize: '15px',
+        lineHeight: '1.4',
+        gap: '20px',
+        minHeight: '24px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .faq-list summary .icon': {
+        width: '20px',
+        height: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .faq-list details p': {
+        fontSize: '14px',
+        lineHeight: '1.6',
+        marginTop: '17px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .faq-list small': {
+        fontSize: '10px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .help-callout': {
+        padding: '23px 20px',
+        gap: '15px',
+        flexWrap: 'wrap',
+        marginTop: '30px',
+        borderRadius: '14px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .help-callout > .icon': {
+        width: '36px',
+        height: '36px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .help-callout > div': {
+        flex: '1',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .help-callout h2': {
+        fontSize: '21px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .help-callout p': {
+        fontSize: '13px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .help-callout .button': {
+        marginLeft: '50px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .closing-cta': {
+        padding: '30px 22px',
+        minHeight: '230px',
+        flexDirection: 'column',
+        alignItems: 'start',
+        gap: '25px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .closing-cta > img': {
+        objectPosition: 'right bottom',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .closing-cta h2': {
+        fontSize: '29px',
+        lineHeight: '1.1',
+        maxWidth: '350px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .closing-cta .button': {
+        minWidth: '185px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .site-footer': {
+        padding: '35px 22px 24px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .footer-grid': {
+        gridTemplateColumns: '1fr 1fr',
+        gap: '30px 22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .footer-grid > div:first-child': {
+        gridColumn: '1 / -1',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .footer-grid .brand': {
+        fontSize: '29px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .footer-grid p': {
+        fontSize: '14px',
+        marginTop: '12px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .footer-grid nav': {
+        gap: '13px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .footer-grid nav a, & .footer-grid nav button': {
+        fontSize: '13px',
+        minHeight: '22px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .footer-grid h3': {
+        fontSize: '16px',
+        marginBottom: '4px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .footer-grid nav span': {
+        marginLeft: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .footer-bottom': {
+        marginTop: '30px',
+        fontSize: '10px',
+        gap: '20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .info-dialog': {
+        padding: '44px 25px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .info-dialog h2': {
+        fontSize: '27px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .info-dialog p': {
+        fontSize: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      "html[lang='th'] & .fleet-intro h1": {
+        fontSize: 'clamp(43px, 11.5vw, 72px)',
+        lineHeight: '1.12',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      "html[lang='th'] & .page-intro h1, html[lang='th'] & .about-copy h1": {
+        fontSize: 'clamp(38px, 9.7vw, 64px)',
+        lineHeight: '1.2',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      "html[lang='th'] & .segmented button": {
+        minWidth: '125px',
+        fontSize: '12px',
+      },
+    },
+  },
+  {
+    '@media (prefers-reduced-motion: reduce)': {
+      '& html': {
+        scrollBehavior: 'auto',
+      },
+    },
+  },
+  {
+    '@media (prefers-reduced-motion: reduce)': {
+      '& *, & *:before, & *:after': {
+        transition: 'none !important',
+      },
+    },
+  },
+  {
+    '& .with-phones .journey-columns > article > p': {
+      minHeight: '84px',
+    },
+  },
+  {
+    '@media (min-width: 1101px)': {
+      '& .page-content': {
+        paddingTop: '30px',
+      },
+    },
+  },
+  {
+    '@media (min-width: 1101px)': {
+      '& .page-intro h1': {
+        fontSize: 'clamp(90px, 9.4vw, 135px)',
+      },
+    },
+  },
+  {
+    '@media (min-width: 1101px)': {
+      '& .phone-art img': {
+        height: '560px',
+        objectFit: 'fill',
+      },
+    },
+  },
+  {
+    '@media (min-width: 1101px)': {
+      '& .lower-home': {
+        paddingTop: '30px',
+      },
+    },
+  },
+  {
+    '@media (min-width: 1101px)': {
+      '& .lower-home .ride-tile': {
+        height: '350px',
+      },
+    },
+  },
+  {
+    '@media (min-width: 1101px)': {
+      '& .lower-home .journey-section': {
+        padding: '35px 0 40px',
+      },
+    },
+  },
+  {
+    '@media (min-width: 1101px)': {
+      '& .lower-home .section-heading h2': {
+        fontSize: '36px',
+      },
+    },
+  },
+  {
+    '@media (min-width: 1101px)': {
+      '& .faq-list details': {
+        paddingTop: '18px',
+        paddingBottom: '18px',
+      },
+    },
+  },
+  {
+    '@media (min-width: 1101px)': {
+      '& .about-lead': {
+        maxWidth: '730px',
+      },
+    },
+  },
+];

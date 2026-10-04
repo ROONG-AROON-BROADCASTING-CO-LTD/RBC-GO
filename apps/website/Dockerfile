@@ -13,6 +13,7 @@ WORKDIR /app
 ENV NODE_ENV=production PORT=5185 HOSTNAME=0.0.0.0 NEXT_TELEMETRY_DISABLED=1
 COPY --from=build --chown=node:node /app/apps/website/.next/standalone ./
 COPY --from=build --chown=node:node /app/apps/website/.next/static ./apps/website/.next/static
+COPY --from=build --chown=node:node /app/apps/website/public ./apps/website/public
 USER node
 EXPOSE 5185
 CMD ["node", "apps/website/server.js"]
