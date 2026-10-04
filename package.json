@@ -8,7 +8,7 @@
     "dev:customer": "pnpm --filter @stackbuild/customer dev",
     "dev:admin": "pnpm --filter @stackbuild/admin dev",
     "dev:website": "pnpm --filter @stackbuild/website dev",
-    "dev:api": "cd apps/api && set -a && . ./.env && set +a && go run ./cmd/api",
+    "dev:api": "cd apps/api && if [ -f ./.env ]; then set -a; . ./.env; set +a; fi; go run ./cmd/api",
     "dev:infra": "docker compose up -d database redis",
     "build": "pnpm build:customer && pnpm build:admin && pnpm build:website && pnpm build:api",
     "build:customer": "pnpm --filter @stackbuild/customer build",
