@@ -1,37 +1,28 @@
 'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
-import { type Locale, type Page, text } from '../data/landing';
+import { type Locale, text } from '../data/landing';
 import { referenceCopy } from '../data/brandPages';
 import { MobileLoginLink } from './MobileLoginLink';
 import { Icon } from './Icon';
+
 export function FleetHero({ locale }: { locale: Locale }) {
-  const [ride, setRide] = useState<'bike' | 'scooter'>('bike');
   const [details, setDetails] = useState(false);
   const c = referenceCopy(locale);
   const t = text[locale];
   return (
     <>
-      <section className={`fleet-hero selected-${ride}`}>
-        <div className="fleet-photo bike-photo">
-          <Image
-            src="/images/fleet-bike.png"
-            alt={t.bike}
-            fill
-            sizes="(max-width:767px) 100vw, 72vw"
-            preload
-          />
-        </div>
-        <div className="fleet-photo scooter-photo">
-          <Image
-            src="/images/fleet-scooter.png"
-            alt={t.scooter}
-            fill
-            sizes="(max-width:767px) 100vw, 28vw"
-            preload
-          />
-        </div>
+      <section className="fleet-hero motorcycle-hero">
+        <Image
+          src="/images/rides-hero.png"
+          alt={c.vehicle}
+          fill
+          sizes="100vw"
+          preload
+        />
+        <div className="motorcycle-shade" />
         <div className="fleet-intro">
           <h1>
             {c.fleet[0]}
@@ -43,27 +34,10 @@ export function FleetHero({ locale }: { locale: Locale }) {
             <br />
             {c.fleetIntro[1]}
           </p>
-          <div
-            className="segmented"
-            aria-label={locale === 'en' ? 'Choose a ride' : 'เลือกรถ'}
-          >
-            {(['bike', 'scooter'] as const).map((r, i) => (
-              <button
-                key={r}
-                aria-pressed={ride === r}
-                onClick={() => {
-                  setRide(r);
-                  setDetails(false);
-                }}
-              >
-                {c.types[i]}
-              </button>
-            ))}
-          </div>
           <ul className="fleet-features">
-            {c.features.map((feature, i) => (
+            {c.features.map((feature, index) => (
               <li key={feature}>
-                <Icon kind={(['bolt', 'route', 'leaf'] as const)[i]} />
+                <Icon kind={(['bolt', 'route', 'scan'] as const)[index]} />
                 {feature}
               </li>
             ))}
@@ -75,37 +49,21 @@ export function FleetHero({ locale }: { locale: Locale }) {
             label={t.login}
           />
         </div>
-        {(['bike', 'scooter'] as const).map((r, i) => (
-          <div key={r} className={`fleet-caption caption-${r}`}>
-            <div>
-              <h2>{c.types[i]}</h2>
-              <p>{i === 0 ? c.bikeCopy : c.scooterCopy}</p>
-            </div>
-            <button
-              className="round-arrow"
-              onClick={() => {
-                setRide(r);
-                setDetails(true);
-              }}
-              aria-label={`${locale === 'en' ? 'View' : 'ดูรายละเอียด'} ${t[r]}`}
-            >
-              <Icon kind="arrow" />
-            </button>
-          </div>
-        ))}
       </section>
       {details && (
         <section className="fleet-details" aria-live="polite">
           <div>
             <span className="eyebrow">{t.coming}</span>
-            <h2>{t[ride]}</h2>
+            <h2>{c.vehicle}</h2>
             <p>{t.specifications}</p>
           </div>
           <button
             className="icon-button"
             onClick={() => setDetails(false)}
             aria-label={
-              locale === 'en' ? 'Close ride details' : 'ปิดรายละเอียดรถ'
+              locale === 'en'
+                ? 'Close motorcycle details'
+                : 'ปิดรายละเอียดมอเตอร์ไซค์'
             }
           >
             <Icon kind="close" />
@@ -115,6 +73,7 @@ export function FleetHero({ locale }: { locale: Locale }) {
     </>
   );
 }
+
 export function InfoDialog({
   locale,
   kind,
@@ -164,6 +123,7 @@ export function InfoDialog({
     </>
   );
 }
+
 export function HelpQuestions({ locale }: { locale: Locale }) {
   const t = text[locale];
   const c = referenceCopy(locale);

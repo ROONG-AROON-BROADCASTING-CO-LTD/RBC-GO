@@ -39,8 +39,8 @@ export function WebsiteDocumentMetadata() {
           ['rides', 'how-it-works', 'pricing', 'about', 'help'].indexOf(page)
         ]
       : language === 'en'
-        ? 'Electric rides for your city'
-        : 'รถไฟฟ้าเพื่อการเดินทางในเมือง';
+        ? 'Electric motorcycle for your city'
+        : 'มอเตอร์ไซค์ไฟฟ้าเพื่อการเดินทางในเมือง';
 
     return { title, description: text[language].description };
   }, [language, pathname]);

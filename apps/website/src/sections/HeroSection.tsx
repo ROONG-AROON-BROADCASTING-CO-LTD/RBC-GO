@@ -1,37 +1,38 @@
 'use client';
-import Image from 'next/image';
 import type { Locale } from '../data/landing';
 import { WebsiteAction } from '../components/WebsiteAction';
 export function HeroSection({ locale }: { locale: Locale }) {
   const isThai = locale === 'th';
   const copy = isThai
     ? {
-        title: ['เมืองของคุณ', 'ไปได้ไกลกว่า'],
+        title: ['ไปให้ไกลกว่า', 'ในทุกจังหวะของเมือง'],
         description:
-          'การเดินทางไฟฟ้าที่คล่องตัว เชื่อมทุกจุดหมายของวันให้ไปต่อได้อย่างเป็นธรรมชาติ',
-        primary: 'ดูรถของเรา',
+          'การเดินทางไฟฟ้าที่ออกแบบมาเพื่อเชื่อมต่อทุกจุดหมายของคุณ ให้ทุกวันในเมืองไปต่อได้อย่างเป็นธรรมชาติ',
+        primary: 'ดูมอเตอร์ไซค์',
         secondary: 'ดูวิธีใช้งาน',
       }
     : {
-        title: ['Your city.', 'Your way forward.'],
+        title: ['Go beyond', 'the everyday.'],
         description:
-          'Electric mobility designed to keep your day moving — smooth, simple, and ready when you are.',
-        primary: 'Explore the fleet',
+          'One electric motorcycle for the parts of Bangkok that keep your day moving.',
+        primary: 'Meet the motorcycle',
         secondary: 'How it works',
       };
 
   return (
     <section className="home-hero">
-      <Image
-        src="/images/city-rides.png"
-        alt={
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        src="/images/home-hero-scooter.mp4"
+        aria-label={
           isThai
-            ? 'จักรยานและสกู๊ตเตอร์ไฟฟ้าในเมือง'
-            : 'Electric bike and scooter in the city'
+            ? 'มอเตอร์ไซค์ไฟฟ้าในกรุงเทพฯ'
+            : 'Electric motorcycle in Bangkok'
         }
-        fill
-        priority
-        sizes="100vw"
       />
       <div className="home-hero-overlay" />
       <div className="home-hero-content">

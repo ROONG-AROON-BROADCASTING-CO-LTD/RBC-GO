@@ -29,12 +29,36 @@ export const websiteSx: SxProps<Theme> = [
       display: 'block',
       width: '100%',
       height: '100%',
+      transition: 'transform 220ms ease',
+    },
+    '& .button .animated-arrow, & .inline-link .animated-arrow': {
+      display: 'inline-flex',
+      flex: 'none',
+      lineHeight: '0',
+      color: 'inherit',
+      opacity: '1',
+      visibility: 'visible',
+    },
+    '& .button:hover .animated-arrow, & .inline-link:hover .animated-arrow': {
+      opacity: '1',
+      visibility: 'visible',
     },
   },
   {
-    '& main, & .site-header, & .site-footer': {
+    '& main': {
+      maxWidth: 'none',
+      margin: '0',
+      paddingInline: 'clamp(24px, 5vw, 82px)',
+    },
+    '& .site-header, & .site-footer': {
       maxWidth: '1440px',
       margin: 'auto',
+    },
+    '& .site-header': {
+      maxWidth: 'none',
+      width: '100%',
+      margin: '0',
+      marginBottom: '-104px',
     },
   },
   {
@@ -42,13 +66,70 @@ export const websiteSx: SxProps<Theme> = [
       position: 'sticky',
       top: '0',
       zIndex: '40',
+      height: '104px',
+      padding: '0',
+      background: 'transparent',
+      overflow: 'visible',
+      transition:
+        'height 220ms ease, background-color 220ms ease, backdrop-filter 220ms ease',
+    },
+  },
+  {
+    '& .site-topbar': {
+      height: '32px',
+      padding: '0 clamp(24px, 5vw, 82px)',
+      background: '#000',
+      borderBottom: '1px solid rgb(255 255 255 / 12%)',
+      color: 'rgb(255 255 255 / 68%)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      fontSize: '10px',
+      lineHeight: '1',
+      letterSpacing: '0.025em',
+      transition:
+        'height 220ms ease, opacity 160ms ease, border-color 160ms ease, padding 220ms ease',
+    },
+    '& .topbar-contact': {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '14px',
+      '& a': { color: '#f2f0e9', whiteSpace: 'nowrap' },
+      '& img': {
+        display: 'block',
+        width: '15px',
+        height: '15px',
+        objectFit: 'contain',
+      },
+    },
+    '& .site-nav': {
       height: '72px',
       padding: '12px clamp(24px, 5vw, 82px)',
-      background: '#000',
       display: 'grid',
       gridTemplateColumns: 'minmax(0, 1fr) auto minmax(0, 1fr)',
       alignItems: 'center',
       gap: '30px',
+      position: 'relative',
+    },
+  },
+  {
+    '& .site-header.is-scrolled': {
+      height: '72px',
+      background: 'rgb(0 0 0 / 96%)',
+      backdropFilter: 'blur(14px)',
+      WebkitBackdropFilter: 'blur(14px)',
+      '& .site-topbar': {
+        height: '0',
+        minHeight: '0',
+        paddingTop: '0',
+        paddingBottom: '0',
+        opacity: '0',
+        borderBottomColor: 'transparent',
+        pointerEvents: 'none',
+      },
+      '& .site-nav': {
+        height: '72px',
+      },
     },
   },
   {
@@ -56,9 +137,10 @@ export const websiteSx: SxProps<Theme> = [
       display: 'inline-flex',
       alignItems: 'center',
       gap: '11px',
-      fontSize: '25px',
-      fontWeight: '800',
-      letterSpacing: '-0.06em',
+      fontSize: '13px',
+      fontWeight: '700',
+      lineHeight: '0.92',
+      letterSpacing: '0.05em',
       whiteSpace: 'nowrap',
     },
   },
@@ -89,12 +171,30 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .desktop-nav a': {
+      position: 'relative',
       color: '#ddd',
+      transition: 'color 200ms ease',
+    },
+    '& .desktop-nav a::after': {
+      position: 'absolute',
+      bottom: '-4px',
+      left: '0',
+      width: '0',
+      height: '1px',
+      background: 'var(--lime)',
+      content: "''",
+      transition: 'width 220ms ease',
     },
   },
   {
     '& .desktop-nav a:hover, & .desktop-nav a[aria-current]': {
       color: 'var(--lime)',
+    },
+    '& .desktop-nav a:hover': {
+      color: 'var(--lime)',
+    },
+    '& .desktop-nav a:hover::after, & .desktop-nav a[aria-current]::after': {
+      width: '100%',
     },
   },
   {
@@ -112,17 +212,42 @@ export const websiteSx: SxProps<Theme> = [
       alignItems: 'center',
       justifyContent: 'center',
       gap: '5px',
+      width: '71px',
+      boxSizing: 'border-box',
+      height: '40px',
       minHeight: '40px',
       padding: '0 12px',
       border: '1px solid rgb(226 227 222 / 55%)',
       borderRadius: '10px',
       background: 'rgb(255 255 255 / 3%)',
+      fontFamily: 'var(--font-kanit), sans-serif',
       fontSize: '12px',
+      fontWeight: '400',
       color: '#9e9f98',
       cursor: 'pointer',
       lineHeight: '1',
+      fontVariantNumeric: 'tabular-nums',
       transition:
         'background 180ms ease,\n    border-color 180ms ease,\n    color 180ms ease',
+    },
+  },
+  {
+    '@media (max-width: 600px)': {
+      '& .locale-switch': {
+        width: '71px',
+        height: '36px',
+        minHeight: '36px',
+        padding: '0 10px',
+      },
+    },
+  },
+  {
+    '& .locale-switch span': {
+      display: 'inline-block',
+      width: '18px',
+      textAlign: 'center',
+      fontSize: '12px',
+      lineHeight: '12px',
     },
   },
   {
@@ -135,6 +260,8 @@ export const websiteSx: SxProps<Theme> = [
     '& .locale-switch i': {
       color: '#51554c',
       fontStyle: 'normal',
+      fontSize: '12px',
+      lineHeight: '12px',
     },
   },
   {
@@ -165,7 +292,7 @@ export const websiteSx: SxProps<Theme> = [
       padding: '17px 29px',
       fontSize: '17px',
       fontWeight: '600',
-      transition: 'opacity 0.15s ease,\n    box-shadow 0.15s ease',
+      transition: 'background-color 0.15s ease, box-shadow 0.15s ease',
     },
   },
   {
@@ -182,14 +309,19 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .button .icon': {
-      width: '23px',
-      height: '23px',
+      width: '19px',
+      height: '19px',
     },
   },
   {
     '& .button:hover': {
-      opacity: '0.88',
       boxShadow: '0 8px 20px rgb(0 0 0 / 18%)',
+    },
+    '& .button.dark:hover': {
+      background: '#040603',
+    },
+    '& .button.lime:hover': {
+      background: '#c7f436',
     },
   },
   {
@@ -214,9 +346,10 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .page-intro p': {
-      fontSize: '26px',
+      fontSize: 'clamp(16px, 1.25vw, 20px)',
       color: '#f0f1eb',
       marginTop: '30px',
+      lineHeight: '1.75',
     },
   },
   {
@@ -231,24 +364,30 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .page-content': {
-      padding: '52px 80px 65px',
+      padding: '52px 0 65px',
     },
   },
   {
     '& .home-hero': {
       position: 'relative',
-      minHeight: 'min(760px, calc(100svh - 72px))',
-      margin: '0 24px',
+      height: 'clamp(640px, calc(100svh - 104px), 940px)',
+      minHeight: '620px',
+      width: '100vw',
+      marginLeft: 'calc(50% - 50vw)',
+      marginRight: 'calc(50% - 50vw)',
       overflow: 'hidden',
-      borderRadius: '14px',
       display: 'flex',
-      alignItems: 'end',
+      alignItems: 'stretch',
     },
   },
   {
-    '& .home-hero > img': {
+    '& .home-hero > video': {
+      position: 'absolute',
+      inset: '0',
+      width: '100%',
+      height: '100%',
       objectFit: 'cover',
-      objectPosition: 'center',
+      objectPosition: 'center 55%',
     },
   },
   {
@@ -256,15 +395,19 @@ export const websiteSx: SxProps<Theme> = [
       position: 'absolute',
       inset: '0',
       background:
-        'linear-gradient(\n    90deg,\n    rgb(5 7 6 / 92%) 0%,\n    rgb(5 7 6 / 65%) 42%,\n    rgb(5 7 6 / 10%) 100%\n  )',
+        'linear-gradient(90deg, rgb(0 0 0 / 76%) 0%, rgb(0 0 0 / 49%) 37%, rgb(0 0 0 / 8%) 75%), linear-gradient(0deg, rgb(0 0 0 / 20%), transparent 40%)',
     },
   },
   {
     '& .home-hero-content': {
       position: 'relative',
       zIndex: '1',
-      maxWidth: '820px',
-      padding: '64px',
+      width: 'min(760px, 75vw)',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      padding: '224px 0 0 clamp(24px, 5vw, 82px)',
     },
   },
   {
@@ -289,6 +432,21 @@ export const websiteSx: SxProps<Theme> = [
       flexWrap: 'wrap',
       gap: '15px',
       marginTop: '38px',
+    },
+  },
+  {
+    '& .home-hero-actions .button': {
+      minWidth: '0',
+      minHeight: '52px',
+      justifyContent: 'flex-start',
+      gap: '12px',
+      padding: '0 23px',
+      borderRadius: '10px',
+      fontSize: '14px',
+    },
+    '& .home-hero-actions .button.dark': {
+      border: '0',
+      background: '#080b06',
     },
   },
   {
@@ -322,7 +480,7 @@ export const websiteSx: SxProps<Theme> = [
       height: 'calc(100svh - 72px)',
       minHeight: '740px',
       maxHeight: '1328px',
-      margin: '0 24px',
+      margin: '0',
       overflow: 'hidden',
       borderRadius: '12px',
     },
@@ -383,9 +541,10 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .fleet-intro > p': {
-      fontSize: '26px',
-      marginTop: '20px',
+      fontSize: 'clamp(16px, 1.25vw, 20px)',
+      marginTop: '30px',
       color: 'white',
+      lineHeight: '1.75',
     },
   },
   {
@@ -515,9 +674,9 @@ export const websiteSx: SxProps<Theme> = [
     '& .fleet-details': {
       display: 'flex',
       justifyContent: 'space-between',
-      padding: '35px 65px',
+      padding: '35px 0',
       background: 'var(--surface)',
-      margin: '20px 24px',
+      margin: '20px 0',
     },
   },
   {
@@ -538,6 +697,108 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
+    '& .vehicle-components': {
+      width: '100%',
+      margin: '0',
+      padding: '96px 0 36px',
+    },
+  },
+  {
+    '& .vehicle-components-heading': {
+      maxWidth: '760px',
+      marginBottom: '38px',
+    },
+  },
+  {
+    '& .vehicle-components-heading .eyebrow': {
+      marginBottom: '16px',
+    },
+  },
+  {
+    '& .vehicle-components-heading h2': {
+      fontSize: 'clamp(38px, 4vw, 64px)',
+      lineHeight: '1.08',
+      letterSpacing: '-0.045em',
+    },
+  },
+  {
+    '& .vehicle-components-heading p': {
+      marginTop: '18px',
+      maxWidth: '650px',
+      color: '#bec4b7',
+      fontSize: '18px',
+      lineHeight: '1.65',
+    },
+  },
+  {
+    '& .vehicle-components-image': {
+      margin: '0',
+      overflow: 'hidden',
+      borderRadius: '16px',
+      border: '1px solid #2a3027',
+      background: '#090c0b',
+    },
+  },
+  {
+    '& .vehicle-components-image img': {
+      display: 'block',
+      width: '100%',
+      height: 'auto',
+    },
+  },
+  {
+    '& .vehicle-components-list': {
+      listStyle: 'none',
+      padding: '0',
+      margin: '34px 0 0',
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+      borderTop: '1px solid #2a3027',
+      borderLeft: '1px solid #2a3027',
+      borderRight: '1px solid #2a3027',
+    },
+  },
+  {
+    '& .vehicle-components-list li': {
+      display: 'flex',
+      gap: '16px',
+      minHeight: '138px',
+      padding: '25px 22px',
+      borderRight: '1px solid #2a3027',
+      borderBottom: '1px solid #2a3027',
+    },
+  },
+  {
+    '& .vehicle-components-list li:nth-child(3n)': {
+      borderRight: '0',
+    },
+  },
+  {
+    '& .vehicle-components-list li > span': {
+      flex: '0 0 auto',
+      color: 'var(--lime)',
+      fontFamily: 'var(--font-inter), sans-serif',
+      fontSize: '12px',
+      fontWeight: '700',
+      letterSpacing: '0.08em',
+      paddingTop: '5px',
+    },
+  },
+  {
+    '& .vehicle-components-list h3': {
+      fontSize: '20px',
+      lineHeight: '1.25',
+    },
+  },
+  {
+    '& .vehicle-components-list p': {
+      marginTop: '7px',
+      color: '#aeb5a6',
+      fontSize: '15px',
+      lineHeight: '1.55',
+    },
+  },
+  {
     '& .icon-button': {
       border: '0',
       background: 'none',
@@ -549,7 +810,7 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .lower-home': {
-      padding: '60px 65px 0',
+      padding: '60px 0 0',
     },
   },
   {
@@ -583,17 +844,23 @@ export const websiteSx: SxProps<Theme> = [
     '& .inline-link': {
       display: 'inline-flex',
       alignItems: 'center',
+      justifyContent: 'space-between',
+      minWidth: '0',
+      padding: '0',
+      borderRadius: '0',
       gap: '18px',
       color: 'var(--lime)',
       fontSize: '16px',
-      textDecoration: 'underline',
-      textUnderlineOffset: '5px',
+      textDecoration: 'none',
+      background: 'transparent',
     },
   },
   {
     '& .inline-link .round-arrow': {
-      width: '50px',
-      height: '50px',
+      width: '19px',
+      height: '19px',
+      background: 'transparent',
+      color: 'currentColor',
     },
   },
   {
@@ -679,20 +946,16 @@ export const websiteSx: SxProps<Theme> = [
     '& .journey-columns': {
       display: 'grid',
       gridTemplateColumns: 'repeat(3, 1fr)',
-      gap: '38px',
+      gap: '26px',
     },
   },
   {
     '& .journey-columns article': {
       minWidth: '0',
-      borderRight: '1px solid var(--line)',
-      paddingRight: '25px',
-    },
-  },
-  {
-    '& .journey-columns article:last-child': {
-      border: '0',
-      paddingRight: '0',
+      border: '1px solid var(--line)',
+      borderRadius: '20px',
+      padding: '34px 38px 38px',
+      minHeight: '230px',
     },
   },
   {
@@ -718,10 +981,16 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '& .journey-title .icon': {
+    '& .animated-journey-icon': {
       color: 'var(--lime)',
       width: '49px',
       height: '49px',
+      flexShrink: '0',
+    },
+    '& .animated-journey-icon svg': {
+      display: 'block',
+      width: '100%',
+      height: '100%',
     },
   },
   {
@@ -746,6 +1015,29 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
+    '& .lower-home .journey-columns': {
+      gap: '18px',
+    },
+  },
+  {
+    '& .lower-home .journey-columns article': {
+      border: '1px solid var(--line)',
+      borderRadius: '14px',
+      padding: '25px',
+    },
+  },
+  {
+    '& .lower-home .journey-columns article:last-child': {
+      border: '1px solid var(--line)',
+      paddingRight: '25px',
+    },
+  },
+  {
+    '& .lower-home .journey-columns p': {
+      paddingLeft: '0',
+    },
+  },
+  {
     '& .lower-home .journey-title .number': {
       width: '39px',
       height: '39px',
@@ -758,7 +1050,7 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '& .lower-home .journey-title .icon': {
+    '& .lower-home .animated-journey-icon': {
       width: '39px',
       height: '39px',
     },
@@ -787,8 +1079,8 @@ export const websiteSx: SxProps<Theme> = [
     '& .phone-art': {
       width: '100%',
       marginTop: '36px',
-      overflow: 'hidden',
-      height: '660px',
+      overflow: 'visible',
+      height: 'auto',
       borderRadius: '45px 45px 0 0',
     },
   },
@@ -983,7 +1275,7 @@ export const websiteSx: SxProps<Theme> = [
     '& .about-copy': {
       position: 'relative',
       zIndex: '1',
-      padding: '40px 80px',
+      padding: '40px 0',
       maxWidth: '1050px',
     },
   },
@@ -1001,10 +1293,11 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .about-lead': {
-      fontSize: '26px',
+      fontSize: 'clamp(16px, 1.25vw, 20px)',
       marginTop: '28px',
       color: '#f6f7f0',
       maxWidth: '900px',
+      lineHeight: '1.75',
     },
   },
   {
@@ -1040,21 +1333,18 @@ export const websiteSx: SxProps<Theme> = [
     '& .about-benefits': {
       display: 'grid',
       gridTemplateColumns: 'repeat(3, 1fr)',
-      gap: '30px',
-      padding: '50px 70px 55px',
+      gap: '26px',
+      padding: '50px 0 55px',
     },
   },
   {
     '& .about-benefits article': {
       display: 'flex',
       gap: '26px',
-      borderRight: '1px solid var(--line)',
-      paddingRight: '25px',
-    },
-  },
-  {
-    '& .about-benefits article:last-child': {
-      border: '0',
+      border: '1px solid var(--line)',
+      borderRadius: '20px',
+      padding: '34px 30px 38px',
+      minHeight: '0',
     },
   },
   {
@@ -1168,9 +1458,9 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .faq-list details p': {
-      fontSize: '19px',
+      fontSize: '16px',
       lineHeight: '1.5',
-      marginTop: '20px',
+      marginTop: '16px',
       maxWidth: '1050px',
     },
   },
@@ -1228,11 +1518,13 @@ export const websiteSx: SxProps<Theme> = [
       position: 'relative',
       background: 'var(--lime)',
       display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      justifyContent: 'center',
       overflow: 'hidden',
+      borderRadius: '12px',
       padding: '48px 65px',
-      minHeight: '200px',
+      minHeight: '320px',
       gap: '40px',
     },
   },
@@ -1247,6 +1539,7 @@ export const websiteSx: SxProps<Theme> = [
     '& .closing-cta h2': {
       position: 'relative',
       fontSize: '45px',
+      fontWeight: '500',
       color: '#090f02',
       lineHeight: '1.03',
       zIndex: '1',
@@ -1256,7 +1549,15 @@ export const websiteSx: SxProps<Theme> = [
     '& .closing-cta .button': {
       position: 'relative',
       zIndex: '1',
-      minWidth: '240px',
+      width: 'auto',
+      minWidth: '0',
+      minHeight: '52px',
+      justifyContent: 'flex-start',
+      gap: '12px',
+      padding: '0 23px',
+      borderRadius: '10px',
+      fontSize: '14px',
+      marginTop: '4px',
     },
   },
   {
@@ -1424,7 +1725,7 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     "html[lang='th'] & .desktop-nav": {
-      gap: '24px',
+      gap: 'clamp(20px, 2.3vw, 42px)',
     },
   },
   {
@@ -1435,9 +1736,11 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 1100px)': {
       '& .site-header': {
+        height: '104px',
+      },
+      '& .site-nav': {
         paddingInline: 'clamp(24px, 5vw, 82px)',
         gap: '20px',
-        height: '72px',
       },
     },
   },
@@ -1511,7 +1814,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 1100px)': {
       '& .fleet-intro > p': {
-        fontSize: '21px',
+        fontSize: '20px',
       },
     },
   },
@@ -1600,7 +1903,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 1100px)': {
       '& .page-intro p': {
-        fontSize: '22px',
+        fontSize: '20px',
       },
     },
   },
@@ -1644,7 +1947,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 1100px)': {
       '& .phone-art': {
-        height: '520px',
+        height: 'auto',
         borderRadius: '35px 35px 0 0',
       },
     },
@@ -1741,7 +2044,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 1100px)': {
       '& .about-lead': {
-        fontSize: '23px',
+        fontSize: '20px',
       },
     },
   },
@@ -1763,7 +2066,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 1100px)': {
       '& .about-benefits': {
-        padding: '40px 45px',
+        padding: '40px 0',
         gap: '22px',
       },
     },
@@ -1772,7 +2075,8 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 1100px)': {
       '& .about-benefits article': {
         gap: '18px',
-        paddingRight: '20px',
+        padding: '26px 24px 28px',
+        minHeight: '0',
       },
     },
   },
@@ -1835,7 +2139,7 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (max-width: 1100px)': {
-      '& .lower-home .journey-title .icon': {
+      '& .lower-home .animated-journey-icon': {
         width: '30px',
         height: '30px',
       },
@@ -1926,7 +2230,9 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .home-hero-content': {
-        padding: '32px 22px 42px',
+        justifyContent: 'end',
+        width: '100%',
+        padding: '0 24px 62px',
       },
     },
   },
@@ -1957,7 +2263,19 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .site-header': {
-        height: '72px',
+        height: '104px',
+      },
+      '& .site-topbar': {
+        paddingInline: '24px',
+      },
+      '& .site-topbar > span': {
+        display: 'none',
+      },
+      '& .topbar-contact': {
+        marginLeft: 'auto',
+        gap: '12px',
+      },
+      '& .site-nav': {
         padding: '12px 24px',
         gap: '15px',
       },
@@ -2078,7 +2396,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .page-content': {
-        padding: '35px 22px 45px',
+        padding: '35px 0 45px',
       },
     },
   },
@@ -2093,7 +2411,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .page-intro p': {
-        fontSize: '17px',
+        fontSize: '15px',
         marginTop: '23px',
         lineHeight: '1.45',
       },
@@ -2110,7 +2428,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .fleet-hero': {
-        margin: '0 12px',
+        margin: '0',
         minHeight: '860px',
         height: 'auto',
         borderRadius: '12px',
@@ -2185,7 +2503,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .fleet-intro > p': {
-        fontSize: '17px',
+        fontSize: '15px',
         marginTop: '16px',
         maxWidth: '290px',
       },
@@ -2330,8 +2648,8 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .fleet-details': {
-        padding: '25px 20px',
-        margin: '15px 12px',
+        padding: '25px 0',
+        margin: '15px 0',
         gap: '15px',
       },
     },
@@ -2346,6 +2664,67 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .fleet-details p': {
+        fontSize: '14px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .vehicle-components': {
+        width: '100%',
+        margin: '0',
+        padding: '58px 0 20px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .vehicle-components-heading': {
+        marginBottom: '25px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .vehicle-components-heading p': {
+        fontSize: '15px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .vehicle-components-image': {
+        borderRadius: '10px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .vehicle-components-list': {
+        gridTemplateColumns: '1fr',
+        marginTop: '24px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .vehicle-components-list li': {
+        minHeight: '0',
+        padding: '19px 0',
+        borderRight: '0',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .vehicle-components-list h3': {
+        fontSize: '18px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .vehicle-components-list p': {
         fontSize: '14px',
       },
     },
@@ -2403,7 +2782,8 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .section-heading .inline-link': {
-        maxWidth: '110px',
+        minWidth: '0',
+        maxWidth: 'none',
         alignItems: 'start',
       },
     },
@@ -2411,16 +2791,16 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .inline-link .round-arrow': {
-        width: '33px',
-        height: '33px',
+        width: '19px',
+        height: '19px',
       },
     },
   },
   {
     '@media (max-width: 767px)': {
       '& .inline-link .icon': {
-        width: '18px',
-        height: '18px',
+        width: '19px',
+        height: '19px',
       },
     },
   },
@@ -2491,17 +2871,17 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .journey-columns article': {
-        borderRight: '0',
-        padding: '0 0 25px',
-        borderBottom: '1px solid var(--line)',
+        border: '1px solid var(--line)',
+        borderRadius: '16px',
+        padding: '26px 24px 28px',
       },
     },
   },
   {
     '@media (max-width: 767px)': {
       '& .journey-columns article:last-child': {
-        borderBottom: '0',
-        paddingBottom: '0',
+        borderBottom: '1px solid var(--line)',
+        paddingBottom: '28px',
       },
     },
   },
@@ -2548,6 +2928,30 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (max-width: 767px)': {
+      '& .lower-home .journey-columns': {
+        gap: '12px',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .lower-home .journey-columns article, & .lower-home .journey-columns article:last-child':
+        {
+          border: '1px solid var(--line)',
+          borderRadius: '12px',
+          padding: '20px',
+        },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .lower-home .journey-columns p': {
+        paddingLeft: '0',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
       '& .lower-home .journey-title h3': {
         fontSize: '22px',
       },
@@ -2555,7 +2959,7 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (max-width: 767px)': {
-      '& .lower-home .journey-title .icon': {
+      '& .lower-home .animated-journey-icon': {
         width: '35px',
         height: '35px',
       },
@@ -2593,7 +2997,7 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .phone-art': {
         maxWidth: '280px',
-        height: '460px',
+        height: 'auto',
         margin: '22px auto 0',
         borderRadius: '35px 35px 0 0',
       },
@@ -2815,7 +3219,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .about-lead': {
-        fontSize: '17px',
+        fontSize: '15px',
         lineHeight: '1.5',
         marginTop: '25px',
         maxWidth: '330px',
@@ -3046,7 +3450,8 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .closing-cta': {
         padding: '30px 22px',
-        minHeight: '230px',
+        minHeight: '280px',
+        borderRadius: '10px',
         flexDirection: 'column',
         alignItems: 'start',
         gap: '25px',
@@ -3072,7 +3477,14 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .closing-cta .button': {
-        minWidth: '185px',
+        width: 'auto',
+        minWidth: '0',
+        minHeight: '52px',
+        justifyContent: 'flex-start',
+        gap: '12px',
+        padding: '0 23px',
+        borderRadius: '10px',
+        fontSize: '14px',
       },
     },
   },
@@ -3232,14 +3644,6 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (min-width: 1101px)': {
-      '& .phone-art img': {
-        height: '560px',
-        objectFit: 'fill',
-      },
-    },
-  },
-  {
-    '@media (min-width: 1101px)': {
       '& .lower-home': {
         paddingTop: '30px',
       },
@@ -3279,6 +3683,353 @@ export const websiteSx: SxProps<Theme> = [
       '& .about-lead': {
         maxWidth: '730px',
       },
+    },
+  },
+  {
+    '& .home-hero > video': { objectPosition: 'center 55%' },
+    '& .motorcycle-hero > img': {
+      objectFit: 'cover',
+      objectPosition: 'center center',
+    },
+    '& .motorcycle-shade': {
+      position: 'absolute',
+      inset: 0,
+      background:
+        'linear-gradient(90deg, rgb(0 0 0 / 88%) 0%, rgb(0 0 0 / 43%) 52%, transparent 100%)',
+    },
+    '& .motorcycle-hero .fleet-intro': { maxWidth: '49%' },
+    '& .caption-motorcycle': { left: '38px', right: '38px', maxWidth: '680px' },
+    '& .motorcycle-tile-wrap': { gridTemplateColumns: 'minmax(0, 1fr)' },
+    '& .lower-home .motorcycle-tile': {
+      width: '100%',
+      height: 'auto',
+      aspectRatio: '16 / 9',
+      background: '#080a08',
+    },
+    '& .lower-home .motorcycle-tile img': {
+      objectFit: 'contain',
+      objectPosition: 'center',
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .motorcycle-hero .fleet-intro': { maxWidth: '100%' },
+      '& .caption-motorcycle': { left: '16px', right: '16px' },
+      '& .lower-home .motorcycle-tile': {
+        height: 'auto',
+        aspectRatio: '16 / 9',
+      },
+      '& .home-hero > video': { objectPosition: '61% center' },
+    },
+  },
+  {
+    '& .round-arrow:hover': { opacity: '0.86', background: 'var(--lime)' },
+    '& .round-arrow.outline:hover': {
+      opacity: '0.86',
+      background: 'none',
+      color: 'var(--lime)',
+    },
+  },
+  {
+    '& .page-intro h1, & .about-copy h1, & .fleet-intro h1': {
+      fontSize: 'clamp(58px, 5vw, 76px)',
+      fontWeight: '400',
+      lineHeight: '1.1',
+      letterSpacing: '-0.05em',
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .page-intro h1, & .about-copy h1, & .fleet-intro h1': {
+        fontSize: 'clamp(44px, 13vw, 58px)',
+        lineHeight: '1.08',
+      },
+    },
+  },
+  {
+    "html[lang='th'] & .page-intro h1, html[lang='th'] & .about-copy h1, html[lang='th'] & .fleet-intro h1":
+      {
+        fontSize: 'clamp(58px, 5vw, 76px)',
+        lineHeight: '1.1',
+      },
+  },
+  {
+    '@media (max-width: 767px)': {
+      "html[lang='th'] & .page-intro h1, html[lang='th'] & .about-copy h1, html[lang='th'] & .fleet-intro h1":
+        {
+          fontSize: 'clamp(44px, 13vw, 58px)',
+          lineHeight: '1.08',
+        },
+    },
+  },
+  {
+    '& .site-footer': {
+      position: 'relative',
+      maxWidth: '1600px',
+      overflow: 'hidden',
+      padding: '0 var(--footer-gutter, clamp(24px, 5vw, 82px))',
+      background: '#000',
+      color: '#fff',
+    },
+    '& .footer-rail': {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      height: '1px',
+      background:
+        'linear-gradient(90deg, transparent 0%, rgb(212 255 64 / 30%) 18%, var(--lime) 50%, rgb(212 255 64 / 30%) 82%, transparent 100%)',
+    },
+    '& .footer-main': {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(260px, 0.86fr) minmax(560px, 1.34fr)',
+      gap: 'clamp(56px, 9vw, 152px)',
+      paddingBlock: 'clamp(68px, 7vw, 116px) clamp(54px, 5.5vw, 84px)',
+    },
+    '& .footer-brand-column': { minWidth: 0 },
+    '& .footer-brand-column .brand': {
+      display: 'flex',
+      width: 'fit-content',
+      alignItems: 'center',
+      gap: '16px',
+      fontSize: 'clamp(22px, 1.8vw, 28px)',
+    },
+    '& .footer-brand-column .brand-logo': { width: '62px', height: '62px' },
+    '& .footer-brand-column > p': {
+      maxWidth: '330px',
+      marginTop: '28px',
+      color: 'rgb(245 245 240 / 68%)',
+      fontSize: '15px',
+      lineHeight: '1.75',
+    },
+    '& .footer-links': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+      gap: 'clamp(26px, 3vw, 52px)',
+    },
+    '& .footer-links nav': {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      gap: '13px',
+    },
+    '& .footer-links h3': {
+      margin: '0 0 11px',
+      color: 'var(--lime)',
+      fontSize: '11px',
+      fontWeight: '600',
+      letterSpacing: '0.08em',
+      textTransform: 'uppercase',
+    },
+    '& .footer-links a, & .footer-links button': {
+      position: 'relative',
+      padding: 0,
+      border: 0,
+      background: 'none',
+      color: 'rgb(245 245 240 / 68%)',
+      fontSize: '14px',
+      lineHeight: '1.35',
+      textAlign: 'left',
+      transition: 'color 200ms ease',
+    },
+    '& .footer-links a::after': {
+      position: 'absolute',
+      bottom: '-4px',
+      left: 0,
+      width: 0,
+      height: '1px',
+      background: 'var(--lime)',
+      content: "''",
+      transition: 'width 220ms ease',
+    },
+    '& .footer-links a:hover, & .footer-links button:hover': {
+      color: 'var(--lime)',
+    },
+    '& .footer-links a:hover::after': { width: '100%' },
+    '& .footer-bottom': {
+      minHeight: '78px',
+      marginTop: 0,
+      paddingTop: 0,
+      alignItems: 'center',
+      borderTop: '1px solid rgb(255 255 255 / 12%)',
+      color: 'rgb(245 245 240 / 43%)',
+      fontSize: '11px',
+    },
+  },
+  {
+    '@media (max-width: 1050px)': {
+      '& .footer-main': {
+        gridTemplateColumns: 'minmax(220px, 0.72fr) minmax(0, 1.28fr)',
+        gap: 'clamp(40px, 6vw, 72px)',
+      },
+    },
+  },
+  {
+    '@media (max-width: 600px)': {
+      '& .site-footer': { paddingInline: '22px' },
+      '& .footer-main': {
+        gridTemplateColumns: '1fr',
+        gap: '46px',
+        paddingBlock: '70px 54px',
+      },
+      '& .footer-links': {
+        gridTemplateColumns: '1fr 1fr',
+        gap: '38px 26px',
+      },
+      '& .footer-links nav:last-child': { gridColumn: '1 / -1' },
+      '& .footer-bottom': {
+        minHeight: 'auto',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        gap: '13px',
+        paddingBlock: '25px',
+      },
+    },
+  },
+  {
+    '@media (min-width: 768px)': {
+      '& .fleet-hero, & .about-hero': {
+        width: '100vw',
+        height: 'clamp(640px, calc(100svh - 104px), 940px)',
+        minHeight: '620px',
+        marginLeft: 'calc(50% - 50vw)',
+        marginRight: 'calc(50% - 50vw)',
+        borderRadius: '0',
+      },
+      '& .about-copy': {
+        maxWidth: '760px',
+        marginLeft: '0',
+        padding: '224px 0 40px clamp(24px, 5vw, 82px)',
+        zIndex: '2',
+      },
+      '& .fleet-intro': {
+        left: 'clamp(24px, 5vw, 82px)',
+        maxWidth: '760px',
+        top: '224px',
+      },
+      '& .page-hero-visual': {
+        position: 'absolute',
+        top: '0',
+        left: '50%',
+        right: 'auto',
+        width: '100vw',
+        transform: 'translateX(-50%)',
+        height: 'clamp(640px, calc(100svh - 104px), 940px)',
+        overflow: 'hidden',
+        zIndex: '0',
+      },
+      '& .page-hero-visual::after': {
+        content: '""',
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '-3px',
+        background:
+          'linear-gradient(90deg, rgb(0 0 0 / 76%) 0%, rgb(0 0 0 / 49%) 37%, rgb(0 0 0 / 8%) 75%), linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 88%) 12%, transparent 42%)',
+      },
+      '& .page-hero-visual img': {
+        objectFit: 'cover',
+        objectPosition: 'center center',
+      },
+      '& .page-content > *:not(.page-hero-visual)': {
+        position: 'relative',
+        zIndex: '1',
+      },
+      '& .page-content > .page-intro': {
+        width: 'min(760px, 75vw)',
+        minHeight: 'calc(clamp(640px, calc(100svh - 104px), 940px) - 224px)',
+      },
+      '& .page-intro p, & .about-copy .about-lead': { maxWidth: '515px' },
+      '& .home-hero h1, & .page-intro h1, & .fleet-intro h1, & .about-copy h1':
+        {
+          fontSize: 'clamp(44px, 3.8vw, 56px) !important',
+        },
+      '& .home-hero-overlay, & .motorcycle-shade': {
+        background:
+          'linear-gradient(90deg, rgb(0 0 0 / 76%) 0%, rgb(0 0 0 / 49%) 37%, rgb(0 0 0 / 8%) 75%), linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 88%) 12%, transparent 42%)',
+      },
+      '& .about-hero::after': {
+        content: '""',
+        position: 'absolute',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        height: '34%',
+        zIndex: '1',
+        background:
+          'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 82%) 14%, transparent 100%)',
+        pointerEvents: 'none',
+      },
+      '& .page-content': {
+        position: 'relative',
+        paddingTop: '224px',
+      },
+      '& .help-callout .button': {
+        minWidth: '0',
+        minHeight: '52px',
+        justifyContent: 'flex-start',
+        padding: '0 23px',
+        borderRadius: '10px',
+        fontSize: '14px',
+        gap: '12px',
+      },
+      '& .help-callout .button:hover': {
+        background: '#c7f436',
+        boxShadow: '0 8px 20px rgb(0 0 0 / 18%)',
+      },
+      '& .help-callout .button:hover .animated-arrow svg': {
+        transform: 'translateX(6px)',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .page-content': { position: 'relative' },
+      '& .page-hero-visual': {
+        position: 'absolute',
+        top: '0',
+        left: '50%',
+        right: 'auto',
+        width: '100vw',
+        transform: 'translateX(-50%)',
+        height: '620px',
+        overflow: 'hidden',
+        zIndex: '0',
+      },
+      '& .page-hero-visual::after': {
+        content: '""',
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '-3px',
+        background:
+          'linear-gradient(90deg, rgb(0 0 0 / 88%), rgb(0 0 0 / 28%)), linear-gradient(0deg, #080a08 0%, transparent 65%)',
+      },
+      '& .help-callout .button': {
+        minWidth: '0',
+        width: '100%',
+        minHeight: '52px',
+        padding: '0 23px',
+        borderRadius: '10px',
+        fontSize: '14px',
+        gap: '12px',
+      },
+      '& .page-hero-visual img': {
+        objectFit: 'cover',
+        objectPosition: 'center center',
+      },
+      '& .page-content > *:not(.page-hero-visual)': {
+        position: 'relative',
+        zIndex: '1',
+      },
+      '& .page-content > .page-intro': { minHeight: '430px' },
+      '& .home-hero h1, & .page-intro h1, & .fleet-intro h1, & .about-copy h1':
+        {
+          fontSize: 'clamp(32px, 8vw, 48px)',
+        },
     },
   },
 ];

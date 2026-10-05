@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { type Locale, type Page, text } from '../data/landing';
 import { referenceCopy } from '../data/brandPages';
 import { customerUrl, siteUrl } from '../../app/site';
@@ -60,6 +59,42 @@ export function BrandPages({ page }: { page?: Page }) {
         {page === 'rides' && (
           <>
             <FleetHero locale={locale} />
+            <section
+              className="vehicle-components"
+              aria-labelledby="vehicle-components-heading"
+            >
+              <div className="vehicle-components-heading">
+                <span className="eyebrow">
+                  {locale === 'en' ? 'VEHICLE DETAILS' : 'รายละเอียดตัวรถ'}
+                </span>
+                <h2 id="vehicle-components-heading">{c.componentTitle}</h2>
+                <p>{c.componentIntro}</p>
+              </div>
+              <figure className="vehicle-components-image">
+                <Image
+                  src="/images/rbc-go-scooter-components.png"
+                  alt={
+                    locale === 'en'
+                      ? 'Annotated RBC GO electric motorcycle components'
+                      : 'ภาพอธิบายส่วนประกอบของมอเตอร์ไซค์ไฟฟ้า RBC GO'
+                  }
+                  width={1672}
+                  height={941}
+                  sizes="(max-width: 767px) 100vw, min(90vw, 1600px)"
+                />
+              </figure>
+              <ol className="vehicle-components-list">
+                {c.components.map(([title, description], index) => (
+                  <li key={title}>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <div>
+                      <h3>{title}</h3>
+                      <p>{description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </section>
             <p className="illustration-note">
               {locale === 'en'
                 ? 'Coming soon in Bangkok · Vehicle images illustrate the planned service.'
@@ -70,14 +105,22 @@ export function BrandPages({ page }: { page?: Page }) {
         {!page && <FleetSection locale={locale} />}
         {page === 'how-it-works' && (
           <div className="page-content how-content">
+            <div className="page-hero-visual">
+              <Image
+                src="/images/how-it-works-hero.png"
+                alt=""
+                fill
+                sizes="100vw"
+                priority
+              />
+            </div>
             <section className="page-intro">
-              <span className="eyebrow">{t.nav[1]}</span>
               <Heading lines={c.how} />
               <p>{c.howIntro}</p>
             </section>
             <JourneySection locale={locale} phones />
             <section className="safety-note" id="safety">
-              <Icon kind="bike" />
+              <Icon kind="motorcycle" />
               <div>
                 <h2>{t.safety}</h2>
                 <p>{t.safetyCopy}</p>
@@ -89,8 +132,16 @@ export function BrandPages({ page }: { page?: Page }) {
         {page === 'pricing' && (
           <>
             <div className="page-content pricing-content">
+              <div className="page-hero-visual">
+                <Image
+                  src="/images/pricing-hero.png"
+                  alt=""
+                  fill
+                  sizes="100vw"
+                  priority
+                />
+              </div>
               <section className="page-intro">
-                <span className="eyebrow">{t.nav[2]}</span>
                 <Heading lines={c.pricing} />
                 <p>
                   {c.priceIntro[0]}
@@ -126,33 +177,13 @@ export function BrandPages({ page }: { page?: Page }) {
                 </aside>
               </section>
             </div>
-            <section className="river-banner">
-              <Image
-                src="/images/bangkok-river.png"
-                alt={
-                  locale === 'en'
-                    ? 'Bangkok river and bridge at sunset'
-                    : 'แม่น้ำและสะพานกรุงเทพฯ ยามเย็น'
-                }
-                fill
-                sizes="100vw"
-              />
-              <div>
-                <h2>
-                  {c.river[0]}
-                  <br />
-                  {c.river[1]}
-                </h2>
-                <p>{c.riverCopy}</p>
-              </div>
-            </section>
           </>
         )}
         {page === 'about' && (
           <>
             <section className="about-hero">
               <Image
-                src="/images/bangkok-temple-wide.png"
+                src="/images/about-hero.png"
                 alt={
                   locale === 'en'
                     ? 'Wat Arun and the Chao Phraya River at sunset'
@@ -163,9 +194,6 @@ export function BrandPages({ page }: { page?: Page }) {
                 preload
               />
               <div className="about-copy">
-                <span className="eyebrow">
-                  {locale === 'en' ? 'ABOUT RBC GO' : 'เกี่ยวกับ RBC GO'}
-                </span>
                 <Heading lines={c.about} />
                 <p className="about-lead">
                   {c.aboutIntro[0]}
@@ -177,12 +205,6 @@ export function BrandPages({ page }: { page?: Page }) {
                     <p key={p}>{p}</p>
                   ))}
                 </div>
-                <Link className="inline-link mission-link" href="#mission">
-                  <span className="round-arrow">
-                    <Icon kind="arrow" />
-                  </span>
-                  {c.mission}
-                </Link>
               </div>
             </section>
             <section id="mission" className="about-benefits">
@@ -200,8 +222,16 @@ export function BrandPages({ page }: { page?: Page }) {
         )}
         {page === 'help' && (
           <div className="page-content help-page">
+            <div className="page-hero-visual">
+              <Image
+                src="/images/help-hero.png"
+                alt=""
+                fill
+                sizes="100vw"
+                priority
+              />
+            </div>
             <section className="page-intro">
-              <span className="eyebrow">{t.nav[4]}</span>
               <Heading lines={c.help} />
               <p>{c.helpIntro}</p>
             </section>
@@ -235,11 +265,7 @@ export function BrandPages({ page }: { page?: Page }) {
           </WebsiteAction>
         </section>
       </main>
-      <WebsiteFooter
-        locale={locale}
-        page={page}
-        onLanguageChange={setLanguage}
-      />
+      <WebsiteFooter locale={locale} page={page} />
     </>
   );
 }

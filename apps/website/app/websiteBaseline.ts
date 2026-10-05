@@ -11,7 +11,8 @@ export const websiteBaseline = {
     boxSizing: 'border-box',
   },
   html: {
-    scrollBehavior: 'smooth',
+    scrollBehavior: 'auto',
+    overscrollBehaviorY: 'none',
   },
   body: {
     margin: '0',
@@ -19,6 +20,7 @@ export const websiteBaseline = {
     color: '#f7f8f4',
     fontFamily: 'var(--font-inter), Arial, sans-serif',
     WebkitFontSmoothing: 'antialiased',
+    overscrollBehaviorY: 'none',
   },
   "html[lang='th'] body": {
     fontFamily: 'var(--font-kanit), Arial, sans-serif',

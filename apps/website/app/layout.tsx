@@ -23,7 +23,7 @@ const kanit = localFont({
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: 'RBC GO | รถไฟฟ้าเพื่อการเดินทางในเมือง',
+    default: 'RBC GO | มอเตอร์ไซค์ไฟฟ้าเพื่อการเดินทางในเมือง',
     template: 'RBC GO | %s',
   },
   robots: { index: indexable, follow: indexable },

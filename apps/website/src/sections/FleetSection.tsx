@@ -14,38 +14,30 @@ export function FleetSection({ locale }: { locale: Locale }) {
         <div className="section-heading">
           <div>
             <span className="eyebrow">
-              {locale === 'en' ? 'OUR FLEET' : 'รถของเรา'}
+              {locale === 'en' ? 'OUR MOTORCYCLE' : 'มอเตอร์ไซค์ของเรา'}
             </span>
             <h2>{c.lowerFleet}</h2>
             <p>{c.lowerIntro}</p>
           </div>
-          <Link className="inline-link" href="/rides">
-            {t.meet}
-            <span className="round-arrow">
-              <Icon kind="arrow" />
-            </span>
-          </Link>
         </div>
-        <div className="ride-tiles">
-          {(['bike', 'scooter'] as const).map((ride, i) => (
-            <Link className={`ride-tile ${ride}`} href="/rides" key={ride}>
-              <Image
-                src={`/images/fleet-${ride}.png`}
-                alt={t[ride]}
-                fill
-                sizes="(max-width:767px) 100vw, 50vw"
-              />
-              <div className="tile-caption">
-                <div>
-                  <h3>{c.types[i]}</h3>
-                  <p>{i === 0 ? c.bikeCopy : c.scooterCopy}</p>
-                </div>
-                <span className="round-arrow outline">
-                  <Icon kind="arrow" />
-                </span>
+        <div className="ride-tiles motorcycle-tile-wrap">
+          <Link className="ride-tile motorcycle-tile" href="/rides">
+            <Image
+              src="/images/rbc-go-future-scooter.png"
+              alt={c.vehicle}
+              fill
+              sizes="(max-width:767px) 100vw, 90vw"
+            />
+            <div className="tile-caption">
+              <div>
+                <h3>{c.vehicle}</h3>
+                <p>{c.vehicleCopy}</p>
               </div>
-            </Link>
-          ))}
+              <span className="round-arrow outline">
+                <Icon kind="arrow" />
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
       <section className="journey-section">
@@ -54,12 +46,6 @@ export function FleetSection({ locale }: { locale: Locale }) {
             <span className="eyebrow">{t.nav[1]}</span>
             <h2>{c.lowerHow}</h2>
           </div>
-          <Link className="inline-link" href="/how-it-works">
-            {t.how}
-            <span className="round-arrow">
-              <Icon kind="arrow" />
-            </span>
-          </Link>
         </div>
         <JourneySection locale={locale} />
       </section>

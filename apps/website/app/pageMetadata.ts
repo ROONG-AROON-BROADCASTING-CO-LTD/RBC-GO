@@ -10,8 +10,8 @@ export function pageMetadata(locale: Locale, page?: Page): Metadata {
   const title = page
     ? t.nav[pages.indexOf(page)]
     : locale === 'en'
-      ? 'Electric rides for your city'
-      : 'รถไฟฟ้าเพื่อการเดินทางในเมือง';
+      ? 'Electric motorcycle for your city'
+      : 'มอเตอร์ไซค์ไฟฟ้าเพื่อการเดินทางในเมือง';
   return {
     metadataBase: siteUrl,
     title: { absolute: `RBC GO | ${title}` },
