@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 import { type Locale, type Page, text } from '../data/landing';
 import { referenceCopy } from '../data/brandPages';
 import { customerUrl, siteUrl } from '../../app/site';
@@ -30,6 +31,7 @@ function Heading({ lines }: { lines: string[] }) {
 }
 export function BrandPages({ page }: { page?: Page }) {
   const { language: locale, setLanguage } = useWebsiteLanguage();
+  const [activeBenefit, setActiveBenefit] = useState<number | null>(null);
   const t = text[locale];
   const c = referenceCopy(locale);
   const schema = {
@@ -95,11 +97,6 @@ export function BrandPages({ page }: { page?: Page }) {
                 ))}
               </ol>
             </section>
-            <p className="illustration-note">
-              {locale === 'en'
-                ? 'Coming soon in Bangkok · Vehicle images illustrate the planned service.'
-                : 'เตรียมพบกันที่กรุงเทพฯ · ภาพรถใช้ประกอบแนวคิดบริการ'}
-            </p>
           </>
         )}
         {!page && <FleetSection locale={locale} />}
@@ -209,8 +206,17 @@ export function BrandPages({ page }: { page?: Page }) {
             </section>
             <section id="mission" className="about-benefits">
               {c.aboutBenefits.map(([title, copy], i) => (
-                <article key={title}>
-                  <Icon kind={(['leaf', 'people', 'sparkle'] as const)[i]} />
+                <article
+                  key={title}
+                  onPointerEnter={() => setActiveBenefit(i)}
+                  onPointerLeave={() => setActiveBenefit(null)}
+                >
+                  <Icon
+                    kind={(['leaf', 'people', 'sparkle'] as const)[i]}
+                    animateOnHover={false}
+                    animationState={activeBenefit === i ? 'animate' : 'normal'}
+                    animationTrigger={activeBenefit === i}
+                  />
                   <div>
                     <h3>{title}</h3>
                     <p>{copy}</p>
@@ -248,7 +254,6 @@ export function BrandPages({ page }: { page?: Page }) {
                 className="button lime"
               >
                 {c.contact}
-                <Icon kind="arrow" />
               </InfoDialog>
             </section>
           </div>

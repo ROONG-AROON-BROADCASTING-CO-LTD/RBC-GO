@@ -37,8 +37,18 @@ export function WebsiteNav({
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    if (open) document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open]);
+
   return (
-    <header className={`site-header${isScrolled ? ' is-scrolled' : ''}`}>
+    <header
+      className={`site-header${isScrolled ? ' is-scrolled' : ''}${open ? ' is-menu-open' : ''}`}
+    >
       <div className="site-topbar">
         <span>
           {locale === 'en'
@@ -152,7 +162,12 @@ export function WebsiteNav({
             aria-label={open ? 'Close menu' : 'Open menu'}
             onClick={() => setOpen(!open)}
           >
-            <Icon kind={open ? 'close' : 'menu'} />
+            <Icon
+              animateOnHover={false}
+              animationState={open ? 'animate' : 'normal'}
+              animationTrigger={open}
+              kind="menu"
+            />
           </button>
         </div>
 
@@ -162,7 +177,11 @@ export function WebsiteNav({
             className="mobile-menu"
             aria-label="Mobile navigation"
           >
-            <Link href="/" onClick={() => setOpen(false)}>
+            <Link
+              href="/"
+              aria-current={page === undefined ? 'page' : undefined}
+              onClick={() => setOpen(false)}
+            >
               {locale === 'en' ? 'Home' : 'หน้าแรก'}
               <Icon kind="arrow" />
             </Link>
@@ -170,6 +189,7 @@ export function WebsiteNav({
               <Link
                 key={item}
                 href={pageHref(item)}
+                aria-current={page === item ? 'page' : undefined}
                 onClick={() => setOpen(false)}
               >
                 {t.nav[index]}

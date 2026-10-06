@@ -77,7 +77,6 @@ export function JourneySection({
           </article>
         ))}
       </div>
-      {phones && <p className="demo-note">{c.demo}</p>}
     </section>
   );
 }

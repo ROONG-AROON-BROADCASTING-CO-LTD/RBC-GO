@@ -8,9 +8,15 @@ export type IconKind = 'arrow' | AnimatedWebsiteIconName;
 export function Icon({
   kind,
   className = '',
+  animateOnHover,
+  animationState,
+  animationTrigger,
 }: {
   kind: IconKind;
   className?: string;
+  animateOnHover?: boolean;
+  animationState?: 'animate' | 'normal';
+  animationTrigger?: boolean | string | number;
 }) {
   if (kind === 'arrow') {
     return (
@@ -21,5 +27,13 @@ export function Icon({
     );
   }
 
-  return <AnimatedWebsiteIcon className={className} name={kind} />;
+  return (
+    <AnimatedWebsiteIcon
+      animateOnHover={animateOnHover}
+      animationState={animationState}
+      animationTrigger={animationTrigger}
+      className={className}
+      name={kind}
+    />
+  );
 }

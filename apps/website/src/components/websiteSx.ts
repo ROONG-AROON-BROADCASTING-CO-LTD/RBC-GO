@@ -76,7 +76,7 @@ export const websiteSx: SxProps<Theme> = [
       background: 'transparent',
       overflow: 'hidden',
       transition:
-        'height 220ms ease, background-color 220ms ease, backdrop-filter 220ms ease',
+        'height 160ms ease, background-color 160ms ease, backdrop-filter 160ms ease',
     },
   },
   {
@@ -93,7 +93,7 @@ export const websiteSx: SxProps<Theme> = [
       lineHeight: '1',
       letterSpacing: '0.025em',
       transition:
-        'height 220ms ease, opacity 160ms ease, border-color 160ms ease, padding 220ms ease',
+        'height 160ms ease, opacity 120ms ease, border-color 120ms ease, padding 160ms ease',
     },
     '& .topbar-contact': {
       display: 'flex',
@@ -135,6 +135,9 @@ export const websiteSx: SxProps<Theme> = [
       '& .site-nav': {
         height: '72px',
       },
+      '& .locale-switch, & .menu-toggle': {
+        borderColor: '#fff',
+      },
     },
   },
   {
@@ -142,7 +145,7 @@ export const websiteSx: SxProps<Theme> = [
       display: 'inline-flex',
       alignItems: 'center',
       gap: '11px',
-      fontSize: '13px',
+      fontSize: '12px',
       fontWeight: '700',
       lineHeight: '0.92',
       letterSpacing: '0.05em',
@@ -162,7 +165,6 @@ export const websiteSx: SxProps<Theme> = [
       height: '42px',
       objectFit: 'cover',
       borderRadius: '50%',
-      boxShadow: '0 0 18px rgb(78 255 0 / 18%)',
     },
   },
   {
@@ -222,7 +224,7 @@ export const websiteSx: SxProps<Theme> = [
       height: '40px',
       minHeight: '40px',
       padding: '0 12px',
-      border: '1px solid rgb(226 227 222 / 55%)',
+      border: '1px solid #000',
       borderRadius: '10px',
       background: 'rgb(255 255 255 / 3%)',
       fontFamily: 'var(--font-kanit), sans-serif',
@@ -240,9 +242,9 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 600px)': {
       '& .locale-switch': {
         width: '71px',
-        height: '36px',
-        minHeight: '36px',
-        padding: '0 10px',
+        height: '40px',
+        minHeight: '40px',
+        padding: '0 12px',
       },
     },
   },
@@ -764,6 +766,25 @@ export const websiteSx: SxProps<Theme> = [
       borderTop: '1px solid #2a3027',
       borderLeft: '1px solid #2a3027',
       borderRight: '1px solid #2a3027',
+      position: 'relative',
+      '&::before': {
+        content: "''",
+        position: 'absolute',
+        right: '33.333%',
+        bottom: '0',
+        height: '138px',
+        borderLeft: '1px solid #2a3027',
+        pointerEvents: 'none',
+      },
+      '&::after': {
+        content: "''",
+        position: 'absolute',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        borderBottom: '1px solid #2a3027',
+        pointerEvents: 'none',
+      },
     },
   },
   {
@@ -784,12 +805,18 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .vehicle-components-list li > span': {
       flex: '0 0 auto',
-      color: 'var(--lime)',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '30px',
+      height: '30px',
+      borderRadius: '50%',
+      background: 'var(--lime)',
+      color: '#0c1105',
       fontFamily: 'var(--font-inter), sans-serif',
       fontSize: '12px',
       fontWeight: '700',
       letterSpacing: '0.08em',
-      paddingTop: '5px',
     },
   },
   {
@@ -1120,6 +1147,8 @@ export const websiteSx: SxProps<Theme> = [
       fontSize: '12px !important',
       marginTop: '18px',
       color: '#8b9284 !important',
+      border: '1px solid #fff',
+      padding: '10px 14px',
     },
   },
   {
@@ -1365,18 +1394,21 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .about-benefits article': {
-      display: 'flex',
-      gap: '26px',
+      position: 'relative',
+      display: 'block',
       border: '1px solid var(--line)',
-      borderRadius: '20px',
-      padding: '34px 30px 38px',
+      borderRadius: '14px',
+      padding: '25px',
       minHeight: '0',
     },
   },
   {
     '& .about-benefits .icon': {
-      width: '57px',
-      height: '57px',
+      position: 'absolute',
+      right: '18px',
+      bottom: '18px',
+      width: '64px',
+      height: '64px',
       color: 'var(--lime)',
     },
   },
@@ -1388,8 +1420,11 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .about-benefits p': {
-      fontSize: '18px',
-      marginTop: '14px',
+      maxWidth: '340px',
+      marginTop: '17px',
+      paddingRight: '82px',
+      fontSize: '16px',
+      lineHeight: '1.4',
     },
   },
   {
@@ -1411,17 +1446,19 @@ export const websiteSx: SxProps<Theme> = [
     '& .search': {
       display: 'flex',
       alignItems: 'center',
-      gap: '20px',
+      gap: '14px',
       background: 'var(--surface)',
       borderRadius: '50px',
-      padding: '15px 24px',
+      maxWidth: '720px',
+      marginInline: 'auto',
+      padding: '10px 18px',
     },
   },
   {
     '& .search .icon': {
       color: 'var(--lime)',
-      width: '32px',
-      height: '32px',
+      width: '26px',
+      height: '26px',
     },
   },
   {
@@ -1430,8 +1467,8 @@ export const websiteSx: SxProps<Theme> = [
       border: '0',
       color: 'white',
       width: '100%',
-      fontSize: '19px',
-      padding: '8px 0',
+      fontSize: '16px',
+      padding: '6px 0',
     },
   },
   {
@@ -1442,52 +1479,49 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '& .faq-list details': {
+    '& .faq-list .faq-item': {
       borderTop: '1px solid var(--line)',
       padding: '23px 17px',
     },
-  },
-  {
-    '& .faq-list details:last-child': {
+    '& .faq-list .faq-item:last-child': {
       borderBottom: '1px solid var(--line)',
     },
-  },
-  {
-    '& .faq-list summary': {
+    '& .faq-list .faq-question': {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
       gap: '25px',
+      width: '100%',
+      padding: 0,
+      border: 0,
+      background: 'none',
       fontSize: '22px',
       color: '#d9dcd2',
       cursor: 'pointer',
-      listStyle: 'none',
+      textAlign: 'left',
     },
-  },
-  {
-    '& .faq-list summary::-webkit-details-marker': {
-      display: 'none',
-    },
-  },
-  {
-    '& .faq-list summary .icon': {
+    '& .faq-list .faq-question .icon': {
       color: 'var(--lime)',
       width: '24px',
       height: '24px',
       transition: 'transform 0.2s',
     },
-  },
-  {
-    '& .faq-list details[open] summary .icon': {
+    '& .faq-list .faq-question .icon.is-open': {
       transform: 'rotate(90deg)',
     },
   },
   {
-    '& .faq-list details p': {
+    '& .faq-list .faq-answer p': {
       fontSize: '16px',
       lineHeight: '1.5',
-      marginTop: '16px',
-      maxWidth: '1050px',
+      margin: '16px 0 0',
+      width: '100%',
+      maxWidth: 'none',
+      boxSizing: 'border-box',
+      padding: '14px 16px',
+      borderRadius: '10px',
+      background: '#151a13',
+      color: 'rgb(245 245 240 / 82%)',
     },
   },
   {
@@ -1810,7 +1844,10 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 1100px)': {
       '& .page-content': {
-        paddingInline: '55px',
+        paddingInline: '0',
+      },
+      '& .pricing-content': {
+        paddingInline: '0',
       },
     },
   },
@@ -2130,13 +2167,6 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (max-width: 1100px)': {
-      '& .lower-home': {
-        paddingInline: '45px',
-      },
-    },
-  },
-  {
-    '@media (max-width: 1100px)': {
       '& .section-heading h2': {
         fontSize: '34px',
       },
@@ -2178,6 +2208,39 @@ export const websiteSx: SxProps<Theme> = [
       '& .lower-home .journey-columns p': {
         paddingLeft: '50px',
         fontSize: '14px',
+      },
+    },
+  },
+  {
+    '@media (min-width: 768px) and (max-width: 850px)': {
+      '& .lower-home .journey-columns': {
+        gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+        gap: '16px',
+      },
+      '& .lower-home .journey-columns article': {
+        padding: '24px',
+        minHeight: '220px',
+      },
+      '& .lower-home .journey-columns article:last-child': {
+        gridColumn: '1 / -1',
+      },
+      '& .lower-home .journey-title': {
+        gap: '10px',
+      },
+      '& .lower-home .journey-title h3': {
+        fontSize: 'clamp(20px, 2.8vw, 24px)',
+      },
+      '& .lower-home .journey-columns p': {
+        paddingRight: '74px',
+        fontSize: '15px',
+        maxWidth: 'none',
+        lineHeight: '1.5',
+      },
+      '& .lower-home .animated-journey-icon': {
+        right: '18px',
+        bottom: '18px',
+        width: '58px',
+        height: '58px',
       },
     },
   },
@@ -2240,8 +2303,12 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .home-hero': {
+        height: '640px',
         minHeight: '640px',
-        margin: '0',
+        maxHeight: '640px',
+        width: '100vw',
+        marginLeft: 'calc(50% - 50vw)',
+        marginRight: 'calc(50% - 50vw)',
         borderRadius: '0',
         alignItems: 'end',
       },
@@ -2260,6 +2327,7 @@ export const websiteSx: SxProps<Theme> = [
       '& .home-hero-content': {
         justifyContent: 'end',
         width: '100%',
+        transform: 'translateY(-48px)',
         padding: '0 24px 62px',
       },
     },
@@ -2267,8 +2335,10 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .home-hero h1': {
-        fontSize: 'clamp(46px, 10vw, 64px)',
+        fontSize: 'clamp(42px, 10vw, 64px)',
+        fontWeight: '600',
         lineHeight: '1.1',
+        letterSpacing: '-0.05em',
       },
     },
   },
@@ -2289,9 +2359,25 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 767px)': {
+    '@media (max-width: 1024px)': {
       '& .site-header': {
         height: '104px',
+        overflow: 'visible',
+      },
+      '& .site-header.is-scrolled': {
+        overflow: 'hidden',
+      },
+      '& .site-header.is-scrolled.is-menu-open': {
+        height: '72px',
+        overflow: 'visible',
+        '& .site-nav': {
+          height: '72px',
+          minHeight: '72px',
+          paddingTop: '12px',
+          paddingBottom: '12px',
+          opacity: '1',
+          pointerEvents: 'auto',
+        },
       },
       '& .site-topbar': {
         paddingInline: '24px',
@@ -2310,15 +2396,15 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 767px)': {
+    '@media (max-width: 1024px)': {
       '& .brand': {
-        fontSize: '22px',
+        fontSize: '20px',
         gap: '9px',
       },
     },
   },
   {
-    '@media (max-width: 767px)': {
+    '@media (max-width: 1024px)': {
       '& .brand-logo': {
         width: '42px',
         height: '42px',
@@ -2326,21 +2412,21 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 767px)': {
+    '@media (max-width: 1024px)': {
       '& .desktop-nav, & .header-start': {
         display: 'none',
       },
     },
   },
   {
-    '@media (max-width: 767px)': {
+    '@media (max-width: 1024px)': {
       '& .header-right': {
         gap: '20px',
       },
     },
   },
   {
-    '@media (max-width: 767px)': {
+    '@media (max-width: 1024px)': {
       '& .locale-switch': {
         fontSize: '12px',
         gap: '9px',
@@ -2348,20 +2434,20 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 767px)': {
+    '@media (max-width: 1024px)': {
       '& .menu-toggle': {
         display: 'grid',
         placeItems: 'center',
         background: 'none',
-        border: '1px solid var(--line)',
-        borderRadius: '9px',
+        border: '1px solid #000',
+        borderRadius: '10px',
         width: '40px',
         height: '40px',
       },
     },
   },
   {
-    '@media (max-width: 767px)': {
+    '@media (max-width: 1024px)': {
       '& .menu-toggle .icon': {
         width: '23px',
         height: '23px',
@@ -2369,7 +2455,7 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 767px)': {
+    '@media (max-width: 1024px)': {
       '& .mobile-menu': {
         display: 'flex',
         flexDirection: 'column',
@@ -2377,16 +2463,16 @@ export const websiteSx: SxProps<Theme> = [
         top: '74px',
         left: '15px',
         right: '15px',
-        background: '#151b12',
+        background: '#000',
         zIndex: '10',
-        border: '1px solid #48533c',
+        border: '1px solid #fff',
         borderRadius: '14px',
         padding: '20px',
       },
     },
   },
   {
-    '@media (max-width: 767px)': {
+    '@media (max-width: 1024px)': {
       '& .mobile-menu > a:not(.mobile-login)': {
         display: 'flex',
         alignItems: 'center',
@@ -2394,11 +2480,14 @@ export const websiteSx: SxProps<Theme> = [
         borderBottom: '1px solid var(--line)',
         padding: '15px 0',
         fontSize: '17px',
+        '&[aria-current="page"]': {
+          color: 'var(--lime)',
+        },
       },
     },
   },
   {
-    '@media (max-width: 767px)': {
+    '@media (max-width: 1024px)': {
       '& .mobile-menu .mobile-login': {
         justifyContent: 'center',
       },
@@ -2731,6 +2820,9 @@ export const websiteSx: SxProps<Theme> = [
       '& .vehicle-components-list': {
         gridTemplateColumns: '1fr',
         marginTop: '24px',
+        '&::before, &::after': {
+          display: 'none',
+        },
       },
     },
   },
@@ -2738,7 +2830,7 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .vehicle-components-list li': {
         minHeight: '0',
-        padding: '19px 0',
+        padding: '19px 16px',
         borderRight: '0',
       },
     },
@@ -2760,7 +2852,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .lower-home': {
-        padding: '40px 22px 0',
+        padding: '40px 0 0',
       },
     },
   },
@@ -3000,6 +3092,10 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .with-phones': {
         marginTop: '36px',
+        paddingTop: '20px',
+      },
+      '& .with-phones .journey-columns': {
+        marginTop: '20px',
       },
     },
   },
@@ -3013,7 +3109,13 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .with-phones .journey-columns article': {
-        padding: '0 0 25px',
+        padding: '20px 24px 25px',
+      },
+      '& .with-phones .journey-columns > article > p': {
+        minHeight: '0',
+      },
+      '& .with-phones .phone-art': {
+        marginTop: '20px',
       },
     },
   },
@@ -3313,7 +3415,7 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .about-benefits': {
         gridTemplateColumns: '1fr',
-        padding: '32px 22px',
+        padding: '32px 0',
         gap: '25px',
       },
     },
@@ -3391,14 +3493,14 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (max-width: 767px)': {
-      '& .faq-list details': {
+      '& .faq-list .faq-item': {
         padding: '20px 5px',
       },
     },
   },
   {
     '@media (max-width: 767px)': {
-      '& .faq-list summary': {
+      '& .faq-list .faq-question': {
         fontSize: '15px',
         lineHeight: '1.4',
         gap: '20px',
@@ -3408,7 +3510,7 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (max-width: 767px)': {
-      '& .faq-list summary .icon': {
+      '& .faq-list .faq-question .icon': {
         width: '20px',
         height: '20px',
       },
@@ -3416,7 +3518,7 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (max-width: 767px)': {
-      '& .faq-list details p': {
+      '& .faq-list .faq-answer p': {
         fontSize: '14px',
         lineHeight: '1.6',
         marginTop: '17px',
@@ -3473,7 +3575,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .help-callout .button': {
-        marginLeft: '50px',
+        marginLeft: '0',
       },
     },
   },
@@ -3656,7 +3758,17 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .with-phones .journey-columns > article > p': {
-      minHeight: '84px',
+      minHeight: '58px',
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .with-phones .journey-columns > article > p': {
+        minHeight: '0 !important',
+      },
+      '& .with-phones .phone-art': {
+        marginTop: '20px !important',
+      },
     },
   },
   {
@@ -3755,6 +3867,13 @@ export const websiteSx: SxProps<Theme> = [
         aspectRatio: '16 / 9',
       },
       '& .home-hero > video': { objectPosition: '61% center' },
+    },
+  },
+  {
+    '@media (min-width: 768px) and (max-width: 1100px)': {
+      '& .motorcycle-hero > img': {
+        objectPosition: '80% center',
+      },
     },
   },
   {
@@ -3977,8 +4096,12 @@ export const websiteSx: SxProps<Theme> = [
       },
       '& .page-hero-visual img': {
         objectFit: 'cover',
-        objectPosition: 'center center',
+        objectPosition: '75% center',
       },
+      '& .pricing-content .page-hero-visual img, & .how-content .page-hero-visual img':
+        {
+          objectPosition: '82% center',
+        },
       '& .page-content > *:not(.page-hero-visual)': {
         position: 'relative',
         zIndex: '1',
@@ -4025,14 +4148,14 @@ export const websiteSx: SxProps<Theme> = [
         background: '#8be63b',
         boxShadow: '0 8px 20px rgb(0 0 0 / 18%)',
       },
-      '& .help-callout .button:hover .animated-arrow svg': {
-        transform: 'translateX(6px)',
-      },
     },
   },
   {
     '@media (max-width: 767px)': {
-      '& .page-content': { position: 'relative' },
+      '& .page-content': {
+        position: 'relative',
+        padding: '0 0 45px',
+      },
       '& .page-hero-visual': {
         position: 'absolute',
         top: '0',
@@ -4040,7 +4163,7 @@ export const websiteSx: SxProps<Theme> = [
         right: 'auto',
         width: '100vw',
         transform: 'translateX(-50%)',
-        height: '620px',
+        height: '640px',
         overflow: 'hidden',
         zIndex: '0',
       },
@@ -4065,16 +4188,134 @@ export const websiteSx: SxProps<Theme> = [
       },
       '& .page-hero-visual img': {
         objectFit: 'cover',
-        objectPosition: 'center center',
+        objectPosition: '75% center',
       },
+      '& .pricing-content .page-hero-visual img, & .how-content .page-hero-visual img':
+        {
+          objectPosition: '82% center',
+        },
       '& .page-content > *:not(.page-hero-visual)': {
         position: 'relative',
         zIndex: '1',
       },
-      '& .page-content > .page-intro': { minHeight: '430px' },
-      '& .home-hero h1, & .page-intro h1, & .fleet-intro h1, & .about-copy h1':
+      '& .page-content > .page-intro': {
+        width: '100vw',
+        height: '640px',
+        minHeight: '640px',
+        maxHeight: '640px',
+        marginLeft: 'calc(50% - 50vw)',
+        marginRight: 'calc(50% - 50vw)',
+        boxSizing: 'border-box',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        transform: 'translateY(-48px)',
+        padding: '333px 24px 0',
+      },
+      '& .fleet-intro': {
+        top: '333px',
+        bottom: 'auto',
+        left: '24px',
+        right: '24px',
+        transform: 'translateY(-48px)',
+      },
+      '& .fleet-hero, & .about-hero': {
+        width: '100vw',
+        height: '640px',
+        minHeight: '640px',
+        maxHeight: '640px',
+        marginLeft: 'calc(50% - 50vw)',
+        marginRight: 'calc(50% - 50vw)',
+        borderRadius: '0',
+      },
+      '& .about-hero': {
+        height: 'auto',
+        minHeight: '640px',
+        maxHeight: 'none',
+        overflow: 'visible',
+      },
+      '& .bike-photo, & .scooter-photo': {
+        height: '640px',
+      },
+      '& .bike-photo img, & .scooter-photo img': {
+        objectPosition: '62% center',
+      },
+      '& .motorcycle-hero > img': {
+        objectPosition: '62% center',
+      },
+      '& .about-hero > img': {
+        objectPosition: '75% center',
+      },
+      '& .about-copy': {
+        position: 'relative',
+        left: 'auto',
+        right: 'auto',
+        top: 'auto',
+        bottom: 'auto',
+        transform: 'translateY(-48px)',
+        padding: '333px 24px 40px',
+      },
+      "html[lang='th'] & .page-intro h1, html[lang='th'] & .fleet-intro h1, html[lang='th'] & .about-copy h1":
         {
-          fontSize: 'clamp(32px, 8vw, 48px)',
+          fontSize: 'clamp(42px, 10vw, 64px)',
+          fontWeight: '600',
+          lineHeight: '1.1',
+          letterSpacing: '0.01em',
+        },
+      '& .page-intro h1 + p, & .fleet-intro h1 + p, & .about-copy h1 + p': {
+        marginTop: '20px',
+      },
+    },
+  },
+  {
+    '@media (min-width: 768px) and (max-width: 1100px)': {
+      '& .home-hero p, & .page-intro p, & .fleet-intro > p, & .about-lead, & .about-narrative p':
+        {
+          fontSize: 'clamp(16px, 1.9vw, 18px)',
+          lineHeight: '1.65',
+        },
+      '& .section-heading h2, & .closing-cta h2, & .rate-notice h2, & .help-callout h2':
+        {
+          fontSize: 'clamp(28px, 3.2vw, 34px)',
+        },
+      '& .fleet-caption h2, & .pricing-list h3, & .about-benefits h3, & .faq-list .faq-question':
+        {
+          fontSize: 'clamp(19px, 2.2vw, 22px)',
+        },
+      '& .fleet-caption p, & .pricing-list p, & .journey-columns p, & .about-benefits p, & .faq-list .faq-answer p':
+        {
+          fontSize: '15px',
+          lineHeight: '1.6',
+        },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .home-hero h1': {
+        fontSize: 'clamp(42px, 10vw, 64px)',
+        fontWeight: '600',
+        lineHeight: '1.1',
+        letterSpacing: '-0.05em',
+      },
+      '& .home-hero p, & .page-intro p, & .fleet-intro > p, & .about-lead, & .about-narrative p':
+        {
+          fontSize: 'clamp(15px, 4vw, 16px)',
+          lineHeight: '1.65',
+        },
+      '& .section-heading h2, & .closing-cta h2, & .rate-notice h2, & .help-callout h2':
+        {
+          fontSize: 'clamp(25px, 7vw, 30px)',
+          lineHeight: '1.18',
+        },
+      '& .fleet-caption h2, & .pricing-list h3, & .about-benefits h3, & .journey-title h3, & .faq-list .faq-question':
+        {
+          fontSize: 'clamp(18px, 5.2vw, 21px)',
+          lineHeight: '1.35',
+        },
+      '& .fleet-caption p, & .pricing-list p, & .journey-columns p, & .about-benefits p, & .faq-list .faq-answer p':
+        {
+          fontSize: '14px',
+          lineHeight: '1.6',
         },
     },
   },

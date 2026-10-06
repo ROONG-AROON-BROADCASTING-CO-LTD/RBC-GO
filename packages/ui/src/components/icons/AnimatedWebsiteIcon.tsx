@@ -1,6 +1,7 @@
 'use client';
 
 import { useAnimation } from 'motion/react';
+import { useEffect } from 'react';
 import { BoltIcon } from './animated/BoltIcon';
 import { ChartIcon } from './animated/ChartIcon';
 import { ChatIcon } from './animated/ChatIcon';
@@ -45,6 +46,9 @@ const iconParts: Record<AnimatedWebsiteIconName, IconParts> = {
 
 type AnimatedWebsiteIconProps = AnimatedIconProps & {
   name: AnimatedWebsiteIconName;
+  animateOnHover?: boolean;
+  animationState?: 'animate' | 'normal';
+  animationTrigger?: boolean | string | number;
 };
 
 // Each icon owns its SVG and animation in ./animated; this component only
@@ -53,16 +57,27 @@ export function AnimatedWebsiteIcon({
   name,
   className,
   size,
+  animateOnHover = true,
+  animationState = 'animate',
+  animationTrigger,
   ...props
 }: AnimatedWebsiteIconProps) {
   const controls = useAnimation();
   const IconParts = iconParts[name];
 
+  useEffect(() => {
+    if (animationTrigger !== undefined) void controls.start(animationState);
+  }, [animationState, animationTrigger, controls]);
+
   return (
     <IconCanvas
       className={className}
-      onMouseEnter={() => void controls.start('animate')}
-      onMouseLeave={() => void controls.start('normal')}
+      onMouseEnter={
+        animateOnHover ? () => void controls.start('animate') : undefined
+      }
+      onMouseLeave={
+        animateOnHover ? () => void controls.start('normal') : undefined
+      }
       size={size}
       {...props}
     >

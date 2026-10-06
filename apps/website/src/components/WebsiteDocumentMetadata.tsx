@@ -34,13 +34,32 @@ export function WebsiteDocumentMetadata() {
   const { language } = useWebsiteLanguage();
   const copy = useMemo(() => {
     const page = pageByPath[pathname];
-    const title = page
-      ? text[language].nav[
-          ['rides', 'how-it-works', 'pricing', 'about', 'help'].indexOf(page)
-        ]
-      : language === 'en'
-        ? 'Electric motorcycle for your city'
-        : 'มอเตอร์ไซค์ไฟฟ้าเพื่อการเดินทางในเมือง';
+    const titles =
+      language === 'en'
+        ? [
+            'Electric motorcycle for Bangkok',
+            'RBC GO electric motorcycle',
+            'How RBC GO works',
+            'RBC GO pricing',
+            'About RBC GO',
+            'RBC GO help and FAQs',
+          ]
+        : [
+            'มอเตอร์ไซค์ไฟฟ้าสำหรับกรุงเทพฯ',
+            'มอเตอร์ไซค์ไฟฟ้า RBC GO',
+            'วิธีใช้งาน RBC GO',
+            'ค่าบริการ RBC GO',
+            'เกี่ยวกับ RBC GO',
+            'ช่วยเหลือและคำถามที่พบบ่อย | RBC GO',
+          ];
+    const title =
+      titles[
+        page
+          ? ['rides', 'how-it-works', 'pricing', 'about', 'help'].indexOf(
+              page,
+            ) + 1
+          : 0
+      ];
 
     return { title, description: text[language].description };
   }, [language, pathname]);

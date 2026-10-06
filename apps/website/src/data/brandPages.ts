@@ -8,9 +8,9 @@ const copy = {
     vehicleCopy:
       'Quiet power, easy handling and a considered ride for the city.',
     features: [
-      'Electric from the start',
-      'Made for Bangkok streets',
-      'Connected when you need it',
+      'Powered by electricity',
+      'Designed for city movement',
+      'Ready to connect every day',
     ],
     componentTitle: 'Made for every part of the ride.',
     componentIntro:
@@ -56,7 +56,8 @@ const copy = {
     ],
     getStarted: 'See how it works',
     how: ['Your next journey', 'starts here.'],
-    howIntro: 'Your phone, your prepaid balance and one electric motorcycle.',
+    howIntro:
+      'Start every journey from your phone—top up, scan the QR code and unlock an electric motorcycle in a few simple steps for a smoother way to move through the city.',
     steps: ['Top up', 'Scan', 'Ride'],
     stepCopy: [
       'Add credit to your RBC GO card before your next journey.',
@@ -105,7 +106,8 @@ const copy = {
       ['Ready on your phone', 'A card, a QR code and a simple start.'],
     ],
     help: ['Good questions.', 'Clear answers.'],
-    helpIntro: 'Find what you need for the journey ahead.',
+    helpIntro:
+      'Explore practical answers, service details and simple guidance to help you feel ready for every journey ahead.',
     popular: 'Popular questions',
     helpMore: 'Still need help?',
     helpMoreCopy: 'Our ride guide walks you through the planned service.',
@@ -133,7 +135,7 @@ const copy = {
     footer: ['Electric journeys.', 'A brighter city.'],
   },
   th: {
-    fleet: ['สร้างมาเพื่อ', 'เมืองข้างหน้า'],
+    fleet: ['ออกแบบเพื่อ', 'เมืองแห่งอนาคต'],
     fleetIntro: [
       'มอเตอร์ไซค์ไฟฟ้าหนึ่งรูปแบบ',
       'พร้อมสำหรับทุกจังหวะของกรุงเทพฯ',
@@ -141,9 +143,9 @@ const copy = {
     vehicle: 'มอเตอร์ไซค์ไฟฟ้า RBC GO',
     vehicleCopy: 'พลังงานเงียบ ควบคุมง่าย และออกแบบมาเพื่อการเดินทางในเมือง',
     features: [
-      'เริ่มต้นด้วยพลังงานไฟฟ้า',
-      'สร้างมาเพื่อถนนกรุงเทพฯ',
-      'เชื่อมต่อเมื่อคุณต้องการ',
+      'ขับเคลื่อนด้วยพลังงานไฟฟ้า',
+      'ออกแบบเพื่อการเดินทางในเมือง',
+      'พร้อมเชื่อมต่อในทุกวัน',
     ],
     componentTitle: 'รายละเอียดที่คิดมาเพื่อทุกช่วงของการเดินทาง',
     componentIntro:
@@ -182,8 +184,9 @@ const copy = {
       ['ขาตั้ง', 'ช่วยให้จอดรถได้มั่นคงในระหว่างพักรถ'],
     ],
     getStarted: 'ดูวิธีใช้งาน',
-    how: ['การเดินทางครั้งต่อไป', 'เริ่มได้ที่นี่'],
-    howIntro: 'มือถือ ยอดเงินแบบเติมล่วงหน้า และมอเตอร์ไซค์ไฟฟ้าหนึ่งคัน',
+    how: ['การเดินทางครั้งใหม่', 'เริ่มต้นที่นี่'],
+    howIntro:
+      'เริ่มต้นทุกการเดินทางผ่านมือถือ เติมเงิน สแกน QR และปลดล็อกมอเตอร์ไซค์ไฟฟ้าได้ในไม่กี่ขั้นตอน เพื่อให้การเดินทางในเมืองของคุณคล่องตัวและมั่นใจยิ่งขึ้น',
     steps: ['เติมเงิน', 'สแกน', 'เดินทาง'],
     stepCopy: [
       'เติมเงินเข้าบัตร RBC GO ก่อนออกเดินทาง',
@@ -191,7 +194,7 @@ const copy = {
       'ขับขี่อย่างปลอดภัย คืนรถในพื้นที่ที่กำหนด และตรวจสอบสรุปการเดินทาง',
     ],
     demo: 'หน้าจอใช้ประกอบแนวคิด ระบบกำลังเตรียมเปิดบริการ',
-    pricing: ['ไปได้ไกล', 'เข้าใจได้ชัดเจน'],
+    pricing: ['เดินทางได้ไกล', 'เข้าใจทุกค่าใช้จ่าย'],
     priceIntro: [
       'จ่ายตามระยะทางที่เดินทาง',
       'ยอดเงินแบบเติมล่วงหน้าและสรุปการเดินทางอยู่ในมือคุณ',
@@ -206,14 +209,14 @@ const copy = {
     stay: 'ติดตามข่าวสารเร็ว ๆ นี้',
     river: ['ทุกกิโลเมตร', 'เพื่อกรุงเทพฯ ที่ดีขึ้น'],
     riverCopy: 'อีกวิธีในการเชื่อมต่อกับเมืองในแบบของคุณ',
-    about: ['เปลี่ยนทีละนิด', 'เพื่อเมืองที่ดีขึ้น'],
+    about: ['ขยับไปข้างหน้า', 'เพื่อเมืองที่ดีขึ้น'],
     aboutIntro: [
       'การเดินทางที่สะอาดขึ้น เพื่อกรุงเทพฯ ที่น่าอยู่',
       'RBC GO ทำให้การเดินทางทุกวันง่ายขึ้น',
     ],
     aboutBody: [
-      'เราเชื่อว่ามอเตอร์ไซค์ไฟฟ้าที่คิดมาอย่างดีเพียงหนึ่งรูปแบบ ช่วยให้การเดินทางระยะสั้นในเมืองเบาขึ้น ชัดเจนขึ้น และเชื่อมต่อมากขึ้น',
-      'เว็บแอปเพื่อมือถือ เชื่อมบัตรเติมเงิน การสแกน QR และการคิดค่าบริการตามระยะทาง ระบบชำระเงินและการเชื่อมต่อรถกำลังเตรียมพร้อมก่อนเปิดบริการ',
+      'เราเชื่อว่ามอเตอร์ไซค์ไฟฟ้าที่ออกแบบอย่างตั้งใจเพียงหนึ่งรุ่น สามารถเปลี่ยนทุกระยะทางสั้นในเมืองให้เบาสบาย ชัดเจน และเชื่อมต่อกับชีวิตคุณได้มากขึ้น',
+      'ทุกประสบการณ์เริ่มจากมือถือของคุณ ตั้งแต่บัตรเติมเงิน การสแกน QR ไปจนถึงค่าโดยสารตามระยะทาง ขณะนี้ระบบชำระเงินและการเชื่อมต่อรถกำลังเตรียมความพร้อม เพื่อให้ทุกการเดินทางพร้อมทันทีเมื่อเราเปิดบริการ',
     ],
     mission: 'แนวคิดของเรา',
     aboutBenefits: [
@@ -221,8 +224,9 @@ const copy = {
       ['เชื่อมต่อมากขึ้น', 'เชื่อมสถานที่ต่าง ๆ ในชีวิตประจำวัน'],
       ['พร้อมบนมือถือ', 'บัตร QR และการเริ่มต้นที่ง่ายขึ้น'],
     ],
-    help: ['ทุกคำถาม', 'มีคำตอบชัดเจน'],
-    helpIntro: 'ค้นหาข้อมูลสำหรับการเดินทางครั้งต่อไป',
+    help: ['ทุกคำถาม', 'มีคำตอบที่ใช่'],
+    helpIntro:
+      'ค้นหาคำตอบ ข้อมูลการใช้งาน และรายละเอียดสำคัญที่ช่วยให้คุณเตรียมพร้อมสำหรับทุกการเดินทางครั้งต่อไปได้อย่างมั่นใจ',
     popular: 'คำถามยอดนิยม',
     helpMore: 'ต้องการความช่วยเหลือ?',
     helpMoreCopy: 'คู่มืออธิบายการใช้บริการที่กำลังเตรียมเปิด',
@@ -230,9 +234,9 @@ const copy = {
     supportTitle: 'ทีมช่วยเหลือกำลังเตรียมพร้อม',
     supportCopy:
       'ช่องทางติดต่อจะแจ้งก่อนเปิดบริการ ขณะนี้ดูแนวทางการใช้บริการได้จากคู่มือและคำถามที่พบบ่อย',
-    lowerFleet: 'หนึ่งคัน เพื่อกรุงเทพฯ',
+    lowerFleet: 'หนึ่งคัน เพื่อทุกจังหวะของกรุงเทพฯ',
     lowerIntro: 'มอเตอร์ไซค์ไฟฟ้าที่สร้างมาเพื่อทุกช่วงต่อของวัน',
-    lowerHow: 'สามขั้นตอน เพื่อการเดินทางที่คิดมาดีขึ้น',
+    lowerHow: 'สามขั้นตอน สู่ทุกการเดินทางที่ง่ายขึ้น',
     cta: ['กรุงเทพฯ ที่สะอาดและน่าอยู่', 'เริ่มจากเราทุกคน'],
     explore: 'สำรวจ',
     support: 'ช่วยเหลือ',

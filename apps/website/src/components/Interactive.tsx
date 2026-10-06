@@ -2,11 +2,18 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import Collapse from '@mui/material/Collapse';
 import { useRef, useState } from 'react';
 import { type Locale, text } from '../data/landing';
 import { referenceCopy } from '../data/brandPages';
 import { MobileLoginLink } from './MobileLoginLink';
 import { Icon } from './Icon';
+import { ArrowRightIcon } from '@stackbuild/ui/icons';
+
+type ArrowHandle = {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+};
 
 export function FleetHero({ locale }: { locale: Locale }) {
   const [details, setDetails] = useState(false);
@@ -86,12 +93,25 @@ export function InfoDialog({
   className?: string;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
+  const arrowRef = useRef<ArrowHandle>(null);
   const c = referenceCopy(locale);
   const title = kind === 'support' ? c.supportTitle : c.policyTitle;
   return (
     <>
-      <button className={className} onClick={() => dialog.current?.showModal()}>
+      <button
+        className={className}
+        onClick={() => dialog.current?.showModal()}
+        onMouseEnter={() => arrowRef.current?.startAnimation()}
+        onMouseLeave={() => arrowRef.current?.stopAnimation()}
+      >
         {children}
+        {className.includes('button') && (
+          <ArrowRightIcon
+            ref={arrowRef}
+            aria-hidden="true"
+            className="icon animated-arrow"
+          />
+        )}
       </button>
       <dialog
         ref={dialog}
@@ -128,6 +148,7 @@ export function HelpQuestions({ locale }: { locale: Locale }) {
   const t = text[locale];
   const c = referenceCopy(locale);
   const [query, setQuery] = useState('');
+  const [openQuestion, setOpenQuestion] = useState<string | null>(null);
   const found = t.faq.filter(([, q, a]) =>
     `${q} ${a}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()),
   );
@@ -151,14 +172,36 @@ export function HelpQuestions({ locale }: { locale: Locale }) {
       </p>
       <div className="faq-list">
         {found.map(([group, q, a]) => (
-          <details key={q}>
-            <summary>
+          <div key={q} className="faq-item">
+            <button
+              className="faq-question"
+              type="button"
+              aria-expanded={openQuestion === q}
+              onClick={() =>
+                setOpenQuestion((current) => (current === q ? null : q))
+              }
+            >
               {q}
-              <Icon kind="chevron" />
-            </summary>
-            <p>{a}</p>
-            <small>{group}</small>
-          </details>
+              <Icon
+                className={openQuestion === q ? 'is-open' : ''}
+                kind="chevron"
+              />
+            </button>
+            <Collapse
+              className={`faq-answer ${openQuestion === q ? 'is-open' : ''}`}
+              in={openQuestion === q}
+              timeout={360}
+              easing={{
+                enter: 'cubic-bezier(0.22, 1, 0.36, 1)',
+                exit: 'cubic-bezier(0.22, 1, 0.36, 1)',
+              }}
+            >
+              <div>
+                <p>{a}</p>
+                <small>{group}</small>
+              </div>
+            </Collapse>
+          </div>
         ))}
         {!found.length && <p className="empty-state">{t.empty}</p>}
       </div>
