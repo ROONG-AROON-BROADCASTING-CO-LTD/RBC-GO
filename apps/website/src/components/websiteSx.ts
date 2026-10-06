@@ -817,6 +817,9 @@ export const websiteSx: SxProps<Theme> = [
       gap: '48px',
       padding: '60px 0 0',
     },
+    '& .home-hero + .lower-home': {
+      marginTop: '40px',
+    },
   },
   {
     '& .section-heading': {
@@ -3656,6 +3659,9 @@ export const websiteSx: SxProps<Theme> = [
       '& .lower-home': {
         gap: '40px',
         paddingTop: '30px',
+      },
+      '& .home-hero + .lower-home': {
+        marginTop: '48px',
       },
     },
   },
