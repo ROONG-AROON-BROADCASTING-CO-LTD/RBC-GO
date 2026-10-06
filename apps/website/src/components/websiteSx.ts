@@ -1551,7 +1551,7 @@ export const websiteSx: SxProps<Theme> = [
     '& .closing-cta h2': {
       position: 'relative',
       fontSize: '45px',
-      fontWeight: '500',
+      fontWeight: '600',
       color: '#090f02',
       lineHeight: '1.03',
       zIndex: '1',
