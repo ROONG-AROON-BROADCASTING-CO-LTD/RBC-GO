@@ -45,6 +45,7 @@ export function FleetSection({ locale }: { locale: Locale }) {
           <div>
             <span className="eyebrow">{t.nav[1]}</span>
             <h2>{c.lowerHow}</h2>
+            <p>{c.howIntro}</p>
           </div>
         </div>
         <JourneySection locale={locale} />
