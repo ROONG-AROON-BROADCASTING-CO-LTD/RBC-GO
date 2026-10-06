@@ -713,6 +713,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .vehicle-components-heading .eyebrow': {
       marginBottom: '16px',
+      fontSize: '15px',
     },
   },
   {
