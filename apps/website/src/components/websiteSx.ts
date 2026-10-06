@@ -1024,6 +1024,7 @@ export const websiteSx: SxProps<Theme> = [
       border: '1px solid var(--line)',
       borderRadius: '14px',
       padding: '25px',
+      minHeight: '0',
     },
   },
   {
