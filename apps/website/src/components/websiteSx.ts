@@ -1612,7 +1612,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .footer-grid h3': {
       fontSize: '19px',
-      letterSpacing: '-0.015em',
+      letterSpacing: '0.01em',
       fontWeight: '600',
       marginBottom: '10px',
     },
@@ -1720,7 +1720,7 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     "html[lang='th'] & h1, html[lang='th'] & h2, html[lang='th'] & h3": {
-      letterSpacing: '-0.025em',
+      letterSpacing: '0.01em',
     },
   },
   {
@@ -3747,11 +3747,11 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '& .page-intro h1, & .about-copy h1, & .fleet-intro h1': {
+    '& .home-hero h1, & .page-intro h1, & .about-copy h1, & .fleet-intro h1': {
       fontSize: 'clamp(58px, 5vw, 76px)',
-      fontWeight: '400',
+      fontWeight: '600',
       lineHeight: '1.1',
-      letterSpacing: '-0.05em',
+      letterSpacing: '0.01em',
     },
   },
   {
