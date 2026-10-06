@@ -15,7 +15,7 @@ const theme = createTheme({
   },
   palette: {
     mode: 'dark',
-    primary: { main: '#4caf18', contrastText: '#050706' },
+    primary: { main: '#69d11a', contrastText: '#050706' },
     background: { default: '#050706', paper: '#141614' },
   },
   typography: {
