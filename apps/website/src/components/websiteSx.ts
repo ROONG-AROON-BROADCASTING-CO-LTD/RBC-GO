@@ -5,16 +5,21 @@ import type { SxProps, Theme } from '@mui/material/styles';
 export const websiteSx: SxProps<Theme> = [
   {
     '& .icon': {
-      display: 'inline-block',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
       width: '26px',
       height: '26px',
       flexShrink: '0',
-      background: 'currentColor',
-      maskImage: 'var(--icon-url)',
-      maskSize: 'contain',
-      maskRepeat: 'no-repeat',
-      maskPosition: 'center',
       verticalAlign: 'middle',
+    },
+  },
+  {
+    '& .animated-website-icon svg': {
+      display: 'block',
+      width: '100%',
+      height: '100%',
+      overflow: 'visible',
     },
   },
   {

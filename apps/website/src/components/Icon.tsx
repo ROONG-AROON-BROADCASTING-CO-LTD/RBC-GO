@@ -1,23 +1,10 @@
-import type { CSSProperties } from 'react';
-import { ArrowRightIcon } from '@stackbuild/ui/icons';
-export type IconKind =
-  | 'leaf'
-  | 'route'
-  | 'scan'
-  | 'arrow'
-  | 'menu'
-  | 'close'
-  | 'search'
-  | 'chevron'
-  | 'motorcycle'
-  | 'bolt'
-  | 'chart'
-  | 'receipt'
-  | 'tag'
-  | 'people'
-  | 'sparkle'
-  | 'chat';
-/** Static assets exported from the installed Material Icons library; no new dependency. */
+import {
+  AnimatedWebsiteIcon,
+  ArrowRightIcon,
+  type AnimatedWebsiteIconName,
+} from '@stackbuild/ui/icons';
+export type IconKind = 'arrow' | AnimatedWebsiteIconName;
+
 export function Icon({
   kind,
   className = '',
@@ -34,11 +21,5 @@ export function Icon({
     );
   }
 
-  return (
-    <span
-      aria-hidden="true"
-      className={`icon ${className}`}
-      style={{ '--icon-url': `url('/icons/${kind}.svg')` } as CSSProperties}
-    />
-  );
+  return <AnimatedWebsiteIcon className={className} name={kind} />;
 }
