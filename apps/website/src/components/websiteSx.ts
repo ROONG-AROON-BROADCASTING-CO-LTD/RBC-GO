@@ -69,7 +69,7 @@ export const websiteSx: SxProps<Theme> = [
       height: '104px',
       padding: '0',
       background: 'transparent',
-      overflow: 'visible',
+      overflow: 'hidden',
       transition:
         'height 220ms ease, background-color 220ms ease, backdrop-filter 220ms ease',
     },
@@ -1048,6 +1048,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .lower-home .journey-columns p': {
       paddingLeft: '0',
+      paddingRight: '82px',
     },
   },
   {
@@ -1065,11 +1066,11 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .lower-home .animated-journey-icon': {
       position: 'absolute',
-      right: '-20px',
-      bottom: '-20px',
+      right: '18px',
+      bottom: '18px',
       zIndex: '1',
-      width: '54px',
-      height: '54px',
+      width: '64px',
+      height: '64px',
       pointerEvents: 'none',
     },
   },
@@ -2160,10 +2161,10 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 1100px)': {
       '& .lower-home .animated-journey-icon': {
-        right: '-16px',
-        bottom: '-16px',
-        width: '44px',
-        height: '44px',
+        right: '16px',
+        bottom: '16px',
+        width: '54px',
+        height: '54px',
       },
     },
   },
@@ -2969,6 +2970,7 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .lower-home .journey-columns p': {
         paddingLeft: '0',
+        paddingRight: '62px',
       },
     },
   },
@@ -2982,10 +2984,10 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .lower-home .animated-journey-icon': {
-        right: '-14px',
-        bottom: '-14px',
-        width: '40px',
-        height: '40px',
+        right: '14px',
+        bottom: '14px',
+        width: '48px',
+        height: '48px',
       },
     },
   },
