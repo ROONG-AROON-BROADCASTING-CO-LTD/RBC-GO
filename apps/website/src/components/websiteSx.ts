@@ -1554,6 +1554,7 @@ export const websiteSx: SxProps<Theme> = [
       objectFit: 'cover',
       objectPosition: 'right bottom',
       zIndex: '0',
+      filter: 'hue-rotate(18deg) saturate(0.78) brightness(0.78)',
     },
   },
   {
