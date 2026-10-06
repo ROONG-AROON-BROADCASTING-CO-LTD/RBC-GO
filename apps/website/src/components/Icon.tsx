@@ -2,11 +2,9 @@ import type { CSSProperties } from 'react';
 import { ArrowRightIcon } from '@stackbuild/ui/icons';
 export type IconKind =
   | 'leaf'
-  | 'wallet'
   | 'route'
   | 'scan'
   | 'arrow'
-  | 'northeast'
   | 'menu'
   | 'close'
   | 'search'
