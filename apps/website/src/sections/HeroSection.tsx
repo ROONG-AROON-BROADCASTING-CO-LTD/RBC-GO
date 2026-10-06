@@ -27,7 +27,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
         muted
         playsInline
         preload="auto"
-        src="/images/home-hero-scooter.mp4"
+        src="/images/heroes/home-hero-scooter.mp4"
         aria-label={
           isThai
             ? 'มอเตอร์ไซค์ไฟฟ้าในกรุงเทพฯ'

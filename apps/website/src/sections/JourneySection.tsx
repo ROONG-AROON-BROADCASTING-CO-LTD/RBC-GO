@@ -16,14 +16,14 @@ export function JourneySection({
   const phoneImages =
     locale === 'en'
       ? [
-          '/images/phone-wallet-en.png',
-          '/images/phone-scan-en.png',
-          '/images/phone-ride-en.png',
+          '/images/journey/phone-wallet-en.png',
+          '/images/journey/phone-scan-en.png',
+          '/images/journey/phone-ride-en.png',
         ]
       : [
-          '/images/phone-wallet-th.png',
-          '/images/phone-scan-th.png',
-          '/images/phone-ride-th.png',
+          '/images/journey/phone-wallet-th.png',
+          '/images/journey/phone-scan-th.png',
+          '/images/journey/phone-ride-th.png',
         ];
   const journeyIcons = [WalletIcon, ScanTextIcon, RouteIcon];
   return (

@@ -26,7 +26,7 @@ export function WebsiteFooter({
           <Link className="brand" href="/">
             <Image
               className="brand-logo"
-              src="/images/rbc-go-logo.jpeg"
+              src="/images/brand/rbc-go-logo.jpeg"
               alt="RBC GO"
               width={88}
               height={88}

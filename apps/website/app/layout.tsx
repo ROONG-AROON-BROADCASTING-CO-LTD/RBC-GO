@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico?v=2',
     shortcut: '/favicon.ico?v=2',
-    apple: '/images/rbc-go-logo.jpeg?v=2',
+    apple: '/images/brand/rbc-go-logo.jpeg?v=2',
   },
 };
 

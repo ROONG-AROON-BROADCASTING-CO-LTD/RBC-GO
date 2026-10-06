@@ -94,7 +94,7 @@ export function WebsiteNav({
         <Link className="brand" href="/" aria-label="RBC GO home">
           <Image
             className="brand-logo"
-            src="/images/rbc-go-logo.jpeg"
+            src="/images/brand/rbc-go-logo.jpeg"
             alt="RBC GO"
             width={72}
             height={72}

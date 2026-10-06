@@ -23,7 +23,7 @@ export function FleetSection({ locale }: { locale: Locale }) {
         <div className="ride-tiles motorcycle-tile-wrap">
           <Link className="ride-tile motorcycle-tile" href="/rides">
             <Image
-              src="/images/rbc-go-future-scooter.png"
+              src="/images/vehicles/rbc-go-future-scooter.png"
               alt={c.vehicle}
               fill
               sizes="(max-width:767px) 100vw, 90vw"

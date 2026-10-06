@@ -72,7 +72,7 @@ export function BrandPages({ page }: { page?: Page }) {
               </div>
               <figure className="vehicle-components-image">
                 <Image
-                  src="/images/rbc-go-scooter-components.png"
+                  src="/images/vehicles/rbc-go-scooter-components.png"
                   alt={
                     locale === 'en'
                       ? 'Annotated RBC GO electric motorcycle components'
@@ -107,7 +107,7 @@ export function BrandPages({ page }: { page?: Page }) {
           <div className="page-content how-content">
             <div className="page-hero-visual">
               <Image
-                src="/images/how-it-works-hero.png"
+                src="/images/heroes/how-it-works-hero.png"
                 alt=""
                 fill
                 sizes="100vw"
@@ -134,7 +134,7 @@ export function BrandPages({ page }: { page?: Page }) {
             <div className="page-content pricing-content">
               <div className="page-hero-visual">
                 <Image
-                  src="/images/pricing-hero.png"
+                  src="/images/heroes/pricing-hero.png"
                   alt=""
                   fill
                   sizes="100vw"
@@ -183,7 +183,7 @@ export function BrandPages({ page }: { page?: Page }) {
           <>
             <section className="about-hero">
               <Image
-                src="/images/about-hero.png"
+                src="/images/heroes/about-hero.png"
                 alt={
                   locale === 'en'
                     ? 'Wat Arun and the Chao Phraya River at sunset'
@@ -224,7 +224,7 @@ export function BrandPages({ page }: { page?: Page }) {
           <div className="page-content help-page">
             <div className="page-hero-visual">
               <Image
-                src="/images/help-hero.png"
+                src="/images/heroes/help-hero.png"
                 alt=""
                 fill
                 sizes="100vw"
@@ -254,7 +254,12 @@ export function BrandPages({ page }: { page?: Page }) {
           </div>
         )}
         <section className="closing-cta">
-          <Image src="/images/bangkok-line.png" alt="" fill sizes="100vw" />
+          <Image
+            src="/images/city/bangkok-line.png"
+            alt=""
+            fill
+            sizes="100vw"
+          />
           <h2>
             {c.cta[0]}
             <br />

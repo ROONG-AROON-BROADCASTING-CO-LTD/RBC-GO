@@ -16,7 +16,7 @@ export function FleetHero({ locale }: { locale: Locale }) {
     <>
       <section className="fleet-hero motorcycle-hero">
         <Image
-          src="/images/rides-hero.png"
+          src="/images/heroes/rides-hero.png"
           alt={c.vehicle}
           fill
           sizes="100vw"
