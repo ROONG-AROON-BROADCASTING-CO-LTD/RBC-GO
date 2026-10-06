@@ -1184,7 +1184,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .pricing-list h3': {
       fontSize: '23px',
-      fontWeight: '400',
+      fontWeight: '600',
       letterSpacing: '-0.025em',
     },
   },
