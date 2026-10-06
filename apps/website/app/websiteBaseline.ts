@@ -2,7 +2,7 @@
 export const websiteBaseline = {
   ':root': {
     '--bg': '#080a08',
-    '--lime': '#d4ff40',
+    '--lime': '#8fea1e',
     '--muted': '#c1c3bc',
     '--line': '#30332e',
     '--surface': '#1b1d1a',

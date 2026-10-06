@@ -321,7 +321,7 @@ export const websiteSx: SxProps<Theme> = [
       background: '#040603',
     },
     '& .button.lime:hover': {
-      background: '#c7f436',
+      background: '#b1f23a',
     },
   },
   {
@@ -3808,7 +3808,7 @@ export const websiteSx: SxProps<Theme> = [
       right: 0,
       height: '1px',
       background:
-        'linear-gradient(90deg, transparent 0%, rgb(212 255 64 / 30%) 18%, var(--lime) 50%, rgb(212 255 64 / 30%) 82%, transparent 100%)',
+        'linear-gradient(90deg, transparent 0%, rgb(143 234 30 / 30%) 18%, var(--lime) 50%, rgb(143 234 30 / 30%) 82%, transparent 100%)',
     },
     '& .footer-main': {
       display: 'grid',
@@ -4006,7 +4006,7 @@ export const websiteSx: SxProps<Theme> = [
         gap: '12px',
       },
       '& .help-callout .button:hover': {
-        background: '#c7f436',
+        background: '#b1f23a',
         boxShadow: '0 8px 20px rgb(0 0 0 / 18%)',
       },
       '& .help-callout .button:hover .animated-arrow svg': {
