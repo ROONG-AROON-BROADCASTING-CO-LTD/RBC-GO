@@ -42,7 +42,7 @@ test('Website language switch keeps the current URL stable', async ({
 
   await expect(page).toHaveURL('http://localhost:5185/');
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-  await expect(page).toHaveTitle('RBC GO | Electric rides for your city');
+  await expect(page).toHaveTitle('RBC GO | Electric motorcycle for your city');
   await expect(
     page.getByRole('heading', { name: 'Your city. Your way forward.' }),
   ).toBeVisible();
