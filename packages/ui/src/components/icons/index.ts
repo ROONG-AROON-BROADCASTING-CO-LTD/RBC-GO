@@ -3,4 +3,6 @@ export {
   AnimatedWebsiteIcon,
   type AnimatedWebsiteIconName,
 } from './AnimatedWebsiteIcon';
-export { RouteIcon, ScanTextIcon, WalletIcon } from './JourneyIcons';
+export { RouteIcon } from './journey/RouteIcon';
+export { ScanTextIcon } from './journey/ScanTextIcon';
+export { WalletIcon } from './journey/WalletIcon';
