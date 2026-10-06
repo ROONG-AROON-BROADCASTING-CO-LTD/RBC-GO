@@ -1177,7 +1177,8 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .pricing-list h3': {
-      fontSize: '26px',
+      fontSize: '23px',
+      fontWeight: '400',
       letterSpacing: '-0.025em',
     },
   },
@@ -1209,7 +1210,8 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .rate-notice h2': {
-      fontSize: '34px',
+      fontSize: '36px',
+      fontWeight: '400',
       lineHeight: '1.05',
     },
   },
