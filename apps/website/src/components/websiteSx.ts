@@ -718,7 +718,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .vehicle-components-heading h2': {
       fontSize: '36px',
-      fontWeight: '400',
+      fontWeight: '600',
       lineHeight: '1.08',
       letterSpacing: '-0.045em',
     },
@@ -839,7 +839,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .section-heading h2': {
       fontSize: '42px',
-      fontWeight: '400',
+      fontWeight: '600',
       lineHeight: '1.12',
     },
   },
