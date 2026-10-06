@@ -3,7 +3,10 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 import { motion } from 'motion/react';
 
-type JourneyIconProps = HTMLAttributes<HTMLDivElement> & { size?: number };
+type JourneyIconProps = HTMLAttributes<HTMLDivElement> & {
+  active?: boolean;
+  size?: number;
+};
 
 function IconFrame({
   children,
@@ -33,7 +36,11 @@ function IconFrame({
 
 // Motion paths are adapted from lucide-animated.com registry icons:
 // wallet, scan-text and route.
-export function WalletIcon({ size, ...props }: JourneyIconProps) {
+export function WalletIcon({
+  active = false,
+  size,
+  ...props
+}: JourneyIconProps) {
   return (
     <IconFrame size={size} {...props}>
       <motion.g
@@ -51,7 +58,7 @@ export function WalletIcon({ size, ...props }: JourneyIconProps) {
             },
           },
         }}
-        whileHover="animate"
+        animate={active ? 'animate' : 'normal'}
       >
         <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
         <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
@@ -60,7 +67,11 @@ export function WalletIcon({ size, ...props }: JourneyIconProps) {
   );
 }
 
-export function ScanTextIcon({ size, ...props }: JourneyIconProps) {
+export function ScanTextIcon({
+  active = false,
+  size,
+  ...props
+}: JourneyIconProps) {
   const lineAnimation = {
     normal: { pathLength: 1, opacity: 1 },
     animate: (index: number) => ({
@@ -83,14 +94,18 @@ export function ScanTextIcon({ size, ...props }: JourneyIconProps) {
           d={d}
           initial="normal"
           variants={lineAnimation}
-          whileHover="animate"
+          animate={active ? 'animate' : 'normal'}
         />
       ))}
     </IconFrame>
   );
 }
 
-export function RouteIcon({ size, ...props }: JourneyIconProps) {
+export function RouteIcon({
+  active = false,
+  size,
+  ...props
+}: JourneyIconProps) {
   const draw = {
     normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
     animate: {
@@ -109,13 +124,13 @@ export function RouteIcon({ size, ...props }: JourneyIconProps) {
         initial="normal"
         r="3"
         variants={draw}
-        whileHover="animate"
+        animate={active ? 'animate' : 'normal'}
       />
       <motion.path
         d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"
         initial="normal"
         variants={draw}
-        whileHover="animate"
+        animate={active ? 'animate' : 'normal'}
       />
       <motion.circle
         cx="18"
@@ -123,7 +138,7 @@ export function RouteIcon({ size, ...props }: JourneyIconProps) {
         initial="normal"
         r="3"
         variants={draw}
-        whileHover="animate"
+        animate={active ? 'animate' : 'normal'}
       />
     </IconFrame>
   );

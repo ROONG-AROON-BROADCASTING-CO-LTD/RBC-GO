@@ -1035,6 +1035,8 @@ export const websiteSx: SxProps<Theme> = [
       borderRadius: '14px',
       padding: '25px',
       minHeight: '0',
+      position: 'relative',
+      overflow: 'visible',
     },
   },
   {
@@ -1062,8 +1064,13 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .lower-home .animated-journey-icon': {
-      width: '39px',
-      height: '39px',
+      position: 'absolute',
+      right: '-20px',
+      bottom: '-20px',
+      zIndex: '1',
+      width: '54px',
+      height: '54px',
+      pointerEvents: 'none',
     },
   },
   {
@@ -2153,8 +2160,10 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 1100px)': {
       '& .lower-home .animated-journey-icon': {
-        width: '30px',
-        height: '30px',
+        right: '-16px',
+        bottom: '-16px',
+        width: '44px',
+        height: '44px',
       },
     },
   },
@@ -2973,8 +2982,10 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .lower-home .animated-journey-icon': {
-        width: '35px',
-        height: '35px',
+        right: '-14px',
+        bottom: '-14px',
+        width: '40px',
+        height: '40px',
       },
     },
   },

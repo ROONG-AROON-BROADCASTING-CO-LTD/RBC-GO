@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import Image from 'next/image';
 import { RouteIcon, ScanTextIcon, WalletIcon } from '@stackbuild/ui/icons';
 import type { Locale } from '../data/landing';
@@ -11,6 +12,7 @@ export function JourneySection({
   phones?: boolean;
 }) {
   const c = referenceCopy(locale);
+  const [activeStep, setActiveStep] = useState<number | null>(null);
   const phoneImages =
     locale === 'en'
       ? [
@@ -28,17 +30,26 @@ export function JourneySection({
     <section className={`journey ${phones ? 'with-phones' : ''}`}>
       <div className="journey-columns">
         {c.steps.map((title, i) => (
-          <article key={title}>
+          <article
+            key={title}
+            onPointerEnter={() => setActiveStep(i)}
+            onPointerLeave={() => setActiveStep(null)}
+          >
             <div className="journey-title">
               <span className="number">{i + 1}</span>
-              {!phones &&
-                (() => {
-                  const JourneyIcon = journeyIcons[i];
-                  return <JourneyIcon className="animated-journey-icon" />;
-                })()}
               <h3>{title}</h3>
             </div>
             <p>{c.stepCopy[i]}</p>
+            {!phones &&
+              (() => {
+                const JourneyIcon = journeyIcons[i];
+                return (
+                  <JourneyIcon
+                    active={activeStep === i}
+                    className="animated-journey-icon"
+                  />
+                );
+              })()}
             {phones && (
               <div className="phone-art">
                 <Image
