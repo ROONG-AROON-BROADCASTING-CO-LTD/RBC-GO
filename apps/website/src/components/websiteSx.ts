@@ -812,6 +812,9 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .lower-home': {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '48px',
       padding: '60px 0 0',
     },
   },
@@ -3651,6 +3654,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (min-width: 1101px)': {
       '& .lower-home': {
+        gap: '40px',
         paddingTop: '30px',
       },
     },
