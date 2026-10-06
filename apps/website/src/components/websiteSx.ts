@@ -340,6 +340,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .page-intro h1': {
       fontSize: 'clamp(72px, 8.35vw, 120px)',
+      fontWeight: '400',
       lineHeight: '1.04',
       letterSpacing: '-0.048em',
     },
@@ -716,7 +717,8 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .vehicle-components-heading h2': {
-      fontSize: 'clamp(38px, 4vw, 64px)',
+      fontSize: '36px',
+      fontWeight: '400',
       lineHeight: '1.08',
       letterSpacing: '-0.045em',
     },
@@ -831,6 +833,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .section-heading h2': {
       fontSize: '42px',
+      fontWeight: '400',
       lineHeight: '1.12',
     },
   },
