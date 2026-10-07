@@ -9,6 +9,10 @@ const inter = localFont({
   src: './fonts/Inter-VariableFont_opsz,wght.ttf',
   variable: '--font-inter',
   display: 'swap',
+  // Inter is used for selected Latin labels, but Kanit is the primary
+  // above-the-fold font on Thai pages. Avoid preloading an asset that is
+  // commonly unused during the initial render.
+  preload: false,
 });
 const kanit = localFont({
   src: [
