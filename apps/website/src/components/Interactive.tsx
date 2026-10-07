@@ -6,7 +6,6 @@ import Collapse from '@mui/material/Collapse';
 import { useRef, useState } from 'react';
 import { type Locale, text } from '../data/landing';
 import { referenceCopy } from '../data/brandPages';
-import { MobileLoginLink } from './MobileLoginLink';
 import { Icon } from './Icon';
 import { ArrowRightIcon } from '@stackbuild/ui/icons';
 
@@ -49,12 +48,6 @@ export function FleetHero({ locale }: { locale: Locale }) {
               </li>
             ))}
           </ul>
-          <MobileLoginLink
-            href={
-              process.env.NEXT_PUBLIC_CUSTOMER_URL ?? 'http://localhost:5183'
-            }
-            label={t.login}
-          />
         </div>
       </section>
       {details && (

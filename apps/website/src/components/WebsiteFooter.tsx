@@ -3,9 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { type Locale, type Page, text, pages } from '../data/landing';
 import { referenceCopy } from '../data/brandPages';
-import { customerUrl } from '../../app/site';
 import { InfoDialog } from './Interactive';
-import { MobileLoginLink } from './MobileLoginLink';
 function pageHref(page?: Page) {
   return page ? `/${page}` : '/';
 }
@@ -40,7 +38,6 @@ export function WebsiteFooter({
             <br />
             {c.footer[1]}
           </p>
-          <MobileLoginLink href={customerUrl} label={t.login} />
         </div>
         <div className="footer-links">
           <nav aria-label="Explore">

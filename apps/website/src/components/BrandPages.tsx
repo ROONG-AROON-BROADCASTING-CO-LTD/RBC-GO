@@ -7,7 +7,6 @@ import { referenceCopy } from '../data/brandPages';
 import { customerUrl, siteUrl } from '../../app/site';
 import { HelpQuestions, FleetHero, InfoDialog } from './Interactive';
 import { WebsiteNav } from './WebsiteNav';
-import { MobileLoginLink } from './MobileLoginLink';
 import { Icon } from './Icon';
 import { useWebsiteLanguage } from './WebsiteLanguageProvider';
 
@@ -122,7 +121,6 @@ export function BrandPages({ page }: { page?: Page }) {
                 <h2>{t.safety}</h2>
                 <p>{t.safetyCopy}</p>
               </div>
-              <MobileLoginLink href={customerUrl} label={t.login} />
             </section>
           </div>
         )}
