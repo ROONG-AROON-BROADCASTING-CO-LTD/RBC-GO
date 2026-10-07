@@ -62,22 +62,60 @@ export function pageMetadata(locale: Locale, page?: Page): Metadata {
         };
   const key = page ?? 'home';
   const [title, description] = seo[key];
+  const keywords =
+    locale === 'en'
+      ? [
+          'RBC GO',
+          'electric motorcycle',
+          'electric mobility',
+          'Bangkok transport',
+          'QR ride',
+          'prepaid motorcycle service',
+        ]
+      : [
+          'RBC GO',
+          'มอเตอร์ไซค์ไฟฟ้า',
+          'การเดินทางในเมือง',
+          'กรุงเทพฯ',
+          'สแกน QR',
+          'บริการมอเตอร์ไซค์แบบเติมเงิน',
+        ];
+  const pageUrl = pageHref(page);
+  const fullTitle = `RBC GO | ${title}`;
   return {
     metadataBase: siteUrl,
-    title: { absolute: `RBC GO | ${title}` },
+    title: { absolute: fullTitle },
     description,
+    keywords,
+    applicationName: 'RBC GO',
+    authors: [{ name: 'RBC GO' }],
+    creator: 'RBC GO',
+    publisher: 'RBC GO',
     alternates: {
-      canonical: pageHref(page),
+      canonical: pageUrl,
     },
     openGraph: {
       type: 'website',
       siteName: 'RBC GO',
-      images: ['/opengraph-image'],
-      title: `RBC GO | ${title}`,
+      images: [
+        {
+          url: '/opengraph-image',
+          width: 1200,
+          height: 630,
+          alt: fullTitle,
+        },
+      ],
+      title: fullTitle,
       description,
-      url: pageHref(page),
+      url: pageUrl,
       locale: locale === 'en' ? 'en_US' : 'th_TH',
       alternateLocale: locale === 'en' ? 'th_TH' : 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: fullTitle,
+      description,
+      images: ['/opengraph-image'],
     },
   };
 }
