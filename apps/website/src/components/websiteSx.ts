@@ -144,8 +144,8 @@ export const websiteSx: SxProps<Theme> = [
     '& .brand': {
       display: 'inline-flex',
       alignItems: 'center',
-      gap: '11px',
-      fontSize: '12px',
+      gap: '10px',
+      fontSize: '20px',
       fontWeight: '700',
       lineHeight: '0.92',
       letterSpacing: '0.05em',
@@ -1817,13 +1817,6 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (max-width: 1100px)': {
-      '& .brand': {
-        fontSize: '31px',
-      },
-    },
-  },
-  {
-    '@media (max-width: 1100px)': {
       '& .desktop-nav': {
         fontSize: '14px',
         gap: '22px',
@@ -2409,8 +2402,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 1024px)': {
       '& .brand': {
-        fontSize: '20px',
-        gap: '9px',
+        gap: '10px',
       },
     },
   },
