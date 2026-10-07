@@ -157,6 +157,8 @@ export function HelpQuestions({ locale }: { locale: Locale }) {
       <label className="search">
         <Icon kind="search" />
         <input
+          id="help-search"
+          name="q"
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
