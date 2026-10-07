@@ -2,26 +2,10 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { cookies } from 'next/headers';
 import localFont from 'next/font/local';
-import Script from 'next/script';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { WebsiteThemeProvider } from './WebsiteThemeProvider';
 import { indexable, siteUrl } from './site';
 import { languageCookieName, normalizeLanguage } from '../src/data/language';
-
-const languageCookieMigration = `
-  (() => {
-    try {
-      const key = '${languageCookieName}';
-      if (document.cookie.split('; ').some((entry) => entry.startsWith(key + '='))) return;
-
-      const language = window.localStorage.getItem(key);
-      if (language !== 'en' && language !== 'th') return;
-
-      document.cookie = key + '=' + language + '; Path=/; Max-Age=31536000; SameSite=Lax';
-      window.location.reload();
-    } catch {}
-  })();
-`;
 
 const inter = localFont({
   src: './fonts/Inter-VariableFont_opsz,wght.ttf',
@@ -75,9 +59,6 @@ export default async function RootLayout({
   return (
     <html lang={language} className={`${inter.variable} ${kanit.variable}`}>
       <body>
-        <Script id="language-cookie-migration" strategy="beforeInteractive">
-          {languageCookieMigration}
-        </Script>
         <AppRouterCacheProvider>
           <WebsiteThemeProvider initialLanguage={language}>
             {children}

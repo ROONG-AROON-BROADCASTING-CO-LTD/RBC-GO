@@ -27,6 +27,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
         muted
         playsInline
         preload="auto"
+        poster="/images/heroes/rides-hero.png"
         src="/images/heroes/home-hero-scooter.mp4"
         aria-label={
           isThai

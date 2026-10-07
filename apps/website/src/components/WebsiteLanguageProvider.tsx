@@ -39,6 +39,21 @@ export function WebsiteLanguageProvider({
     document.cookie = `${languageCookieName}=${nextLanguage}; Path=/; Max-Age=31536000; SameSite=Lax`;
   }, []);
 
+  useEffect(() => {
+    if (
+      document.cookie
+        .split('; ')
+        .some((entry) => entry.startsWith(`${languageCookieName}=`))
+    ) {
+      return;
+    }
+
+    const legacyLanguage = window.localStorage.getItem(languageCookieName);
+    if (legacyLanguage === 'en' || legacyLanguage === 'th') {
+      setLanguage(legacyLanguage);
+    }
+  }, [setLanguage]);
+
   const value = useMemo<WebsiteLanguageContextValue>(
     () => ({
       language,
