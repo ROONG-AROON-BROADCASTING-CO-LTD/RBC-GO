@@ -264,6 +264,7 @@ export function BrandPages({ page }: { page?: Page }) {
             alt=""
             fill
             sizes="100vw"
+            style={{ aspectRatio: '2172 / 724' }}
           />
           <h2>
             {c.cta[0]}
