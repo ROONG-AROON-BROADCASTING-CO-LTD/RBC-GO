@@ -1597,6 +1597,10 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .closing-cta > img': {
+      position: 'absolute',
+      inset: '0',
+      width: '100%',
+      height: '100%',
       objectFit: 'cover',
       objectPosition: 'right bottom',
       zIndex: '0',
