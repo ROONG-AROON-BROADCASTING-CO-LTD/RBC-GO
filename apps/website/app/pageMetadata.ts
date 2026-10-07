@@ -56,7 +56,7 @@ export function pageMetadata(locale: Locale, page?: Page): Metadata {
             'รู้จักแนวคิดและวิสัยทัศน์ของ RBC GO เพื่อการเดินทางในเมืองที่สะอาดและง่ายขึ้นในกรุงเทพฯ',
           ],
           help: [
-            'ช่วยเหลือและคำถามที่พบบ่อย | RBC GO',
+            'ช่วยเหลือและคำถามที่พบบ่อย - RBC GO',
             'ค้นหาคำตอบเกี่ยวกับบริการ บัตร ค่าบริการ การใช้งาน และการเดินทางด้วย RBC GO',
           ],
         };
@@ -81,7 +81,7 @@ export function pageMetadata(locale: Locale, page?: Page): Metadata {
           'บริการมอเตอร์ไซค์แบบเติมเงิน',
         ];
   const pageUrl = pageHref(page);
-  const fullTitle = `RBC GO | ${title}`;
+  const fullTitle = `RBC GO - ${title}`;
   return {
     metadataBase: siteUrl,
     title: { absolute: fullTitle },

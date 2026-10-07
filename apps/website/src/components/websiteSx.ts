@@ -934,6 +934,13 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
+    '& .lower-home .motorcycle-tile:hover .tile-caption .round-arrow': {
+      background: 'var(--lime)',
+      borderColor: 'var(--lime)',
+      color: '#0c1105',
+    },
+  },
+  {
     '& .ride-tile.scooter img': {
       objectPosition: '50% 60%',
     },

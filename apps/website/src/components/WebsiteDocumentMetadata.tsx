@@ -50,7 +50,7 @@ export function WebsiteDocumentMetadata() {
             'วิธีใช้งาน RBC GO',
             'ค่าบริการ RBC GO',
             'เกี่ยวกับ RBC GO',
-            'ช่วยเหลือและคำถามที่พบบ่อย | RBC GO',
+            'ช่วยเหลือและคำถามที่พบบ่อย - RBC GO',
           ];
     const title =
       titles[
@@ -66,7 +66,7 @@ export function WebsiteDocumentMetadata() {
 
   useEffect(() => {
     const applyMetadata = () => {
-      const title = `RBC GO | ${copy.title}`;
+      const title = `RBC GO - ${copy.title}`;
       document.title = title;
       setMeta('name', 'description', copy.description);
       setMeta('property', 'og:title', title);
