@@ -227,7 +227,7 @@ export const websiteSx: SxProps<Theme> = [
       border: '1px solid #000',
       borderRadius: '10px',
       background: 'rgb(255 255 255 / 3%)',
-      fontFamily: 'var(--font-kanit), sans-serif',
+      fontFamily: 'var(--font-ibm-plex-sans-thai), sans-serif',
       fontSize: '12px',
       fontWeight: '400',
       color: '#9e9f98',

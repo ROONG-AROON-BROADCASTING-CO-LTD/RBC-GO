@@ -23,7 +23,7 @@ export const websiteBaseline = {
     overscrollBehaviorY: 'none',
   },
   "html[lang='th'] body": {
-    fontFamily: 'var(--font-kanit), Arial, sans-serif',
+    fontFamily: 'var(--font-ibm-plex-sans-thai), Arial, sans-serif',
   },
   a: {
     color: 'inherit',

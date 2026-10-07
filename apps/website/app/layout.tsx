@@ -11,18 +11,18 @@ const inter = localFont({
   src: './fonts/Inter-VariableFont_opsz,wght.ttf',
   variable: '--font-inter',
   display: 'swap',
-  // Inter is used for selected Latin labels, but Kanit is the primary
+  // Inter is used for selected Latin labels, but IBM Plex Sans Thai is the primary
   // above-the-fold font on Thai pages. Avoid preloading an asset that is
   // commonly unused during the initial render.
   preload: false,
 });
-const kanit = localFont({
+const ibmPlexSansThai = localFont({
   src: [
-    { path: './fonts/Kanit-Regular.ttf', weight: '400' },
-    { path: './fonts/Kanit-SemiBold.ttf', weight: '600' },
-    { path: './fonts/Kanit-Bold.ttf', weight: '700' },
+    { path: './fonts/IBMPlexSansThai-Regular.ttf', weight: '400' },
+    { path: './fonts/IBMPlexSansThai-SemiBold.ttf', weight: '600' },
+    { path: './fonts/IBMPlexSansThai-Bold.ttf', weight: '700' },
   ],
-  variable: '--font-kanit',
+  variable: '--font-ibm-plex-sans-thai',
   display: 'swap',
 });
 
@@ -57,7 +57,10 @@ export default async function RootLayout({
   );
 
   return (
-    <html lang={language} className={`${inter.variable} ${kanit.variable}`}>
+    <html
+      lang={language}
+      className={`${inter.variable} ${ibmPlexSansThai.variable}`}
+    >
       <body>
         <AppRouterCacheProvider>
           <WebsiteThemeProvider initialLanguage={language}>
