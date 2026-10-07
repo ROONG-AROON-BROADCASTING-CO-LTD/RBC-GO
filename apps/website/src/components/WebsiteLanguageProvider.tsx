@@ -37,6 +37,7 @@ export function WebsiteLanguageProvider({
   const setLanguage = useCallback((nextLanguage: Locale) => {
     setLanguageState(nextLanguage);
     document.cookie = `${languageCookieName}=${nextLanguage}; Path=/; Max-Age=31536000; SameSite=Lax`;
+    window.localStorage.setItem(languageCookieName, nextLanguage);
   }, []);
 
   useEffect(() => {
