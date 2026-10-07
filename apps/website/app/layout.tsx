@@ -1,9 +1,27 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
+import { cookies } from 'next/headers';
 import localFont from 'next/font/local';
+import Script from 'next/script';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { WebsiteThemeProvider } from './WebsiteThemeProvider';
 import { indexable, siteUrl } from './site';
+import { languageCookieName, normalizeLanguage } from '../src/data/language';
+
+const languageCookieMigration = `
+  (() => {
+    try {
+      const key = '${languageCookieName}';
+      if (document.cookie.split('; ').some((entry) => entry.startsWith(key + '='))) return;
+
+      const language = window.localStorage.getItem(key);
+      if (language !== 'en' && language !== 'th') return;
+
+      document.cookie = key + '=' + language + '; Path=/; Max-Age=31536000; SameSite=Lax';
+      window.location.reload();
+    } catch {}
+  })();
+`;
 
 const inter = localFont({
   src: './fonts/Inter-VariableFont_opsz,wght.ttf',
@@ -44,12 +62,26 @@ export const viewport: Viewport = {
   themeColor: '#050706',
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  const cookieStore = await cookies();
+  const language = normalizeLanguage(
+    cookieStore.get(languageCookieName)?.value,
+  );
+
   return (
-    <html lang="th" className={`${inter.variable} ${kanit.variable}`}>
+    <html lang={language} className={`${inter.variable} ${kanit.variable}`}>
       <body>
+        <Script id="language-cookie-migration" strategy="beforeInteractive">
+          {languageCookieMigration}
+        </Script>
         <AppRouterCacheProvider>
-          <WebsiteThemeProvider>{children}</WebsiteThemeProvider>
+          <WebsiteThemeProvider initialLanguage={language}>
+            {children}
+          </WebsiteThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>

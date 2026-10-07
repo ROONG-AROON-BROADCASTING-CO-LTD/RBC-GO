@@ -8,6 +8,7 @@ import { websiteBaseline } from './websiteBaseline';
 import { websiteSx } from '../src/components/websiteSx';
 import { WebsiteLanguageProvider } from '../src/components/WebsiteLanguageProvider';
 import { WebsiteDocumentMetadata } from '../src/components/WebsiteDocumentMetadata';
+import type { Locale } from '../src/data/landing';
 
 const theme = createTheme({
   components: {
@@ -24,11 +25,17 @@ const theme = createTheme({
   },
 });
 
-export function WebsiteThemeProvider({ children }: { children: ReactNode }) {
+export function WebsiteThemeProvider({
+  children,
+  initialLanguage,
+}: {
+  children: ReactNode;
+  initialLanguage: Locale;
+}) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <WebsiteLanguageProvider>
+      <WebsiteLanguageProvider initialLanguage={initialLanguage}>
         <WebsiteDocumentMetadata />
         <Box sx={websiteSx}>{children}</Box>
       </WebsiteLanguageProvider>

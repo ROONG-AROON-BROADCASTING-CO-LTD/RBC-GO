@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from 'react';
 import type { Locale } from '../data/landing';
+import { languageCookieName } from '../data/language';
 
 type WebsiteLanguageContextValue = {
   language: Locale;
@@ -20,45 +21,22 @@ type WebsiteLanguageContextValue = {
 const WebsiteLanguageContext =
   createContext<WebsiteLanguageContextValue | null>(null);
 
-const storageKey = 'rbc-go-language';
-
-export function WebsiteLanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Locale>('th');
-  const [languageLoaded, setLanguageLoaded] = useState(false);
-
-  useEffect(() => {
-    const storedLanguage = window.localStorage.getItem(storageKey);
-    const url = new URL(window.location.href);
-    const requestedLanguage = url.searchParams.get('lang');
-    const nextLanguage =
-      requestedLanguage === 'en' || requestedLanguage === 'th'
-        ? requestedLanguage
-        : storedLanguage === 'en' || storedLanguage === 'th'
-          ? storedLanguage
-          : 'th';
-
-    setLanguageState(nextLanguage);
-
-    if (url.searchParams.has('lang')) {
-      url.searchParams.delete('lang');
-      window.history.replaceState(
-        window.history.state,
-        '',
-        `${url.pathname}${url.search}${url.hash}`,
-      );
-    }
-    setLanguageLoaded(true);
-  }, []);
+export function WebsiteLanguageProvider({
+  children,
+  initialLanguage,
+}: {
+  children: ReactNode;
+  initialLanguage: Locale;
+}) {
+  const [language, setLanguageState] = useState<Locale>(initialLanguage);
 
   useEffect(() => {
-    if (!languageLoaded) return;
-
     document.documentElement.lang = language;
-    window.localStorage.setItem(storageKey, language);
-  }, [language, languageLoaded]);
+  }, [language]);
 
   const setLanguage = useCallback((nextLanguage: Locale) => {
     setLanguageState(nextLanguage);
+    document.cookie = `${languageCookieName}=${nextLanguage}; Path=/; Max-Age=31536000; SameSite=Lax`;
   }, []);
 
   const value = useMemo<WebsiteLanguageContextValue>(
