@@ -75,6 +75,21 @@ export const text: Record<Locale, Content> = {
         'How do I contact support?',
         'Support channels will be published before launch. The ride guide and FAQs currently explain the planned service.',
       ],
+      [
+        'Motorcycle & care',
+        'What battery does the KRONOS K6 use?',
+        'The KRONOS K6 specification shown on this site uses a Li-ion (R136) 72V31Ah battery. Always use compatible charging equipment and follow the guidance published before launch.',
+      ],
+      [
+        'Motorcycle & care',
+        'How long does charging take?',
+        'The published K6 specification lists an estimated charging time of 4–6 hours. Charging guidance and supported locations will be confirmed before RBC GO launches.',
+      ],
+      [
+        'Motorcycle & care',
+        'How will maintenance and support work?',
+        'RBC GO is preparing maintenance and support guidance for launch. Service channels, inspection steps and spare-part support will be published before live journeys become available.',
+      ],
     ],
   },
   th: {
@@ -133,6 +148,21 @@ export const text: Record<Locale, Content> = {
         'เริ่มต้นใช้งาน',
         'ติดต่อทีมช่วยเหลืออย่างไร?',
         'ช่องทางช่วยเหลือจะแจ้งก่อนเปิดบริการ ขณะนี้ดูแนวทางของบริการได้จากคู่มือและคำถามที่พบบ่อย',
+      ],
+      [
+        'รถและการดูแล',
+        'KRONOS K6 ใช้แบตเตอรี่แบบใด?',
+        'สเปก KRONOS K6 ที่แสดงในเว็บไซต์นี้ระบุแบตเตอรี่ Li-ion (R136) 72V31Ah ใช้ชุดชาร์จที่รองรับและทำตามแนวทางที่จะประกาศก่อนเปิดบริการ',
+      ],
+      [
+        'รถและการดูแล',
+        'การชาร์จใช้เวลานานเท่าไร?',
+        'สเปก K6 ที่เผยแพร่ระบุระยะเวลาโดยประมาณ 4–6 ชั่วโมง แนวทางการชาร์จและจุดที่รองรับจะแจ้งก่อน RBC GO เปิดบริการ',
+      ],
+      [
+        'รถและการดูแล',
+        'การบำรุงรักษาและบริการช่วยเหลือเป็นอย่างไร?',
+        'RBC GO กำลังเตรียมแนวทางการบำรุงรักษาและการช่วยเหลือสำหรับช่วงเปิดตัว ช่องทางบริการ ขั้นตอนตรวจเช็ก และอะไหล่จะแจ้งก่อนเริ่มให้บริการจริง',
       ],
     ],
   },

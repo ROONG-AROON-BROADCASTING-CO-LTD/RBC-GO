@@ -4350,6 +4350,72 @@ export const websiteSx: SxProps<Theme> = [
   // Keep the type scale consistent after switching to IBM Plex Sans Thai.
   // This last layer intentionally normalizes the shared patterns used by every public page.
   {
+    '& .vehicle-care, & .about-proof': {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(0, 0.78fr) minmax(0, 1.22fr)',
+      gap: 'clamp(30px, 5vw, 88px)',
+      padding: 'clamp(62px, 8vw, 112px) 0',
+      borderTop: '1px solid #2a3027',
+    },
+    '& .vehicle-care-heading, & .about-proof-heading': {
+      alignSelf: 'start',
+    },
+    '& .vehicle-care-heading .eyebrow, & .about-proof-heading .eyebrow': {
+      display: 'block',
+      marginBottom: '14px',
+    },
+    '& .vehicle-care h2, & .about-proof h2': {
+      maxWidth: '480px',
+      fontSize: 'clamp(32px, 3vw, 48px)',
+      fontWeight: '600',
+      lineHeight: '1.12',
+      letterSpacing: '-0.035em',
+    },
+    '& .vehicle-care-heading > p, & .about-proof-heading > p': {
+      marginTop: '18px',
+      maxWidth: '510px',
+      color: '#bec4b7',
+      fontSize: '17px',
+      lineHeight: '1.65',
+    },
+    '& .vehicle-care-list, & .about-proof-list': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+      gap: '1px',
+      overflow: 'hidden',
+      border: '1px solid #2a3027',
+      borderRadius: '16px',
+      background: '#2a3027',
+    },
+    '& .vehicle-care-list article, & .about-proof-list article': {
+      minHeight: '242px',
+      padding: '26px 22px',
+      background: '#090c0b',
+    },
+    '& .vehicle-care-list .icon, & .about-proof-list .icon': {
+      width: '34px',
+      height: '34px',
+      marginBottom: '42px',
+      color: 'var(--lime)',
+    },
+    '& .vehicle-care-list h3, & .about-proof-list h3': {
+      fontSize: '20px',
+      fontWeight: '600',
+      lineHeight: '1.3',
+    },
+    '& .vehicle-care-list p, & .about-proof-list p': {
+      marginTop: '9px',
+      color: '#aeb5a6',
+      fontSize: '15px',
+      lineHeight: '1.6',
+    },
+    '@media (max-width: 900px)': {
+      '& .vehicle-care, & .about-proof': {
+        gridTemplateColumns: '1fr',
+      },
+    },
+  },
+  {
     '& .site-topbar': {
       fontSize: '11px',
       lineHeight: '1.2',
@@ -4363,22 +4429,22 @@ export const websiteSx: SxProps<Theme> = [
       fontWeight: '600',
       lineHeight: '1.35',
     },
-    '& .section-heading h2, & .vehicle-components-heading h2, & .fleet-details h2, & .help-content > h2':
+    '& .section-heading h2, & .vehicle-components-heading h2, & .vehicle-care h2, & .about-proof h2, & .fleet-details h2, & .help-content > h2':
       {
         fontSize: 'clamp(32px, 2.8vw, 40px)',
         lineHeight: '1.18',
       },
-    '& .section-heading p, & .vehicle-components-heading p, & .fleet-details p, & .safety-note p, & .help-callout p':
+    '& .section-heading p, & .vehicle-components-heading p, & .vehicle-care-heading > p, & .about-proof-heading > p, & .fleet-details p, & .safety-note p, & .help-callout p':
       {
         fontSize: '16px',
         lineHeight: '1.65',
       },
-    '& .vehicle-components-list h3, & .journey-title h3, & .pricing-list h3, & .about-benefits h3, & .faq-list .faq-question':
+    '& .vehicle-components-list h3, & .vehicle-care-list h3, & .about-proof-list h3, & .journey-title h3, & .pricing-list h3, & .about-benefits h3, & .faq-list .faq-question':
       {
         fontSize: 'clamp(20px, 1.7vw, 23px)',
         lineHeight: '1.35',
       },
-    '& .vehicle-components-list p, & .journey-columns p, & .pricing-list p, & .about-benefits p, & .faq-list .faq-answer p':
+    '& .vehicle-components-list p, & .vehicle-care-list p, & .about-proof-list p, & .journey-columns p, & .pricing-list p, & .about-benefits p, & .faq-list .faq-answer p':
       {
         fontSize: '16px',
         lineHeight: '1.65',
@@ -4425,6 +4491,20 @@ export const websiteSx: SxProps<Theme> = [
           fontSize: '16px',
           lineHeight: '1.65',
         },
+      '& .vehicle-care, & .about-proof': {
+        gap: '28px',
+        padding: '58px 0',
+      },
+      '& .vehicle-care-list, & .about-proof-list': {
+        gridTemplateColumns: '1fr',
+      },
+      '& .vehicle-care-list article, & .about-proof-list article': {
+        minHeight: '0',
+        padding: '24px 22px',
+      },
+      '& .vehicle-care-list .icon, & .about-proof-list .icon': {
+        marginBottom: '26px',
+      },
       '& .section-heading h2, & .closing-cta h2, & .rate-notice h2, & .help-callout h2, & .vehicle-components-heading h2, & .fleet-details h2, & .help-content > h2':
         {
           fontSize: 'clamp(26px, 7vw, 30px)',

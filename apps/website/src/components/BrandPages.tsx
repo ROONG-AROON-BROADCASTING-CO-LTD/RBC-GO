@@ -96,6 +96,28 @@ export function BrandPages({ page }: { page?: Page }) {
                 ))}
               </ol>
             </section>
+            <section
+              className="vehicle-care"
+              aria-labelledby="vehicle-care-heading"
+            >
+              <div className="vehicle-care-heading">
+                <span className="eyebrow">{c.vehicleCareLabel}</span>
+                <h2 id="vehicle-care-heading">{c.vehicleCareTitle}</h2>
+                <p>{c.vehicleCareIntro}</p>
+              </div>
+              <div className="vehicle-care-list">
+                {c.vehicleCareItems.map(([title, copy], index) => (
+                  <article key={title}>
+                    <Icon
+                      kind={(['bolt', 'chart', 'chat'] as const)[index]}
+                      animateOnHover={false}
+                    />
+                    <h3>{title}</h3>
+                    <p>{copy}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
           </>
         )}
         {!page && <FleetSection locale={locale} />}
@@ -221,6 +243,28 @@ export function BrandPages({ page }: { page?: Page }) {
                   </div>
                 </article>
               ))}
+            </section>
+            <section
+              className="about-proof"
+              aria-labelledby="about-proof-heading"
+            >
+              <div className="about-proof-heading">
+                <span className="eyebrow">{c.manufacturingLabel}</span>
+                <h2 id="about-proof-heading">{c.manufacturingTitle}</h2>
+                <p>{c.manufacturingIntro}</p>
+              </div>
+              <div className="about-proof-list">
+                {c.manufacturingPoints.map(([title, copy], index) => (
+                  <article key={title}>
+                    <Icon
+                      kind={(['motorcycle', 'chart', 'chat'] as const)[index]}
+                      animateOnHover={false}
+                    />
+                    <h3>{title}</h3>
+                    <p>{copy}</p>
+                  </article>
+                ))}
+              </div>
             </section>
           </>
         )}

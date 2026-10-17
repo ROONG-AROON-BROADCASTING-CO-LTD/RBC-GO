@@ -29,6 +29,21 @@ const copy = {
       ['Charging input', '84V5Ah'],
       ['Charging time', '4–6 hours'],
     ],
+    vehicleCareLabel: 'BATTERY & CARE',
+    vehicleCareTitle: 'Built for everyday readiness.',
+    vehicleCareIntro:
+      'The K6 combines a lithium-ion power system with a clear charging cycle and service-ready components.',
+    vehicleCareItems: [
+      ['Lithium-ion power', 'Li-ion (R136) 72V31Ah battery system for the K6.'],
+      [
+        '4–6 hour charging',
+        'Estimated charging time shown in the K6 specification. Use compatible charging equipment.',
+      ],
+      [
+        'Support before launch',
+        'Maintenance steps, service channels and spare-part guidance will be announced before live journeys begin.',
+      ],
+    ],
     getStarted: 'See how it works',
     how: ['Your next journey', 'starts here.'],
     howIntro:
@@ -79,6 +94,24 @@ const copy = {
       ['Electric by design', 'A practical way to move through the city.'],
       ['More connected', 'Short journeys connect the places in your day.'],
       ['Ready on your phone', 'A card, a QR code and a simple start.'],
+    ],
+    manufacturingLabel: 'ENGINEERING & SERVICE',
+    manufacturingTitle: 'Built with local production in mind.',
+    manufacturingIntro:
+      'KRONOS E-BIKES reports a Thailand-based production operation with ISO 9001:2015 quality management. RBC GO brings that product context into a city-first service experience.',
+    manufacturingPoints: [
+      [
+        'Made in Thailand',
+        'A local production base keeps the product close to the city it is designed to serve.',
+      ],
+      [
+        'Quality process',
+        'KRONOS reports ISO 9001:2015 quality management and engineering-led production controls.',
+      ],
+      [
+        'Service readiness',
+        'Maintenance, parts and support guidance are being prepared before RBC GO opens for live journeys.',
+      ],
     ],
     help: ['Good questions.', 'Clear answers.'],
     helpIntro:
@@ -139,6 +172,21 @@ const copy = {
       ['แรงดันไฟฟ้าในการชาร์จ', '84V5AH'],
       ['ระยะเวลาในการชาร์จ', '4–6 ชม.'],
     ],
+    vehicleCareLabel: 'แบตเตอรี่และการดูแล',
+    vehicleCareTitle: 'พร้อมสำหรับทุกวันของเมือง',
+    vehicleCareIntro:
+      'K6 ใช้ระบบแบตเตอรี่ลิเธียมไอออน พร้อมข้อมูลรอบชาร์จและแนวทางการดูแลที่ชัดเจน',
+    vehicleCareItems: [
+      ['พลังงานลิเธียมไอออน', 'ระบบแบตเตอรี่ Li-ion (R136) 72V31Ah ของ K6'],
+      [
+        'ชาร์จประมาณ 4–6 ชั่วโมง',
+        'ระยะเวลาตามสเปก K6 ใช้ร่วมกับชุดชาร์จที่รองรับ',
+      ],
+      [
+        'เตรียมพร้อมด้านบริการ',
+        'ขั้นตอนดูแลรถ ช่องทางบริการ และอะไหล่จะแจ้งก่อนเปิดใช้บริการจริง',
+      ],
+    ],
     getStarted: 'ดูวิธีใช้งาน',
     how: ['การเดินทางครั้งใหม่', 'เริ่มต้นที่นี่'],
     howIntro:
@@ -179,6 +227,24 @@ const copy = {
       ['ออกแบบด้วยพลังงานไฟฟ้า', 'อีกวิธีที่ลงตัวในการเดินทางในเมือง'],
       ['เชื่อมต่อมากขึ้น', 'เชื่อมสถานที่ต่าง ๆ ในชีวิตประจำวัน'],
       ['พร้อมบนมือถือ', 'บัตร QR และการเริ่มต้นที่ง่ายขึ้น'],
+    ],
+    manufacturingLabel: 'วิศวกรรมและการดูแล',
+    manufacturingTitle: 'ผลิตเพื่อการใช้งานในเมืองไทย',
+    manufacturingIntro:
+      'KRONOS E-BIKES ระบุว่ามีฐานการผลิตในประเทศไทยและระบบบริหารคุณภาพ ISO 9001:2015 ขณะที่ RBC GO นำบริบทของผลิตภัณฑ์นี้มาต่อยอดสู่บริการสำหรับการเดินทางในเมือง',
+    manufacturingPoints: [
+      [
+        'ฐานการผลิตในประเทศไทย',
+        'อยู่ใกล้กับเมืองและผู้ใช้ที่รถถูกออกแบบมาเพื่อรองรับ',
+      ],
+      [
+        'กระบวนการคุณภาพ',
+        'KRONOS ระบุการบริหารคุณภาพตามมาตรฐาน ISO 9001:2015 และการควบคุมงานโดยทีมวิศวกร',
+      ],
+      [
+        'พร้อมสำหรับการดูแล',
+        'แนวทางบำรุงรักษา อะไหล่ และทีมช่วยเหลือจะประกาศก่อนเปิดบริการจริง',
+      ],
     ],
     help: ['ทุกคำถาม', 'มีคำตอบที่ใช่'],
     helpIntro:
