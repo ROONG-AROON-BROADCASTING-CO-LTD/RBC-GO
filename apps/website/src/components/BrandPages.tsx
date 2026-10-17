@@ -263,6 +263,7 @@ export function BrandPages({ page }: { page?: Page }) {
             width={2172}
             height={724}
             sizes="100vw"
+            loading="eager"
           />
           <h2>
             {c.cta[0]}
