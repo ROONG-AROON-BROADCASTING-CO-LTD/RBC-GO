@@ -4324,4 +4324,94 @@ export const websiteSx: SxProps<Theme> = [
         },
     },
   },
+  // Keep the type scale consistent after switching to IBM Plex Sans Thai.
+  // This last layer intentionally normalizes the shared patterns used by every public page.
+  {
+    '& .site-topbar': {
+      fontSize: '11px',
+      lineHeight: '1.2',
+    },
+    '& .button': {
+      fontSize: '16px',
+      lineHeight: '1.35',
+    },
+    '& .eyebrow': {
+      fontSize: '14px',
+      fontWeight: '600',
+      lineHeight: '1.35',
+    },
+    '& .section-heading h2, & .vehicle-components-heading h2, & .fleet-details h2, & .help-content > h2':
+      {
+        fontSize: 'clamp(32px, 2.8vw, 40px)',
+        lineHeight: '1.18',
+      },
+    '& .section-heading p, & .vehicle-components-heading p, & .fleet-details p, & .safety-note p, & .help-callout p':
+      {
+        fontSize: '16px',
+        lineHeight: '1.65',
+      },
+    '& .vehicle-components-list h3, & .journey-title h3, & .pricing-list h3, & .about-benefits h3, & .faq-list .faq-question':
+      {
+        fontSize: 'clamp(20px, 1.7vw, 23px)',
+        lineHeight: '1.35',
+      },
+    '& .vehicle-components-list p, & .journey-columns p, & .pricing-list p, & .about-benefits p, & .faq-list .faq-answer p':
+      {
+        fontSize: '16px',
+        lineHeight: '1.65',
+      },
+    '& .footer-brand-column > p, & .footer-links a, & .footer-links button': {
+      lineHeight: '1.6',
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
+      '& .site-topbar': {
+        fontSize: '10px',
+      },
+      '& .desktop-nav': {
+        fontSize: '14px',
+      },
+      '& .mobile-menu a, & .mobile-menu button': {
+        fontSize: '16px',
+        lineHeight: '1.45',
+      },
+      '& .home-hero h1, & .page-intro h1, & .fleet-intro h1, & .about-copy h1':
+        {
+          fontSize: 'clamp(40px, 10vw, 50px) !important',
+          lineHeight: '1.16 !important',
+          letterSpacing: '0.005em !important',
+        },
+      '& .home-hero p, & .page-intro p, & .fleet-intro > p, & .about-lead, & .about-narrative p':
+        {
+          fontSize: '16px',
+          lineHeight: '1.65',
+        },
+      '& .section-heading h2, & .closing-cta h2, & .rate-notice h2, & .help-callout h2, & .vehicle-components-heading h2, & .fleet-details h2, & .help-content > h2':
+        {
+          fontSize: 'clamp(26px, 7vw, 30px)',
+          lineHeight: '1.22',
+        },
+      '& .vehicle-components-list h3, & .fleet-caption h2, & .pricing-list h3, & .about-benefits h3, & .journey-title h3, & .faq-list .faq-question':
+        {
+          fontSize: '20px',
+          lineHeight: '1.4',
+        },
+      '& .vehicle-components-list p, & .fleet-caption p, & .pricing-list p, & .journey-columns p, & .about-benefits p, & .faq-list .faq-answer p, & .section-heading p, & .vehicle-components-heading p, & .fleet-details p, & .safety-note p, & .help-callout p':
+        {
+          fontSize: '15px',
+          lineHeight: '1.65',
+        },
+      '& .button': {
+        fontSize: '15px',
+      },
+      '& .footer-brand-column > p, & .footer-links a, & .footer-links button': {
+        fontSize: '14px',
+      },
+      '& .footer-bottom': {
+        fontSize: '11px',
+        lineHeight: '1.5',
+      },
+    },
+  },
 ];
