@@ -4371,6 +4371,21 @@ export const websiteSx: SxProps<Theme> = [
     '& .footer-brand-column > p, & .footer-links a, & .footer-links button': {
       lineHeight: '1.6',
     },
+    '& .footer-brand-column > p': {
+      fontSize: '16px',
+    },
+    '& .footer-links h3': {
+      fontSize: '15px',
+      fontWeight: '700',
+      lineHeight: '1.35',
+    },
+    '& .footer-links a, & .footer-links button': {
+      fontSize: '15px',
+    },
+    '& .footer-bottom': {
+      fontSize: '12px',
+      lineHeight: '1.5',
+    },
   },
   {
     '@media (max-width: 767px)': {
@@ -4414,10 +4429,13 @@ export const websiteSx: SxProps<Theme> = [
         fontSize: '15px',
       },
       '& .footer-brand-column > p, & .footer-links a, & .footer-links button': {
-        fontSize: '14px',
+        fontSize: '15px',
+      },
+      '& .footer-links h3': {
+        fontSize: '15px',
       },
       '& .footer-bottom': {
-        fontSize: '11px',
+        fontSize: '12px',
         lineHeight: '1.5',
       },
     },
