@@ -27,6 +27,7 @@ export function FleetSection({ locale }: { locale: Locale }) {
               alt={c.vehicle}
               fill
               sizes="(max-width:767px) 100vw, 90vw"
+              loading="eager"
             />
             <div className="tile-caption">
               <div>
