@@ -32,7 +32,6 @@ export function JourneySection({
         {c.steps.map((title, i) => (
           <article
             key={title}
-            data-home-reveal={!phones ? '' : undefined}
             onPointerEnter={() => setActiveStep(i)}
             onPointerLeave={() => setActiveStep(null)}
           >
