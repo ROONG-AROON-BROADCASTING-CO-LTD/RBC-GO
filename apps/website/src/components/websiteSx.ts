@@ -4416,6 +4416,68 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
+    '& .manufacturing-gallery': {
+      padding: '0 0 clamp(64px, 9vw, 128px)',
+    },
+    '& .manufacturing-gallery-heading': {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
+      gap: 'clamp(26px, 5vw, 88px)',
+      marginBottom: '28px',
+      paddingTop: '34px',
+      borderTop: '1px solid #2a3027',
+    },
+    '& .manufacturing-gallery-heading h2': {
+      maxWidth: '520px',
+      fontSize: 'clamp(28px, 2.6vw, 42px)',
+      fontWeight: '600',
+      lineHeight: '1.16',
+      letterSpacing: '-0.03em',
+    },
+    '& .manufacturing-gallery-heading p': {
+      maxWidth: '540px',
+      color: '#bec4b7',
+      fontSize: '16px',
+      lineHeight: '1.65',
+    },
+    '& .manufacturing-gallery-grid': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+      gap: '16px',
+    },
+    '& .manufacturing-gallery figure': {
+      margin: '0',
+      overflow: 'hidden',
+      border: '1px solid #2a3027',
+      borderRadius: '14px',
+      background: '#090c0b',
+    },
+    '& .manufacturing-gallery img': {
+      display: 'block',
+      width: '100%',
+      aspectRatio: '4 / 3',
+      objectFit: 'cover',
+      filter: 'saturate(0.82) contrast(1.04)',
+    },
+    '& .manufacturing-gallery figcaption': {
+      padding: '13px 16px',
+      color: '#bec4b7',
+      fontSize: '14px',
+      lineHeight: '1.45',
+    },
+    '@media (max-width: 767px)': {
+      '& .manufacturing-gallery': {
+        paddingBottom: '62px',
+      },
+      '& .manufacturing-gallery-heading, & .manufacturing-gallery-grid': {
+        gridTemplateColumns: '1fr',
+      },
+      '& .manufacturing-gallery-heading': {
+        gap: '12px',
+      },
+    },
+  },
+  {
     '& .site-topbar': {
       fontSize: '11px',
       lineHeight: '1.2',

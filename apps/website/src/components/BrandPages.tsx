@@ -266,6 +266,40 @@ export function BrandPages({ page }: { page?: Page }) {
                 ))}
               </div>
             </section>
+            <section
+              className="manufacturing-gallery"
+              aria-labelledby="manufacturing-gallery-heading"
+            >
+              <div className="manufacturing-gallery-heading">
+                <h2 id="manufacturing-gallery-heading">
+                  {c.manufacturingGalleryTitle}
+                </h2>
+                <p>{c.manufacturingGalleryCopy}</p>
+              </div>
+              <div className="manufacturing-gallery-grid">
+                {[
+                  {
+                    src: '/images/about/kronos-factory-floor.jpg',
+                    caption: c.manufacturingGalleryCaptions[0],
+                  },
+                  {
+                    src: '/images/about/kronos-assembly-line.jpg',
+                    caption: c.manufacturingGalleryCaptions[1],
+                  },
+                ].map((image) => (
+                  <figure key={image.src}>
+                    <Image
+                      src={image.src}
+                      alt={image.caption}
+                      width={1478}
+                      height={1108}
+                      sizes="(max-width: 767px) 100vw, 50vw"
+                    />
+                    <figcaption>{image.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </section>
           </>
         )}
         {page === 'help' && (

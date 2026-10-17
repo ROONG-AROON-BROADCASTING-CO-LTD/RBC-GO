@@ -113,6 +113,13 @@ const copy = {
         'Maintenance, parts and support guidance are being prepared before RBC GO opens for live journeys.',
       ],
     ],
+    manufacturingGalleryTitle: 'Inside the KRONOS production base.',
+    manufacturingGalleryCopy:
+      'Factory and assembly images supplied by KRONOS E-BIKES show the production setting behind the product context for RBC GO.',
+    manufacturingGalleryCaptions: [
+      'Fabrication floor — KRONOS E-BIKES factory',
+      'Assembly work — KRONOS E-BIKES factory',
+    ],
     help: ['Good questions.', 'Clear answers.'],
     helpIntro:
       'Explore practical answers, service details and simple guidance to help you feel ready for every journey ahead.',
@@ -245,6 +252,13 @@ const copy = {
         'พร้อมสำหรับการดูแล',
         'แนวทางบำรุงรักษา อะไหล่ และทีมช่วยเหลือจะประกาศก่อนเปิดบริการจริง',
       ],
+    ],
+    manufacturingGalleryTitle: 'เบื้องหลังฐานการผลิต KRONOS',
+    manufacturingGalleryCopy:
+      'ภาพโรงงานและการประกอบจาก KRONOS E-BIKES แสดงบริบทการผลิตที่อยู่เบื้องหลังผลิตภัณฑ์สำหรับ RBC GO',
+    manufacturingGalleryCaptions: [
+      'พื้นที่งานผลิต — โรงงาน KRONOS E-BIKES',
+      'งานประกอบ — โรงงาน KRONOS E-BIKES',
     ],
     help: ['ทุกคำถาม', 'มีคำตอบที่ใช่'],
     helpIntro:
