@@ -4455,8 +4455,8 @@ export const websiteSx: SxProps<Theme> = [
     '& .manufacturing-gallery img': {
       display: 'block',
       width: '100%',
-      aspectRatio: '4 / 3',
-      objectFit: 'cover',
+      height: 'auto',
+      objectFit: 'contain',
       filter: 'saturate(0.82) contrast(1.04)',
     },
     '& .manufacturing-gallery figcaption': {
