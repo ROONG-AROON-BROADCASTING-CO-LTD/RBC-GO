@@ -395,6 +395,11 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
+    '& .home-hero-poster': {
+      objectFit: 'cover',
+      objectPosition: 'center 55%',
+      zIndex: '0',
+    },
     '& .home-hero > video': {
       position: 'absolute',
       inset: '0',
@@ -402,12 +407,19 @@ export const websiteSx: SxProps<Theme> = [
       height: '100%',
       objectFit: 'cover',
       objectPosition: 'center 55%',
+      zIndex: '1',
+      opacity: '0',
+      transition: 'opacity 180ms ease-out',
+    },
+    '& .home-hero > video.is-ready': {
+      opacity: '1',
     },
   },
   {
     '& .home-hero-overlay': {
       position: 'absolute',
       inset: '0',
+      zIndex: '2',
       background:
         'linear-gradient(90deg, rgb(0 0 0 / 76%) 0%, rgb(0 0 0 / 49%) 37%, rgb(0 0 0 / 8%) 75%), linear-gradient(0deg, rgb(0 0 0 / 20%), transparent 40%)',
     },
@@ -415,7 +427,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .home-hero-content': {
       position: 'relative',
-      zIndex: '1',
+      zIndex: '3',
       width: 'min(760px, 75vw)',
       height: '100%',
       display: 'flex',
@@ -3880,7 +3892,9 @@ export const websiteSx: SxProps<Theme> = [
         height: 'auto',
         aspectRatio: '16 / 9',
       },
-      '& .home-hero > video': { objectPosition: '61% center' },
+      '& .home-hero-poster, & .home-hero > video': {
+        objectPosition: '61% center',
+      },
     },
   },
   {

@@ -1,7 +1,23 @@
 'use client';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 import type { Locale } from '../data/landing';
 import { WebsiteAction } from '../components/WebsiteAction';
 export function HeroSection({ locale }: { locale: Locale }) {
+  const [isVideoReady, setIsVideoReady] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const showVideo = () => setIsVideoReady(true);
+    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) showVideo();
+    video.addEventListener('canplay', showVideo, { once: true });
+
+    return () => video.removeEventListener('canplay', showVideo);
+  }, []);
+
   const isThai = locale === 'th';
   const copy = isThai
     ? {
@@ -21,7 +37,17 @@ export function HeroSection({ locale }: { locale: Locale }) {
 
   return (
     <section className="home-hero">
+      <Image
+        className="home-hero-poster"
+        src="/images/heroes/home-hero-scooter-poster.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+      />
       <video
+        ref={videoRef}
+        className={isVideoReady ? 'is-ready' : undefined}
         autoPlay
         loop
         muted
