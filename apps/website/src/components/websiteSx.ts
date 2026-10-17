@@ -391,6 +391,7 @@ export const websiteSx: SxProps<Theme> = [
       overflow: 'hidden',
       display: 'flex',
       alignItems: 'stretch',
+      background: '#080a08',
     },
   },
   {
