@@ -76,8 +76,8 @@ export function BrandPages({ page }: { page?: Page }) {
                   src="/images/vehicles/rbc-go-scooter-components.png"
                   alt={
                     locale === 'en'
-                      ? 'Annotated RBC GO electric motorcycle components'
-                      : 'ภาพอธิบายส่วนประกอบของมอเตอร์ไซค์ไฟฟ้า RBC GO'
+                      ? 'KRONOS K6 electric scooter specifications'
+                      : 'ข้อมูลสเปกมอเตอร์ไซค์ไฟฟ้า KRONOS K6'
                   }
                   width={1672}
                   height={941}
