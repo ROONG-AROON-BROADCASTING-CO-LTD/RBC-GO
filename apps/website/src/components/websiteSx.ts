@@ -1589,7 +1589,9 @@ export const websiteSx: SxProps<Theme> = [
       flexDirection: 'column',
       alignItems: 'flex-start',
       justifyContent: 'center',
-      overflow: 'hidden',
+      // The background illustration is clipped directly below so button hover shadows
+      // can extend beyond this card.
+      overflow: 'visible',
       borderRadius: '12px',
       padding: '48px 65px',
       minHeight: '320px',
@@ -1604,6 +1606,7 @@ export const websiteSx: SxProps<Theme> = [
       height: '100%',
       objectFit: 'cover',
       objectPosition: 'right bottom',
+      clipPath: 'inset(0 round 12px)',
       zIndex: '0',
     },
   },
@@ -3600,6 +3603,7 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .closing-cta > img': {
         objectPosition: 'right bottom',
+        clipPath: 'inset(0 round 10px)',
       },
     },
   },
