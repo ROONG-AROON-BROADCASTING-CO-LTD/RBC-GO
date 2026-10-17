@@ -339,6 +339,10 @@ export const websiteSx: SxProps<Theme> = [
       borderRadius: '10px',
       fontSize: '13px',
     },
+    '& .site-header:has(.header-start:hover), & .site-header:has(.header-start:focus-visible)':
+      {
+        overflow: 'visible',
+      },
   },
   {
     '& .menu-toggle, & .mobile-menu': {
