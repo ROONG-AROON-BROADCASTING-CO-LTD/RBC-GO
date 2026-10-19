@@ -44,7 +44,7 @@ export function BrandPages({ page }: { page?: Page }) {
   };
   return (
     <>
-      <PageMotion />
+      <PageMotion page={page ?? 'home'} />
       <WebsiteNav
         locale={locale}
         page={page}

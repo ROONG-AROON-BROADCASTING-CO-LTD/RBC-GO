@@ -4,10 +4,11 @@ import { useEffect } from 'react';
 import { animate, hover, inView } from 'motion';
 
 const revealSelectors = [
-  '.home-hero-content',
-  '.fleet-intro',
-  '.about-copy',
-  '.page-intro',
+  '.home-hero-content > *',
+  '.fleet-intro > *',
+  '.about-copy > *',
+  '.page-intro > *',
+  '.motorcycle-tile-wrap',
   '.section-heading',
   '.vehicle-components-heading',
   '.vehicle-components-image',
@@ -32,7 +33,7 @@ const revealSelectors = [
   '.footer-bottom',
 ].join(', ');
 
-export function PageMotion() {
+export function PageMotion({ page }: { page: string }) {
   useEffect(() => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (reduceMotion.matches) return;
@@ -45,13 +46,20 @@ export function PageMotion() {
       nodes,
       (element) => {
         const index = nodes.indexOf(element as HTMLElement);
+        const isImage = element.matches(
+          '.vehicle-components-image, .motorcycle-tile-wrap, .manufacturing-gallery-grid > figure',
+        );
         const animation = animate(
           element,
-          { opacity: [1, 1], y: [26, 0] },
+          {
+            opacity: [0.12, 1],
+            y: [isImage ? 70 : 48, 0],
+            scale: [isImage ? 0.94 : 1, 1],
+          },
           {
             type: 'tween',
-            duration: 0.72,
-            delay: (index % 4) * 0.07,
+            duration: 1.05,
+            delay: (index % 4) * 0.12,
             ease: [0.16, 1, 0.3, 1],
           },
         );
@@ -61,7 +69,7 @@ export function PageMotion() {
           animations.delete(animation);
         });
       },
-      { margin: '0px 0px -8% 0px', amount: 0.12 },
+      { margin: '0px 0px -5% 0px', amount: 0.12 },
     );
     const stopHover = hover(
       '.button, .round-arrow, .icon-button',
@@ -117,7 +125,7 @@ export function PageMotion() {
       hero?.style.removeProperty('--hero-pointer-x');
       hero?.style.removeProperty('--hero-pointer-y');
     };
-  }, []);
+  }, [page]);
 
   return null;
 }
