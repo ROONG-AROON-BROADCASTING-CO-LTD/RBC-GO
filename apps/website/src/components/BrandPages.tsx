@@ -20,13 +20,47 @@ import { JourneySection } from '../sections/JourneySection';
 function pageHref(page?: Page) {
   return page ? `/${page}` : '/';
 }
+const heroLine = {
+  initial: { opacity: 0, y: 42, filter: 'blur(10px)' },
+  animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
+  transition: {
+    type: 'tween' as const,
+    duration: 0.92,
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+  },
+};
+
 function Heading({ lines }: { lines: string[] }) {
   return (
-    <h1>
-      {lines[0]}
-      <br />
-      {lines[1]}
-    </h1>
+    <motion.h1 initial="initial" animate="animate">
+      <motion.span {...heroLine} className="page-hero-title-line">
+        {lines[0]}
+      </motion.span>
+      <motion.span
+        {...heroLine}
+        className="page-hero-title-line"
+        transition={{ ...heroLine.transition, delay: 0.12 }}
+      >
+        {lines[1]}
+      </motion.span>
+    </motion.h1>
+  );
+}
+
+function HeroCopy({ children }: { children: React.ReactNode }) {
+  return (
+    <motion.p
+      initial={{ opacity: 0, y: 24, filter: 'blur(6px)' }}
+      animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      transition={{
+        type: 'tween',
+        duration: 0.82,
+        delay: 0.36,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+    >
+      {children}
+    </motion.p>
   );
 }
 
@@ -158,10 +192,10 @@ export function BrandPages({ page }: { page?: Page }) {
                 priority
               />
             </div>
-            <motion.section {...reveal} className="page-intro">
+            <section className="page-intro">
               <Heading lines={c.how} />
-              <p>{c.howIntro}</p>
-            </motion.section>
+              <HeroCopy>{c.howIntro}</HeroCopy>
+            </section>
             <JourneySection locale={locale} phones />
             <motion.section {...reveal} className="safety-note" id="safety">
               <Icon kind="motorcycle" />
@@ -184,14 +218,14 @@ export function BrandPages({ page }: { page?: Page }) {
                   priority
                 />
               </div>
-              <motion.section {...reveal} className="page-intro">
+              <section className="page-intro">
                 <Heading lines={c.pricing} />
-                <p>
+                <HeroCopy>
                   {c.priceIntro[0]}
                   <br />
                   {c.priceIntro[1]}
-                </p>
-              </motion.section>
+                </HeroCopy>
+              </section>
               <motion.section {...reveal} className="pricing-grid">
                 <div className="pricing-list">
                   {c.priceItems.map(([title, copy], i) => (
@@ -226,7 +260,7 @@ export function BrandPages({ page }: { page?: Page }) {
         )}
         {page === 'about' && (
           <>
-            <motion.section {...reveal} className="about-hero">
+            <section className="about-hero">
               <Image
                 src="/images/heroes/about-hero.png"
                 alt={
@@ -240,18 +274,38 @@ export function BrandPages({ page }: { page?: Page }) {
               />
               <div className="about-copy">
                 <Heading lines={c.about} />
-                <p className="about-lead">
+                <motion.p
+                  className="about-lead"
+                  initial={{ opacity: 0, y: 24, filter: 'blur(6px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  transition={{
+                    type: 'tween',
+                    duration: 0.82,
+                    delay: 0.36,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                >
                   {c.aboutIntro[0]}
                   <br />
                   {c.aboutIntro[1]}
-                </p>
-                <div className="about-narrative">
+                </motion.p>
+                <motion.div
+                  className="about-narrative"
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: 'tween',
+                    duration: 0.78,
+                    delay: 0.5,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                >
                   {c.aboutBody.map((p) => (
                     <p key={p}>{p}</p>
                   ))}
-                </div>
+                </motion.div>
               </div>
-            </motion.section>
+            </section>
             <motion.section {...reveal} id="mission" className="about-benefits">
               {c.aboutBenefits.map(([title, copy], i) => (
                 <motion.article
@@ -352,10 +406,10 @@ export function BrandPages({ page }: { page?: Page }) {
                 priority
               />
             </div>
-            <motion.section {...reveal} className="page-intro">
+            <section className="page-intro">
               <Heading lines={c.help} />
-              <p>{c.helpIntro}</p>
-            </motion.section>
+              <HeroCopy>{c.helpIntro}</HeroCopy>
+            </section>
             <HelpQuestions locale={locale} />
             <motion.section {...reveal} className="help-callout">
               <Icon kind="chat" />

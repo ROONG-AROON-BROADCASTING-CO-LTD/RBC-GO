@@ -26,6 +26,16 @@ const reveal = {
   },
 };
 
+const heroLine = {
+  initial: { opacity: 0, y: 42, filter: 'blur(10px)' },
+  animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
+  transition: {
+    type: 'tween' as const,
+    duration: 0.92,
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+  },
+};
+
 export function FleetHero({ locale }: { locale: Locale }) {
   const [details, setDetails] = useState(false);
   const c = referenceCopy(locale);
@@ -47,26 +57,52 @@ export function FleetHero({ locale }: { locale: Locale }) {
           animate={{ opacity: [0.25, 0.62, 0.25], scale: [0.94, 1.08, 0.94] }}
           transition={{ duration: 6.5, ease: 'easeInOut', repeat: Infinity }}
         />
-        <motion.div {...reveal} className="fleet-intro">
-          <h1>
-            {c.fleet[0]}
-            <br />
-            {c.fleet[1]}
-          </h1>
-          <p>
+        <div className="fleet-intro">
+          <motion.h1 initial="initial" animate="animate">
+            <motion.span {...heroLine} className="fleet-hero-title-line">
+              {c.fleet[0]}
+            </motion.span>
+            <motion.span
+              {...heroLine}
+              className="fleet-hero-title-line"
+              transition={{ ...heroLine.transition, delay: 0.12 }}
+            >
+              {c.fleet[1]}
+            </motion.span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 24, filter: 'blur(6px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{
+              type: 'tween',
+              duration: 0.82,
+              delay: 0.36,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+          >
             {c.fleetIntro[0]}
             <br />
             {c.fleetIntro[1]}
-          </p>
-          <ul className="fleet-features">
+          </motion.p>
+          <motion.ul
+            className="fleet-features"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: 'tween',
+              duration: 0.74,
+              delay: 0.5,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+          >
             {c.features.map((feature, index) => (
               <li key={feature}>
                 <Icon kind={(['bolt', 'route', 'scan'] as const)[index]} />
                 {feature}
               </li>
             ))}
-          </ul>
-        </motion.div>
+          </motion.ul>
+        </div>
       </section>
       {details && (
         <section className="fleet-details" aria-live="polite">

@@ -4620,10 +4620,11 @@ export const websiteSx: SxProps<Theme> = [
       position: 'relative',
       zIndex: '3',
     },
-    '& .home-hero-title-line': {
-      display: 'block',
-      transformOrigin: 'left center',
-    },
+    '& .home-hero-title-line, & .page-hero-title-line, & .fleet-hero-title-line':
+      {
+        display: 'block',
+        transformOrigin: 'left center',
+      },
     '& .motorcycle-tile-wrap': {
       perspective: '1200px',
       transformStyle: 'preserve-3d',
