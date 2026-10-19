@@ -12,6 +12,7 @@ import { useWebsiteLanguage } from './WebsiteLanguageProvider';
 
 import { WebsiteAction } from './WebsiteAction';
 import { WebsiteFooter } from './WebsiteFooter';
+import { PageMotion } from './PageMotion';
 import { HeroSection } from '../sections/HeroSection';
 import { FleetSection } from '../sections/FleetSection';
 import { JourneySection } from '../sections/JourneySection';
@@ -43,6 +44,7 @@ export function BrandPages({ page }: { page?: Page }) {
   };
   return (
     <>
+      <PageMotion />
       <WebsiteNav
         locale={locale}
         page={page}

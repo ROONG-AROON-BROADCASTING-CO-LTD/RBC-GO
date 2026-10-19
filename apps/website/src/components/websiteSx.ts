@@ -4597,4 +4597,84 @@ export const websiteSx: SxProps<Theme> = [
       },
     },
   },
+  {
+    '@keyframes websiteReveal': {
+      from: {
+        opacity: 0,
+        transform: 'translate3d(0, 26px, 0)',
+      },
+      to: {
+        opacity: 1,
+        transform: 'translate3d(0, 0, 0)',
+      },
+    },
+    '@keyframes heroHalo': {
+      '0%, 100%': { opacity: 0.22, transform: 'scale(0.96)' },
+      '50%': { opacity: 0.42, transform: 'scale(1.04)' },
+    },
+    '& .motion-target.motion-enter': {
+      animation:
+        'websiteReveal 720ms cubic-bezier(0.16, 1, 0.3, 1) var(--motion-delay, 0ms) both',
+    },
+    '& .home-hero': {
+      isolation: 'isolate',
+    },
+    '& .home-hero::after': {
+      position: 'absolute',
+      inset: '-12%',
+      zIndex: '1',
+      content: "''",
+      pointerEvents: 'none',
+      background:
+        'radial-gradient(380px circle at var(--hero-pointer-x, 78%) var(--hero-pointer-y, 38%), rgb(157 255 27 / 18%), transparent 68%)',
+      animation: 'heroHalo 7s ease-in-out infinite',
+      transition: 'background-position 160ms ease-out',
+    },
+    '& .home-hero-content': {
+      position: 'relative',
+      zIndex: '3',
+    },
+    '& .button, & .round-arrow, & .icon-button': {
+      transition:
+        'transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease',
+    },
+    '& .button:hover, & .round-arrow:hover, & .icon-button:hover': {
+      transform: 'translateY(-2px)',
+    },
+    '& .button:active, & .round-arrow:active, & .icon-button:active': {
+      transform: 'translateY(0) scale(0.96)',
+    },
+    '& .journey-columns article, & .about-benefits article, & .vehicle-care-list article, & .about-proof-list article, & .pricing-list article, & .faq-list .faq-item':
+      {
+        transition:
+          'transform 240ms cubic-bezier(0.16, 1, 0.3, 1), border-color 240ms ease, background-color 240ms ease, box-shadow 240ms ease',
+      },
+    '& .journey-columns article:hover, & .about-benefits article:hover, & .vehicle-care-list article:hover, & .about-proof-list article:hover, & .pricing-list article:hover':
+      {
+        transform: 'translateY(-5px)',
+        borderColor: 'rgb(153 255 24 / 72%)',
+        boxShadow: '0 18px 40px rgb(0 0 0 / 22%)',
+      },
+    '& .manufacturing-gallery figure img': {
+      transition:
+        'transform 600ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease',
+    },
+    '& .manufacturing-gallery figure:hover img': {
+      transform: 'scale(1.035)',
+      filter: 'saturate(1) contrast(1.05)',
+    },
+    '& .faq-list .faq-item:hover': {
+      borderColor: 'rgb(153 255 24 / 42%)',
+      background: 'rgb(153 255 24 / 3%)',
+    },
+    '@media (prefers-reduced-motion: reduce)': {
+      '& .motion-target.motion-enter, & .home-hero::after': {
+        animation: 'none',
+      },
+      '& .button:hover, & .round-arrow:hover, & .icon-button:hover, & .journey-columns article:hover, & .about-benefits article:hover, & .vehicle-care-list article:hover, & .about-proof-list article:hover, & .pricing-list article:hover, & .manufacturing-gallery figure:hover img':
+        {
+          transform: 'none',
+        },
+    },
+  },
 ];
