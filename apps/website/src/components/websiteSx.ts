@@ -4598,23 +4598,9 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@keyframes websiteReveal': {
-      from: {
-        opacity: 0,
-        transform: 'translate3d(0, 26px, 0)',
-      },
-      to: {
-        opacity: 1,
-        transform: 'translate3d(0, 0, 0)',
-      },
-    },
     '@keyframes heroHalo': {
       '0%, 100%': { opacity: 0.22, transform: 'scale(0.96)' },
       '50%': { opacity: 0.42, transform: 'scale(1.04)' },
-    },
-    '& .motion-target.motion-enter': {
-      animation:
-        'websiteReveal 720ms cubic-bezier(0.16, 1, 0.3, 1) var(--motion-delay, 0ms) both',
     },
     '& .home-hero': {
       isolation: 'isolate',

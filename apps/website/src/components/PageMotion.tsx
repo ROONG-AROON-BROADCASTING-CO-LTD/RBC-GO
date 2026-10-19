@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { animate, hover, inView } from 'motion';
 
 const revealSelectors = [
   '.home-hero-content',
@@ -39,22 +40,58 @@ export function PageMotion() {
     const nodes = Array.from(
       document.querySelectorAll<HTMLElement>(revealSelectors),
     );
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          entry.target.classList.add('motion-enter');
-          observer.unobserve(entry.target);
-        }
+    const animations = new Set<ReturnType<typeof animate>>();
+    const stopObserving = inView(
+      nodes,
+      (element) => {
+        const index = nodes.indexOf(element as HTMLElement);
+        const animation = animate(
+          element,
+          { opacity: [1, 1], y: [26, 0] },
+          {
+            type: 'tween',
+            duration: 0.72,
+            delay: (index % 4) * 0.07,
+            ease: [0.16, 1, 0.3, 1],
+          },
+        );
+        animations.add(animation);
+        void animation.then(() => {
+          animation.cancel();
+          animations.delete(animation);
+        });
       },
-      { rootMargin: '0px 0px -8%', threshold: 0.12 },
+      { margin: '0px 0px -8% 0px', amount: 0.12 },
     );
-
-    nodes.forEach((node, index) => {
-      node.classList.add('motion-target');
-      node.style.setProperty('--motion-delay', `${(index % 4) * 70}ms`);
-      observer.observe(node);
-    });
+    const stopHover = hover(
+      '.button, .round-arrow, .icon-button',
+      (element) => {
+        const enter = animate(
+          element,
+          { scale: 1.035 },
+          {
+            type: 'spring',
+            stiffness: 400,
+            damping: 24,
+          },
+        );
+        animations.add(enter);
+        return () => {
+          enter.cancel();
+          animations.delete(enter);
+          const exit = animate(
+            element,
+            { scale: 1 },
+            {
+              type: 'spring',
+              stiffness: 400,
+              damping: 24,
+            },
+          );
+          animations.add(exit);
+        };
+      },
+    );
 
     const hero = document.querySelector<HTMLElement>('.home-hero');
     const updateHeroGlow = (event: PointerEvent) => {
@@ -73,12 +110,10 @@ export function PageMotion() {
     hero?.addEventListener('pointermove', updateHeroGlow, { passive: true });
 
     return () => {
-      observer.disconnect();
+      stopObserving();
+      stopHover();
+      animations.forEach((animation) => animation.cancel());
       hero?.removeEventListener('pointermove', updateHeroGlow);
-      nodes.forEach((node) => {
-        node.classList.remove('motion-target', 'motion-enter');
-        node.style.removeProperty('--motion-delay');
-      });
       hero?.style.removeProperty('--hero-pointer-x');
       hero?.style.removeProperty('--hero-pointer-y');
     };
