@@ -4624,34 +4624,6 @@ export const websiteSx: SxProps<Theme> = [
       display: 'block',
       transformOrigin: 'left center',
     },
-    '& .hero-scanline': {
-      position: 'absolute',
-      zIndex: '2',
-      top: '22%',
-      width: '32%',
-      height: '1px',
-      pointerEvents: 'none',
-      background:
-        'linear-gradient(90deg, transparent, rgb(192 255 119 / 0.82), transparent)',
-      boxShadow: '0 0 28px rgb(153 255 24 / 55%)',
-    },
-    '& .hero-scroll-cue': {
-      position: 'absolute',
-      bottom: '42px',
-      left: '0',
-      width: '1px',
-      height: '46px',
-      overflow: 'hidden',
-      background: 'rgb(255 255 255 / 22%)',
-    },
-    '& .hero-scroll-cue span': {
-      display: 'block',
-      width: '100%',
-      height: '100%',
-      transformOrigin: 'top center',
-      background: 'var(--lime)',
-      boxShadow: '0 0 14px var(--lime)',
-    },
     '& .motorcycle-tile-wrap': {
       perspective: '1200px',
       transformStyle: 'preserve-3d',
@@ -4731,14 +4703,6 @@ export const websiteSx: SxProps<Theme> = [
         },
     },
     '@media (max-width: 767px)': {
-      '& .hero-scroll-cue': {
-        bottom: '28px',
-        height: '32px',
-      },
-      '& .hero-scanline': {
-        top: '18%',
-        width: '52%',
-      },
       '& .tile-lime-orbit': {
         width: '180px',
       },

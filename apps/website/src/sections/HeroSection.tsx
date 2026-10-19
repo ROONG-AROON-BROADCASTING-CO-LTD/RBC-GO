@@ -97,12 +97,6 @@ export function HeroSection({ locale }: { locale: Locale }) {
         }
       />
       <div className="home-hero-overlay" />
-      <motion.div
-        aria-hidden="true"
-        className="hero-scanline"
-        animate={{ left: ['-30%', '110%'], opacity: [0, 0.65, 0] }}
-        transition={{ duration: 7.5, ease: 'easeInOut', repeat: Infinity }}
-      />
       <div className="home-hero-content">
         <motion.h1 initial="initial" animate="animate">
           <motion.span {...heroLine} className="home-hero-title-line">
@@ -133,18 +127,6 @@ export function HeroSection({ locale }: { locale: Locale }) {
           <WebsiteAction dark href="/how-it-works">
             {copy.secondary}
           </WebsiteAction>
-        </motion.div>
-        <motion.div
-          aria-hidden="true"
-          className="hero-scroll-cue"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.95, duration: 0.45 }}
-        >
-          <motion.span
-            animate={{ scaleY: [0.2, 1, 0.2], y: [0, 8, 0] }}
-            transition={{ duration: 1.8, ease: 'easeInOut', repeat: Infinity }}
-          />
         </motion.div>
       </div>
     </section>
