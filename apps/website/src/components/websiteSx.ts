@@ -2504,8 +2504,9 @@ export const websiteSx: SxProps<Theme> = [
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
+        marginInline: '-20px',
         borderBottom: '1px solid var(--line)',
-        padding: '15px 0',
+        padding: '15px 20px',
         fontSize: '17px',
         fontWeight: '600',
         '&[aria-current="page"]': {
