@@ -4682,7 +4682,7 @@ export const websiteSx: SxProps<Theme> = [
       {
         position: 'relative',
         zIndex: '1',
-        transform: 'translateY(-5px)',
+        transform: 'translateY(-6px) scale(1.012) !important',
         borderColor: 'rgb(153 255 24 / 72%)',
         backgroundColor: 'rgb(153 255 24 / 3%)',
         boxShadow:
