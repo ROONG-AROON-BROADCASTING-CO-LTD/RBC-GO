@@ -42,56 +42,55 @@ export function JourneySection({
   return (
     <section className={`journey ${phones ? 'with-phones' : ''}`}>
       <div className="journey-columns">
-        {c.steps.map((title, i) => (
-          <motion.article
-            {...reveal}
-            transition={{ ...reveal.transition, delay: i * 0.12 }}
-            whileHover={{ y: -5 }}
-            key={title}
-            onPointerEnter={() => setActiveStep(i)}
-            onPointerLeave={() => setActiveStep(null)}
-          >
-            <div className="journey-title">
-              <span className="number">{i + 1}</span>
-              <h3>{title}</h3>
-            </div>
-            <p>{c.stepCopy[i]}</p>
-            {!phones &&
-              (() => {
-                const JourneyIcon = journeyIcons[i];
-                return (
-                  <JourneyIcon
-                    active={activeStep === i}
-                    className="animated-journey-icon"
-                  />
-                );
-              })()}
-            {phones && (
-              <div className="phone-art">
-                <Image
-                  src={phoneImages[i]}
-                  alt={
-                    locale === 'en'
-                      ? [
-                          'Illustrative wallet screen with prepaid card',
-                          'Illustrative QR scan screen',
-                          'Illustrative ride map and trip status',
-                        ][i]
-                      : [
-                          'ภาพตัวอย่างวอลเล็ตและบัตรเติมเงิน',
-                          'ภาพตัวอย่างการสแกน QR',
-                          'ภาพตัวอย่างแผนที่และสถานะการเดินทาง',
-                        ][i]
-                  }
-                  width={941}
-                  height={1672}
-                  sizes="(max-width:767px) 75vw, 30vw"
-                  loading="eager"
-                />
+        {c.steps.map((title, i) => {
+          const JourneyIcon = journeyIcons[i];
+
+          return (
+            <motion.article
+              key={`${title}-${i}`}
+              {...reveal}
+              transition={{ ...reveal.transition, delay: i * 0.12 }}
+              whileHover={{ y: -5 }}
+              onPointerEnter={() => setActiveStep(i)}
+              onPointerLeave={() => setActiveStep(null)}
+            >
+              <div className="journey-title">
+                <span className="number">{i + 1}</span>
+                <h3>{title}</h3>
               </div>
-            )}
-          </motion.article>
-        ))}
+              <p>{c.stepCopy[i]}</p>
+              {!phones ? (
+                <JourneyIcon
+                  active={activeStep === i}
+                  className="animated-journey-icon"
+                />
+              ) : (
+                <div className="phone-art">
+                  <Image
+                    src={phoneImages[i]}
+                    alt={
+                      locale === 'en'
+                        ? [
+                            'Illustrative wallet screen with prepaid card',
+                            'Illustrative QR scan screen',
+                            'Illustrative ride map and trip status',
+                          ][i]
+                        : [
+                            'ภาพตัวอย่างวอลเล็ตและบัตรเติมเงิน',
+                            'ภาพตัวอย่างการสแกน QR',
+                            'ภาพตัวอย่างแผนที่และสถานะการเดินทาง',
+                          ][i]
+                    }
+                    width={941}
+                    height={1672}
+                    sizes="(max-width:767px) 75vw, 30vw"
+                    loading="eager"
+                  />
+                </div>
+              )}
+            </motion.article>
+          );
+        })}
       </div>
     </section>
   );
