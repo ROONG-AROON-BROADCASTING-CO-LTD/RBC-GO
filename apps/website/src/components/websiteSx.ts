@@ -1234,7 +1234,10 @@ export const websiteSx: SxProps<Theme> = [
       display: 'flex',
       alignItems: 'start',
       gap: '28px',
-      marginBottom: '35px',
+      marginBottom: '18px',
+      padding: '24px',
+      border: '1px solid var(--line)',
+      borderRadius: '14px',
     },
   },
   {
@@ -3239,6 +3242,7 @@ export const websiteSx: SxProps<Theme> = [
       '& .pricing-list article': {
         gap: '20px',
         marginBottom: '30px',
+        padding: '20px',
       },
     },
   },
