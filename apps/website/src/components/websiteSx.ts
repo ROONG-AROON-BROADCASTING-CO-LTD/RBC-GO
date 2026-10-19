@@ -4675,7 +4675,7 @@ export const websiteSx: SxProps<Theme> = [
         transition:
           'transform 240ms cubic-bezier(0.16, 1, 0.3, 1), border-color 240ms ease, background-color 240ms ease, box-shadow 240ms ease',
       },
-    '& .journey-columns article:hover, & .about-benefits article:hover, & .vehicle-care-list article:hover, & .about-proof-list article:hover, & .pricing-list article:hover':
+    '& .journey-columns article:hover, & .lower-home .journey-columns article:hover, & .about-benefits article:hover, & .vehicle-care-list article:hover, & .about-proof-list article:hover, & .pricing-list article:hover':
       {
         transform: 'translateY(-5px)',
         borderColor: 'rgb(153 255 24 / 72%)',
