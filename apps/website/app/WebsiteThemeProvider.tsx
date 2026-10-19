@@ -6,8 +6,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { websiteBaseline } from './websiteBaseline';
 import { websiteSx } from '../src/components/websiteSx';
-import { WebsiteLanguageProvider } from '../src/components/WebsiteLanguageProvider';
-import { WebsiteDocumentMetadata } from '../src/components/WebsiteDocumentMetadata';
+import { WebsiteLanguageProvider } from '../src/components/layout/WebsiteLanguageProvider';
+import { WebsiteDocumentMetadata } from '../src/components/layout/WebsiteDocumentMetadata';
 import type { Locale } from '../src/data/landing';
 
 const theme = createTheme({

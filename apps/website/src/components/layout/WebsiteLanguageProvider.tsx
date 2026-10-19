@@ -9,8 +9,8 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import type { Locale } from '../data/landing';
-import { languageCookieName } from '../data/language';
+import type { Locale } from '../../data/landing';
+import { languageCookieName } from '../../data/language';
 
 type WebsiteLanguageContextValue = {
   language: Locale;

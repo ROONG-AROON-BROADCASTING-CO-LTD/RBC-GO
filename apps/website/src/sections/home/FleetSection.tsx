@@ -3,9 +3,9 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { type Locale, text } from '../data/landing';
-import { referenceCopy } from '../data/brandPages';
-import { Icon } from '../components/Icon';
+import { type Locale, text } from '../../data/landing';
+import { referenceCopy } from '../../data/brandPages';
+import { Icon } from '../../components/ui/Icon';
 import { JourneySection } from './JourneySection';
 
 const reveal = {

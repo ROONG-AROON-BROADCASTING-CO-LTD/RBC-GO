@@ -2,9 +2,9 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { type Locale, type Page, text, pages } from '../data/landing';
-import { referenceCopy } from '../data/brandPages';
-import { InfoDialog } from './Interactive';
+import { type Locale, type Page, text, pages } from '../../data/landing';
+import { referenceCopy } from '../../data/brandPages';
+import { InfoDialog } from '../interactive/Interactive';
 function pageHref(page?: Page) {
   return page ? `/${page}` : '/';
 }

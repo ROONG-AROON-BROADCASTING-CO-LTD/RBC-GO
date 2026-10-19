@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo } from 'react';
 import { usePathname } from 'next/navigation';
-import { type Page, text } from '../data/landing';
+import { type Page, text } from '../../data/landing';
 import { useWebsiteLanguage } from './WebsiteLanguageProvider';
 
 const pageByPath: Record<string, Page | undefined> = {

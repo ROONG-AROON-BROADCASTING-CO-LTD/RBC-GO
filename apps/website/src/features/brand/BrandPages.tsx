@@ -2,20 +2,23 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { type Locale, type Page, text } from '../data/landing';
-import { referenceCopy } from '../data/brandPages';
-import { customerUrl, siteUrl } from '../../app/site';
-import { HelpQuestions, FleetHero, InfoDialog } from './Interactive';
-import { WebsiteNav } from './WebsiteNav';
-import { Icon } from './Icon';
-import { useWebsiteLanguage } from './WebsiteLanguageProvider';
-
-import { WebsiteAction } from './WebsiteAction';
-import { WebsiteFooter } from './WebsiteFooter';
+import { type Locale, type Page, text } from '../../data/landing';
+import { referenceCopy } from '../../data/brandPages';
+import { customerUrl, siteUrl } from '../../../app/site';
+import {
+  HelpQuestions,
+  FleetHero,
+  InfoDialog,
+} from '../../components/interactive/Interactive';
+import { WebsiteNav } from '../../components/layout/WebsiteNav';
+import { WebsiteFooter } from '../../components/layout/WebsiteFooter';
+import { useWebsiteLanguage } from '../../components/layout/WebsiteLanguageProvider';
+import { Icon } from '../../components/ui/Icon';
+import { WebsiteAction } from '../../components/ui/WebsiteAction';
 import { motion, MotionConfig } from 'motion/react';
-import { HeroSection } from '../sections/HeroSection';
-import { FleetSection } from '../sections/FleetSection';
-import { JourneySection } from '../sections/JourneySection';
+import { HeroSection } from '../../sections/home/HeroSection';
+import { FleetSection } from '../../sections/home/FleetSection';
+import { JourneySection } from '../../sections/home/JourneySection';
 
 function pageHref(page?: Page) {
   return page ? `/${page}` : '/';

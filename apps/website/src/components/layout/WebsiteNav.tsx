@@ -3,10 +3,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { type Locale, type Page, pages, text } from '../data/landing';
-import { referenceCopy } from '../data/brandPages';
-import { Icon } from './Icon';
-import { MobileLoginLink } from './MobileLoginLink';
+import { type Locale, type Page, pages, text } from '../../data/landing';
+import { referenceCopy } from '../../data/brandPages';
+import { Icon } from '../ui/Icon';
+import { MobileLoginLink } from '../ui/MobileLoginLink';
 
 type WebsiteNavProps = {
   locale: Locale;

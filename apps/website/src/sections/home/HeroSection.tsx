@@ -2,8 +2,8 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import type { Locale } from '../data/landing';
-import { WebsiteAction } from '../components/WebsiteAction';
+import type { Locale } from '../../data/landing';
+import { WebsiteAction } from '../../components/ui/WebsiteAction';
 
 const reveal = {
   initial: { opacity: 0, y: 32 },

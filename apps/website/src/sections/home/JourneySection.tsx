@@ -3,8 +3,8 @@ import { motion } from 'motion/react';
 import { useState } from 'react';
 import Image from 'next/image';
 import { RouteIcon, ScanTextIcon, WalletIcon } from '@stackbuild/ui/icons';
-import type { Locale } from '../data/landing';
-import { referenceCopy } from '../data/brandPages';
+import type { Locale } from '../../data/landing';
+import { referenceCopy } from '../../data/brandPages';
 
 const reveal = {
   initial: { opacity: 0, y: 32 },

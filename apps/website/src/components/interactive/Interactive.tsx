@@ -5,9 +5,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Collapse from '@mui/material/Collapse';
 import { useRef, useState } from 'react';
-import { type Locale, text } from '../data/landing';
-import { referenceCopy } from '../data/brandPages';
-import { Icon } from './Icon';
+import { type Locale, text } from '../../data/landing';
+import { referenceCopy } from '../../data/brandPages';
+import { Icon } from '../ui/Icon';
 import { ArrowRightIcon } from '@stackbuild/ui/icons';
 
 type ArrowHandle = {
