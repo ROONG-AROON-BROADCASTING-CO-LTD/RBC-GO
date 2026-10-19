@@ -1609,8 +1609,6 @@ export const websiteSx: SxProps<Theme> = [
       flexDirection: 'column',
       alignItems: 'flex-start',
       justifyContent: 'center',
-      // The background illustration is clipped directly below so button hover shadows
-      // can extend beyond this card.
       overflow: 'visible',
       borderRadius: '12px',
       padding: '48px 65px',
@@ -1619,7 +1617,15 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '& .closing-cta > img': {
+    '& .closing-cta-video': {
+      background: '#050706',
+      overflow: 'hidden',
+      aspectRatio: '16 / 9',
+      minHeight: '0',
+    },
+  },
+  {
+    '& .closing-cta > img, & .closing-cta > video': {
       position: 'absolute',
       inset: '0',
       width: '100%',
@@ -1628,6 +1634,11 @@ export const websiteSx: SxProps<Theme> = [
       objectPosition: 'right bottom',
       clipPath: 'inset(0 round 12px)',
       zIndex: '0',
+    },
+    '& .closing-cta > video': {
+      objectFit: 'contain',
+      objectPosition: 'center',
+      transform: 'none',
     },
   },
   {
@@ -3627,13 +3638,22 @@ export const websiteSx: SxProps<Theme> = [
         alignItems: 'start',
         gap: '25px',
       },
+      '& .closing-cta-video': {
+        aspectRatio: 'auto',
+        minHeight: '390px',
+      },
     },
   },
   {
     '@media (max-width: 767px)': {
-      '& .closing-cta > img': {
+      '& .closing-cta > img, & .closing-cta > video': {
         objectPosition: 'right bottom',
         clipPath: 'inset(0 round 10px)',
+      },
+      '& .closing-cta > video': {
+        objectFit: 'contain',
+        objectPosition: 'center',
+        transform: 'none',
       },
     },
   },
@@ -3965,15 +3985,6 @@ export const websiteSx: SxProps<Theme> = [
       padding: '0 var(--footer-gutter, clamp(24px, 5vw, 82px))',
       background: '#000',
       color: '#fff',
-    },
-    '& .footer-rail': {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      height: '1px',
-      background:
-        'linear-gradient(90deg, transparent 0%, rgb(105 209 26 / 30%) 18%, var(--lime) 50%, rgb(105 209 26 / 30%) 82%, transparent 100%)',
     },
     '& .footer-main': {
       display: 'grid',

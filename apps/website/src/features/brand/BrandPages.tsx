@@ -430,14 +430,19 @@ export function BrandPages({ page }: { page?: Page }) {
             </motion.section>
           </div>
         )}
-        <motion.section {...reveal} className="closing-cta">
-          <Image
-            src="/images/city/bangkok-line.png"
-            alt=""
-            width={2172}
-            height={724}
-            sizes="100vw"
-            loading="eager"
+        <motion.section {...reveal} className="closing-cta closing-cta-video">
+          <video
+            aria-label={
+              locale === 'th'
+                ? 'ผู้ขับขี่มอเตอร์ไซค์ในเมืองอนาคต'
+                : 'Scooter rider in a futuristic city'
+            }
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            src="/images/city/scooter-rider-futuristic-city.mp4"
           />
           <h2>
             {c.cta[0]}

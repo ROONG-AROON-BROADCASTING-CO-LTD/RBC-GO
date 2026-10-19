@@ -31,7 +31,6 @@ export function WebsiteFooter({
   const c = referenceCopy(locale);
   return (
     <footer className="site-footer">
-      <div className="footer-rail" />
       <motion.div {...reveal} className="footer-main">
         <div className="footer-brand-column">
           <Link className="brand" href="/">
