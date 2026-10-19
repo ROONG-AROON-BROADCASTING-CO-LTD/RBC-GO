@@ -150,6 +150,12 @@ const copy = {
       ['ISO 9001:2015', 'Quality-management system reported by KRONOS'],
       ['Thailand', 'Manufacturing base reported by KRONOS'],
     ],
+    factoryLocationLabel: 'FACTORY LOCATION',
+    factoryLocationTitle: 'Production base in Samut Prakan.',
+    factoryLocationCompany: 'AMIDA International Co., Ltd.',
+    factoryLocationAddress:
+      '40/25 Moo 3, Soi Bangpla 2 (Thanasit), Theparak Road Km 14, Bangpla, Bang Phli, Samut Prakan 10540, Thailand',
+    factoryLocationNote: 'Address published by KRONOS E-BIKES.',
     eventsLabel: 'PUBLIC SHOWCASES',
     eventsTitle: 'KRONOS in the city.',
     eventsIntro:
@@ -356,6 +362,12 @@ const copy = {
       ['ISO 9001:2015', 'ระบบบริหารคุณภาพตามที่ KRONOS ระบุ'],
       ['ประเทศไทย', 'ฐานการผลิตตามที่ KRONOS ระบุ'],
     ],
+    factoryLocationLabel: 'ที่ตั้งฐานการผลิต',
+    factoryLocationTitle: 'ฐานการผลิตในสมุทรปราการ',
+    factoryLocationCompany: 'บริษัท อมิดะ อินเตอร์เนชั่นแนล จำกัด',
+    factoryLocationAddress:
+      '40/25 หมู่ 3 ซอยบางปลา 2 (ธนสิทธิ์) ถ.เทพารักษ์ กม. 14 ต.บางปลา อ.บางพลี จ.สมุทรปราการ 10540',
+    factoryLocationNote: 'ที่อยู่ตามข้อมูลที่ KRONOS E-BIKES เผยแพร่',
     eventsLabel: 'การออกสู่สาธารณะ',
     eventsTitle: 'KRONOS ในเมือง',
     eventsIntro:

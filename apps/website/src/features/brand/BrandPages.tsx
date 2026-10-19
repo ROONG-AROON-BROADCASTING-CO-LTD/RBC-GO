@@ -1,9 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { type Locale, type Page, text } from '../../data/landing';
 import { referenceCopy } from '../../data/brandPages';
+import { brandEvents } from '../../data/brandEvents';
 import { customerUrl, siteUrl } from '../../../app/site';
 import {
   HelpQuestions,
@@ -91,15 +93,6 @@ function galleryReveal(index: number) {
     },
   };
 }
-
-const eventImages = [
-  '/images/about/kronos-event-bitec.jpg',
-  '/images/about/kronos-event-cross-border.jpg',
-  '/images/about/kronos-event-udon-01.jpg',
-  '/images/about/kronos-event-ladprao.jpg',
-  '/images/about/kronos-event-paragon.jpg',
-  '/images/about/kronos-event-power-buy.jpg',
-];
 
 export function BrandPages({ page }: { page?: Page }) {
   const { language: locale, setLanguage } = useWebsiteLanguage();
@@ -410,6 +403,21 @@ export function BrandPages({ page }: { page?: Page }) {
                   </motion.div>
                 ))}
               </motion.div>
+              <motion.div
+                {...reveal}
+                transition={{ ...reveal.transition, delay: 0.16 }}
+                className="factory-location"
+              >
+                <div>
+                  <span className="eyebrow">{c.factoryLocationLabel}</span>
+                  <h3>{c.factoryLocationTitle}</h3>
+                </div>
+                <address>
+                  <strong>{c.factoryLocationCompany}</strong>
+                  <span>{c.factoryLocationAddress}</span>
+                  <small>{c.factoryLocationNote}</small>
+                </address>
+              </motion.div>
               <div className="factory-capability-list">
                 {c.factoryCapabilities.map(([title, copy], index) => (
                   <motion.article
@@ -479,6 +487,7 @@ export function BrandPages({ page }: { page?: Page }) {
               </div>
             </section>
             <section
+              id="events"
               className="brand-events"
               aria-labelledby="brand-events-heading"
             >
@@ -488,26 +497,31 @@ export function BrandPages({ page }: { page?: Page }) {
                 <p>{c.eventsIntro}</p>
               </motion.div>
               <ol className="brand-events-list">
-                {c.events.map(([date, title, detail], index) => (
-                  <motion.li
-                    key={`${date}-${title}`}
-                    {...galleryReveal(index)}
-                    whileHover={{ y: -4 }}
-                  >
-                    <Image
-                      src={eventImages[index]}
-                      alt={`${title} — KRONOS E-BIKES`}
-                      width={1080}
-                      height={811}
-                      sizes="(max-width: 600px) 100vw, (max-width: 900px) 160px, 140px"
-                    />
-                    <time>{date}</time>
-                    <div>
-                      <h3>{title}</h3>
-                      <p>{detail}</p>
-                    </div>
-                  </motion.li>
-                ))}
+                {brandEvents.map((event, index) => {
+                  const eventCopy = event.copy[locale];
+                  return (
+                    <motion.li
+                      key={event.slug}
+                      {...galleryReveal(index)}
+                      whileHover={{ y: -4 }}
+                    >
+                      <Link href={`/events/${event.slug}`}>
+                        <Image
+                          src={event.images[0]}
+                          alt={`${eventCopy.title} — KRONOS E-BIKES`}
+                          width={1080}
+                          height={811}
+                          sizes="(max-width: 600px) 100vw, (max-width: 900px) 160px, 140px"
+                        />
+                        <time>{eventCopy.date}</time>
+                        <div>
+                          <h3>{eventCopy.title}</h3>
+                          <p>{eventCopy.detail}</p>
+                        </div>
+                      </Link>
+                    </motion.li>
+                  );
+                })}
               </ol>
               <motion.div {...reveal} className="events-gallery-heading">
                 <h3>{c.eventGalleryTitle}</h3>
