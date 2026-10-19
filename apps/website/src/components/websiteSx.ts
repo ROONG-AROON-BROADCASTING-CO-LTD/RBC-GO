@@ -4598,23 +4598,8 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@keyframes heroHalo': {
-      '0%, 100%': { opacity: 0.22, transform: 'scale(0.96)' },
-      '50%': { opacity: 0.42, transform: 'scale(1.04)' },
-    },
     '& .home-hero': {
       isolation: 'isolate',
-    },
-    '& .home-hero::after': {
-      position: 'absolute',
-      inset: '-12%',
-      zIndex: '1',
-      content: "''",
-      pointerEvents: 'none',
-      background:
-        'radial-gradient(380px circle at var(--hero-pointer-x, 78%) var(--hero-pointer-y, 38%), rgb(157 255 27 / 18%), transparent 68%)',
-      animation: 'heroHalo 7s ease-in-out infinite',
-      transition: 'background-position 160ms ease-out',
     },
     '& .home-hero-content': {
       position: 'relative',
@@ -4716,7 +4701,7 @@ export const websiteSx: SxProps<Theme> = [
       background: 'rgb(153 255 24 / 3%)',
     },
     '@media (prefers-reduced-motion: reduce)': {
-      '& .motion-target.motion-enter, & .home-hero::after': {
+      '& .motion-target.motion-enter': {
         animation: 'none',
       },
       '& .button:hover, & .round-arrow:hover, & .icon-button:hover, & .journey-columns article:hover, & .about-benefits article:hover, & .vehicle-care-list article:hover, & .about-proof-list article:hover, & .pricing-list article:hover, & .manufacturing-gallery figure:hover img':
