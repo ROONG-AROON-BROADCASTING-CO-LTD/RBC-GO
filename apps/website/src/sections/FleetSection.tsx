@@ -33,8 +33,23 @@ export function FleetSection({ locale }: { locale: Locale }) {
             <p>{c.lowerIntro}</p>
           </div>
         </motion.div>
-        <motion.div {...reveal} className="ride-tiles motorcycle-tile-wrap">
+        <motion.div
+          {...reveal}
+          className="ride-tiles motorcycle-tile-wrap"
+          whileHover={{ y: -8, rotateX: 1.2 }}
+          transition={{ type: 'spring', stiffness: 210, damping: 22 }}
+        >
           <Link className="ride-tile motorcycle-tile" href="/rides">
+            <motion.span
+              aria-hidden="true"
+              className="tile-lime-orbit"
+              animate={{ opacity: [0.3, 0.68, 0.3], scale: [0.92, 1.08, 0.92] }}
+              transition={{
+                duration: 4.8,
+                ease: 'easeInOut',
+                repeat: Infinity,
+              }}
+            />
             <Image
               src="/images/vehicles/rbc-go-future-scooter.png"
               alt={c.vehicle}

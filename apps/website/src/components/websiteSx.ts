@@ -4620,6 +4620,74 @@ export const websiteSx: SxProps<Theme> = [
       position: 'relative',
       zIndex: '3',
     },
+    '& .home-hero-title-line': {
+      display: 'block',
+      transformOrigin: 'left center',
+    },
+    '& .hero-scanline': {
+      position: 'absolute',
+      zIndex: '2',
+      top: '22%',
+      width: '32%',
+      height: '1px',
+      pointerEvents: 'none',
+      background:
+        'linear-gradient(90deg, transparent, rgb(192 255 119 / 0.82), transparent)',
+      boxShadow: '0 0 28px rgb(153 255 24 / 55%)',
+    },
+    '& .hero-scroll-cue': {
+      position: 'absolute',
+      bottom: '42px',
+      left: '0',
+      width: '1px',
+      height: '46px',
+      overflow: 'hidden',
+      background: 'rgb(255 255 255 / 22%)',
+    },
+    '& .hero-scroll-cue span': {
+      display: 'block',
+      width: '100%',
+      height: '100%',
+      transformOrigin: 'top center',
+      background: 'var(--lime)',
+      boxShadow: '0 0 14px var(--lime)',
+    },
+    '& .motorcycle-tile-wrap': {
+      perspective: '1200px',
+      transformStyle: 'preserve-3d',
+    },
+    '& .tile-lime-orbit': {
+      position: 'absolute',
+      zIndex: '1',
+      top: '10%',
+      right: '8%',
+      width: '260px',
+      aspectRatio: '1',
+      borderRadius: '50%',
+      pointerEvents: 'none',
+      background:
+        'radial-gradient(circle, rgb(153 255 24 / 24%) 0%, rgb(153 255 24 / 8%) 34%, transparent 70%)',
+      filter: 'blur(8px)',
+    },
+    '& .motorcycle-tile .tile-caption': {
+      zIndex: '2',
+    },
+    '& .fleet-hero-beacon': {
+      position: 'absolute',
+      zIndex: '2',
+      right: '-8%',
+      bottom: '-18%',
+      width: 'min(44vw, 680px)',
+      aspectRatio: '1',
+      pointerEvents: 'none',
+      borderRadius: '50%',
+      background:
+        'radial-gradient(circle, rgb(153 255 24 / 20%) 0%, rgb(153 255 24 / 5%) 38%, transparent 70%)',
+      mixBlendMode: 'screen',
+    },
+    '& .fleet-intro': {
+      zIndex: '3',
+    },
     '& .button, & .round-arrow, & .icon-button': {
       transition:
         'transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease',
@@ -4661,6 +4729,22 @@ export const websiteSx: SxProps<Theme> = [
         {
           transform: 'none',
         },
+    },
+    '@media (max-width: 767px)': {
+      '& .hero-scroll-cue': {
+        bottom: '28px',
+        height: '32px',
+      },
+      '& .hero-scanline': {
+        top: '18%',
+        width: '52%',
+      },
+      '& .tile-lime-orbit': {
+        width: '180px',
+      },
+      '& .fleet-hero-beacon': {
+        width: '88vw',
+      },
     },
   },
 ];

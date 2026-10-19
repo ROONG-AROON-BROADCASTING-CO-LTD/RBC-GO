@@ -16,6 +16,16 @@ const reveal = {
   },
 };
 
+const heroLine = {
+  initial: { opacity: 0, y: 42, filter: 'blur(10px)' },
+  animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
+  transition: {
+    type: 'tween' as const,
+    duration: 0.92,
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+  },
+};
+
 export function HeroSection({ locale }: { locale: Locale }) {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -87,27 +97,54 @@ export function HeroSection({ locale }: { locale: Locale }) {
         }
       />
       <div className="home-hero-overlay" />
+      <motion.div
+        aria-hidden="true"
+        className="hero-scanline"
+        animate={{ left: ['-30%', '110%'], opacity: [0, 0.65, 0] }}
+        transition={{ duration: 7.5, ease: 'easeInOut', repeat: Infinity }}
+      />
       <div className="home-hero-content">
-        <motion.h1 {...reveal}>
-          {copy.title[0]}
-          <br />
-          {copy.title[1]}
+        <motion.h1 initial="initial" animate="animate">
+          <motion.span {...heroLine} className="home-hero-title-line">
+            {copy.title[0]}
+          </motion.span>
+          <motion.span
+            {...heroLine}
+            className="home-hero-title-line"
+            transition={{ ...heroLine.transition, delay: 0.12 }}
+          >
+            {copy.title[1]}
+          </motion.span>
         </motion.h1>
         <motion.p
-          {...reveal}
-          transition={{ ...reveal.transition, delay: 0.12 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ...reveal.transition, delay: 0.36 }}
         >
           {copy.description}
         </motion.p>
         <motion.div
-          {...reveal}
-          transition={{ ...reveal.transition, delay: 0.24 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ...reveal.transition, delay: 0.5 }}
           className="home-hero-actions"
         >
           <WebsiteAction href="/rides">{copy.primary}</WebsiteAction>
           <WebsiteAction dark href="/how-it-works">
             {copy.secondary}
           </WebsiteAction>
+        </motion.div>
+        <motion.div
+          aria-hidden="true"
+          className="hero-scroll-cue"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.95, duration: 0.45 }}
+        >
+          <motion.span
+            animate={{ scaleY: [0.2, 1, 0.2], y: [0, 8, 0] }}
+            transition={{ duration: 1.8, ease: 'easeInOut', repeat: Infinity }}
+          />
         </motion.div>
       </div>
     </section>
