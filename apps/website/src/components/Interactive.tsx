@@ -181,35 +181,37 @@ export function HelpQuestions({ locale }: { locale: Locale }) {
       </p>
       <div className="faq-list">
         {found.map(([group, q, a]) => (
-          <motion.div {...reveal} key={q} className="faq-item">
-            <button
-              className="faq-question"
-              type="button"
-              aria-expanded={openQuestion === q}
-              onClick={() =>
-                setOpenQuestion((current) => (current === q ? null : q))
-              }
-            >
-              {q}
-              <Icon
-                className={openQuestion === q ? 'is-open' : ''}
-                kind="chevron"
-              />
-            </button>
-            <Collapse
-              className={`faq-answer ${openQuestion === q ? 'is-open' : ''}`}
-              in={openQuestion === q}
-              timeout={360}
-              easing={{
-                enter: 'cubic-bezier(0.22, 1, 0.36, 1)',
-                exit: 'cubic-bezier(0.22, 1, 0.36, 1)',
-              }}
-            >
-              <div>
-                <p>{a}</p>
-                <small>{group}</small>
-              </div>
-            </Collapse>
+          <motion.div key={q} {...reveal} className="faq-item">
+            <>
+              <button
+                className="faq-question"
+                type="button"
+                aria-expanded={openQuestion === q}
+                onClick={() =>
+                  setOpenQuestion((current) => (current === q ? null : q))
+                }
+              >
+                {q}
+                <Icon
+                  className={openQuestion === q ? 'is-open' : ''}
+                  kind="chevron"
+                />
+              </button>
+              <Collapse
+                className={`faq-answer ${openQuestion === q ? 'is-open' : ''}`}
+                in={openQuestion === q}
+                timeout={360}
+                easing={{
+                  enter: 'cubic-bezier(0.22, 1, 0.36, 1)',
+                  exit: 'cubic-bezier(0.22, 1, 0.36, 1)',
+                }}
+              >
+                <div>
+                  <p>{a}</p>
+                  <small>{group}</small>
+                </div>
+              </Collapse>
+            </>
           </motion.div>
         ))}
         {!found.length && <p className="empty-state">{t.empty}</p>}

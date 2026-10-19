@@ -101,18 +101,20 @@ export function BrandPages({ page }: { page?: Page }) {
               <ol className="vehicle-components-list">
                 {c.components.map(([title, description], index) => (
                   <motion.li
+                    key={`${title}-${index}`}
                     {...reveal}
                     transition={{
                       ...reveal.transition,
                       delay: (index % 3) * 0.12,
                     }}
-                    key={title}
                   >
-                    <span>{String(index + 1).padStart(2, '0')}</span>
-                    <div>
-                      <h3>{title}</h3>
-                      <p>{description}</p>
-                    </div>
+                    <>
+                      <span>{String(index + 1).padStart(2, '0')}</span>
+                      <div>
+                        <h3>{title}</h3>
+                        <p>{description}</p>
+                      </div>
+                    </>
                   </motion.li>
                 ))}
               </ol>
@@ -129,13 +131,15 @@ export function BrandPages({ page }: { page?: Page }) {
               </div>
               <div className="vehicle-care-list">
                 {c.vehicleCareItems.map(([title, copy], index) => (
-                  <motion.article {...reveal} key={title}>
-                    <Icon
-                      kind={(['bolt', 'chart', 'chat'] as const)[index]}
-                      animateOnHover={false}
-                    />
-                    <h3>{title}</h3>
-                    <p>{copy}</p>
+                  <motion.article key={`${title}-${index}`} {...reveal}>
+                    <>
+                      <Icon
+                        kind={(['bolt', 'chart', 'chat'] as const)[index]}
+                        animateOnHover={false}
+                      />
+                      <h3>{title}</h3>
+                      <p>{copy}</p>
+                    </>
                   </motion.article>
                 ))}
               </div>
@@ -191,14 +195,16 @@ export function BrandPages({ page }: { page?: Page }) {
               <motion.section {...reveal} className="pricing-grid">
                 <div className="pricing-list">
                   {c.priceItems.map(([title, copy], i) => (
-                    <motion.article {...reveal} key={title}>
-                      <Icon
-                        kind={(['route', 'chart', 'receipt'] as const)[i]}
-                      />
-                      <div>
-                        <h3>{title}</h3>
-                        <p>{copy}</p>
-                      </div>
+                    <motion.article key={`${title}-${i}`} {...reveal}>
+                      <>
+                        <Icon
+                          kind={(['route', 'chart', 'receipt'] as const)[i]}
+                        />
+                        <div>
+                          <h3>{title}</h3>
+                          <p>{copy}</p>
+                        </div>
+                      </>
                     </motion.article>
                   ))}
                 </div>
@@ -249,21 +255,25 @@ export function BrandPages({ page }: { page?: Page }) {
             <motion.section {...reveal} id="mission" className="about-benefits">
               {c.aboutBenefits.map(([title, copy], i) => (
                 <motion.article
+                  key={`${title}-${i}`}
                   {...reveal}
-                  key={title}
                   onPointerEnter={() => setActiveBenefit(i)}
                   onPointerLeave={() => setActiveBenefit(null)}
                 >
-                  <Icon
-                    kind={(['leaf', 'people', 'sparkle'] as const)[i]}
-                    animateOnHover={false}
-                    animationState={activeBenefit === i ? 'animate' : 'normal'}
-                    animationTrigger={activeBenefit === i}
-                  />
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{copy}</p>
-                  </div>
+                  <>
+                    <Icon
+                      kind={(['leaf', 'people', 'sparkle'] as const)[i]}
+                      animateOnHover={false}
+                      animationState={
+                        activeBenefit === i ? 'animate' : 'normal'
+                      }
+                      animationTrigger={activeBenefit === i}
+                    />
+                    <div>
+                      <h3>{title}</h3>
+                      <p>{copy}</p>
+                    </div>
+                  </>
                 </motion.article>
               ))}
             </motion.section>
@@ -279,13 +289,15 @@ export function BrandPages({ page }: { page?: Page }) {
               </div>
               <div className="about-proof-list">
                 {c.manufacturingPoints.map(([title, copy], index) => (
-                  <motion.article {...reveal} key={title}>
-                    <Icon
-                      kind={(['motorcycle', 'chart', 'chat'] as const)[index]}
-                      animateOnHover={false}
-                    />
-                    <h3>{title}</h3>
-                    <p>{copy}</p>
+                  <motion.article key={`${title}-${index}`} {...reveal}>
+                    <>
+                      <Icon
+                        kind={(['motorcycle', 'chart', 'chat'] as const)[index]}
+                        animateOnHover={false}
+                      />
+                      <h3>{title}</h3>
+                      <p>{copy}</p>
+                    </>
                   </motion.article>
                 ))}
               </div>
@@ -312,15 +324,17 @@ export function BrandPages({ page }: { page?: Page }) {
                     caption: c.manufacturingGalleryCaptions[1],
                   },
                 ].map((image) => (
-                  <motion.figure {...reveal} key={image.src}>
-                    <Image
-                      src={image.src}
-                      alt={image.caption}
-                      width={1478}
-                      height={1108}
-                      sizes="(max-width: 767px) 100vw, 50vw"
-                    />
-                    <figcaption>{image.caption}</figcaption>
+                  <motion.figure key={image.src} {...reveal}>
+                    <>
+                      <Image
+                        src={image.src}
+                        alt={image.caption}
+                        width={1478}
+                        height={1108}
+                        sizes="(max-width: 767px) 100vw, 50vw"
+                      />
+                      <figcaption>{image.caption}</figcaption>
+                    </>
                   </motion.figure>
                 ))}
               </div>
