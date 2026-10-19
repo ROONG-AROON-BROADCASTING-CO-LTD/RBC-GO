@@ -2903,6 +2903,14 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (max-width: 767px)': {
+      '& .lower-home .section-heading h2, & .lower-home .section-heading p': {
+        width: '100%',
+        maxWidth: 'none',
+      },
+    },
+  },
+  {
+    '@media (max-width: 767px)': {
       '& .section-heading .eyebrow': {
         fontSize: '10px',
         marginBottom: '12px',
