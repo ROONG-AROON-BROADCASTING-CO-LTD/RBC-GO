@@ -2,6 +2,7 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import { type Locale, text } from '../data/landing';
 import { referenceCopy } from '../data/brandPages';
 import { Icon } from '../components/Icon';
@@ -21,6 +22,7 @@ const reveal = {
 export function FleetSection({ locale }: { locale: Locale }) {
   const t = text[locale];
   const c = referenceCopy(locale);
+  const [isFeatureVideoReady, setIsFeatureVideoReady] = useState(false);
   return (
     <div id="explore" className="lower-home">
       <section className="fleet-section">
@@ -51,11 +53,24 @@ export function FleetSection({ locale }: { locale: Locale }) {
               }}
             />
             <Image
+              className="motorcycle-tile-poster"
               src="/images/vehicles/rbc-go-future-scooter.png"
               alt={c.vehicle}
               fill
               sizes="(max-width:767px) 100vw, 90vw"
               loading="eager"
+            />
+            <video
+              aria-label={c.vehicle}
+              autoPlay
+              className={`motorcycle-tile-video${isFeatureVideoReady ? ' is-ready' : ''}`}
+              loop
+              muted
+              onCanPlay={() => setIsFeatureVideoReady(true)}
+              playsInline
+              poster="/images/vehicles/rbc-go-future-scooter.png"
+              preload="metadata"
+              src="/images/vehicles/rbc-go-motorcycle-feature.mp4"
             />
             <div className="tile-caption">
               <div>

@@ -4630,7 +4630,7 @@ export const websiteSx: SxProps<Theme> = [
     },
     '& .tile-lime-orbit': {
       position: 'absolute',
-      zIndex: '1',
+      zIndex: '2',
       top: '10%',
       right: '8%',
       width: '260px',
@@ -4642,7 +4642,24 @@ export const websiteSx: SxProps<Theme> = [
       filter: 'blur(8px)',
     },
     '& .motorcycle-tile .tile-caption': {
-      zIndex: '2',
+      zIndex: '3',
+    },
+    '& .motorcycle-tile-poster': {
+      zIndex: '0',
+    },
+    '& .motorcycle-tile-video': {
+      position: 'absolute',
+      zIndex: '1',
+      inset: '0',
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      objectPosition: 'center',
+      opacity: '0',
+      transition: 'opacity 300ms ease-out',
+    },
+    '& .motorcycle-tile-video.is-ready': {
+      opacity: '1',
     },
     '& .fleet-hero-beacon': {
       position: 'absolute',
