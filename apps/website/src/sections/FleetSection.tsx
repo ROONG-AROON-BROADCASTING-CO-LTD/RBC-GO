@@ -1,17 +1,30 @@
 'use client';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { type Locale, text } from '../data/landing';
 import { referenceCopy } from '../data/brandPages';
 import { Icon } from '../components/Icon';
 import { JourneySection } from './JourneySection';
+
+const reveal = {
+  initial: false as const,
+  whileInView: { opacity: [0.12, 1], y: [48, 0] },
+  viewport: { once: true, amount: 0.12 },
+  transition: {
+    type: 'tween' as const,
+    duration: 1.05,
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+  },
+};
+
 export function FleetSection({ locale }: { locale: Locale }) {
   const t = text[locale];
   const c = referenceCopy(locale);
   return (
     <div id="explore" className="lower-home">
       <section className="fleet-section">
-        <div className="section-heading">
+        <motion.div {...reveal} className="section-heading">
           <div>
             <span className="eyebrow">
               {locale === 'en' ? 'OUR MOTORCYCLE' : 'มอเตอร์ไซค์ของเรา'}
@@ -19,8 +32,8 @@ export function FleetSection({ locale }: { locale: Locale }) {
             <h2>{c.lowerFleet}</h2>
             <p>{c.lowerIntro}</p>
           </div>
-        </div>
-        <div className="ride-tiles motorcycle-tile-wrap">
+        </motion.div>
+        <motion.div {...reveal} className="ride-tiles motorcycle-tile-wrap">
           <Link className="ride-tile motorcycle-tile" href="/rides">
             <Image
               src="/images/vehicles/rbc-go-future-scooter.png"
@@ -39,16 +52,16 @@ export function FleetSection({ locale }: { locale: Locale }) {
               </span>
             </div>
           </Link>
-        </div>
+        </motion.div>
       </section>
       <section className="journey-section">
-        <div className="section-heading">
+        <motion.div {...reveal} className="section-heading">
           <div>
             <span className="eyebrow">{t.nav[1]}</span>
             <h2>{c.lowerHow}</h2>
             <p>{c.howIntro}</p>
           </div>
-        </div>
+        </motion.div>
         <JourneySection locale={locale} />
       </section>
     </div>

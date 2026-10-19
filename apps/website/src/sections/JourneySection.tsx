@@ -1,9 +1,22 @@
 'use client';
+import { motion } from 'motion/react';
 import { useState } from 'react';
 import Image from 'next/image';
 import { RouteIcon, ScanTextIcon, WalletIcon } from '@stackbuild/ui/icons';
 import type { Locale } from '../data/landing';
 import { referenceCopy } from '../data/brandPages';
+
+const reveal = {
+  initial: false as const,
+  whileInView: { opacity: [0.12, 1], y: [48, 0] },
+  viewport: { once: true, amount: 0.12 },
+  transition: {
+    type: 'tween' as const,
+    duration: 1.05,
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+  },
+};
+
 export function JourneySection({
   locale,
   phones = false,
@@ -30,7 +43,10 @@ export function JourneySection({
     <section className={`journey ${phones ? 'with-phones' : ''}`}>
       <div className="journey-columns">
         {c.steps.map((title, i) => (
-          <article
+          <motion.article
+            {...reveal}
+            transition={{ ...reveal.transition, delay: i * 0.12 }}
+            whileHover={{ y: -5 }}
             key={title}
             onPointerEnter={() => setActiveStep(i)}
             onPointerLeave={() => setActiveStep(null)}
@@ -74,7 +90,7 @@ export function JourneySection({
                 />
               </div>
             )}
-          </article>
+          </motion.article>
         ))}
       </div>
     </section>

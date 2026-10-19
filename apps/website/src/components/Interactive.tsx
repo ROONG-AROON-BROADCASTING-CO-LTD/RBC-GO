@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'motion/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Collapse from '@mui/material/Collapse';
@@ -12,6 +13,17 @@ import { ArrowRightIcon } from '@stackbuild/ui/icons';
 type ArrowHandle = {
   startAnimation: () => void;
   stopAnimation: () => void;
+};
+
+const reveal = {
+  initial: false as const,
+  whileInView: { opacity: [0.12, 1], y: [48, 0] },
+  viewport: { once: true, amount: 0.12 },
+  transition: {
+    type: 'tween' as const,
+    duration: 1.05,
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+  },
 };
 
 export function FleetHero({ locale }: { locale: Locale }) {
@@ -29,7 +41,7 @@ export function FleetHero({ locale }: { locale: Locale }) {
           preload
         />
         <div className="motorcycle-shade" />
-        <div className="fleet-intro">
+        <motion.div {...reveal} className="fleet-intro">
           <h1>
             {c.fleet[0]}
             <br />
@@ -48,7 +60,7 @@ export function FleetHero({ locale }: { locale: Locale }) {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       </section>
       {details && (
         <section className="fleet-details" aria-live="polite">
@@ -106,7 +118,9 @@ export function InfoDialog({
           />
         )}
       </button>
-      <dialog
+      <motion.dialog
+        initial={false}
+        animate={{ scale: 1, opacity: 1 }}
         ref={dialog}
         className="info-dialog"
         aria-label={title}
@@ -132,7 +146,7 @@ export function InfoDialog({
           {c.guide}
           <Icon kind="arrow" />
         </Link>
-      </dialog>
+      </motion.dialog>
     </>
   );
 }
@@ -167,7 +181,7 @@ export function HelpQuestions({ locale }: { locale: Locale }) {
       </p>
       <div className="faq-list">
         {found.map(([group, q, a]) => (
-          <div key={q} className="faq-item">
+          <motion.div {...reveal} key={q} className="faq-item">
             <button
               className="faq-question"
               type="button"
@@ -196,7 +210,7 @@ export function HelpQuestions({ locale }: { locale: Locale }) {
                 <small>{group}</small>
               </div>
             </Collapse>
-          </div>
+          </motion.div>
         ))}
         {!found.length && <p className="empty-state">{t.empty}</p>}
       </div>

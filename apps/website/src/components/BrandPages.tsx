@@ -12,7 +12,7 @@ import { useWebsiteLanguage } from './WebsiteLanguageProvider';
 
 import { WebsiteAction } from './WebsiteAction';
 import { WebsiteFooter } from './WebsiteFooter';
-import { PageMotion } from './PageMotion';
+import { motion, MotionConfig } from 'motion/react';
 import { HeroSection } from '../sections/HeroSection';
 import { FleetSection } from '../sections/FleetSection';
 import { JourneySection } from '../sections/JourneySection';
@@ -29,6 +29,18 @@ function Heading({ lines }: { lines: string[] }) {
     </h1>
   );
 }
+
+const reveal = {
+  initial: false as const,
+  whileInView: { opacity: [0.12, 1], y: [48, 0] },
+  viewport: { once: true, amount: 0.12 },
+  transition: {
+    type: 'tween' as const,
+    duration: 1.05,
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+  },
+};
+
 export function BrandPages({ page }: { page?: Page }) {
   const { language: locale, setLanguage } = useWebsiteLanguage();
   const [activeBenefit, setActiveBenefit] = useState<number | null>(null);
@@ -43,8 +55,7 @@ export function BrandPages({ page }: { page?: Page }) {
     inLanguage: locale,
   };
   return (
-    <>
-      <PageMotion page={page ?? 'home'} />
+    <MotionConfig reducedMotion="user">
       <WebsiteNav
         locale={locale}
         page={page}
@@ -62,7 +73,8 @@ export function BrandPages({ page }: { page?: Page }) {
         {page === 'rides' && (
           <>
             <FleetHero locale={locale} />
-            <section
+            <motion.section
+              {...reveal}
               className="vehicle-components"
               aria-labelledby="vehicle-components-heading"
             >
@@ -73,7 +85,7 @@ export function BrandPages({ page }: { page?: Page }) {
                 <h2 id="vehicle-components-heading">{c.componentTitle}</h2>
                 <p>{c.componentIntro}</p>
               </div>
-              <figure className="vehicle-components-image">
+              <motion.figure {...reveal} className="vehicle-components-image">
                 <Image
                   src="/images/vehicles/rbc-go-scooter-components.png"
                   alt={
@@ -85,20 +97,28 @@ export function BrandPages({ page }: { page?: Page }) {
                   height={941}
                   sizes="(max-width: 767px) 100vw, min(90vw, 1600px)"
                 />
-              </figure>
+              </motion.figure>
               <ol className="vehicle-components-list">
                 {c.components.map(([title, description], index) => (
-                  <li key={title}>
+                  <motion.li
+                    {...reveal}
+                    transition={{
+                      ...reveal.transition,
+                      delay: (index % 3) * 0.12,
+                    }}
+                    key={title}
+                  >
                     <span>{String(index + 1).padStart(2, '0')}</span>
                     <div>
                       <h3>{title}</h3>
                       <p>{description}</p>
                     </div>
-                  </li>
+                  </motion.li>
                 ))}
               </ol>
-            </section>
-            <section
+            </motion.section>
+            <motion.section
+              {...reveal}
               className="vehicle-care"
               aria-labelledby="vehicle-care-heading"
             >
@@ -109,17 +129,17 @@ export function BrandPages({ page }: { page?: Page }) {
               </div>
               <div className="vehicle-care-list">
                 {c.vehicleCareItems.map(([title, copy], index) => (
-                  <article key={title}>
+                  <motion.article {...reveal} key={title}>
                     <Icon
                       kind={(['bolt', 'chart', 'chat'] as const)[index]}
                       animateOnHover={false}
                     />
                     <h3>{title}</h3>
                     <p>{copy}</p>
-                  </article>
+                  </motion.article>
                 ))}
               </div>
-            </section>
+            </motion.section>
           </>
         )}
         {!page && <FleetSection locale={locale} />}
@@ -134,18 +154,18 @@ export function BrandPages({ page }: { page?: Page }) {
                 priority
               />
             </div>
-            <section className="page-intro">
+            <motion.section {...reveal} className="page-intro">
               <Heading lines={c.how} />
               <p>{c.howIntro}</p>
-            </section>
+            </motion.section>
             <JourneySection locale={locale} phones />
-            <section className="safety-note" id="safety">
+            <motion.section {...reveal} className="safety-note" id="safety">
               <Icon kind="motorcycle" />
               <div>
                 <h2>{t.safety}</h2>
                 <p>{t.safetyCopy}</p>
               </div>
-            </section>
+            </motion.section>
           </div>
         )}
         {page === 'pricing' && (
@@ -160,18 +180,18 @@ export function BrandPages({ page }: { page?: Page }) {
                   priority
                 />
               </div>
-              <section className="page-intro">
+              <motion.section {...reveal} className="page-intro">
                 <Heading lines={c.pricing} />
                 <p>
                   {c.priceIntro[0]}
                   <br />
                   {c.priceIntro[1]}
                 </p>
-              </section>
-              <section className="pricing-grid">
+              </motion.section>
+              <motion.section {...reveal} className="pricing-grid">
                 <div className="pricing-list">
                   {c.priceItems.map(([title, copy], i) => (
-                    <article key={title}>
+                    <motion.article {...reveal} key={title}>
                       <Icon
                         kind={(['route', 'chart', 'receipt'] as const)[i]}
                       />
@@ -179,7 +199,7 @@ export function BrandPages({ page }: { page?: Page }) {
                         <h3>{title}</h3>
                         <p>{copy}</p>
                       </div>
-                    </article>
+                    </motion.article>
                   ))}
                 </div>
                 <aside className="rate-notice">
@@ -194,13 +214,13 @@ export function BrandPages({ page }: { page?: Page }) {
                     <small>{c.stay}</small>
                   </div>
                 </aside>
-              </section>
+              </motion.section>
             </div>
           </>
         )}
         {page === 'about' && (
           <>
-            <section className="about-hero">
+            <motion.section {...reveal} className="about-hero">
               <Image
                 src="/images/heroes/about-hero.png"
                 alt={
@@ -225,10 +245,11 @@ export function BrandPages({ page }: { page?: Page }) {
                   ))}
                 </div>
               </div>
-            </section>
-            <section id="mission" className="about-benefits">
+            </motion.section>
+            <motion.section {...reveal} id="mission" className="about-benefits">
               {c.aboutBenefits.map(([title, copy], i) => (
-                <article
+                <motion.article
+                  {...reveal}
                   key={title}
                   onPointerEnter={() => setActiveBenefit(i)}
                   onPointerLeave={() => setActiveBenefit(null)}
@@ -243,10 +264,11 @@ export function BrandPages({ page }: { page?: Page }) {
                     <h3>{title}</h3>
                     <p>{copy}</p>
                   </div>
-                </article>
+                </motion.article>
               ))}
-            </section>
-            <section
+            </motion.section>
+            <motion.section
+              {...reveal}
               className="about-proof"
               aria-labelledby="about-proof-heading"
             >
@@ -257,18 +279,19 @@ export function BrandPages({ page }: { page?: Page }) {
               </div>
               <div className="about-proof-list">
                 {c.manufacturingPoints.map(([title, copy], index) => (
-                  <article key={title}>
+                  <motion.article {...reveal} key={title}>
                     <Icon
                       kind={(['motorcycle', 'chart', 'chat'] as const)[index]}
                       animateOnHover={false}
                     />
                     <h3>{title}</h3>
                     <p>{copy}</p>
-                  </article>
+                  </motion.article>
                 ))}
               </div>
-            </section>
-            <section
+            </motion.section>
+            <motion.section
+              {...reveal}
               className="manufacturing-gallery"
               aria-labelledby="manufacturing-gallery-heading"
             >
@@ -289,7 +312,7 @@ export function BrandPages({ page }: { page?: Page }) {
                     caption: c.manufacturingGalleryCaptions[1],
                   },
                 ].map((image) => (
-                  <figure key={image.src}>
+                  <motion.figure {...reveal} key={image.src}>
                     <Image
                       src={image.src}
                       alt={image.caption}
@@ -298,10 +321,10 @@ export function BrandPages({ page }: { page?: Page }) {
                       sizes="(max-width: 767px) 100vw, 50vw"
                     />
                     <figcaption>{image.caption}</figcaption>
-                  </figure>
+                  </motion.figure>
                 ))}
               </div>
-            </section>
+            </motion.section>
           </>
         )}
         {page === 'help' && (
@@ -315,12 +338,12 @@ export function BrandPages({ page }: { page?: Page }) {
                 priority
               />
             </div>
-            <section className="page-intro">
+            <motion.section {...reveal} className="page-intro">
               <Heading lines={c.help} />
               <p>{c.helpIntro}</p>
-            </section>
+            </motion.section>
             <HelpQuestions locale={locale} />
-            <section className="help-callout">
+            <motion.section {...reveal} className="help-callout">
               <Icon kind="chat" />
               <div>
                 <h2>{c.helpMore}</h2>
@@ -333,10 +356,10 @@ export function BrandPages({ page }: { page?: Page }) {
               >
                 {c.contact}
               </InfoDialog>
-            </section>
+            </motion.section>
           </div>
         )}
-        <section className="closing-cta">
+        <motion.section {...reveal} className="closing-cta">
           <Image
             src="/images/city/bangkok-line.png"
             alt=""
@@ -353,9 +376,9 @@ export function BrandPages({ page }: { page?: Page }) {
           <WebsiteAction href="/how-it-works" dark>
             {c.getStarted}
           </WebsiteAction>
-        </section>
+        </motion.section>
       </main>
       <WebsiteFooter locale={locale} page={page} />
-    </>
+    </MotionConfig>
   );
 }

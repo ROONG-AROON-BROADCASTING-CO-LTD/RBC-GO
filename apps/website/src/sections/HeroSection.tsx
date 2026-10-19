@@ -1,8 +1,21 @@
 'use client';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import type { Locale } from '../data/landing';
 import { WebsiteAction } from '../components/WebsiteAction';
+
+const reveal = {
+  initial: false as const,
+  whileInView: { opacity: [0.12, 1], y: [48, 0] },
+  viewport: { once: true, amount: 0.12 },
+  transition: {
+    type: 'tween' as const,
+    duration: 1.05,
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+  },
+};
+
 export function HeroSection({ locale }: { locale: Locale }) {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -36,7 +49,20 @@ export function HeroSection({ locale }: { locale: Locale }) {
       };
 
   return (
-    <section className="home-hero">
+    <section
+      className="home-hero"
+      onPointerMove={(event) => {
+        const bounds = event.currentTarget.getBoundingClientRect();
+        event.currentTarget.style.setProperty(
+          '--hero-pointer-x',
+          `${event.clientX - bounds.left}px`,
+        );
+        event.currentTarget.style.setProperty(
+          '--hero-pointer-y',
+          `${event.clientY - bounds.top}px`,
+        );
+      }}
+    >
       <Image
         className="home-hero-poster"
         src="/images/heroes/home-hero-scooter-poster.jpg"
@@ -62,18 +88,27 @@ export function HeroSection({ locale }: { locale: Locale }) {
       />
       <div className="home-hero-overlay" />
       <div className="home-hero-content">
-        <h1>
+        <motion.h1 {...reveal}>
           {copy.title[0]}
           <br />
           {copy.title[1]}
-        </h1>
-        <p>{copy.description}</p>
-        <div className="home-hero-actions">
+        </motion.h1>
+        <motion.p
+          {...reveal}
+          transition={{ ...reveal.transition, delay: 0.12 }}
+        >
+          {copy.description}
+        </motion.p>
+        <motion.div
+          {...reveal}
+          transition={{ ...reveal.transition, delay: 0.24 }}
+          className="home-hero-actions"
+        >
           <WebsiteAction href="/rides">{copy.primary}</WebsiteAction>
           <WebsiteAction dark href="/how-it-works">
             {copy.secondary}
           </WebsiteAction>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

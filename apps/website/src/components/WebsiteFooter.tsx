@@ -1,4 +1,5 @@
 'use client';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { type Locale, type Page, text, pages } from '../data/landing';
@@ -7,6 +8,18 @@ import { InfoDialog } from './Interactive';
 function pageHref(page?: Page) {
   return page ? `/${page}` : '/';
 }
+
+const reveal = {
+  initial: false as const,
+  whileInView: { opacity: [0.12, 1], y: [48, 0] },
+  viewport: { once: true, amount: 0.12 },
+  transition: {
+    type: 'tween' as const,
+    duration: 1.05,
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+  },
+};
+
 export function WebsiteFooter({
   locale,
   page,
@@ -19,7 +32,7 @@ export function WebsiteFooter({
   return (
     <footer className="site-footer">
       <div className="footer-rail" />
-      <div className="footer-main">
+      <motion.div {...reveal} className="footer-main">
         <div className="footer-brand-column">
           <Link className="brand" href="/">
             <Image
@@ -69,11 +82,11 @@ export function WebsiteFooter({
             ))}
           </nav>
         </div>
-      </div>
-      <div className="footer-bottom">
+      </motion.div>
+      <motion.div {...reveal} className="footer-bottom">
         <span>© {new Date().getFullYear()} RBC GO</span>
         <span>{t.coming}</span>
-      </div>
+      </motion.div>
     </footer>
   );
 }
