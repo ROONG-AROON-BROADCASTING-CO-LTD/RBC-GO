@@ -4692,6 +4692,10 @@ export const websiteSx: SxProps<Theme> = [
         boxShadow:
           'inset 0 0 0 1px rgb(153 255 24 / 72%), 0 18px 40px rgb(0 0 0 / 22%)',
       },
+    '& .vehicle-components-list li:hover, & .vehicle-care-list article:hover, & .about-proof-list article:hover':
+      {
+        transform: 'none !important',
+      },
     '& .manufacturing-gallery figure img': {
       transition:
         'transform 600ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease',
