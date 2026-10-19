@@ -78,6 +78,29 @@ const reveal = {
   },
 };
 
+function galleryReveal(index: number) {
+  return {
+    initial: { opacity: 0, y: 28, scale: 0.985 },
+    whileInView: { opacity: 1, y: 0, scale: 1 },
+    viewport: { once: true, amount: 0.2 },
+    transition: {
+      type: 'tween' as const,
+      duration: 0.72,
+      delay: Math.min(index * 0.08, 0.32),
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+    },
+  };
+}
+
+const eventImages = [
+  '/images/about/kronos-event-bitec.jpg',
+  '/images/about/kronos-event-cross-border.jpg',
+  '/images/about/kronos-event-udon-01.jpg',
+  '/images/about/kronos-event-ladprao.jpg',
+  '/images/about/kronos-event-paragon.jpg',
+  '/images/about/kronos-event-power-buy.jpg',
+];
+
 export function BrandPages({ page }: { page?: Page }) {
   const { language: locale, setLanguage } = useWebsiteLanguage();
   const [activeBenefit, setActiveBenefit] = useState<number | null>(null);
@@ -309,11 +332,12 @@ export function BrandPages({ page }: { page?: Page }) {
                 </motion.div>
               </div>
             </section>
-            <motion.section {...reveal} id="mission" className="about-benefits">
+            <section id="mission" className="about-benefits">
               {c.aboutBenefits.map(([title, copy], i) => (
                 <motion.article
                   key={`${title}-${i}`}
                   {...reveal}
+                  transition={{ ...reveal.transition, delay: i * 0.12 }}
                   onPointerEnter={() => setActiveBenefit(i)}
                   onPointerLeave={() => setActiveBenefit(null)}
                 >
@@ -333,20 +357,23 @@ export function BrandPages({ page }: { page?: Page }) {
                   </>
                 </motion.article>
               ))}
-            </motion.section>
-            <motion.section
-              {...reveal}
+            </section>
+            <section
               className="about-proof"
               aria-labelledby="about-proof-heading"
             >
-              <div className="about-proof-heading">
+              <motion.div {...reveal} className="about-proof-heading">
                 <span className="eyebrow">{c.manufacturingLabel}</span>
                 <h2 id="about-proof-heading">{c.manufacturingTitle}</h2>
                 <p>{c.manufacturingIntro}</p>
-              </div>
+              </motion.div>
               <div className="about-proof-list">
                 {c.manufacturingPoints.map(([title, copy], index) => (
-                  <motion.article key={`${title}-${index}`} {...reveal}>
+                  <motion.article
+                    key={`${title}-${index}`}
+                    {...reveal}
+                    transition={{ ...reveal.transition, delay: index * 0.12 }}
+                  >
                     <>
                       <Icon
                         kind={(['motorcycle', 'chart', 'chat'] as const)[index]}
@@ -358,18 +385,57 @@ export function BrandPages({ page }: { page?: Page }) {
                   </motion.article>
                 ))}
               </div>
-            </motion.section>
-            <motion.section
-              {...reveal}
+            </section>
+            <section
+              className="factory-capabilities"
+              aria-labelledby="factory-capabilities-heading"
+            >
+              <motion.div {...reveal} className="factory-capabilities-heading">
+                <span className="eyebrow">{c.factoryDetailLabel}</span>
+                <h2 id="factory-capabilities-heading">
+                  {c.factoryDetailTitle}
+                </h2>
+                <p>{c.factoryDetailIntro}</p>
+              </motion.div>
+              <motion.div
+                {...reveal}
+                transition={{ ...reveal.transition, delay: 0.1 }}
+                className="factory-facts"
+                aria-label={c.factoryDetailLabel}
+              >
+                {c.factoryFacts.map(([value, label], index) => (
+                  <motion.div key={value} {...galleryReveal(index)}>
+                    <strong>{value}</strong>
+                    <span>{label}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
+              <div className="factory-capability-list">
+                {c.factoryCapabilities.map(([title, copy], index) => (
+                  <motion.article
+                    key={title}
+                    {...galleryReveal(index)}
+                    whileHover={{ y: -4 }}
+                  >
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <div>
+                      <h3>{title}</h3>
+                      <p>{copy}</p>
+                    </div>
+                  </motion.article>
+                ))}
+              </div>
+            </section>
+            <section
               className="manufacturing-gallery"
               aria-labelledby="manufacturing-gallery-heading"
             >
-              <div className="manufacturing-gallery-heading">
+              <motion.div {...reveal} className="manufacturing-gallery-heading">
                 <h2 id="manufacturing-gallery-heading">
                   {c.manufacturingGalleryTitle}
                 </h2>
                 <p>{c.manufacturingGalleryCopy}</p>
-              </div>
+              </motion.div>
               <div className="manufacturing-gallery-grid">
                 {[
                   {
@@ -380,8 +446,24 @@ export function BrandPages({ page }: { page?: Page }) {
                     src: '/images/about/kronos-assembly-line.jpg',
                     caption: c.manufacturingGalleryCaptions[1],
                   },
-                ].map((image) => (
-                  <motion.figure key={image.src} {...reveal}>
+                  {
+                    src: '/images/about/kronos-metal-fabrication.jpg',
+                    caption: c.manufacturingGalleryCaptions[2],
+                  },
+                  {
+                    src: '/images/about/kronos-factory-exterior.jpg',
+                    caption: c.manufacturingGalleryCaptions[3],
+                  },
+                  {
+                    src: '/images/about/kronos-factory-machining.jpg',
+                    caption: c.manufacturingGalleryCaptions[4],
+                  },
+                ].map((image, index) => (
+                  <motion.figure
+                    key={image.src}
+                    {...galleryReveal(index)}
+                    whileHover={{ y: -5 }}
+                  >
                     <>
                       <Image
                         src={image.src}
@@ -395,7 +477,65 @@ export function BrandPages({ page }: { page?: Page }) {
                   </motion.figure>
                 ))}
               </div>
-            </motion.section>
+            </section>
+            <section
+              className="brand-events"
+              aria-labelledby="brand-events-heading"
+            >
+              <motion.div {...reveal} className="brand-events-heading">
+                <span className="eyebrow">{c.eventsLabel}</span>
+                <h2 id="brand-events-heading">{c.eventsTitle}</h2>
+                <p>{c.eventsIntro}</p>
+              </motion.div>
+              <ol className="brand-events-list">
+                {c.events.map(([date, title, detail], index) => (
+                  <motion.li
+                    key={`${date}-${title}`}
+                    {...galleryReveal(index)}
+                    whileHover={{ y: -4 }}
+                  >
+                    <Image
+                      src={eventImages[index]}
+                      alt={`${title} — KRONOS E-BIKES`}
+                      width={1080}
+                      height={811}
+                      sizes="(max-width: 600px) 100vw, (max-width: 900px) 160px, 140px"
+                    />
+                    <time>{date}</time>
+                    <div>
+                      <h3>{title}</h3>
+                      <p>{detail}</p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ol>
+              <motion.div {...reveal} className="events-gallery-heading">
+                <h3>{c.eventGalleryTitle}</h3>
+                <p>{c.eventGalleryCopy}</p>
+              </motion.div>
+              <div className="events-gallery-grid">
+                {[
+                  '/images/about/kronos-event-udon-01.jpg',
+                  '/images/about/kronos-event-udon-02.jpg',
+                  '/images/about/kronos-event-udon-03.jpg',
+                ].map((src, index) => (
+                  <motion.figure
+                    key={src}
+                    {...galleryReveal(index)}
+                    whileHover={{ y: -5 }}
+                  >
+                    <Image
+                      src={src}
+                      alt={c.eventGalleryCaptions[index]}
+                      width={1440}
+                      height={1077}
+                      sizes="(max-width: 767px) 100vw, 33vw"
+                    />
+                    <figcaption>{c.eventGalleryCaptions[index]}</figcaption>
+                  </motion.figure>
+                ))}
+              </div>
+            </section>
           </>
         )}
         {page === 'help' && (

@@ -19,6 +19,7 @@ export const websiteBaseline = {
     background: 'var(--bg)',
     color: '#f7f8f4',
     fontFamily: 'var(--font-inter), Arial, sans-serif',
+    fontWeight: '600',
     WebkitFontSmoothing: 'antialiased',
     overscrollBehaviorY: 'none',
   },
@@ -40,7 +41,7 @@ export const websiteBaseline = {
     margin: '0',
   },
   'h1,\nh2,\nh3': {
-    fontWeight: '700',
+    fontWeight: '600',
     letterSpacing: '-0.04em',
   },
   p: {

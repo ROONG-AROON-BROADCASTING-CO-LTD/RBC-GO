@@ -146,7 +146,7 @@ export const websiteSx: SxProps<Theme> = [
       alignItems: 'center',
       gap: '10px',
       fontSize: '20px',
-      fontWeight: '700',
+      fontWeight: '600',
       lineHeight: '0.92',
       letterSpacing: '0.05em',
       whiteSpace: 'nowrap',
@@ -261,7 +261,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .locale-switch .active': {
       color: 'white',
-      fontWeight: '700',
+      fontWeight: '600',
     },
   },
   {
@@ -352,7 +352,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .page-intro h1': {
       fontSize: 'clamp(72px, 8.35vw, 120px)',
-      fontWeight: '400',
+      fontWeight: '600',
       lineHeight: '1.04',
       letterSpacing: '-0.048em',
     },
@@ -439,7 +439,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .home-hero h1': {
       fontSize: 'clamp(58px, 5vw, 76px)',
-      fontWeight: '400',
+      fontWeight: '600',
       lineHeight: '1.1',
       letterSpacing: '-0.05em',
     },
@@ -833,7 +833,7 @@ export const websiteSx: SxProps<Theme> = [
       color: '#0c1105',
       fontFamily: 'var(--font-inter), sans-serif',
       fontSize: '12px',
-      fontWeight: '700',
+      fontWeight: '600',
       letterSpacing: '0.08em',
     },
   },
@@ -1288,7 +1288,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .rate-notice h2': {
       fontSize: '36px',
-      fontWeight: '400',
+      fontWeight: '600',
       lineHeight: '1.05',
     },
   },
@@ -1645,7 +1645,7 @@ export const websiteSx: SxProps<Theme> = [
     '& .closing-cta h2': {
       position: 'relative',
       fontSize: '45px',
-      fontWeight: '600',
+      fontWeight: '700',
       color: '#090f02',
       lineHeight: '1.03',
       zIndex: '1',
@@ -4440,6 +4440,154 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
+    '& .factory-capabilities, & .brand-events': {
+      padding: 'clamp(72px, 9vw, 132px) 0',
+      borderTop: '1px solid #2a3027',
+    },
+    '& .factory-capabilities-heading, & .brand-events-heading': {
+      maxWidth: '720px',
+    },
+    '& .factory-capabilities h2, & .brand-events h2': {
+      marginTop: '13px',
+      fontSize: 'clamp(32px, 3vw, 48px)',
+      lineHeight: '1.16',
+      letterSpacing: '-0.035em',
+    },
+    '& .factory-capabilities-heading > p, & .brand-events-heading > p': {
+      marginTop: '18px',
+      maxWidth: '650px',
+      color: '#bec4b7',
+      fontSize: '16px',
+      lineHeight: '1.7',
+    },
+    '& .factory-facts': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+      marginTop: 'clamp(38px, 5vw, 70px)',
+      borderTop: '1px solid #2a3027',
+      borderBottom: '1px solid #2a3027',
+    },
+    '& .factory-facts > div': {
+      display: 'grid',
+      alignContent: 'start',
+      gap: '9px',
+      minHeight: '148px',
+      padding: '24px',
+    },
+    '& .factory-facts > div + div': { borderLeft: '1px solid #2a3027' },
+    '& .factory-facts strong': {
+      color: 'var(--lime)',
+      fontSize: 'clamp(22px, 2vw, 31px)',
+      fontWeight: '600',
+      lineHeight: '1.1',
+    },
+    '& .factory-facts span': {
+      color: '#aeb5a6',
+      fontSize: '14px',
+      lineHeight: '1.55',
+    },
+    '& .factory-capability-list': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+      marginTop: '16px',
+      borderTop: '1px solid #2a3027',
+      borderLeft: '1px solid #2a3027',
+    },
+    '& .factory-capability-list article': {
+      display: 'grid',
+      gridTemplateColumns: '50px minmax(0, 1fr)',
+      gap: '18px',
+      minHeight: '178px',
+      padding: '28px 24px',
+      borderRight: '1px solid #2a3027',
+      borderBottom: '1px solid #2a3027',
+      background: '#090c0b',
+    },
+    '& .factory-capability-list > article:nth-child(2n)': {
+      background: '#0c100e',
+    },
+    '& .factory-capability-list article > span': {
+      color: 'var(--lime)',
+      fontSize: '13px',
+      fontWeight: '600',
+      letterSpacing: '0.08em',
+    },
+    '& .factory-capability-list h3, & .brand-events-list h3': {
+      fontSize: '20px',
+      fontWeight: '600',
+      lineHeight: '1.28',
+    },
+    '& .factory-capability-list p, & .brand-events-list p': {
+      marginTop: '9px',
+      color: '#aeb5a6',
+      fontSize: '15px',
+      lineHeight: '1.62',
+    },
+    '& .brand-events-list': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+      gap: '0 42px',
+      margin: 'clamp(42px, 6vw, 78px) 0 0',
+      padding: 0,
+      listStyle: 'none',
+    },
+    '& .brand-events-list li': {
+      display: 'grid',
+      gridTemplateColumns: '112px 136px minmax(0, 1fr)',
+      gap: '18px',
+      padding: '24px 0',
+      borderTop: '1px solid #2a3027',
+    },
+    '& .brand-events-list img': {
+      display: 'block',
+      width: '100%',
+      height: '100%',
+      minHeight: '96px',
+      borderRadius: '8px',
+      objectFit: 'cover',
+      transition:
+        'transform 360ms cubic-bezier(0.16, 1, 0.3, 1), filter 260ms ease',
+    },
+    '& .brand-events-list li:hover img': {
+      transform: 'scale(1.035)',
+      filter: 'saturate(1.08) contrast(1.04)',
+    },
+    '& .brand-events-list time': {
+      color: 'var(--lime)',
+      fontSize: '13px',
+      fontWeight: '600',
+      lineHeight: '1.45',
+    },
+    '@media (max-width: 900px)': {
+      '& .factory-facts, & .factory-capability-list, & .brand-events-list': {
+        gridTemplateColumns: '1fr',
+      },
+      '& .factory-facts > div + div': {
+        borderTop: '1px solid #2a3027',
+        borderLeft: 0,
+      },
+      '& .brand-events-list': { gap: 0 },
+    },
+    '@media (max-width: 600px)': {
+      '& .factory-capabilities, & .brand-events': { padding: '62px 0' },
+      '& .factory-facts > div': { minHeight: '0', padding: '22px 0' },
+      '& .factory-capability-list article': {
+        gridTemplateColumns: '38px minmax(0, 1fr)',
+        minHeight: '0',
+        padding: '24px 18px',
+      },
+      '& .brand-events-list li': {
+        gridTemplateColumns: '1fr 1fr',
+        gap: '8px',
+      },
+      '& .brand-events-list img': {
+        gridColumn: '1 / -1',
+        minHeight: 'auto',
+        aspectRatio: '16 / 9',
+      },
+    },
+  },
+  {
     '& .manufacturing-gallery': {
       padding: '0 0 clamp(64px, 9vw, 128px)',
     },
@@ -4466,7 +4614,7 @@ export const websiteSx: SxProps<Theme> = [
     },
     '& .manufacturing-gallery-grid': {
       display: 'grid',
-      gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+      gridTemplateColumns: 'repeat(6, minmax(0, 1fr))',
       gap: '16px',
     },
     '& .manufacturing-gallery figure': {
@@ -4475,6 +4623,13 @@ export const websiteSx: SxProps<Theme> = [
       border: '1px solid #2a3027',
       borderRadius: '14px',
       background: '#090c0b',
+    },
+    '& .manufacturing-gallery figure:nth-child(1), & .manufacturing-gallery figure:nth-child(2)':
+      {
+        gridColumn: 'span 3',
+      },
+    '& .manufacturing-gallery figure:nth-child(n + 3)': {
+      gridColumn: 'span 2',
     },
     '& .manufacturing-gallery img': {
       display: 'block',
@@ -4489,6 +4644,51 @@ export const websiteSx: SxProps<Theme> = [
       fontSize: '14px',
       lineHeight: '1.45',
     },
+    '& .events-gallery-heading': {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(0, 0.8fr) minmax(0, 1.2fr)',
+      gap: 'clamp(26px, 5vw, 88px)',
+      marginTop: 'clamp(54px, 7vw, 94px)',
+      paddingTop: '34px',
+      borderTop: '1px solid #2a3027',
+    },
+    '& .events-gallery-heading h3': {
+      fontSize: 'clamp(24px, 2.2vw, 36px)',
+      fontWeight: '600',
+      lineHeight: '1.16',
+      letterSpacing: '-0.03em',
+    },
+    '& .events-gallery-heading p': {
+      maxWidth: '560px',
+      color: '#bec4b7',
+      fontSize: '16px',
+      lineHeight: '1.65',
+    },
+    '& .events-gallery-grid': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+      gap: '16px',
+      marginTop: '28px',
+    },
+    '& .events-gallery-grid figure': {
+      margin: 0,
+      overflow: 'hidden',
+      border: '1px solid #2a3027',
+      borderRadius: '14px',
+      background: '#090c0b',
+    },
+    '& .events-gallery-grid img': {
+      display: 'block',
+      width: '100%',
+      height: 'auto',
+      filter: 'saturate(0.9) contrast(1.03)',
+    },
+    '& .events-gallery-grid figcaption': {
+      padding: '13px 16px',
+      color: '#bec4b7',
+      fontSize: '14px',
+      lineHeight: '1.45',
+    },
     '@media (max-width: 767px)': {
       '& .manufacturing-gallery': {
         paddingBottom: '62px',
@@ -4496,9 +4696,14 @@ export const websiteSx: SxProps<Theme> = [
       '& .manufacturing-gallery-heading, & .manufacturing-gallery-grid': {
         gridTemplateColumns: '1fr',
       },
+      '& .manufacturing-gallery figure:nth-child(n)': { gridColumn: 'auto' },
       '& .manufacturing-gallery-heading': {
         gap: '12px',
       },
+      '& .events-gallery-heading, & .events-gallery-grid': {
+        gridTemplateColumns: '1fr',
+      },
+      '& .events-gallery-heading': { gap: '12px' },
     },
   },
   {
@@ -4543,7 +4748,7 @@ export const websiteSx: SxProps<Theme> = [
     },
     '& .footer-links h3': {
       fontSize: '15px',
-      fontWeight: '700',
+      fontWeight: '600',
       lineHeight: '1.35',
     },
     '& .footer-links a, & .footer-links button': {
@@ -4716,14 +4921,15 @@ export const websiteSx: SxProps<Theme> = [
       {
         transform: 'none !important',
       },
-    '& .manufacturing-gallery figure img': {
+    '& .manufacturing-gallery figure img, & .events-gallery-grid figure img': {
       transition:
         'transform 600ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease',
     },
-    '& .manufacturing-gallery figure:hover img': {
-      transform: 'scale(1.035)',
-      filter: 'saturate(1) contrast(1.05)',
-    },
+    '& .manufacturing-gallery figure:hover img, & .events-gallery-grid figure:hover img':
+      {
+        transform: 'scale(1.035)',
+        filter: 'saturate(1) contrast(1.05)',
+      },
     '& .faq-list .faq-item:hover': {
       borderColor: 'rgb(153 255 24 / 42%)',
       background: 'rgb(153 255 24 / 3%)',
@@ -4732,7 +4938,7 @@ export const websiteSx: SxProps<Theme> = [
       '& .motion-target.motion-enter': {
         animation: 'none',
       },
-      '& .button:hover, & .round-arrow:hover, & .icon-button:hover, & .journey-columns article:hover, & .about-benefits article:hover, & .vehicle-care-list article:hover, & .about-proof-list article:hover, & .pricing-list article:hover, & .manufacturing-gallery figure:hover img':
+      '& .button:hover, & .round-arrow:hover, & .icon-button:hover, & .journey-columns article:hover, & .about-benefits article:hover, & .vehicle-care-list article:hover, & .about-proof-list article:hover, & .pricing-list article:hover, & .manufacturing-gallery figure:hover img, & .events-gallery-grid figure:hover img, & .brand-events-list li:hover img':
         {
           transform: 'none',
         },

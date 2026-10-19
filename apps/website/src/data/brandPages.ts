@@ -119,6 +119,72 @@ const copy = {
     manufacturingGalleryCaptions: [
       'Fabrication floor — KRONOS E-BIKES factory',
       'Assembly work — KRONOS E-BIKES factory',
+      'Metal fabrication — KRONOS E-BIKES factory',
+      'KRONOS production facility — Thailand',
+      'Machining area — KRONOS E-BIKES factory',
+    ],
+    factoryDetailLabel: 'PRODUCTION CAPABILITY',
+    factoryDetailTitle: 'From metalwork to electric mobility.',
+    factoryDetailIntro:
+      'KRONOS describes a Thailand-based, one-stop metal fabrication operation that supports electric-bike production and OEM work.',
+    factoryCapabilities: [
+      [
+        'Cut & form',
+        'Laser cutting, shearing, bending, stamping and turret punching for production parts.',
+      ],
+      [
+        'Fabricate & assemble',
+        'Welding and assembly work for frames, components and made-to-order metal structures.',
+      ],
+      [
+        'Finish with precision',
+        'Laser marking, CNC pipe bending, sheet rolling and plasma or gas cutting.',
+      ],
+      [
+        'Engineer-led control',
+        'Material use, nesting and production steps are designed and supervised by engineering teams.',
+      ],
+    ],
+    factoryFacts: [
+      ['20+ years', 'Industrial parts experience reported by KRONOS'],
+      ['ISO 9001:2015', 'Quality-management system reported by KRONOS'],
+      ['Thailand', 'Manufacturing base reported by KRONOS'],
+    ],
+    eventsLabel: 'PUBLIC SHOWCASES',
+    eventsTitle: 'KRONOS in the city.',
+    eventsIntro:
+      'Selected past public appearances listed on the KRONOS events page. These are historical showcases, not upcoming RBC GO service dates.',
+    eventGalleryTitle: 'A closer look at a KRONOS showcase.',
+    eventGalleryCopy:
+      'Images from KRONOS & G2U’s Central Udon Thani electric-vehicle showcase, published on the KRONOS events page.',
+    eventGalleryCaptions: [
+      'Central Udon Thani — KRONOS & G2U showcase',
+      'Event visitors and vehicle display',
+      'KRONOS & G2U electric mobility display',
+    ],
+    events: [
+      [
+        '1–9 Oct 2022',
+        'BITEC — BnB Home Expo',
+        'Hall 101, BITEC Bangna — KRONOS | G2U',
+      ],
+      [
+        '23–25 Sep 2022',
+        'Thailand–Cambodia Cross Border Trade Expo',
+        'ASEAN Market, Chong Chom Border, Surin Province',
+      ],
+      [
+        '23 Sep 2022',
+        'Central Udon Thani',
+        'KRONOS & G2U electric vehicle showcase',
+      ],
+      ['14 Sep 2022', 'Central Ladprao', 'iTechworld Power Buy, Level 1'],
+      [
+        '15–28 Sep 2022',
+        'Siam Paragon / Power Mall',
+        'Level 4 exhibition — KRONOS | G2U',
+      ],
+      ['9–28 Aug 2022', 'Power Buy Expo', 'IMPACT Muang Thong Thani, Hall 8'],
     ],
     help: ['Good questions.', 'Clear answers.'],
     helpIntro:
@@ -259,6 +325,68 @@ const copy = {
     manufacturingGalleryCaptions: [
       'พื้นที่งานผลิต — โรงงาน KRONOS E-BIKES',
       'งานประกอบ — โรงงาน KRONOS E-BIKES',
+      'งานโลหะและการผลิต — โรงงาน KRONOS E-BIKES',
+      'อาคารฐานการผลิต KRONOS ในประเทศไทย',
+      'พื้นที่เครื่องจักร — โรงงาน KRONOS E-BIKES',
+    ],
+    factoryDetailLabel: 'ศักยภาพฐานการผลิต',
+    factoryDetailTitle: 'จากงานโลหะ สู่การขับเคลื่อนด้วยไฟฟ้า',
+    factoryDetailIntro:
+      'KRONOS ระบุว่าฐานการผลิตในประเทศไทยรองรับงานโลหะ OEM แบบครบวงจร เพื่อสนับสนุนการผลิตรถไฟฟ้าและงานประกอบตามแบบ',
+    factoryCapabilities: [
+      [
+        'ตัดและขึ้นรูป',
+        'ตัดเลเซอร์ ตัดเหล็ก พับเหล็ก ปั๊มโลหะ และงานพั้นชิ่งสำหรับชิ้นส่วนการผลิต',
+      ],
+      [
+        'ผลิตและประกอบ',
+        'งานเชื่อมและประกอบสำหรับโครงรถ ชิ้นส่วน และงานโลหะตามแบบ',
+      ],
+      [
+        'ความเที่ยงตรงของชิ้นงาน',
+        'Laser Marking, CNC ดัดท่อ ม้วนเหล็ก และตัดพลาสมาหรือแก๊ส',
+      ],
+      [
+        'การควบคุมโดยวิศวกร',
+        'การใช้วัสดุ การจัดเรียงชิ้นงาน และลำดับการผลิตดูแลโดยทีมวิศวกรรม',
+      ],
+    ],
+    factoryFacts: [
+      ['มากกว่า 20 ปี', 'ประสบการณ์ด้านอุตสาหกรรมชิ้นส่วนตามที่ KRONOS ระบุ'],
+      ['ISO 9001:2015', 'ระบบบริหารคุณภาพตามที่ KRONOS ระบุ'],
+      ['ประเทศไทย', 'ฐานการผลิตตามที่ KRONOS ระบุ'],
+    ],
+    eventsLabel: 'การออกสู่สาธารณะ',
+    eventsTitle: 'KRONOS ในเมือง',
+    eventsIntro:
+      'ตัวอย่างกิจกรรมที่ผ่านมา ซึ่งเผยแพร่บนหน้า Events ของ KRONOS เพื่อแสดงการพบปะผู้ใช้ในพื้นที่จริง ไม่ใช่กำหนดการเปิดบริการของ RBC GO',
+    eventGalleryTitle: 'บรรยากาศจากงาน KRONOS',
+    eventGalleryCopy:
+      'ภาพจากกิจกรรม KRONOS & G2U ที่ Central Udon Thani ซึ่งเผยแพร่บนหน้า Events ของ KRONOS',
+    eventGalleryCaptions: [
+      'Central Udon Thani — กิจกรรม KRONOS & G2U',
+      'ผู้ร่วมงานและพื้นที่จัดแสดงรถ',
+      'การจัดแสดงรถไฟฟ้า KRONOS & G2U',
+    ],
+    events: [
+      [
+        '1–9 ต.ค. 2022',
+        'BITEC — BnB Home Expo',
+        'Hall 101, ไบเทค บางนา — KRONOS | G2U',
+      ],
+      [
+        '23–25 ก.ย. 2022',
+        'Thailand–Cambodia Cross Border Trade Expo',
+        'ตลาดอาเซียน ด่านช่องจอม จังหวัดสุรินทร์',
+      ],
+      ['23 ก.ย. 2022', 'Central Udon Thani', 'กิจกรรมรถไฟฟ้า KRONOS & G2U'],
+      ['14 ก.ย. 2022', 'Central Ladprao', 'งาน iTechworld Power Buy ชั้น 1'],
+      [
+        '15–28 ก.ย. 2022',
+        'Siam Paragon / Power Mall',
+        'งานออกบูธชั้น 4 — KRONOS | G2U',
+      ],
+      ['9–28 ส.ค. 2022', 'Power Buy Expo', 'IMPACT เมืองทองธานี Hall 8'],
     ],
     help: ['ทุกคำถาม', 'มีคำตอบที่ใช่'],
     helpIntro:
