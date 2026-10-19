@@ -4670,16 +4670,20 @@ export const websiteSx: SxProps<Theme> = [
     '& .button:active, & .round-arrow:active, & .icon-button:active': {
       transform: 'translateY(0) scale(0.96)',
     },
-    '& .journey-columns article, & .about-benefits article, & .vehicle-care-list article, & .about-proof-list article, & .pricing-list article, & .faq-list .faq-item':
+    '& .journey-columns article, & .about-benefits article, & .vehicle-components-list li, & .vehicle-care-list article, & .about-proof-list article, & .pricing-list article, & .faq-list .faq-item':
       {
         transition:
           'transform 240ms cubic-bezier(0.16, 1, 0.3, 1), border-color 240ms ease, background-color 240ms ease, box-shadow 240ms ease',
       },
-    '& .journey-columns article:hover, & .lower-home .journey-columns article:hover, & .about-benefits article:hover, & .vehicle-care-list article:hover, & .about-proof-list article:hover, & .pricing-list article:hover':
+    '& .journey-columns article:hover, & .lower-home .journey-columns article:hover, & .about-benefits article:hover, & .vehicle-components-list li:hover, & .vehicle-care-list article:hover, & .about-proof-list article:hover, & .pricing-list article:hover':
       {
+        position: 'relative',
+        zIndex: '1',
         transform: 'translateY(-5px)',
         borderColor: 'rgb(153 255 24 / 72%)',
-        boxShadow: '0 18px 40px rgb(0 0 0 / 22%)',
+        backgroundColor: 'rgb(153 255 24 / 3%)',
+        boxShadow:
+          'inset 0 0 0 1px rgb(153 255 24 / 72%), 0 18px 40px rgb(0 0 0 / 22%)',
       },
     '& .manufacturing-gallery figure img': {
       transition:
