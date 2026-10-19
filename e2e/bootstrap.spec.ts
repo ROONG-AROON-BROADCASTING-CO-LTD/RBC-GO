@@ -26,8 +26,14 @@ test('Website serves stable public routes and crawl controls', async ({
   const sitemapXml = await sitemap.text();
   expect(sitemapXml).toContain('http://localhost:5185/');
   expect(sitemapXml).not.toContain('?lang=');
-  expect(sitemapXml).not.toContain('/th');
-  expect(sitemapXml).not.toContain('/en');
+  const sitemapPaths = [...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)].map(
+    ([, location]) => new URL(location).pathname,
+  );
+  expect(sitemapPaths).not.toContain('/th');
+  expect(sitemapPaths).not.toContain('/en');
+  expect(sitemapPaths).not.toContainEqual(
+    expect.stringMatching(/^\/(?:th|en)\//),
+  );
   const share = await request.get('/opengraph-image');
   expect(share.ok()).toBe(true);
   expect(share.headers()['content-type']).toContain('image/png');
