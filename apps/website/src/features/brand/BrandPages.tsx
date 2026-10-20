@@ -207,20 +207,29 @@ export function BrandPages({ page }: { page?: Page }) {
                 <h2 id="vehicle-care-heading">{c.vehicleCareTitle}</h2>
                 <p>{c.vehicleCareIntro}</p>
               </div>
-              <div className="vehicle-care-list">
+              <motion.div
+                className="vehicle-care-list"
+                variants={componentListReveal}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.16 }}
+              >
                 {c.vehicleCareItems.map(([title, copy], index) => (
-                  <motion.article key={`${title}-${index}`} {...reveal}>
-                    <>
+                  <article key={`${title}-${index}`}>
+                    <motion.div
+                      className="vehicle-care-content"
+                      variants={componentItemReveal}
+                    >
                       <Icon
                         kind={(['bolt', 'chart', 'chat'] as const)[index]}
                         animateOnHover={false}
                       />
                       <h3>{title}</h3>
                       <p>{copy}</p>
-                    </>
-                  </motion.article>
+                    </motion.div>
+                  </article>
                 ))}
-              </div>
+              </motion.div>
             </motion.section>
           </>
         )}
@@ -350,16 +359,24 @@ export function BrandPages({ page }: { page?: Page }) {
                 </motion.div>
               </div>
             </section>
-            <section id="mission" className="about-benefits">
+            <motion.section
+              id="mission"
+              className="about-benefits"
+              variants={componentListReveal}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.16 }}
+            >
               {c.aboutBenefits.map(([title, copy], i) => (
-                <motion.article
+                <article
                   key={`${title}-${i}`}
-                  {...reveal}
-                  transition={{ ...reveal.transition, delay: i * 0.12 }}
                   onPointerEnter={() => setActiveBenefit(i)}
                   onPointerLeave={() => setActiveBenefit(null)}
                 >
-                  <>
+                  <motion.div
+                    className="about-benefit-content"
+                    variants={componentItemReveal}
+                  >
                     <Icon
                       kind={(['leaf', 'people', 'sparkle'] as const)[i]}
                       animateOnHover={false}
@@ -372,10 +389,10 @@ export function BrandPages({ page }: { page?: Page }) {
                       <h3>{title}</h3>
                       <p>{copy}</p>
                     </div>
-                  </>
-                </motion.article>
+                  </motion.div>
+                </article>
               ))}
-            </section>
+            </motion.section>
             <section
               className="about-proof"
               aria-labelledby="about-proof-heading"
@@ -385,24 +402,29 @@ export function BrandPages({ page }: { page?: Page }) {
                 <h2 id="about-proof-heading">{c.manufacturingTitle}</h2>
                 <p>{c.manufacturingIntro}</p>
               </motion.div>
-              <div className="about-proof-list">
+              <motion.div
+                className="about-proof-list"
+                variants={componentListReveal}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.16 }}
+              >
                 {c.manufacturingPoints.map(([title, copy], index) => (
-                  <motion.article
-                    key={`${title}-${index}`}
-                    {...reveal}
-                    transition={{ ...reveal.transition, delay: index * 0.12 }}
-                  >
-                    <>
+                  <article key={`${title}-${index}`}>
+                    <motion.div
+                      className="about-proof-content"
+                      variants={componentItemReveal}
+                    >
                       <Icon
                         kind={(['motorcycle', 'chart', 'chat'] as const)[index]}
                         animateOnHover={false}
                       />
                       <h3>{title}</h3>
                       <p>{copy}</p>
-                    </>
-                  </motion.article>
+                    </motion.div>
+                  </article>
                 ))}
-              </div>
+              </motion.div>
             </section>
             <section
               className="factory-capabilities"
@@ -415,49 +437,58 @@ export function BrandPages({ page }: { page?: Page }) {
                 </h2>
                 <p>{c.factoryDetailIntro}</p>
               </motion.div>
-              <motion.div
-                {...reveal}
-                transition={{ ...reveal.transition, delay: 0.1 }}
-                className="factory-facts"
-                aria-label={c.factoryDetailLabel}
-              >
+              <div className="factory-facts" aria-label={c.factoryDetailLabel}>
                 {c.factoryFacts.map(([value, label], index) => (
-                  <motion.div key={value} {...galleryReveal(index)}>
-                    <strong>{value}</strong>
-                    <span>{label}</span>
-                  </motion.div>
-                ))}
-              </motion.div>
-              <motion.div
-                {...reveal}
-                transition={{ ...reveal.transition, delay: 0.16 }}
-                className="factory-location"
-              >
-                <div>
-                  <span className="eyebrow">{c.factoryLocationLabel}</span>
-                  <h3>{c.factoryLocationTitle}</h3>
-                </div>
-                <address>
-                  <strong>{c.factoryLocationCompany}</strong>
-                  <span>{c.factoryLocationAddress}</span>
-                  <small>{c.factoryLocationNote}</small>
-                </address>
-              </motion.div>
-              <div className="factory-capability-list">
-                {c.factoryCapabilities.map(([title, copy], index) => (
-                  <motion.article
-                    key={title}
-                    {...galleryReveal(index)}
-                    whileHover={{ y: -4 }}
-                  >
-                    <span>{String(index + 1).padStart(2, '0')}</span>
-                    <div>
-                      <h3>{title}</h3>
-                      <p>{copy}</p>
-                    </div>
-                  </motion.article>
+                  <div key={value}>
+                    <motion.div
+                      className="factory-fact-content"
+                      {...galleryReveal(index)}
+                    >
+                      <strong>{value}</strong>
+                      <span>{label}</span>
+                    </motion.div>
+                  </div>
                 ))}
               </div>
+              <div className="factory-location">
+                <motion.div
+                  className="factory-location-content"
+                  {...reveal}
+                  transition={{ ...reveal.transition, delay: 0.16 }}
+                >
+                  <div>
+                    <span className="eyebrow">{c.factoryLocationLabel}</span>
+                    <h3>{c.factoryLocationTitle}</h3>
+                  </div>
+                  <address>
+                    <strong>{c.factoryLocationCompany}</strong>
+                    <span>{c.factoryLocationAddress}</span>
+                    <small>{c.factoryLocationNote}</small>
+                  </address>
+                </motion.div>
+              </div>
+              <motion.div
+                className="factory-capability-list"
+                variants={componentListReveal}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.16 }}
+              >
+                {c.factoryCapabilities.map(([title, copy], index) => (
+                  <article key={title}>
+                    <motion.div
+                      className="factory-capability-content"
+                      variants={componentItemReveal}
+                    >
+                      <span>{String(index + 1).padStart(2, '0')}</span>
+                      <div>
+                        <h3>{title}</h3>
+                        <p>{copy}</p>
+                      </div>
+                    </motion.div>
+                  </article>
+                ))}
+              </motion.div>
             </section>
             <section
               id="production-gallery"

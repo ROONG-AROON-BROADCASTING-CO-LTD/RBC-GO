@@ -4472,13 +4472,15 @@ export const websiteSx: SxProps<Theme> = [
       borderBottom: '1px solid #2a3027',
     },
     '& .factory-facts > div': {
-      display: 'grid',
-      alignContent: 'start',
-      gap: '9px',
       minHeight: '148px',
       padding: '24px',
     },
     '& .factory-facts > div + div': { borderLeft: '1px solid #2a3027' },
+    '& .factory-fact-content': {
+      display: 'grid',
+      alignContent: 'start',
+      gap: '9px',
+    },
     '& .factory-facts strong': {
       color: 'var(--lime)',
       fontSize: 'clamp(22px, 2vw, 31px)',
@@ -4491,14 +4493,16 @@ export const websiteSx: SxProps<Theme> = [
       lineHeight: '1.55',
     },
     '& .factory-location': {
-      display: 'grid',
-      gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)',
-      gap: 'clamp(24px, 5vw, 72px)',
       marginTop: '16px',
       padding: 'clamp(24px, 3vw, 38px)',
       border: '1px solid #2a3027',
       borderRadius: '14px',
       background: 'linear-gradient(120deg, #0d120e 0%, #090c0b 72%)',
+    },
+    '& .factory-location-content': {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)',
+      gap: 'clamp(24px, 5vw, 72px)',
     },
     '& .factory-location h3': {
       marginTop: '12px',
@@ -4535,19 +4539,21 @@ export const websiteSx: SxProps<Theme> = [
       borderLeft: '1px solid #2a3027',
     },
     '& .factory-capability-list article': {
-      display: 'grid',
-      gridTemplateColumns: '50px minmax(0, 1fr)',
-      gap: '18px',
       minHeight: '178px',
       padding: '28px 24px',
       borderRight: '1px solid #2a3027',
       borderBottom: '1px solid #2a3027',
       background: '#090c0b',
     },
+    '& .factory-capability-content': {
+      display: 'grid',
+      gridTemplateColumns: '50px minmax(0, 1fr)',
+      gap: '18px',
+    },
     '& .factory-capability-list > article:nth-child(2n)': {
       background: '#0c100e',
     },
-    '& .factory-capability-list article > span': {
+    '& .factory-capability-content > span': {
       color: 'var(--lime)',
       fontSize: '13px',
       fontWeight: '600',
@@ -4611,7 +4617,7 @@ export const websiteSx: SxProps<Theme> = [
         borderTop: '1px solid #2a3027',
         borderLeft: 0,
       },
-      '& .factory-location': {
+      '& .factory-location-content': {
         gridTemplateColumns: '1fr',
       },
       '& .brand-events-list': { gap: 0 },
@@ -4619,8 +4625,10 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 600px)': {
       '& .factory-capabilities, & .brand-events': { padding: '62px 0' },
       '& .factory-facts > div': { minHeight: '0', padding: '22px 0' },
-      '& .factory-capability-list article': {
+      '& .factory-capability-content': {
         gridTemplateColumns: '38px minmax(0, 1fr)',
+      },
+      '& .factory-capability-list article': {
         minHeight: '0',
         padding: '24px 18px',
       },
