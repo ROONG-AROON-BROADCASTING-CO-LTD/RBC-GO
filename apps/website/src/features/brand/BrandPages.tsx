@@ -142,7 +142,6 @@ function galleryReveal(index: number) {
 export function BrandPages({ page }: { page?: Page }) {
   const { language: locale, setLanguage } = useWebsiteLanguage();
   const [activeBenefit, setActiveBenefit] = useState<number | null>(null);
-  const [pricingIconTrigger, setPricingIconTrigger] = useState(0);
   const t = text[locale];
   const c = referenceCopy(locale);
   const schema = {
@@ -326,9 +325,6 @@ export function BrandPages({ page }: { page?: Page }) {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.16 }}
-                  onMouseEnter={() =>
-                    setPricingIconTrigger((value) => value + 1)
-                  }
                 >
                   {c.priceItems.map(([title, copy], i) => (
                     <motion.article
@@ -338,7 +334,6 @@ export function BrandPages({ page }: { page?: Page }) {
                     >
                       <Icon
                         kind={(['route', 'chart', 'receipt'] as const)[i]}
-                        animationTrigger={pricingIconTrigger}
                       />
                       <div>
                         <h3>{title}</h3>
