@@ -5334,7 +5334,8 @@ export const websiteSx: SxProps<Theme> = [
     },
     '& .pricing-list .journey-title h3': {
       fontSize: '28px !important',
-      lineHeight: '1.2 !important',
+      lineHeight: '1.35 !important',
+      fontWeight: '600',
       letterSpacing: '-0.025em',
     },
     '& .pricing-list article > p': {
