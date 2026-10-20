@@ -428,7 +428,7 @@ export function BrandPages({ page }: { page?: Page }) {
               id="mission"
               className="about-benefits"
               variants={componentListReveal}
-              initial="hidden"
+              initial={false}
               whileInView="visible"
               viewport={{ once: true, amount: 0.16 }}
             >
@@ -528,7 +528,7 @@ export function BrandPages({ page }: { page?: Page }) {
               <motion.div
                 className="about-proof-list"
                 variants={componentListReveal}
-                initial="hidden"
+                initial={false}
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.16 }}
               >
@@ -606,7 +606,7 @@ export function BrandPages({ page }: { page?: Page }) {
               <motion.div
                 className="factory-capability-list"
                 variants={componentListReveal}
-                initial="hidden"
+                initial={false}
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.16 }}
               >
