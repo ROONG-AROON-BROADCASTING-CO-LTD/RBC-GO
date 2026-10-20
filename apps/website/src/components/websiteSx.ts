@@ -5314,6 +5314,29 @@ export const websiteSx: SxProps<Theme> = [
         paddingTop: 0,
         borderTop: 0,
       },
+    // Use the homepage section-heading scale for the factory introduction as
+    // well, so both headings share the same rhythm and reveal footprint.
+    '& .page-about .factory-capabilities-heading': {
+      width: 'min(100%, 532px)',
+      maxWidth: 'none',
+    },
+    '& .page-about .factory-capabilities-heading .eyebrow': {
+      marginBottom: '14px',
+      fontSize: '15px',
+    },
+    '& .page-about .factory-capabilities-heading h2': {
+      marginTop: 0,
+      fontSize: '36px',
+      lineHeight: '1.18',
+      letterSpacing: '0.01em',
+    },
+    '& .page-about .factory-capabilities-heading > p': {
+      marginTop: '12px',
+      maxWidth: 'none',
+      color: '#c1c3bc',
+      fontSize: '16px',
+      lineHeight: '1.65',
+    },
     '& .button, & .round-arrow, & .icon-button': {
       transition:
         'transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease',
