@@ -4411,6 +4411,9 @@ export const websiteSx: SxProps<Theme> = [
       padding: 'clamp(62px, 8vw, 112px) 0',
       borderTop: '1px solid #2a3027',
     },
+    '& .vehicle-care': {
+      borderTop: 0,
+    },
     '& .vehicle-care-heading, & .about-proof-heading': {
       alignSelf: 'start',
     },
