@@ -306,6 +306,7 @@ export function BrandPages({ page }: { page?: Page }) {
                   <div>
                     <span className="eyebrow">{c.rates[0]}</span>
                     <h2>{c.pricingDetailsTitle}</h2>
+                    <p>{c.pricingDetailsIntro}</p>
                   </div>
                 </motion.div>
                 <motion.div
