@@ -103,14 +103,14 @@ const componentItemReveal = {
   },
 };
 
-const componentIconReveal = {
-  hidden: { opacity: 0, scale: 0.78 },
+const componentCardReveal = {
+  hidden: { opacity: 0, y: 32 },
   visible: {
     opacity: 1,
-    scale: 1,
+    y: 0,
     transition: {
       type: 'tween' as const,
-      duration: 0.42,
+      duration: 1.05,
       ease: [0.16, 1, 0.3, 1] as const,
     },
   },
@@ -381,15 +381,14 @@ export function BrandPages({ page }: { page?: Page }) {
               viewport={{ once: true, amount: 0.16 }}
             >
               {c.aboutBenefits.map(([title, copy], i) => (
-                <article
+                <motion.article
                   key={`${title}-${i}`}
+                  variants={componentCardReveal}
+                  whileHover={{ y: -5 }}
                   onPointerEnter={() => setActiveBenefit(i)}
                   onPointerLeave={() => setActiveBenefit(null)}
                 >
-                  <motion.div
-                    className="about-benefit-icon-motion"
-                    variants={componentIconReveal}
-                  >
+                  <div className="about-benefit-icon-motion">
                     <Icon
                       kind={(['leaf', 'people', 'sparkle'] as const)[i]}
                       animateOnHover={false}
@@ -398,17 +397,14 @@ export function BrandPages({ page }: { page?: Page }) {
                       }
                       animationTrigger={activeBenefit === i}
                     />
-                  </motion.div>
-                  <motion.div
-                    className="about-benefit-copy"
-                    variants={componentItemReveal}
-                  >
+                  </div>
+                  <div className="about-benefit-copy">
                     <div>
                       <h3>{title}</h3>
                       <p>{copy}</p>
                     </div>
-                  </motion.div>
-                </article>
+                  </div>
+                </motion.article>
               ))}
             </motion.section>
             <section
