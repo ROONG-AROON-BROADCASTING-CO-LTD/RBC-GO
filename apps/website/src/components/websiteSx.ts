@@ -1230,7 +1230,7 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .pricing-list': {
       borderRight: '1px solid var(--line)',
-      paddingRight: '65px',
+      paddingRight: '50px',
     },
   },
   {
