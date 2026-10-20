@@ -3864,10 +3864,10 @@ export const websiteSx: SxProps<Theme> = [
     '@media (min-width: 1101px)': {
       '& .lower-home': {
         gap: '40px',
-        paddingTop: '30px',
+        paddingTop: '48px',
       },
       '& .home-hero + .lower-home': {
-        marginTop: '48px',
+        marginTop: '0',
       },
     },
   },
