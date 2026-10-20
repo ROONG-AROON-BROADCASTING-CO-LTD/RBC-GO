@@ -1306,7 +1306,7 @@ export const websiteSx: SxProps<Theme> = [
       background: 'var(--surface)',
       borderRadius: '14px',
       margin: '26px 0 0',
-      padding: '40px',
+      padding: '25px',
       alignSelf: 'stretch',
       height: 'auto',
       boxSizing: 'border-box',
