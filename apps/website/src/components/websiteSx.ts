@@ -1435,12 +1435,17 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '& .about-benefits .icon': {
+    '& .about-benefit-icon-motion': {
       position: 'absolute',
       right: '18px',
       bottom: '18px',
       width: '64px',
       height: '64px',
+    },
+    '& .about-benefit-icon-motion .icon': {
+      display: 'block',
+      width: '100%',
+      height: '100%',
       color: 'var(--lime)',
     },
   },
@@ -2188,7 +2193,7 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (max-width: 1100px)': {
-      '& .about-benefits .icon': {
+      '& .about-benefit-icon-motion': {
         width: '42px',
         height: '42px',
       },
@@ -3484,7 +3489,7 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (max-width: 767px)': {
-      '& .about-benefits .icon': {
+      '& .about-benefit-icon-motion': {
         width: '42px',
         height: '42px',
       },

@@ -103,6 +103,19 @@ const componentItemReveal = {
   },
 };
 
+const componentIconReveal = {
+  hidden: { opacity: 0, scale: 0.78 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: 'tween' as const,
+      duration: 0.42,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
+
 function galleryReveal(index: number) {
   return {
     initial: { opacity: 0, y: 28, scale: 0.985 },
@@ -373,12 +386,19 @@ export function BrandPages({ page }: { page?: Page }) {
                   onPointerEnter={() => setActiveBenefit(i)}
                   onPointerLeave={() => setActiveBenefit(null)}
                 >
-                  <Icon
-                    kind={(['leaf', 'people', 'sparkle'] as const)[i]}
-                    animateOnHover={false}
-                    animationState={activeBenefit === i ? 'animate' : 'normal'}
-                    animationTrigger={activeBenefit === i}
-                  />
+                  <motion.div
+                    className="about-benefit-icon-motion"
+                    variants={componentIconReveal}
+                  >
+                    <Icon
+                      kind={(['leaf', 'people', 'sparkle'] as const)[i]}
+                      animateOnHover={false}
+                      animationState={
+                        activeBenefit === i ? 'animate' : 'normal'
+                      }
+                      animationTrigger={activeBenefit === i}
+                    />
+                  </motion.div>
                   <motion.div
                     className="about-benefit-copy"
                     variants={componentItemReveal}
