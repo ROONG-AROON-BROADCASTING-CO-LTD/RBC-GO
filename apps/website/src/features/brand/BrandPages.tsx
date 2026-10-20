@@ -341,8 +341,14 @@ export function BrandPages({ page }: { page?: Page }) {
                       }}
                       onMouseLeave={() => setPricingHoveredIndex(null)}
                     >
+                      <div className="journey-title">
+                        <span className="number">{i + 1}</span>
+                        <h3>{title}</h3>
+                      </div>
+                      <p>{copy}</p>
                       <Icon
                         kind={(['route', 'chart', 'receipt'] as const)[i]}
+                        className="pricing-card-icon"
                         animateOnHover={false}
                         animationState={
                           pricingHoveredIndex === i ? 'animate' : 'normal'
@@ -351,10 +357,6 @@ export function BrandPages({ page }: { page?: Page }) {
                           pricingHoveredIndex === i ? pricingIconTrigger : 0
                         }
                       />
-                      <div>
-                        <h3>{title}</h3>
-                        <p>{copy}</p>
-                      </div>
                     </motion.article>
                   ))}
                 </motion.div>

@@ -1237,13 +1237,28 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .pricing-list article': {
-      display: 'flex',
-      alignItems: 'start',
-      gap: '28px',
+      position: 'relative',
+      display: 'block',
       margin: '0',
-      padding: '24px',
+      padding: '26px 38px',
       border: '1px solid var(--line)',
-      borderRadius: '14px',
+      borderRadius: '20px',
+      minHeight: '190px',
+    },
+  },
+  {
+    '& .pricing-list .pricing-card-icon': {
+      position: 'absolute',
+      top: '50%',
+      right: '30px',
+      width: '56px',
+      height: '56px',
+      color: 'var(--lime)',
+      transform: 'translateY(-50%)',
+    },
+    '& .pricing-list article > p': {
+      maxWidth: '72%',
+      marginTop: '24px',
     },
   },
   {
