@@ -5295,11 +5295,11 @@ export const websiteSx: SxProps<Theme> = [
     '& .fleet-intro': {
       zIndex: '3',
     },
-    // Keep the About page's content sections on one vertical rhythm, without
-    // the divider rules that previously separated those sections.
+    // Match the shared 48px vertical rhythm used by the standard content
+    // sections, while keeping the About page free of section dividers.
     '& .page-about .about-benefits, & .page-about .kronos-collaboration, & .page-about .about-proof, & .page-about .factory-capabilities, & .page-about .manufacturing-gallery, & .page-about .brand-events':
       {
-        padding: 'clamp(48px, 7vw, 104px) 0',
+        padding: '48px 0',
         borderTop: 0,
       },
     '& .page-about .manufacturing-gallery-heading, & .page-about .events-gallery-heading, & .page-about .kronos-press-sources':
