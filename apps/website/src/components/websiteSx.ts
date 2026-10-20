@@ -4438,7 +4438,7 @@ export const websiteSx: SxProps<Theme> = [
       gap: '1px',
       overflow: 'hidden',
       border: '1px solid #2a3027',
-      borderRadius: '16px',
+      borderRadius: '12px',
       background: '#2a3027',
     },
     '& .vehicle-care-list article, & .about-proof-list article': {
@@ -5296,6 +5296,12 @@ export const websiteSx: SxProps<Theme> = [
       },
     '& .vehicle-components-list li:hover': {
       borderColor: '#2a3027',
+      backgroundColor: 'rgb(153 255 24 / 3%)',
+      boxShadow: 'none',
+      outline: '1px solid rgb(153 255 24 / 72%)',
+      outlineOffset: '-1px',
+    },
+    '& .vehicle-care-list article:hover': {
       backgroundColor: 'rgb(153 255 24 / 3%)',
       boxShadow: 'none',
       outline: '1px solid rgb(153 255 24 / 72%)',
