@@ -123,6 +123,24 @@ const copy = {
       'KRONOS production facility — Thailand',
       'Machining area — KRONOS E-BIKES factory',
     ],
+    collaborationLabel: 'RBC GO × KRONOS',
+    collaborationTitle: 'A collaboration for better city movement.',
+    collaborationIntro:
+      'RBC GO is developed in collaboration with KRONOS E-BIKES, connecting Thailand-based electric-mobility production with a service designed for Bangkok’s daily journeys.',
+    pressGalleryTitle: 'KRONOS at Motor Expo 2023.',
+    pressGalleryCopy:
+      'Published KRONOS press photographs capture the launch setting, team and electric-motorcycle showcase from Motor Expo 2023.',
+    pressGalleryCaptions: [
+      'KRONOS team at the 2023 inCarMag showcase',
+      'KRONOS team at Motor Expo 2023',
+      'KRONOS press event at Motor Expo 2023',
+      'Electric-motorcycle showcase at the KRONOS booth',
+    ],
+    pressSources: [
+      ['inCarMag', 'https://www.incarmag.com/?p=4389'],
+      ['Thailand Movement', 'https://thailandmovement.com/?p=22220'],
+      ['Newz Society', 'https://newszociety.com/biz/57054/'],
+    ],
     factoryDetailLabel: 'PRODUCTION CAPABILITY',
     factoryDetailTitle: 'From metalwork to electric mobility.',
     factoryDetailIntro:
@@ -334,6 +352,24 @@ const copy = {
       'งานโลหะและการผลิต — โรงงาน KRONOS E-BIKES',
       'อาคารฐานการผลิต KRONOS ในประเทศไทย',
       'พื้นที่เครื่องจักร — โรงงาน KRONOS E-BIKES',
+    ],
+    collaborationLabel: 'RBC GO × KRONOS',
+    collaborationTitle: 'ความร่วมมือเพื่อการเดินทางในเมืองที่ดีขึ้น',
+    collaborationIntro:
+      'RBC GO พัฒนาร่วมกับ KRONOS E-BIKES เพื่อเชื่อมต่อบริบทการผลิตยานยนต์ไฟฟ้าในประเทศไทยเข้ากับบริการที่ออกแบบเพื่อทุกการเดินทางของกรุงเทพฯ',
+    pressGalleryTitle: 'KRONOS ในงาน Motor Expo 2023',
+    pressGalleryCopy:
+      'ภาพข่าวที่ KRONOS เผยแพร่บันทึกบรรยากาศการเปิดตัว ทีมงาน และการจัดแสดงมอเตอร์ไซค์ไฟฟ้าในงาน Motor Expo 2023',
+    pressGalleryCaptions: [
+      'ทีม KRONOS ในงาน 2023 inCarMag',
+      'ทีม KRONOS ในงาน Motor Expo 2023',
+      'กิจกรรมข่าวของ KRONOS ในงาน Motor Expo 2023',
+      'การจัดแสดงมอเตอร์ไซค์ไฟฟ้าที่บูธ KRONOS',
+    ],
+    pressSources: [
+      ['inCarMag', 'https://www.incarmag.com/?p=4389'],
+      ['Thailand Movement', 'https://thailandmovement.com/?p=22220'],
+      ['Newz Society', 'https://newszociety.com/biz/57054/'],
     ],
     factoryDetailLabel: 'ศักยภาพฐานการผลิต',
     factoryDetailTitle: 'จากงานโลหะ สู่การขับเคลื่อนด้วยไฟฟ้า',

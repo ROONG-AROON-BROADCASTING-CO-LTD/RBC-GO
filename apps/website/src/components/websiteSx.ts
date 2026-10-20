@@ -4882,6 +4882,150 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
+    '& .kronos-collaboration': {
+      padding: 'clamp(72px, 9vw, 132px) 0',
+      borderTop: '1px solid #2a3027',
+    },
+    '& .kronos-collaboration-copy': {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(0, 0.88fr) minmax(0, 1.12fr)',
+      gap: 'clamp(26px, 5vw, 88px)',
+      alignItems: 'end',
+      marginBottom: 'clamp(34px, 5vw, 64px)',
+    },
+    '& .kronos-collaboration-copy h2': {
+      gridRow: '2',
+      maxWidth: '580px',
+      marginTop: '14px',
+      fontSize: 'clamp(32px, 3.2vw, 52px)',
+      fontWeight: '600',
+      lineHeight: '1.12',
+      letterSpacing: '-0.035em',
+    },
+    '& .kronos-collaboration-copy .eyebrow': {
+      gridColumn: '1 / -1',
+    },
+    '& .kronos-collaboration-copy p': {
+      maxWidth: '560px',
+      color: '#bec4b7',
+      fontSize: '17px',
+      lineHeight: '1.68',
+    },
+    '& .kronos-press-gallery': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
+      gap: '16px',
+    },
+    '& .kronos-press-gallery figure': {
+      position: 'relative',
+      margin: 0,
+      overflow: 'hidden',
+      border: '1px solid #2a3027',
+      borderRadius: '14px',
+      background: '#090c0b',
+    },
+    '& .kronos-press-gallery figure:nth-child(1)': {
+      gridColumn: 'span 7',
+    },
+    '& .kronos-press-gallery figure:nth-child(2)': {
+      gridColumn: 'span 5',
+    },
+    '& .kronos-press-gallery figure:nth-child(3), & .kronos-press-gallery figure:nth-child(4)':
+      {
+        gridColumn: 'span 6',
+      },
+    '& .kronos-press-gallery img': {
+      display: 'block',
+      width: '100%',
+      height: 'auto',
+      transition:
+        'transform 600ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease',
+    },
+    '& .kronos-press-gallery figure:hover img': {
+      transform: 'scale(1.035)',
+      filter: 'saturate(1.06) contrast(1.04)',
+    },
+    '& .kronos-press-gallery figcaption': {
+      padding: '13px 16px',
+      color: '#bec4b7',
+      fontSize: '14px',
+      lineHeight: '1.45',
+    },
+    '& .kronos-press-sources': {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(0, 0.88fr) minmax(0, 1.12fr)',
+      gap: 'clamp(26px, 5vw, 88px)',
+      marginTop: '28px',
+      paddingTop: '30px',
+      borderTop: '1px solid #2a3027',
+    },
+    '& .kronos-press-sources h3': {
+      fontSize: 'clamp(24px, 2.3vw, 36px)',
+      fontWeight: '600',
+      lineHeight: '1.16',
+      letterSpacing: '-0.03em',
+    },
+    '& .kronos-press-sources p': {
+      maxWidth: '560px',
+      marginTop: '13px',
+      color: '#bec4b7',
+      fontSize: '16px',
+      lineHeight: '1.65',
+    },
+    '& .kronos-press-sources > div:last-child': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+      alignContent: 'start',
+      borderTop: '1px solid #2a3027',
+      borderLeft: '1px solid #2a3027',
+    },
+    '& .kronos-press-sources a': {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: '12px',
+      minHeight: '88px',
+      padding: '18px',
+      borderRight: '1px solid #2a3027',
+      borderBottom: '1px solid #2a3027',
+      color: '#f7f8f4',
+      fontSize: '15px',
+      fontWeight: '600',
+      textDecoration: 'none',
+      transition: 'background-color 220ms ease, color 220ms ease',
+    },
+    '& .kronos-press-sources a:hover': {
+      background: 'var(--lime)',
+      color: '#081008',
+    },
+    '& .kronos-press-sources a span': {
+      fontSize: '20px',
+      lineHeight: 1,
+    },
+    '@media (max-width: 767px)': {
+      '& .kronos-collaboration': {
+        padding: '62px 0',
+      },
+      '& .kronos-collaboration-copy, & .kronos-press-sources': {
+        gridTemplateColumns: '1fr',
+        gap: '14px',
+      },
+      '& .kronos-collaboration-copy h2': {
+        gridRow: 'auto',
+      },
+      '& .kronos-press-gallery': {
+        gridTemplateColumns: '1fr',
+        gap: '12px',
+      },
+      '& .kronos-press-gallery figure:nth-child(n)': {
+        gridColumn: 'auto',
+      },
+      '& .kronos-press-sources > div:last-child': {
+        gridTemplateColumns: '1fr',
+      },
+    },
+  },
+  {
     '& .site-topbar': {
       fontSize: '11px',
       lineHeight: '1.2',

@@ -487,6 +487,56 @@ export function BrandPages({ page }: { page?: Page }) {
               </div>
             </section>
             <section
+              id="collaboration"
+              className="kronos-collaboration"
+              aria-labelledby="kronos-collaboration-heading"
+            >
+              <motion.div {...reveal} className="kronos-collaboration-copy">
+                <span className="eyebrow">{c.collaborationLabel}</span>
+                <h2 id="kronos-collaboration-heading">
+                  {c.collaborationTitle}
+                </h2>
+                <p>{c.collaborationIntro}</p>
+              </motion.div>
+              <div className="kronos-press-gallery">
+                {[
+                  '/images/about/kronos-press/kronos-motor-expo-2023-01.jpg',
+                  '/images/about/kronos-press/kronos-motor-expo-2023-02.jpg',
+                  '/images/about/kronos-press/kronos-motor-expo-2023-03.jpg',
+                  '/images/about/kronos-press/kronos-motor-expo-2023-04.jpg',
+                ].map((src, index) => (
+                  <motion.figure
+                    key={src}
+                    {...galleryReveal(index)}
+                    whileHover={{ y: -5 }}
+                  >
+                    <Image
+                      src={src}
+                      alt={c.pressGalleryCaptions[index]}
+                      width={index === 3 ? 600 : 940}
+                      height={[569, 643, 694, 397][index]}
+                      sizes="(max-width: 767px) 100vw, 50vw"
+                    />
+                    <figcaption>{c.pressGalleryCaptions[index]}</figcaption>
+                  </motion.figure>
+                ))}
+              </div>
+              <motion.div {...reveal} className="kronos-press-sources">
+                <div>
+                  <h3>{c.pressGalleryTitle}</h3>
+                  <p>{c.pressGalleryCopy}</p>
+                </div>
+                <div aria-label="KRONOS press sources">
+                  {c.pressSources.map(([label, href]) => (
+                    <a key={href} href={href} target="_blank" rel="noreferrer">
+                      {label}
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  ))}
+                </div>
+              </motion.div>
+            </section>
+            <section
               id="events"
               className="brand-events"
               aria-labelledby="brand-events-heading"
