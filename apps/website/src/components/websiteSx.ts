@@ -2964,6 +2964,9 @@ export const websiteSx: SxProps<Theme> = [
         fontSize: '27px',
         maxWidth: '240px',
       },
+      '& .how-details-heading h2': {
+        maxWidth: 'none',
+      },
     },
   },
   {
