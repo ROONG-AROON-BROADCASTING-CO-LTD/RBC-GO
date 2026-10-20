@@ -5322,6 +5322,11 @@ export const websiteSx: SxProps<Theme> = [
         transition:
           'transform 240ms cubic-bezier(0.16, 1, 0.3, 1), border-color 240ms ease, background-color 240ms ease, box-shadow 240ms ease',
       },
+    '& .factory-facts article, & .factory-location, & .factory-capability-list article':
+      {
+        transition:
+          'transform 240ms cubic-bezier(0.16, 1, 0.3, 1), border-color 240ms ease, background 240ms ease, box-shadow 240ms ease',
+      },
     '& .journey-columns article:hover, & .lower-home .journey-columns article:hover, & .about-benefits article:hover, & .vehicle-components-list li:hover, & .vehicle-care-list article:hover, & .about-proof-list article:hover, & .pricing-list article:hover':
       {
         position: 'relative',
@@ -5335,6 +5340,16 @@ export const websiteSx: SxProps<Theme> = [
     '& .vehicle-components-list li:hover, & .vehicle-care-list article:hover, & .about-proof-list article:hover':
       {
         transform: 'none !important',
+      },
+    '& .factory-facts article:hover, & .factory-location:hover, & .factory-capability-list article:hover':
+      {
+        position: 'relative',
+        zIndex: '1',
+        transform: 'translateY(-6px) scale(1.012)',
+        borderColor: 'rgb(153 255 24 / 72%)',
+        background: 'rgb(153 255 24 / 3%)',
+        boxShadow:
+          'inset 0 0 0 1px rgb(153 255 24 / 72%), 0 18px 40px rgb(0 0 0 / 22%)',
       },
     '& .vehicle-components-list li:hover': {
       borderColor: '#2a3027',
