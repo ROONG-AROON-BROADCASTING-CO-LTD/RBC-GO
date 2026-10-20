@@ -116,6 +116,15 @@ const componentCardReveal = {
   },
 };
 
+const sequentialCardListReveal = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
 function galleryReveal(index: number) {
   return {
     initial: { opacity: 0, y: 28, scale: 0.985 },
@@ -292,23 +301,31 @@ export function BrandPages({ page }: { page?: Page }) {
                   {c.priceIntro[1]}
                 </HeroCopy>
               </section>
-              <motion.section {...reveal} className="pricing-grid">
-                <div className="pricing-list">
+              <section className="pricing-grid">
+                <motion.div
+                  className="pricing-list"
+                  variants={sequentialCardListReveal}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.16 }}
+                >
                   {c.priceItems.map(([title, copy], i) => (
-                    <motion.article key={`${title}-${i}`} {...reveal}>
-                      <>
-                        <Icon
-                          kind={(['route', 'chart', 'receipt'] as const)[i]}
-                        />
-                        <div>
-                          <h3>{title}</h3>
-                          <p>{copy}</p>
-                        </div>
-                      </>
+                    <motion.article
+                      key={`${title}-${i}`}
+                      variants={componentCardReveal}
+                      whileHover={{ y: -5 }}
+                    >
+                      <Icon
+                        kind={(['route', 'chart', 'receipt'] as const)[i]}
+                      />
+                      <div>
+                        <h3>{title}</h3>
+                        <p>{copy}</p>
+                      </div>
                     </motion.article>
                   ))}
-                </div>
-                <aside className="rate-notice">
+                </motion.div>
+                <motion.aside {...reveal} className="rate-notice">
                   <Icon kind="tag" />
                   <div>
                     <h2>
@@ -319,8 +336,8 @@ export function BrandPages({ page }: { page?: Page }) {
                     <p>{c.rateCopy}</p>
                     <small>{c.stay}</small>
                   </div>
-                </aside>
-              </motion.section>
+                </motion.aside>
+              </section>
             </div>
           </>
         )}
