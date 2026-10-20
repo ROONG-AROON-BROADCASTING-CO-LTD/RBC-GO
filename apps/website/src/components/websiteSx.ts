@@ -1276,7 +1276,7 @@ export const websiteSx: SxProps<Theme> = [
       display: 'flex',
       gap: '25px',
       background: 'var(--surface)',
-      borderRadius: '26px',
+      borderRadius: '14px',
       marginLeft: '50px',
       padding: '40px',
       alignSelf: 'stretch',
