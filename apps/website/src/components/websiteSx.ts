@@ -5302,7 +5302,7 @@ export const websiteSx: SxProps<Theme> = [
       outlineOffset: '-1px',
     },
     '& .vehicle-care-list article:hover': {
-      backgroundColor: 'rgb(153 255 24 / 3%)',
+      backgroundColor: 'rgb(153 255 24 / 3%) !important',
       boxShadow: 'none',
       outline: '1px solid rgb(153 255 24 / 72%)',
       outlineOffset: '-1px',
