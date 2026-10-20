@@ -784,6 +784,8 @@ export const websiteSx: SxProps<Theme> = [
       borderTop: '1px solid #2a3027',
       borderLeft: '1px solid #2a3027',
       borderRight: '1px solid #2a3027',
+      borderRadius: '20px',
+      overflow: 'hidden',
       position: 'relative',
       '&::before': {
         content: "''",
