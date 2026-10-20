@@ -4468,6 +4468,16 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
+    '& .vehicle-care': {
+      display: 'block',
+      padding: '48px 0 64px',
+    },
+    '& .vehicle-care-heading': {
+      maxWidth: '760px',
+      marginBottom: '32px',
+    },
+  },
+  {
     '& .factory-capabilities, & .brand-events': {
       padding: 'clamp(72px, 9vw, 132px) 0',
       borderTop: '1px solid #2a3027',
