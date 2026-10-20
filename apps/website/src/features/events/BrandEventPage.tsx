@@ -20,7 +20,11 @@ const reveal = {
 };
 
 export function BrandEventPage({ event }: { event: BrandEvent }) {
-  const { language: locale, setLanguage } = useWebsiteLanguage();
+  const {
+    language: locale,
+    isLanguageSwitching,
+    setLanguage,
+  } = useWebsiteLanguage();
   const c = event.copy[locale];
   const label =
     locale === 'en' ? 'KRONOS event archive' : 'คลังภาพกิจกรรม KRONOS';
@@ -28,7 +32,7 @@ export function BrandEventPage({ event }: { event: BrandEvent }) {
     locale === 'en' ? 'Complete photo album' : 'อัลบั้มภาพเต็ม';
 
   return (
-    <MotionConfig reducedMotion="user">
+    <MotionConfig reducedMotion={isLanguageSwitching ? 'always' : 'user'}>
       <WebsiteNav
         locale={locale}
         page="about"

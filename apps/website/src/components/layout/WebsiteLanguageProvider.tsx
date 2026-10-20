@@ -14,6 +14,7 @@ import { languageCookieName } from '../../data/language';
 
 type WebsiteLanguageContextValue = {
   language: Locale;
+  isLanguageSwitching: boolean;
   setLanguage: (language: Locale) => void;
   toggleLanguage: () => void;
 };
@@ -29,16 +30,32 @@ export function WebsiteLanguageProvider({
   initialLanguage: Locale;
 }) {
   const [language, setLanguageState] = useState<Locale>(initialLanguage);
+  const [isLanguageSwitching, setIsLanguageSwitching] = useState(false);
 
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
 
-  const setLanguage = useCallback((nextLanguage: Locale) => {
-    setLanguageState(nextLanguage);
-    document.cookie = `${languageCookieName}=${nextLanguage}; Path=/; Max-Age=31536000; SameSite=Lax`;
-    window.localStorage.setItem(languageCookieName, nextLanguage);
-  }, []);
+  const setLanguage = useCallback(
+    (nextLanguage: Locale) => {
+      if (nextLanguage === language) return;
+
+      setIsLanguageSwitching(true);
+      setLanguageState(nextLanguage);
+      document.cookie = `${languageCookieName}=${nextLanguage}; Path=/; Max-Age=31536000; SameSite=Lax`;
+      window.localStorage.setItem(languageCookieName, nextLanguage);
+    },
+    [language],
+  );
+
+  useEffect(() => {
+    if (!isLanguageSwitching) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      setIsLanguageSwitching(false);
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [isLanguageSwitching]);
 
   useEffect(() => {
     if (
@@ -58,10 +75,11 @@ export function WebsiteLanguageProvider({
   const value = useMemo<WebsiteLanguageContextValue>(
     () => ({
       language,
+      isLanguageSwitching,
       setLanguage,
       toggleLanguage: () => setLanguage(language === 'th' ? 'en' : 'th'),
     }),
-    [language, setLanguage],
+    [isLanguageSwitching, language, setLanguage],
   );
 
   return (

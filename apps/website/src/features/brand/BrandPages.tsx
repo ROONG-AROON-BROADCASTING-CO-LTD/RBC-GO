@@ -140,7 +140,11 @@ function galleryReveal(index: number) {
 }
 
 export function BrandPages({ page }: { page?: Page }) {
-  const { language: locale, setLanguage } = useWebsiteLanguage();
+  const {
+    language: locale,
+    isLanguageSwitching,
+    setLanguage,
+  } = useWebsiteLanguage();
   const [activeBenefit, setActiveBenefit] = useState<number | null>(null);
   const [pricingHoveredIndex, setPricingHoveredIndex] = useState<number | null>(
     null,
@@ -157,7 +161,7 @@ export function BrandPages({ page }: { page?: Page }) {
     inLanguage: locale,
   };
   return (
-    <MotionConfig reducedMotion="user">
+    <MotionConfig reducedMotion={isLanguageSwitching ? 'always' : 'user'}>
       <WebsiteNav
         locale={locale}
         page={page}
