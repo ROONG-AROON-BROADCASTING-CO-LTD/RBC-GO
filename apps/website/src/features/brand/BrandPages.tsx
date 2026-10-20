@@ -80,6 +80,29 @@ const reveal = {
   },
 };
 
+const componentListReveal = {
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 0.06,
+      staggerChildren: 0.09,
+    },
+  },
+};
+
+const componentItemReveal = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'tween' as const,
+      duration: 0.48,
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+    },
+  },
+};
+
 function galleryReveal(index: number) {
   return {
     initial: { opacity: 0, y: 28, scale: 0.985 },
@@ -151,15 +174,17 @@ export function BrandPages({ page }: { page?: Page }) {
                   sizes="(max-width: 767px) 100vw, min(90vw, 1600px)"
                 />
               </motion.figure>
-              <ol className="vehicle-components-list">
+              <motion.ol
+                className="vehicle-components-list"
+                variants={componentListReveal}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.16 }}
+              >
                 {c.components.map(([title, description], index) => (
                   <motion.li
                     key={`${title}-${index}`}
-                    {...reveal}
-                    transition={{
-                      ...reveal.transition,
-                      delay: (index % 3) * 0.12,
-                    }}
+                    variants={componentItemReveal}
                   >
                     <>
                       <span>{String(index + 1).padStart(2, '0')}</span>
@@ -170,7 +195,7 @@ export function BrandPages({ page }: { page?: Page }) {
                     </>
                   </motion.li>
                 ))}
-              </ol>
+              </motion.ol>
             </motion.section>
             <motion.section
               {...reveal}
