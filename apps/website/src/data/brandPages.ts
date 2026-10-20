@@ -130,7 +130,7 @@ const copy = {
       'Laser cutting in the KRONOS fabrication facility',
       'Assembly floor and production components',
     ],
-    collaborationLabel: 'RBC GO × KRONOS',
+    collaborationLabel: 'RBC Group × KRONOS',
     collaborationTitle: 'A collaboration for better city movement.',
     collaborationIntro:
       'RBC GO is developed in collaboration with KRONOS E-BIKES, connecting Thailand-based electric-mobility production with a service designed for Bangkok’s daily journeys.',
@@ -370,7 +370,7 @@ const copy = {
       'งานตัดเลเซอร์ในพื้นที่ผลิตของ KRONOS',
       'พื้นที่ประกอบและชิ้นส่วนการผลิต',
     ],
-    collaborationLabel: 'RBC GO × KRONOS',
+    collaborationLabel: 'RBC Group × KRONOS',
     collaborationTitle: 'ความร่วมมือเพื่อการเดินทางในเมืองที่ดีขึ้น',
     collaborationIntro:
       'RBC GO พัฒนาร่วมกับ KRONOS E-BIKES เพื่อเชื่อมต่อบริบทการผลิตยานยนต์ไฟฟ้าในประเทศไทยเข้ากับบริการที่ออกแบบเพื่อทุกการเดินทางของกรุงเทพฯ',
