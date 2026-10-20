@@ -1187,7 +1187,7 @@ export const websiteSx: SxProps<Theme> = [
       display: 'flex',
       gap: '25px',
       alignItems: 'center',
-      borderTop: '1px solid var(--line)',
+      borderTop: 0,
       paddingTop: '35px',
       marginTop: '35px',
     },
