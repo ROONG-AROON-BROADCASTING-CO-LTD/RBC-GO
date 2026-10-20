@@ -5326,7 +5326,7 @@ export const websiteSx: SxProps<Theme> = [
       },
     '& .vehicle-components-list li:hover': {
       borderColor: '#2a3027',
-      backgroundColor: 'rgb(153 255 24 / 14%)',
+      backgroundColor: 'rgb(153 255 24 / 3%)',
       boxShadow: 'none',
       outline: '1px solid rgb(153 255 24 / 72%)',
       outlineOffset: '-1px',
@@ -5357,7 +5357,7 @@ export const websiteSx: SxProps<Theme> = [
       transform: 'none !important',
     },
     '& .vehicle-care-list article:hover': {
-      backgroundColor: 'rgb(153 255 24 / 14%) !important',
+      backgroundColor: 'rgb(153 255 24 / 3%) !important',
       boxShadow: 'none',
       outline: '1px solid rgb(153 255 24 / 72%)',
       outlineOffset: '-1px',
