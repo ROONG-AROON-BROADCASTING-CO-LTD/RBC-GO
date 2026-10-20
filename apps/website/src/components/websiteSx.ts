@@ -5292,19 +5292,6 @@ export const websiteSx: SxProps<Theme> = [
     '& .motorcycle-tile-video.is-ready': {
       opacity: '1',
     },
-    '& .fleet-hero-beacon': {
-      position: 'absolute',
-      zIndex: '2',
-      right: '-8%',
-      bottom: '-18%',
-      width: 'min(44vw, 680px)',
-      aspectRatio: '1',
-      pointerEvents: 'none',
-      borderRadius: '50%',
-      background:
-        'radial-gradient(circle, rgb(153 255 24 / 20%) 0%, rgb(153 255 24 / 5%) 38%, transparent 70%)',
-      mixBlendMode: 'screen',
-    },
     '& .fleet-intro': {
       zIndex: '3',
     },
@@ -5400,9 +5387,6 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .tile-lime-orbit': {
         width: '180px',
-      },
-      '& .fleet-hero-beacon': {
-        width: '88vw',
       },
     },
   },

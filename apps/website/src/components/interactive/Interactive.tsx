@@ -51,12 +51,6 @@ export function FleetHero({ locale }: { locale: Locale }) {
           preload
         />
         <div className="motorcycle-shade" />
-        <motion.div
-          aria-hidden="true"
-          className="fleet-hero-beacon"
-          animate={{ opacity: [0.25, 0.62, 0.25], scale: [0.94, 1.08, 0.94] }}
-          transition={{ duration: 6.5, ease: 'easeInOut', repeat: Infinity }}
-        />
         <div className="fleet-intro">
           <motion.h1 initial="initial" animate="animate">
             <motion.span {...heroLine} className="fleet-hero-title-line">
