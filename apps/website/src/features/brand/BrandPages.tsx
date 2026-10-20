@@ -373,18 +373,16 @@ export function BrandPages({ page }: { page?: Page }) {
                   onPointerEnter={() => setActiveBenefit(i)}
                   onPointerLeave={() => setActiveBenefit(null)}
                 >
+                  <Icon
+                    kind={(['leaf', 'people', 'sparkle'] as const)[i]}
+                    animateOnHover={false}
+                    animationState={activeBenefit === i ? 'animate' : 'normal'}
+                    animationTrigger={activeBenefit === i}
+                  />
                   <motion.div
-                    className="about-benefit-content"
+                    className="about-benefit-copy"
                     variants={componentItemReveal}
                   >
-                    <Icon
-                      kind={(['leaf', 'people', 'sparkle'] as const)[i]}
-                      animateOnHover={false}
-                      animationState={
-                        activeBenefit === i ? 'animate' : 'normal'
-                      }
-                      animationTrigger={activeBenefit === i}
-                    />
                     <div>
                       <h3>{title}</h3>
                       <p>{copy}</p>
