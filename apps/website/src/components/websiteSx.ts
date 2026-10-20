@@ -982,6 +982,11 @@ export const websiteSx: SxProps<Theme> = [
       justifyContent: 'space-between',
       gap: '25px',
       borderRadius: '7px',
+      opacity: '0',
+      transform: 'translateY(14px)',
+      transition:
+        'opacity 240ms ease, transform 240ms cubic-bezier(0.16, 1, 0.3, 1)',
+      pointerEvents: 'none',
     },
   },
   {
@@ -1002,6 +1007,11 @@ export const websiteSx: SxProps<Theme> = [
       width: '45px',
       height: '45px',
     },
+    '& .lower-home .motorcycle-tile:hover .tile-caption, & .lower-home .motorcycle-tile:focus-visible .tile-caption':
+      {
+        opacity: '1',
+        transform: 'translateY(0)',
+      },
   },
   {
     '& .round-arrow.outline': {
