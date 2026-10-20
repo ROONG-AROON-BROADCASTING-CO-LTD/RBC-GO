@@ -1232,7 +1232,7 @@ export const websiteSx: SxProps<Theme> = [
     '& .pricing-list': {
       display: 'grid',
       gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-      gap: '18px',
+      gap: '26px',
     },
   },
   {
@@ -1240,10 +1240,10 @@ export const websiteSx: SxProps<Theme> = [
       position: 'relative',
       display: 'block',
       margin: '0',
-      padding: '26px 38px',
+      padding: '34px 38px 38px',
       border: '1px solid var(--line)',
       borderRadius: '20px',
-      minHeight: '190px',
+      minHeight: '230px',
     },
   },
   {
@@ -1251,14 +1251,23 @@ export const websiteSx: SxProps<Theme> = [
       position: 'absolute',
       top: '50%',
       right: '30px',
-      width: '56px',
-      height: '56px',
+      width: '49px',
+      height: '49px',
       color: 'var(--lime)',
       transform: 'translateY(-50%)',
     },
     '& .pricing-list article > p': {
-      maxWidth: '72%',
-      marginTop: '24px',
+      maxWidth: '340px',
+      marginTop: '17px',
+      fontSize: '19px',
+      lineHeight: '1.4',
+      color: '#e2e4dc',
+    },
+  },
+  {
+    '& .pricing-list .journey-title h3': {
+      fontSize: '28px',
+      letterSpacing: '-0.025em',
     },
   },
   {
