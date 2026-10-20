@@ -4367,6 +4367,8 @@ export const websiteSx: SxProps<Theme> = [
         objectPosition: '62% center',
       },
       '& .about-hero > img': {
+        height: '640px !important',
+        bottom: 'auto !important',
         objectPosition: '75% center',
       },
       '& .about-copy': {
