@@ -3308,6 +3308,7 @@ export const websiteSx: SxProps<Theme> = [
         border: '0',
         padding: '0',
         gridTemplateColumns: '1fr',
+        gap: '16px',
       },
     },
   },
@@ -3315,11 +3316,8 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .pricing-list article': {
         gap: '20px',
-        marginBottom: '30px',
-        padding: '20px',
-      },
-      '& .pricing-list article:last-child': {
         marginBottom: '0',
+        padding: '20px',
       },
     },
   },
