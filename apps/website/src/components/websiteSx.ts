@@ -784,7 +784,7 @@ export const websiteSx: SxProps<Theme> = [
       borderTop: '1px solid #2a3027',
       borderLeft: '1px solid #2a3027',
       borderRight: '1px solid #2a3027',
-      borderRadius: '20px',
+      borderRadius: '12px',
       overflow: 'hidden',
       position: 'relative',
       '&::before': {
@@ -5294,6 +5294,11 @@ export const websiteSx: SxProps<Theme> = [
       {
         transform: 'none !important',
       },
+    '& .vehicle-components-list li:hover': {
+      borderColor: '#2a3027',
+      backgroundColor: 'rgb(153 255 24 / 3%)',
+      boxShadow: 'none',
+    },
     '& .manufacturing-gallery figure img, & .events-gallery-grid figure img': {
       transition:
         'transform 600ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease',
