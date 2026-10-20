@@ -4371,6 +4371,18 @@ export const websiteSx: SxProps<Theme> = [
         bottom: 'auto !important',
         objectPosition: '75% center',
       },
+      '& .about-hero::after': {
+        content: '""',
+        position: 'absolute',
+        top: '320px',
+        left: '0',
+        right: '0',
+        height: '320px',
+        zIndex: '0',
+        background:
+          'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 84%) 22%, transparent 100%)',
+        pointerEvents: 'none',
+      },
       '& .about-copy': {
         position: 'relative',
         left: 'auto',
