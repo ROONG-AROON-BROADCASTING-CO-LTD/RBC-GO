@@ -497,8 +497,8 @@ export function BrandPages({ page }: { page?: Page }) {
                     <Image
                       src={src}
                       alt={c.pressGalleryCaptions[index]}
-                      width={index === 3 ? 600 : 940}
-                      height={[569, 643, 694, 397][index]}
+                      width={600}
+                      height={397}
                       sizes="(max-width: 767px) 100vw, 50vw"
                     />
                     <figcaption>{c.pressGalleryCaptions[index]}</figcaption>
