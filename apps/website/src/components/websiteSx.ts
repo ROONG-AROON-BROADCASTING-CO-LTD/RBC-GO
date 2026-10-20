@@ -1279,7 +1279,9 @@ export const websiteSx: SxProps<Theme> = [
       borderRadius: '26px',
       marginLeft: '50px',
       padding: '40px',
-      alignSelf: 'start',
+      alignSelf: 'stretch',
+      height: '100%',
+      boxSizing: 'border-box',
     },
   },
   {
@@ -3305,6 +3307,7 @@ export const websiteSx: SxProps<Theme> = [
         padding: '28px',
         gap: '20px',
         borderRadius: '20px',
+        height: 'auto',
       },
     },
   },
