@@ -3869,6 +3869,18 @@ export const websiteSx: SxProps<Theme> = [
       '& .home-hero + .lower-home': {
         marginTop: '0',
       },
+      '& .vehicle-components': {
+        paddingTop: '48px',
+      },
+      '& .about-hero + .about-benefits': {
+        paddingTop: '48px',
+      },
+      '& .pricing-grid, & .how-details-heading': {
+        marginTop: '48px',
+      },
+      '& .help-page .page-intro': {
+        marginBottom: '48px',
+      },
     },
   },
   {
