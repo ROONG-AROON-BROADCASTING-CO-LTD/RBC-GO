@@ -1232,7 +1232,7 @@ export const websiteSx: SxProps<Theme> = [
     '& .pricing-list': {
       display: 'grid',
       gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-      gap: '26px',
+      gap: '18px',
     },
   },
   {
@@ -1240,34 +1240,36 @@ export const websiteSx: SxProps<Theme> = [
       position: 'relative',
       display: 'block',
       margin: '0',
-      padding: '34px 38px 38px',
+      padding: '25px',
       border: '1px solid var(--line)',
-      borderRadius: '20px',
-      minHeight: '230px',
+      borderRadius: '14px',
+      minHeight: '0',
     },
   },
   {
     '& .pricing-list .pricing-card-icon': {
       position: 'absolute',
-      top: '50%',
-      right: '30px',
-      width: '49px',
-      height: '49px',
+      right: '18px',
+      bottom: '18px',
+      width: '64px',
+      height: '64px',
       color: 'var(--lime)',
-      transform: 'translateY(-50%)',
+      pointerEvents: 'none',
     },
     '& .pricing-list article > p': {
-      maxWidth: '340px',
+      paddingRight: '82px',
       marginTop: '17px',
-      fontSize: '19px',
-      lineHeight: '1.4',
-      color: '#e2e4dc',
+      maxWidth: 'none',
     },
   },
   {
     '& .pricing-list .journey-title h3': {
-      fontSize: '28px',
-      letterSpacing: '-0.025em',
+      fontSize: '23px',
+    },
+    '& .pricing-list .number': {
+      width: '39px',
+      height: '39px',
+      fontSize: '22px',
     },
   },
   {
@@ -1278,8 +1280,8 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .pricing-list .icon': {
       color: 'var(--lime)',
-      width: '56px',
-      height: '56px',
+      width: '64px',
+      height: '64px',
     },
   },
   {
@@ -1291,10 +1293,10 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .pricing-list p': {
-      fontSize: '19px',
-      marginTop: '12px',
-      lineHeight: '1.4',
-      maxWidth: '510px',
+      fontSize: '16px',
+      marginTop: '17px',
+      lineHeight: '1.6',
+      maxWidth: 'none',
     },
   },
   {
@@ -5329,20 +5331,29 @@ export const websiteSx: SxProps<Theme> = [
       outlineOffset: '-1px',
     },
     '& .pricing-list article': {
-      padding: '34px 38px 38px !important',
-      minHeight: '230px !important',
+      padding: '25px !important',
+      minHeight: '0 !important',
     },
     '& .pricing-list .journey-title h3': {
-      fontSize: '28px !important',
+      fontSize: '23px !important',
       lineHeight: '1.35 !important',
       fontWeight: '600',
       letterSpacing: '-0.025em',
     },
     '& .pricing-list article > p': {
       marginTop: '17px !important',
-      maxWidth: '340px !important',
-      fontSize: '19px !important',
-      lineHeight: '1.4 !important',
+      paddingRight: '82px !important',
+      maxWidth: 'none !important',
+      fontSize: '16px !important',
+      lineHeight: '1.6 !important',
+    },
+    '& .pricing-list .pricing-card-icon': {
+      top: 'auto !important',
+      right: '18px !important',
+      bottom: '18px !important',
+      width: '64px !important',
+      height: '64px !important',
+      transform: 'none !important',
     },
     '& .vehicle-care-list article:hover': {
       backgroundColor: 'rgb(153 255 24 / 3%) !important',
