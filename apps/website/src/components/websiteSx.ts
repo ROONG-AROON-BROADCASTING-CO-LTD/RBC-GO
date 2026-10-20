@@ -5298,6 +5298,8 @@ export const websiteSx: SxProps<Theme> = [
       borderColor: '#2a3027',
       backgroundColor: 'rgb(153 255 24 / 3%)',
       boxShadow: 'none',
+      outline: '1px solid rgb(153 255 24 / 72%)',
+      outlineOffset: '-1px',
     },
     '& .manufacturing-gallery figure img, & .events-gallery-grid figure img': {
       transition:
