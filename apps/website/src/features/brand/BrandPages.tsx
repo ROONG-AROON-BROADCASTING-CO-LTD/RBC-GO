@@ -326,7 +326,7 @@ export function BrandPages({ page }: { page?: Page }) {
                 <motion.div
                   className="pricing-list"
                   variants={sequentialCardListReveal}
-                  initial="hidden"
+                  initial={false}
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.16 }}
                 >
@@ -360,7 +360,11 @@ export function BrandPages({ page }: { page?: Page }) {
                     </motion.article>
                   ))}
                 </motion.div>
-                <motion.aside {...reveal} className="rate-notice">
+                <motion.aside
+                  {...reveal}
+                  initial={false}
+                  className="rate-notice"
+                >
                   <Icon kind="tag" />
                   <div>
                     <h2>
