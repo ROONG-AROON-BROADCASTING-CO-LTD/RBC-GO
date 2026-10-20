@@ -2451,7 +2451,7 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 1024px)': {
+    '@media (max-width: 1100px)': {
       '& .site-header': {
         height: '104px',
         overflow: 'visible',
@@ -2488,14 +2488,14 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 1024px)': {
+    '@media (max-width: 1100px)': {
       '& .brand': {
         gap: '10px',
       },
     },
   },
   {
-    '@media (max-width: 1024px)': {
+    '@media (max-width: 1100px)': {
       '& .brand-logo': {
         width: '42px',
         height: '42px',
@@ -2503,21 +2503,21 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 1024px)': {
+    '@media (max-width: 1100px)': {
       '& .desktop-nav, & .header-start': {
         display: 'none',
       },
     },
   },
   {
-    '@media (max-width: 1024px)': {
+    '@media (max-width: 1100px)': {
       '& .header-right': {
         gap: '20px',
       },
     },
   },
   {
-    '@media (max-width: 1024px)': {
+    '@media (max-width: 1100px)': {
       '& .locale-switch': {
         fontSize: '12px',
         gap: '9px',
@@ -2525,7 +2525,7 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 1024px)': {
+    '@media (max-width: 1100px)': {
       '& .menu-toggle': {
         display: 'grid',
         placeItems: 'center',
@@ -2538,7 +2538,7 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 1024px)': {
+    '@media (max-width: 1100px)': {
       '& .menu-toggle .icon': {
         width: '23px',
         height: '23px',
@@ -2546,7 +2546,7 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 1024px)': {
+    '@media (max-width: 1100px)': {
       '& .mobile-menu': {
         display: 'flex',
         flexDirection: 'column',
@@ -2563,7 +2563,7 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 1024px)': {
+    '@media (max-width: 1100px)': {
       '& .mobile-menu > a:not(.mobile-login)': {
         display: 'flex',
         alignItems: 'center',
@@ -2580,7 +2580,7 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '@media (max-width: 1024px)': {
+    '@media (max-width: 1100px)': {
       '& .mobile-menu .mobile-login': {
         justifyContent: 'center',
       },

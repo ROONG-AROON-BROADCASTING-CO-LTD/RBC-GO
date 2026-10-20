@@ -207,7 +207,7 @@ export function BrandPages({ page }: { page?: Page }) {
               <motion.ol
                 className="vehicle-components-list"
                 variants={componentListReveal}
-                initial={false}
+                initial={isLanguageSwitching ? false : 'hidden'}
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.16 }}
               >
@@ -240,7 +240,7 @@ export function BrandPages({ page }: { page?: Page }) {
               <motion.div
                 className="vehicle-care-list"
                 variants={componentListReveal}
-                initial={false}
+                initial={isLanguageSwitching ? false : 'hidden'}
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.16 }}
               >
