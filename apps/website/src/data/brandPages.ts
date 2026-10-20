@@ -120,6 +120,7 @@ const copy = {
       ],
     ],
     manufacturingGalleryTitle: 'Inside the KRONOS production base.',
+    manufacturingGalleryLabel: 'PRODUCTION GALLERY',
     manufacturingGalleryCopy:
       'Factory and assembly images supplied by KRONOS E-BIKES show the production setting behind the product context for RBC GO.',
     manufacturingGalleryCaptions: [
@@ -134,6 +135,7 @@ const copy = {
     collaborationIntro:
       'RBC GO is developed in collaboration with KRONOS E-BIKES, connecting Thailand-based electric-mobility production with a service designed for Bangkok’s daily journeys.',
     pressGalleryTitle: 'KRONOS at Motor Expo 2023.',
+    pressGalleryLabel: 'PRESS GALLERY',
     pressGalleryCopy:
       'Published KRONOS press photographs capture the launch setting, team and electric-motorcycle showcase from Motor Expo 2023.',
     pressGalleryCaptions: [
@@ -185,6 +187,7 @@ const copy = {
     eventsIntro:
       'Selected past public appearances listed on the KRONOS events page. These are historical showcases, not upcoming RBC GO service dates.',
     eventGalleryTitle: 'A closer look at a KRONOS showcase.',
+    eventGalleryLabel: 'EVENT GALLERY',
     eventGalleryCopy:
       'Images from KRONOS & G2U’s Central Udon Thani electric-vehicle showcase, published on the KRONOS events page.',
     eventGalleryCaptions: [
@@ -357,6 +360,7 @@ const copy = {
       ],
     ],
     manufacturingGalleryTitle: 'เบื้องหลังฐานการผลิต KRONOS',
+    manufacturingGalleryLabel: 'คลังภาพฐานการผลิต',
     manufacturingGalleryCopy:
       'ภาพโรงงานและการประกอบจาก KRONOS E-BIKES แสดงบริบทการผลิตที่อยู่เบื้องหลังผลิตภัณฑ์สำหรับ RBC GO',
     manufacturingGalleryCaptions: [
@@ -371,6 +375,7 @@ const copy = {
     collaborationIntro:
       'RBC GO พัฒนาร่วมกับ KRONOS E-BIKES เพื่อเชื่อมต่อบริบทการผลิตยานยนต์ไฟฟ้าในประเทศไทยเข้ากับบริการที่ออกแบบเพื่อทุกการเดินทางของกรุงเทพฯ',
     pressGalleryTitle: 'KRONOS ในงาน Motor Expo 2023',
+    pressGalleryLabel: 'คลังภาพข่าว',
     pressGalleryCopy:
       'ภาพข่าวที่ KRONOS เผยแพร่บันทึกบรรยากาศการเปิดตัว ทีมงาน และการจัดแสดงมอเตอร์ไซค์ไฟฟ้าในงาน Motor Expo 2023',
     pressGalleryCaptions: [
@@ -422,6 +427,7 @@ const copy = {
     eventsIntro:
       'ตัวอย่างกิจกรรมที่ผ่านมา ซึ่งเผยแพร่บนหน้า Events ของ KRONOS เพื่อแสดงการพบปะผู้ใช้ในพื้นที่จริง ไม่ใช่กำหนดการเปิดบริการของ RBC GO',
     eventGalleryTitle: 'บรรยากาศจากงาน KRONOS',
+    eventGalleryLabel: 'คลังภาพกิจกรรม',
     eventGalleryCopy:
       'ภาพจากกิจกรรม KRONOS & G2U ที่ Central Udon Thani ซึ่งเผยแพร่บนหน้า Events ของ KRONOS',
     eventGalleryCaptions: [

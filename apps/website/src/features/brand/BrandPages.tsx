@@ -464,7 +464,10 @@ export function BrandPages({ page }: { page?: Page }) {
               className="kronos-collaboration"
               aria-labelledby="kronos-collaboration-heading"
             >
-              <motion.div {...reveal} className="kronos-collaboration-copy">
+              <motion.div
+                {...reveal}
+                className="kronos-collaboration-copy about-section-heading"
+              >
                 <span className="eyebrow">{c.collaborationLabel}</span>
                 <h2 id="kronos-collaboration-heading">
                   {c.collaborationTitle}
@@ -495,7 +498,8 @@ export function BrandPages({ page }: { page?: Page }) {
                 ))}
               </div>
               <motion.div {...reveal} className="kronos-press-sources">
-                <div>
+                <div className="about-section-heading about-subsection-heading">
+                  <span className="eyebrow">{c.pressGalleryLabel}</span>
                   <h3>{c.pressGalleryTitle}</h3>
                   <p>{c.pressGalleryCopy}</p>
                 </div>
@@ -513,7 +517,10 @@ export function BrandPages({ page }: { page?: Page }) {
               className="about-proof"
               aria-labelledby="about-proof-heading"
             >
-              <motion.div {...reveal} className="about-proof-heading">
+              <motion.div
+                {...reveal}
+                className="about-proof-heading about-section-heading"
+              >
                 <span className="eyebrow">{c.manufacturingLabel}</span>
                 <h2 id="about-proof-heading">{c.manufacturingTitle}</h2>
                 <p>{c.manufacturingIntro}</p>
@@ -546,7 +553,10 @@ export function BrandPages({ page }: { page?: Page }) {
               className="factory-capabilities"
               aria-labelledby="factory-capabilities-heading"
             >
-              <motion.div {...reveal} className="factory-capabilities-heading">
+              <motion.div
+                {...reveal}
+                className="factory-capabilities-heading about-section-heading"
+              >
                 <span className="eyebrow">{c.factoryDetailLabel}</span>
                 <h2 id="factory-capabilities-heading">
                   {c.factoryDetailTitle}
@@ -622,7 +632,11 @@ export function BrandPages({ page }: { page?: Page }) {
               className="manufacturing-gallery"
               aria-labelledby="manufacturing-gallery-heading"
             >
-              <motion.div {...reveal} className="manufacturing-gallery-heading">
+              <motion.div
+                {...reveal}
+                className="manufacturing-gallery-heading about-section-heading"
+              >
+                <span className="eyebrow">{c.manufacturingGalleryLabel}</span>
                 <h2 id="manufacturing-gallery-heading">
                   {c.manufacturingGalleryTitle}
                 </h2>
@@ -675,7 +689,10 @@ export function BrandPages({ page }: { page?: Page }) {
               className="brand-events"
               aria-labelledby="brand-events-heading"
             >
-              <motion.div {...reveal} className="brand-events-heading">
+              <motion.div
+                {...reveal}
+                className="brand-events-heading about-section-heading"
+              >
                 <span className="eyebrow">{c.eventsLabel}</span>
                 <h2 id="brand-events-heading">{c.eventsTitle}</h2>
                 <p>{c.eventsIntro}</p>
@@ -707,7 +724,11 @@ export function BrandPages({ page }: { page?: Page }) {
                   );
                 })}
               </ol>
-              <motion.div {...reveal} className="events-gallery-heading">
+              <motion.div
+                {...reveal}
+                className="events-gallery-heading about-section-heading about-subsection-heading"
+              >
+                <span className="eyebrow">{c.eventGalleryLabel}</span>
                 <h3>{c.eventGalleryTitle}</h3>
                 <p>{c.eventGalleryCopy}</p>
               </motion.div>

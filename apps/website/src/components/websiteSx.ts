@@ -5314,23 +5314,27 @@ export const websiteSx: SxProps<Theme> = [
         paddingTop: 0,
         borderTop: 0,
       },
-    // Use the homepage section-heading scale for the factory introduction as
-    // well, so both headings share the same rhythm and reveal footprint.
-    '& .page-about .factory-capabilities-heading': {
+    // Every About-page section uses the same eyebrow, title, and supporting
+    // copy rhythm, including the gallery and press sub-sections.
+    '& .page-about .about-section-heading': {
+      display: 'block',
       width: 'min(100%, 640px)',
       maxWidth: 'none',
     },
-    '& .page-about .factory-capabilities-heading .eyebrow': {
+    '& .page-about .about-section-heading .eyebrow': {
+      display: 'block',
       marginBottom: '14px',
       fontSize: '15px',
     },
-    '& .page-about .factory-capabilities-heading h2': {
-      marginTop: 0,
-      fontSize: '36px',
-      lineHeight: '1.18',
-      letterSpacing: '0.01em',
-    },
-    '& .page-about .factory-capabilities-heading > p': {
+    '& .page-about .about-section-heading h2, & .page-about .about-section-heading h3':
+      {
+        marginTop: 0,
+        fontSize: '36px',
+        fontWeight: '600',
+        lineHeight: '1.18',
+        letterSpacing: '0.01em',
+      },
+    '& .page-about .about-section-heading > p': {
       marginTop: '12px',
       maxWidth: 'none',
       color: '#c1c3bc',
