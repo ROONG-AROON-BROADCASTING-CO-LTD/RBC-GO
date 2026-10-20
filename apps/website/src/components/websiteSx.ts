@@ -5295,6 +5295,21 @@ export const websiteSx: SxProps<Theme> = [
     '& .fleet-intro': {
       zIndex: '3',
     },
+    // Full-bleed dividers separate page-level content groups while the content
+    // itself stays aligned to the shared page gutter.
+    '& main > section + section, & main > .page-content + section, & main > .lower-home + section, & .page-home > .home-hero + .lower-home, & .lower-home > section + section, & .pricing-content > .page-intro + .pricing-grid, & .how-content > .how-details-heading + .journey, & .how-content > .journey + .safety-note, & .help-page > .page-intro + .help-content, & .help-page > .help-content + .help-callout':
+      {
+        position: 'relative',
+        '&::before': {
+          content: "''",
+          position: 'absolute',
+          top: '0',
+          left: 'calc((100vw - 100%) / -2)',
+          width: '100vw',
+          borderTop: '1px solid #2a3027',
+          pointerEvents: 'none',
+        },
+      },
     '& .button, & .round-arrow, & .icon-button': {
       transition:
         'transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease',
