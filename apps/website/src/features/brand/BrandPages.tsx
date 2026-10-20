@@ -142,6 +142,10 @@ function galleryReveal(index: number) {
 export function BrandPages({ page }: { page?: Page }) {
   const { language: locale, setLanguage } = useWebsiteLanguage();
   const [activeBenefit, setActiveBenefit] = useState<number | null>(null);
+  const [pricingHoveredIndex, setPricingHoveredIndex] = useState<number | null>(
+    null,
+  );
+  const [pricingIconTrigger, setPricingIconTrigger] = useState(0);
   const t = text[locale];
   const c = referenceCopy(locale);
   const schema = {
@@ -331,9 +335,21 @@ export function BrandPages({ page }: { page?: Page }) {
                       key={`${title}-${i}`}
                       variants={componentCardReveal}
                       whileHover={{ y: -5 }}
+                      onMouseEnter={() => {
+                        setPricingHoveredIndex(i);
+                        setPricingIconTrigger((value) => value + 1);
+                      }}
+                      onMouseLeave={() => setPricingHoveredIndex(null)}
                     >
                       <Icon
                         kind={(['route', 'chart', 'receipt'] as const)[i]}
+                        animateOnHover={false}
+                        animationState={
+                          pricingHoveredIndex === i ? 'animate' : 'normal'
+                        }
+                        animationTrigger={
+                          pricingHoveredIndex === i ? pricingIconTrigger : 0
+                        }
                       />
                       <div>
                         <h3>{title}</h3>
