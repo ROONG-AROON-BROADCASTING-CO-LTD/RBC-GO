@@ -82,8 +82,8 @@ const copy = {
     pricingDetailsIntro:
       'Review the fare logic, what to check before riding and how your journey is summarized.',
     rateCopy:
-      'We are preparing launch rates and will share the details before service begins.',
-    stay: 'Stay tuned!',
+      'Sample pricing: ฿10 unlock fee + ฿3 per kilometre, with no advance booking fee.',
+    stay: 'Simulation data — final rates will be announced before launch.',
     river: ['Every kilometre.', 'A brighter Bangkok.'],
     riverCopy: 'A new way to connect with the city on your terms.',
     about: ['A little change.', 'A better city.'],
@@ -318,8 +318,9 @@ const copy = {
     pricingDetailsTitle: 'รายละเอียดค่าบริการที่เข้าใจง่าย',
     pricingDetailsIntro:
       'ทำความเข้าใจการคิดค่าบริการ สิ่งที่ควรตรวจสอบก่อนเดินทาง และสรุปค่าใช้จ่ายหลังจบทริป',
-    rateCopy: 'เรากำลังเตรียมอัตราค่าบริการ และจะแจ้งรายละเอียดก่อนเปิดบริการ',
-    stay: 'ติดตามข่าวสารเร็ว ๆ นี้',
+    rateCopy:
+      'ตัวอย่างข้อมูลจำลอง: ค่าปลดล็อก 10 บาท + 3 บาทต่อกิโลเมตร และไม่มีค่าจองล่วงหน้า',
+    stay: 'ข้อมูลจำลอง — อัตราจริงจะแจ้งก่อนเปิดบริการ',
     river: ['ทุกกิโลเมตร', 'เพื่อกรุงเทพฯ ที่ดีขึ้น'],
     riverCopy: 'อีกวิธีในการเชื่อมต่อกับเมืองในแบบของคุณ',
     about: ['ขยับไปข้างหน้า', 'เพื่อเมืองที่ดีขึ้น'],
