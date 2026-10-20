@@ -5328,6 +5328,21 @@ export const websiteSx: SxProps<Theme> = [
       outline: '1px solid rgb(153 255 24 / 72%)',
       outlineOffset: '-1px',
     },
+    '& .pricing-list article': {
+      padding: '34px 38px 38px !important',
+      minHeight: '230px !important',
+    },
+    '& .pricing-list .journey-title h3': {
+      fontSize: '28px !important',
+      lineHeight: '1.2 !important',
+      letterSpacing: '-0.025em',
+    },
+    '& .pricing-list article > p': {
+      marginTop: '17px !important',
+      maxWidth: '340px !important',
+      fontSize: '19px !important',
+      lineHeight: '1.4 !important',
+    },
     '& .vehicle-care-list article:hover': {
       backgroundColor: 'rgb(153 255 24 / 3%) !important',
       boxShadow: 'none',
