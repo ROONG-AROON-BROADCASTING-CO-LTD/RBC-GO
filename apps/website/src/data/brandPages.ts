@@ -117,11 +117,11 @@ const copy = {
     manufacturingGalleryCopy:
       'Factory and assembly images supplied by KRONOS E-BIKES show the production setting behind the product context for RBC GO.',
     manufacturingGalleryCaptions: [
-      'Fabrication floor — KRONOS E-BIKES factory',
-      'Assembly work — KRONOS E-BIKES factory',
-      'Metal fabrication — KRONOS E-BIKES factory',
-      'KRONOS production facility — Thailand',
-      'Machining area — KRONOS E-BIKES factory',
+      'KRONOS production campus — Thailand',
+      'Fabrication floor with laser-cutting equipment',
+      'Press shop and formed-frame components',
+      'Laser cutting in the KRONOS fabrication facility',
+      'Assembly floor and production components',
     ],
     collaborationLabel: 'RBC GO × KRONOS',
     collaborationTitle: 'A collaboration for better city movement.',
@@ -347,11 +347,11 @@ const copy = {
     manufacturingGalleryCopy:
       'ภาพโรงงานและการประกอบจาก KRONOS E-BIKES แสดงบริบทการผลิตที่อยู่เบื้องหลังผลิตภัณฑ์สำหรับ RBC GO',
     manufacturingGalleryCaptions: [
-      'พื้นที่งานผลิต — โรงงาน KRONOS E-BIKES',
-      'งานประกอบ — โรงงาน KRONOS E-BIKES',
-      'งานโลหะและการผลิต — โรงงาน KRONOS E-BIKES',
-      'อาคารฐานการผลิต KRONOS ในประเทศไทย',
-      'พื้นที่เครื่องจักร — โรงงาน KRONOS E-BIKES',
+      'พื้นที่โรงงานและฐานการผลิต KRONOS ในประเทศไทย',
+      'พื้นที่ผลิตพร้อมเครื่องตัดเลเซอร์',
+      'พื้นที่เครื่องปั๊มและชิ้นส่วนโครงขึ้นรูป',
+      'งานตัดเลเซอร์ในพื้นที่ผลิตของ KRONOS',
+      'พื้นที่ประกอบและชิ้นส่วนการผลิต',
     ],
     collaborationLabel: 'RBC GO × KRONOS',
     collaborationTitle: 'ความร่วมมือเพื่อการเดินทางในเมืองที่ดีขึ้น',

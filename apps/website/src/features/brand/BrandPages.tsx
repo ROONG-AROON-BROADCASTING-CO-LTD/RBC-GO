@@ -435,6 +435,7 @@ export function BrandPages({ page }: { page?: Page }) {
               </div>
             </section>
             <section
+              id="production-gallery"
               className="manufacturing-gallery"
               aria-labelledby="manufacturing-gallery-heading"
             >
@@ -447,23 +448,23 @@ export function BrandPages({ page }: { page?: Page }) {
               <div className="manufacturing-gallery-grid">
                 {[
                   {
-                    src: '/images/about/kronos-factory-floor.jpg',
+                    src: '/images/about/kronos-factory-gate.jpg',
                     caption: c.manufacturingGalleryCaptions[0],
                   },
                   {
-                    src: '/images/about/kronos-assembly-line.jpg',
+                    src: '/images/about/kronos-factory-overview.jpg',
                     caption: c.manufacturingGalleryCaptions[1],
                   },
                   {
-                    src: '/images/about/kronos-metal-fabrication.jpg',
+                    src: '/images/about/kronos-factory-press-shop.jpg',
                     caption: c.manufacturingGalleryCaptions[2],
                   },
                   {
-                    src: '/images/about/kronos-factory-exterior.jpg',
+                    src: '/images/about/kronos-factory-laser-cut.jpg',
                     caption: c.manufacturingGalleryCaptions[3],
                   },
                   {
-                    src: '/images/about/kronos-factory-machining.jpg',
+                    src: '/images/about/kronos-factory-assembly-floor.jpg',
                     caption: c.manufacturingGalleryCaptions[4],
                   },
                 ].map((image, index) => (
