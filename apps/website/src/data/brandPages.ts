@@ -75,6 +75,7 @@ const copy = {
       ],
     ],
     rates: ['Rates', 'coming soon'],
+    pricingDetailsTitle: 'How the journey stays clear.',
     rateCopy:
       'We are preparing launch rates and will share the details before service begins.',
     stay: 'Stay tuned!',
@@ -306,6 +307,7 @@ const copy = {
       ['สรุปชัดเจน', 'ดูระยะทางและค่าบริการหลังคืนมอเตอร์ไซค์'],
     ],
     rates: ['อัตราค่าบริการ', 'พบกันเร็ว ๆ นี้'],
+    pricingDetailsTitle: 'รายละเอียดค่าบริการที่เข้าใจง่าย',
     rateCopy: 'เรากำลังเตรียมอัตราค่าบริการ และจะแจ้งรายละเอียดก่อนเปิดบริการ',
     stay: 'ติดตามข่าวสารเร็ว ๆ นี้',
     river: ['ทุกกิโลเมตร', 'เพื่อกรุงเทพฯ ที่ดีขึ้น'],

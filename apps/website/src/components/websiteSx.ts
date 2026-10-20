@@ -1227,6 +1227,16 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
+    '& .pricing-grid-heading': {
+      marginBottom: '26px',
+    },
+    '& .pricing-grid-heading h2': {
+      fontSize: 'clamp(28px, 3.2vw, 40px)',
+      lineHeight: '1.15',
+      marginTop: '8px',
+    },
+  },
+  {
     '& .pricing-list': {
       display: 'grid',
       gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',

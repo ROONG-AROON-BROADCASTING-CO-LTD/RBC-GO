@@ -302,6 +302,10 @@ export function BrandPages({ page }: { page?: Page }) {
                 </HeroCopy>
               </section>
               <section className="pricing-grid">
+                <motion.div {...reveal} className="pricing-grid-heading">
+                  <span className="eyebrow">{c.rates[0]}</span>
+                  <h2>{c.pricingDetailsTitle}</h2>
+                </motion.div>
                 <motion.div
                   className="pricing-list"
                   variants={sequentialCardListReveal}
