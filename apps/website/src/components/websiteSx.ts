@@ -5341,6 +5341,13 @@ export const websiteSx: SxProps<Theme> = [
       fontSize: '16px',
       lineHeight: '1.65',
     },
+    '& .page-about .kronos-collaboration-copy': {
+      width: 'min(100%, 760px)',
+    },
+    '& .page-about .kronos-collaboration-copy h2': {
+      maxWidth: 'none',
+      whiteSpace: 'nowrap',
+    },
     '& .button, & .round-arrow, & .icon-button': {
       transition:
         'transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease',
@@ -5451,6 +5458,12 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .tile-lime-orbit': {
         width: '180px',
+      },
+      '& .page-about .kronos-collaboration-copy': {
+        width: '100%',
+      },
+      '& .page-about .kronos-collaboration-copy h2': {
+        whiteSpace: 'normal',
       },
     },
   },
