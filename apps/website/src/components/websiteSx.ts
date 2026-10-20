@@ -1676,11 +1676,6 @@ export const websiteSx: SxProps<Theme> = [
     '& .closing-cta-video:hover, & .closing-cta-video:focus-within': {
       boxShadow: '0 18px 40px rgb(0 0 0 / 28%)',
     },
-    '& .closing-cta-video:hover > video, & .closing-cta-video:focus-within > video':
-      {
-        transform: 'scale(1.02)',
-        transition: 'transform 500ms cubic-bezier(0.16, 1, 0.3, 1)',
-      },
   },
   {
     '& .closing-cta > img, & .closing-cta > video': {
