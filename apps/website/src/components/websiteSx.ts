@@ -5295,20 +5295,17 @@ export const websiteSx: SxProps<Theme> = [
     '& .fleet-intro': {
       zIndex: '3',
     },
-    // Full-bleed dividers separate page-level content groups while the content
-    // itself stays aligned to the shared page gutter.
-    '& main > section + section, & main > .page-content + section, & main > .lower-home + section, & .page-home > .home-hero + .lower-home, & .lower-home > section + section, & .pricing-content > .page-intro + .pricing-grid, & .how-content > .how-details-heading + .journey, & .how-content > .journey + .safety-note, & .help-page > .page-intro + .help-content, & .help-page > .help-content + .help-callout':
+    // Keep the About page's content sections on one vertical rhythm, without
+    // the divider rules that previously separated those sections.
+    '& .page-about .about-benefits, & .page-about .kronos-collaboration, & .page-about .about-proof, & .page-about .factory-capabilities, & .page-about .manufacturing-gallery, & .page-about .brand-events':
       {
-        position: 'relative',
-        '&::before': {
-          content: "''",
-          position: 'absolute',
-          top: '0',
-          left: 'calc((100vw - 100%) / -2)',
-          width: '100vw',
-          borderTop: '1px solid #2a3027',
-          pointerEvents: 'none',
-        },
+        padding: 'clamp(48px, 7vw, 104px) 0',
+        borderTop: 0,
+      },
+    '& .page-about .manufacturing-gallery-heading, & .page-about .events-gallery-heading, & .page-about .kronos-press-sources':
+      {
+        paddingTop: 0,
+        borderTop: 0,
       },
     '& .button, & .round-arrow, & .icon-button': {
       transition:
