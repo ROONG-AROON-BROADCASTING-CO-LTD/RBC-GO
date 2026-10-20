@@ -5357,7 +5357,10 @@ export const websiteSx: SxProps<Theme> = [
       transform: 'none !important',
     },
     '& .vehicle-care-list article:hover': {
-      backgroundColor: 'rgb(153 255 24 / 3%) !important',
+      // Match the component grid hover tone exactly. The care cards have their
+      // own opaque base, so applying the shared transparent lime overlay here
+      // would otherwise produce a lighter green.
+      backgroundColor: '#0c1108 !important',
       boxShadow: 'none',
       outline: '1px solid rgb(153 255 24 / 72%)',
       outlineOffset: '-1px',
