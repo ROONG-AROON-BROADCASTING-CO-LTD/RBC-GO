@@ -1149,7 +1149,7 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .with-phones .journey-columns article': {
-      paddingRight: '35px',
+      padding: '25px',
     },
   },
   {
