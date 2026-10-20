@@ -765,7 +765,12 @@ export function BrandPages({ page }: { page?: Page }) {
             </motion.section>
           </div>
         )}
-        <motion.section {...reveal} className="closing-cta closing-cta-video">
+        <motion.section
+          {...reveal}
+          className="closing-cta closing-cta-video"
+          whileHover={{ y: -8, rotateX: 1.2 }}
+          transition={{ type: 'spring', stiffness: 210, damping: 22 }}
+        >
           <video
             aria-label={
               locale === 'th'
