@@ -203,7 +203,7 @@ export function HelpQuestions({ locale }: { locale: Locale }) {
   );
   return (
     <section className="help-content">
-      <label className="search">
+      <motion.label {...reveal} className="search">
         <Icon kind="search" />
         <input
           id="help-search"
@@ -216,8 +216,10 @@ export function HelpQuestions({ locale }: { locale: Locale }) {
           }
           aria-label={t.search}
         />
-      </label>
-      <h2>{c.popular}</h2>
+      </motion.label>
+      <motion.h2 {...reveal} transition={{ ...reveal.transition, delay: 0.12 }}>
+        {c.popular}
+      </motion.h2>
       <p className="sr-only" role="status">
         {found.length} {locale === 'en' ? 'questions' : 'คำถาม'}
       </p>
