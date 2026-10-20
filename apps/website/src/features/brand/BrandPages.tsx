@@ -555,28 +555,30 @@ export function BrandPages({ page }: { page?: Page }) {
               </motion.div>
               <div className="factory-facts" aria-label={c.factoryDetailLabel}>
                 {c.factoryFacts.map(([value, label], index) => (
-                  <article key={value}>
+                  <motion.article
+                    key={value}
+                    {...galleryReveal(index)}
+                    whileHover={{ y: -6, scale: 1.012 }}
+                  >
                     <span className="factory-fact-label">
                       {locale === 'en'
                         ? `FACT ${String(index + 1).padStart(2, '0')}`
                         : `ข้อมูลสำคัญ ${String(index + 1).padStart(2, '0')}`}
                     </span>
-                    <motion.div
-                      className="factory-fact-content"
-                      {...galleryReveal(index)}
-                    >
+                    <div className="factory-fact-content">
                       <strong>{value}</strong>
                       <span>{label}</span>
-                    </motion.div>
-                  </article>
+                    </div>
+                  </motion.article>
                 ))}
               </div>
-              <div className="factory-location">
-                <motion.div
-                  className="factory-location-content"
-                  {...reveal}
-                  transition={{ ...reveal.transition, delay: 0.16 }}
-                >
+              <motion.div
+                className="factory-location"
+                {...reveal}
+                transition={{ ...reveal.transition, delay: 0.16 }}
+                whileHover={{ y: -6, scale: 1.012 }}
+              >
+                <div className="factory-location-content">
                   <div>
                     <span className="eyebrow">{c.factoryLocationLabel}</span>
                     <h3>{c.factoryLocationTitle}</h3>
@@ -589,8 +591,8 @@ export function BrandPages({ page }: { page?: Page }) {
                     <span>{c.factoryLocationAddress}</span>
                     <small>{c.factoryLocationNote}</small>
                   </address>
-                </motion.div>
-              </div>
+                </div>
+              </motion.div>
               <motion.div
                 className="factory-capability-list"
                 variants={componentListReveal}
@@ -599,18 +601,19 @@ export function BrandPages({ page }: { page?: Page }) {
                 viewport={{ once: true, amount: 0.16 }}
               >
                 {c.factoryCapabilities.map(([title, copy], index) => (
-                  <article key={title}>
-                    <motion.div
-                      className="factory-capability-content"
-                      variants={componentItemReveal}
-                    >
+                  <motion.article
+                    key={title}
+                    variants={componentItemReveal}
+                    whileHover={{ y: -6, scale: 1.012 }}
+                  >
+                    <div className="factory-capability-content">
                       <span>{String(index + 1).padStart(2, '0')}</span>
                       <div>
                         <h3>{title}</h3>
                         <p>{copy}</p>
                       </div>
-                    </motion.div>
-                  </article>
+                    </div>
+                  </motion.article>
                 ))}
               </motion.div>
             </section>
