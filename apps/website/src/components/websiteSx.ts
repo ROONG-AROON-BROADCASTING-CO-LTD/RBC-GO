@@ -807,12 +807,16 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .vehicle-components-list li': {
-      display: 'flex',
-      gap: '16px',
       minHeight: '138px',
       padding: '25px 22px',
       borderRight: '1px solid #2a3027',
       borderBottom: '1px solid #2a3027',
+    },
+  },
+  {
+    '& .vehicle-component-content': {
+      display: 'flex',
+      gap: '16px',
     },
   },
   {
@@ -821,7 +825,7 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '& .vehicle-components-list li > span': {
+    '& .vehicle-component-content > span': {
       flex: '0 0 auto',
       display: 'inline-flex',
       alignItems: 'center',

@@ -182,18 +182,18 @@ export function BrandPages({ page }: { page?: Page }) {
                 viewport={{ once: true, amount: 0.16 }}
               >
                 {c.components.map(([title, description], index) => (
-                  <motion.li
-                    key={`${title}-${index}`}
-                    variants={componentItemReveal}
-                  >
-                    <>
+                  <li key={`${title}-${index}`}>
+                    <motion.div
+                      className="vehicle-component-content"
+                      variants={componentItemReveal}
+                    >
                       <span>{String(index + 1).padStart(2, '0')}</span>
                       <div>
                         <h3>{title}</h3>
                         <p>{description}</p>
                       </div>
-                    </>
-                  </motion.li>
+                    </motion.div>
+                  </li>
                 ))}
               </motion.ol>
             </motion.section>
