@@ -1671,7 +1671,18 @@ export const websiteSx: SxProps<Theme> = [
       overflow: 'hidden',
       aspectRatio: '16 / 9',
       minHeight: '0',
+      transition:
+        'transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms ease',
     },
+    '& .closing-cta-video:hover, & .closing-cta-video:focus-within': {
+      transform: 'translateY(-8px) !important',
+      boxShadow: '0 18px 40px rgb(0 0 0 / 28%)',
+    },
+    '& .closing-cta-video:hover > video, & .closing-cta-video:focus-within > video':
+      {
+        transform: 'scale(1.02)',
+        transition: 'transform 500ms cubic-bezier(0.16, 1, 0.3, 1)',
+      },
   },
   {
     '& .closing-cta > img, & .closing-cta > video': {
