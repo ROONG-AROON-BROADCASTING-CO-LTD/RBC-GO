@@ -46,6 +46,9 @@ const copy = {
     ],
     getStarted: 'See how it works',
     how: ['Your next journey', 'starts here.'],
+    howDetailsTitle: 'Three simple steps to get moving.',
+    howDetailsIntro:
+      'Follow the same clear rhythm every time: prepare your balance, scan the motorcycle and ride with confidence.',
     howIntro:
       'Start every journey from your phone—top up, scan the QR code and unlock an electric motorcycle in a few simple steps for a smoother way to move through the city.',
     steps: ['Top up', 'Scan', 'Ride'],
@@ -289,6 +292,9 @@ const copy = {
     ],
     getStarted: 'ดูวิธีใช้งาน',
     how: ['การเดินทางครั้งใหม่', 'เริ่มต้นที่นี่'],
+    howDetailsTitle: 'สามขั้นตอน สู่ทุกการเดินทางที่ง่ายขึ้น',
+    howDetailsIntro:
+      'ทำความเข้าใจจังหวะการใช้งานตั้งแต่เตรียมยอดเงิน สแกนมอเตอร์ไซค์ ไปจนถึงการเดินทางอย่างมั่นใจ',
     howIntro:
       'เริ่มต้นทุกการเดินทางผ่านมือถือ เติมเงิน สแกน QR และปลดล็อกมอเตอร์ไซค์ไฟฟ้าได้ในไม่กี่ขั้นตอน เพื่อให้การเดินทางในเมืองของคุณคล่องตัวและมั่นใจยิ่งขึ้น',
     steps: ['เติมเงิน', 'สแกน', 'เดินทาง'],

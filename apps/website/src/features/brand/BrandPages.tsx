@@ -271,6 +271,16 @@ export function BrandPages({ page }: { page?: Page }) {
               <Heading lines={c.how} />
               <HeroCopy>{c.howIntro}</HeroCopy>
             </section>
+            <motion.div
+              {...reveal}
+              className="section-heading how-details-heading"
+            >
+              <div>
+                <span className="eyebrow">{t.nav[2]}</span>
+                <h2>{c.howDetailsTitle}</h2>
+                <p>{c.howDetailsIntro}</p>
+              </div>
+            </motion.div>
             <JourneySection locale={locale} phones />
             <motion.section {...reveal} className="safety-note" id="safety">
               <Icon kind="motorcycle" />
