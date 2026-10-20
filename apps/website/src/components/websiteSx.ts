@@ -1221,16 +1221,16 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '& .pricing-grid': {
-      display: 'grid',
-      gridTemplateColumns: '58% 42%',
-      gap: '0',
+      display: 'flex',
+      flexDirection: 'column',
       marginTop: '60px',
     },
   },
   {
     '& .pricing-list': {
-      borderRight: '1px solid var(--line)',
-      paddingRight: '50px',
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+      gap: '18px',
     },
   },
   {
@@ -1238,7 +1238,7 @@ export const websiteSx: SxProps<Theme> = [
       display: 'flex',
       alignItems: 'start',
       gap: '28px',
-      marginBottom: '18px',
+      margin: '0',
       padding: '24px',
       border: '1px solid var(--line)',
       borderRadius: '14px',
@@ -1277,10 +1277,10 @@ export const websiteSx: SxProps<Theme> = [
       gap: '25px',
       background: 'var(--surface)',
       borderRadius: '14px',
-      marginLeft: '50px',
+      margin: '26px 0 0',
       padding: '40px',
       alignSelf: 'stretch',
-      height: '100%',
+      height: 'auto',
       boxSizing: 'border-box',
     },
   },
@@ -3265,6 +3265,7 @@ export const websiteSx: SxProps<Theme> = [
       '& .pricing-list': {
         border: '0',
         padding: '0',
+        gridTemplateColumns: '1fr',
       },
     },
   },
@@ -3274,6 +3275,9 @@ export const websiteSx: SxProps<Theme> = [
         gap: '20px',
         marginBottom: '30px',
         padding: '20px',
+      },
+      '& .pricing-list article:last-child': {
+        marginBottom: '0',
       },
     },
   },
