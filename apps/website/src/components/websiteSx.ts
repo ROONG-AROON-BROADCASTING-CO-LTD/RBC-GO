@@ -5317,7 +5317,7 @@ export const websiteSx: SxProps<Theme> = [
     // Use the homepage section-heading scale for the factory introduction as
     // well, so both headings share the same rhythm and reveal footprint.
     '& .page-about .factory-capabilities-heading': {
-      width: 'min(100%, 532px)',
+      width: 'min(100%, 640px)',
       maxWidth: 'none',
     },
     '& .page-about .factory-capabilities-heading .eyebrow': {
