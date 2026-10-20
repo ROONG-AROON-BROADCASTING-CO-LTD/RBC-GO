@@ -4467,19 +4467,30 @@ export const websiteSx: SxProps<Theme> = [
     '& .factory-facts': {
       display: 'grid',
       gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-      marginTop: 'clamp(38px, 5vw, 70px)',
-      borderTop: '1px solid #2a3027',
-      borderBottom: '1px solid #2a3027',
+      gap: '12px',
+      marginTop: 'clamp(34px, 4vw, 52px)',
     },
-    '& .factory-facts > div': {
-      minHeight: '148px',
-      padding: '24px',
+    '& .factory-facts article': {
+      minHeight: '156px',
+      padding: '22px 24px 24px',
+      border: '1px solid #2a3027',
+      borderRadius: '12px',
+      background: 'linear-gradient(145deg, #0d120e 0%, #090c0b 100%)',
     },
-    '& .factory-facts > div + div': { borderLeft: '1px solid #2a3027' },
+    '& .factory-fact-label, & .factory-address-label': {
+      display: 'block',
+      color: 'var(--lime)',
+      fontSize: '11px',
+      fontWeight: '600',
+      letterSpacing: '0.1em',
+      lineHeight: '1.3',
+      textTransform: 'uppercase',
+    },
     '& .factory-fact-content': {
       display: 'grid',
       alignContent: 'start',
-      gap: '9px',
+      gap: '8px',
+      marginTop: '18px',
     },
     '& .factory-facts strong': {
       color: 'var(--lime)',
@@ -4493,8 +4504,8 @@ export const websiteSx: SxProps<Theme> = [
       lineHeight: '1.55',
     },
     '& .factory-location': {
-      marginTop: '16px',
-      padding: 'clamp(24px, 3vw, 38px)',
+      marginTop: '12px',
+      padding: 'clamp(26px, 3vw, 38px)',
       border: '1px solid #2a3027',
       borderRadius: '14px',
       background: 'linear-gradient(120deg, #0d120e 0%, #090c0b 72%)',
@@ -4521,6 +4532,9 @@ export const websiteSx: SxProps<Theme> = [
       fontStyle: 'normal',
       lineHeight: '1.65',
     },
+    '& .factory-location .factory-address-label': {
+      marginBottom: '3px',
+    },
     '& .factory-location address strong': {
       color: '#f7f8f4',
       fontWeight: '600',
@@ -4534,24 +4548,20 @@ export const websiteSx: SxProps<Theme> = [
     '& .factory-capability-list': {
       display: 'grid',
       gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-      marginTop: '16px',
-      borderTop: '1px solid #2a3027',
-      borderLeft: '1px solid #2a3027',
+      gap: '12px',
+      marginTop: '12px',
     },
     '& .factory-capability-list article': {
-      minHeight: '178px',
+      minHeight: '154px',
       padding: '28px 24px',
-      borderRight: '1px solid #2a3027',
-      borderBottom: '1px solid #2a3027',
+      border: '1px solid #2a3027',
+      borderRadius: '12px',
       background: '#090c0b',
     },
     '& .factory-capability-content': {
       display: 'grid',
       gridTemplateColumns: '50px minmax(0, 1fr)',
       gap: '18px',
-    },
-    '& .factory-capability-list > article:nth-child(2n)': {
-      background: '#0c100e',
     },
     '& .factory-capability-content > span': {
       color: 'var(--lime)',
@@ -4613,10 +4623,6 @@ export const websiteSx: SxProps<Theme> = [
       '& .factory-facts, & .factory-capability-list, & .brand-events-list': {
         gridTemplateColumns: '1fr',
       },
-      '& .factory-facts > div + div': {
-        borderTop: '1px solid #2a3027',
-        borderLeft: 0,
-      },
       '& .factory-location-content': {
         gridTemplateColumns: '1fr',
       },
@@ -4624,7 +4630,7 @@ export const websiteSx: SxProps<Theme> = [
     },
     '@media (max-width: 600px)': {
       '& .factory-capabilities, & .brand-events': { padding: '62px 0' },
-      '& .factory-facts > div': { minHeight: '0', padding: '22px 0' },
+      '& .factory-facts article': { minHeight: '0', padding: '20px' },
       '& .factory-capability-content': {
         gridTemplateColumns: '38px minmax(0, 1fr)',
       },

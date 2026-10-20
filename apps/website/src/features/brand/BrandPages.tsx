@@ -437,7 +437,12 @@ export function BrandPages({ page }: { page?: Page }) {
               </motion.div>
               <div className="factory-facts" aria-label={c.factoryDetailLabel}>
                 {c.factoryFacts.map(([value, label], index) => (
-                  <div key={value}>
+                  <article key={value}>
+                    <span className="factory-fact-label">
+                      {locale === 'en'
+                        ? `FACT ${String(index + 1).padStart(2, '0')}`
+                        : `ข้อมูลสำคัญ ${String(index + 1).padStart(2, '0')}`}
+                    </span>
                     <motion.div
                       className="factory-fact-content"
                       {...galleryReveal(index)}
@@ -445,7 +450,7 @@ export function BrandPages({ page }: { page?: Page }) {
                       <strong>{value}</strong>
                       <span>{label}</span>
                     </motion.div>
-                  </div>
+                  </article>
                 ))}
               </div>
               <div className="factory-location">
@@ -459,6 +464,9 @@ export function BrandPages({ page }: { page?: Page }) {
                     <h3>{c.factoryLocationTitle}</h3>
                   </div>
                   <address>
+                    <span className="factory-address-label">
+                      {locale === 'en' ? 'Factory address' : 'ที่อยู่โรงงาน'}
+                    </span>
                     <strong>{c.factoryLocationCompany}</strong>
                     <span>{c.factoryLocationAddress}</span>
                     <small>{c.factoryLocationNote}</small>
