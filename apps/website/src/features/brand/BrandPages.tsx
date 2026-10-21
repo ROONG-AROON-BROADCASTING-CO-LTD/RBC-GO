@@ -197,6 +197,7 @@ export function BrandPages({ page }: { page?: Page }) {
                   width={1672}
                   height={941}
                   sizes="(max-width: 767px) 100vw, min(90vw, 1600px)"
+                  loading="eager"
                 />
               </motion.figure>
               <motion.ol
