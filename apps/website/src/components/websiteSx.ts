@@ -4344,7 +4344,11 @@ export const websiteSx: SxProps<Theme> = [
         objectPosition: '62% center',
       },
       '& .motorcycle-hero > img': {
-        objectPosition: '62% center',
+        objectPosition: '78% center',
+      },
+      '& .motorcycle-hero .motorcycle-shade': {
+        background:
+          'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 92%) 12%, rgb(8 10 8 / 42%) 25%, transparent 42%), linear-gradient(90deg, rgb(0 0 0 / 88%) 0%, rgb(0 0 0 / 47%) 52%, transparent 100%)',
       },
       '& .about-hero > img': {
         height: '640px !important',
