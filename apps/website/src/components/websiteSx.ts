@@ -750,6 +750,8 @@ export const websiteSx: SxProps<Theme> = [
   {
     '& .vehicle-components-image': {
       margin: '0',
+      // Reserve the specification artwork's space while its lazy image loads.
+      aspectRatio: '1672 / 941',
       overflow: 'hidden',
       borderRadius: '16px',
       border: '1px solid #2a3027',
