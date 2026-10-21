@@ -4136,7 +4136,7 @@ export const websiteSx: SxProps<Theme> = [
       '& .footer-main': {
         gridTemplateColumns: '1fr',
         gap: '46px',
-        paddingBlock: '70px 54px',
+        paddingBlock: '45px',
       },
       '& .footer-links': {
         gridTemplateColumns: '1fr 1fr',
