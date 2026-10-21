@@ -421,7 +421,7 @@ export const websiteSx: SxProps<Theme> = [
       inset: '0',
       zIndex: '2',
       background:
-        'linear-gradient(90deg, rgb(0 0 0 / 76%) 0%, rgb(0 0 0 / 49%) 37%, rgb(0 0 0 / 8%) 75%), linear-gradient(0deg, rgb(0 0 0 / 20%), transparent 40%)',
+        'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 92%) 12%, rgb(8 10 8 / 42%) 25%, transparent 42%), linear-gradient(90deg, rgb(0 0 0 / 88%) 0%, rgb(0 0 0 / 47%) 52%, transparent 100%)',
     },
   },
   {
@@ -3952,7 +3952,7 @@ export const websiteSx: SxProps<Theme> = [
       position: 'absolute',
       inset: 0,
       background:
-        'linear-gradient(90deg, rgb(0 0 0 / 88%) 0%, rgb(0 0 0 / 43%) 52%, transparent 100%)',
+        'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 92%) 12%, rgb(8 10 8 / 42%) 25%, transparent 42%), linear-gradient(90deg, rgb(0 0 0 / 88%) 0%, rgb(0 0 0 / 47%) 52%, transparent 100%)',
     },
     '& .motorcycle-hero .fleet-intro': { maxWidth: '49%' },
     '& .caption-motorcycle': { left: '38px', right: '38px', maxWidth: '680px' },
@@ -4195,7 +4195,7 @@ export const websiteSx: SxProps<Theme> = [
         right: '0',
         bottom: '-3px',
         background:
-          'linear-gradient(90deg, rgb(0 0 0 / 76%) 0%, rgb(0 0 0 / 49%) 37%, rgb(0 0 0 / 8%) 75%), linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 88%) 12%, transparent 42%)',
+          'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 92%) 12%, rgb(8 10 8 / 42%) 25%, transparent 42%), linear-gradient(90deg, rgb(0 0 0 / 88%) 0%, rgb(0 0 0 / 47%) 52%, transparent 100%)',
       },
       '& .page-hero-visual img': {
         objectFit: 'cover',
@@ -4220,18 +4220,18 @@ export const websiteSx: SxProps<Theme> = [
         },
       '& .home-hero-overlay, & .motorcycle-shade': {
         background:
-          'linear-gradient(90deg, rgb(0 0 0 / 76%) 0%, rgb(0 0 0 / 49%) 37%, rgb(0 0 0 / 8%) 75%), linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 88%) 12%, transparent 42%)',
+          'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 92%) 12%, rgb(8 10 8 / 42%) 25%, transparent 42%), linear-gradient(90deg, rgb(0 0 0 / 88%) 0%, rgb(0 0 0 / 47%) 52%, transparent 100%)',
       },
       '& .about-hero::after': {
         content: '""',
         position: 'absolute',
         left: '0',
         right: '0',
+        top: '0',
         bottom: '0',
-        height: '34%',
         zIndex: '1',
         background:
-          'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 82%) 14%, transparent 100%)',
+          'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 92%) 12%, rgb(8 10 8 / 42%) 25%, transparent 42%), linear-gradient(90deg, rgb(0 0 0 / 88%) 0%, rgb(0 0 0 / 47%) 52%, transparent 100%)',
         pointerEvents: 'none',
       },
       '& .page-content': {
