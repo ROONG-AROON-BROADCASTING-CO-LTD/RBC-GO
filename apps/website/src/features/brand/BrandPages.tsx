@@ -433,7 +433,7 @@ export function BrandPages({ page }: { page?: Page }) {
               id="mission"
               className="about-benefits"
               variants={componentListReveal}
-              initial={false}
+              initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.16 }}
             >
