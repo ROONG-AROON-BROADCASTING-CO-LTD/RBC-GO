@@ -11,7 +11,6 @@ export type Page = (typeof pages)[number];
 type Content = {
   nav: string[];
   description: string;
-  login: string;
   coming: string;
   meet: string;
   how: string;
@@ -28,7 +27,6 @@ export const text: Record<Locale, Content> = {
     nav: ['Our motorcycle', 'How it works', 'Pricing', 'About', 'Help'],
     description:
       'A prepaid, mobile-first electric motorcycle service for Bangkok.',
-    login: 'Open RBC GO',
     coming: 'COMING SOON IN BANGKOK',
     meet: 'Meet the motorcycle',
     how: 'See how it works',
@@ -48,7 +46,7 @@ export const text: Record<Locale, Content> = {
       [
         'Getting started',
         'Do I need to download an app?',
-        'RBC GO is designed as a mobile-first web app. Open the website on a smartphone to see the entry button.',
+        'RBC GO is designed as a mobile-first web app. Service access details will be announced before launch.',
       ],
       [
         'Wallet & pricing',
@@ -102,7 +100,6 @@ export const text: Record<Locale, Content> = {
     ],
     description:
       'บริการมอเตอร์ไซค์ไฟฟ้าแบบเติมเงิน ออกแบบเพื่อมือถือสำหรับกรุงเทพฯ',
-    login: 'เข้าสู่ระบบ RBC GO',
     coming: 'เตรียมพบกันเร็ว ๆ นี้ที่กรุงเทพฯ',
     meet: 'รู้จักมอเตอร์ไซค์',
     how: 'ดูวิธีใช้งาน',
@@ -122,7 +119,7 @@ export const text: Record<Locale, Content> = {
       [
         'เริ่มต้นใช้งาน',
         'ต้องดาวน์โหลดแอปหรือไม่?',
-        'RBC GO เป็นเว็บแอปที่ออกแบบเพื่อมือถือ เปิดเว็บไซต์ผ่านสมาร์ตโฟนเพื่อเห็นปุ่มเข้าสู่ระบบ',
+        'RBC GO เป็นเว็บแอปที่ออกแบบเพื่อมือถือ รายละเอียดการเข้าใช้บริการจะแจ้งก่อนเปิดตัว',
       ],
       [
         'วอลเล็ตและค่าบริการ',

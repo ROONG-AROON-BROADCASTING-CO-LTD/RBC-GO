@@ -22,7 +22,6 @@ services:
       dockerfile: apps/website/Dockerfile
       args:
         NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:5185}
-        NEXT_PUBLIC_CUSTOMER_URL: ${NEXT_PUBLIC_CUSTOMER_URL:-http://localhost:5183}
         SEO_ALLOW_INDEXING: ${SEO_ALLOW_INDEXING:-false}
     ports: ['127.0.0.1:5185:5185']
     restart: unless-stopped

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { type Locale, type Page, text } from '../../data/landing';
 import { referenceCopy } from '../../data/brandPages';
 import { brandEvents } from '../../data/brandEvents';
-import { customerUrl, siteUrl } from '../../../app/site';
+import { siteUrl } from '../../../app/site';
 import {
   HelpQuestions,
   FleetHero,
@@ -162,12 +162,7 @@ export function BrandPages({ page }: { page?: Page }) {
   };
   return (
     <MotionConfig reducedMotion={isLanguageSwitching ? 'always' : 'user'}>
-      <WebsiteNav
-        locale={locale}
-        page={page}
-        customerUrl={customerUrl}
-        onLanguageChange={setLanguage}
-      />
+      <WebsiteNav locale={locale} page={page} onLanguageChange={setLanguage} />
       <main id="main" className={`page-${page ?? 'home'}`}>
         <script
           type="application/ld+json"

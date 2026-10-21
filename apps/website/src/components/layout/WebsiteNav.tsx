@@ -6,12 +6,10 @@ import { useEffect, useState } from 'react';
 import { type Locale, type Page, pages, text } from '../../data/landing';
 import { referenceCopy } from '../../data/brandPages';
 import { Icon } from '../ui/Icon';
-import { MobileLoginLink } from '../ui/MobileLoginLink';
 
 type WebsiteNavProps = {
   locale: Locale;
   page?: Page;
-  customerUrl: string;
   onLanguageChange: (locale: Locale) => void;
 };
 
@@ -22,7 +20,6 @@ function pageHref(page?: Page) {
 export function WebsiteNav({
   locale,
   page,
-  customerUrl,
   onLanguageChange,
 }: WebsiteNavProps) {
   const [open, setOpen] = useState(false);
@@ -196,7 +193,6 @@ export function WebsiteNav({
                 <Icon kind="arrow" />
               </Link>
             ))}
-            <MobileLoginLink href={customerUrl} label={t.login} />
           </nav>
         )}
       </div>

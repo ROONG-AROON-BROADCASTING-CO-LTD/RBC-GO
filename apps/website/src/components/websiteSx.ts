@@ -686,17 +686,6 @@ export const websiteSx: SxProps<Theme> = [
     },
   },
   {
-    '& .mobile-login': {
-      display: 'inline-flex',
-      background: 'var(--lime)',
-      color: '#101600',
-      fontWeight: '600',
-      borderRadius: '50px',
-      padding: '14px 24px',
-      marginTop: '20px',
-    },
-  },
-  {
     '& .fleet-details': {
       display: 'flex',
       justifyContent: 'space-between',
@@ -1219,11 +1208,6 @@ export const websiteSx: SxProps<Theme> = [
     '& .safety-note p': {
       fontSize: '15px',
       maxWidth: '840px',
-    },
-  },
-  {
-    '& .safety-note .mobile-login': {
-      flexShrink: '0',
     },
   },
   {
@@ -2564,7 +2548,7 @@ export const websiteSx: SxProps<Theme> = [
   },
   {
     '@media (max-width: 1100px)': {
-      '& .mobile-menu > a:not(.mobile-login)': {
+      '& .mobile-menu > a': {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -2576,13 +2560,6 @@ export const websiteSx: SxProps<Theme> = [
         '&[aria-current="page"]': {
           color: 'var(--lime)',
         },
-      },
-    },
-  },
-  {
-    '@media (max-width: 1100px)': {
-      '& .mobile-menu .mobile-login': {
-        justifyContent: 'center',
       },
     },
   },
@@ -2843,15 +2820,6 @@ export const websiteSx: SxProps<Theme> = [
         padding: '15px 22px',
         fontSize: '10px',
         lineHeight: '1.5',
-      },
-    },
-  },
-  {
-    '@media (max-width: 767px)': {
-      '& .mobile-login': {
-        fontSize: '13px',
-        padding: '12px 19px',
-        marginTop: '18px',
       },
     },
   },
@@ -3286,13 +3254,6 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .safety-note p': {
         fontSize: '13px',
-      },
-    },
-  },
-  {
-    '@media (max-width: 767px)': {
-      '& .safety-note .mobile-login': {
-        marginLeft: '48px',
       },
     },
   },

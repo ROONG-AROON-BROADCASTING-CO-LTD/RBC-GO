@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { motion, MotionConfig } from 'motion/react';
-import { customerUrl } from '../../../app/site';
 import type { BrandEvent } from '../../data/brandEvents';
 import { WebsiteFooter } from '../../components/layout/WebsiteFooter';
 import { WebsiteNav } from '../../components/layout/WebsiteNav';
@@ -33,12 +32,7 @@ export function BrandEventPage({ event }: { event: BrandEvent }) {
 
   return (
     <MotionConfig reducedMotion={isLanguageSwitching ? 'always' : 'user'}>
-      <WebsiteNav
-        locale={locale}
-        page="about"
-        customerUrl={customerUrl}
-        onLanguageChange={setLanguage}
-      />
+      <WebsiteNav locale={locale} page="about" onLanguageChange={setLanguage} />
       <main id="main" className="event-page">
         <section className="event-detail-hero" aria-labelledby="event-title">
           <motion.div {...reveal} className="event-detail-copy">
