@@ -3509,8 +3509,8 @@ export const websiteSx: SxProps<Theme> = [
   {
     '@media (max-width: 767px)': {
       '& .about-benefits article': {
-        border: '0',
-        padding: '0',
+        border: '1px solid var(--line)',
+        padding: '26px 24px 28px',
         gap: '23px',
       },
     },
