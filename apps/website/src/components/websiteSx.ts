@@ -5427,6 +5427,9 @@ export const websiteSx: SxProps<Theme> = [
       borderColor: 'rgb(153 255 24 / 42%)',
       background: 'rgb(153 255 24 / 3%)',
     },
+    '& .eyebrow': {
+      fontSize: '15px !important',
+    },
     '@media (prefers-reduced-motion: reduce)': {
       '& .motion-target.motion-enter': {
         animation: 'none',
