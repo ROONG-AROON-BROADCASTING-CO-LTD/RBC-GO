@@ -2935,6 +2935,9 @@ export const websiteSx: SxProps<Theme> = [
       '& .how-details-heading h2': {
         maxWidth: 'none',
       },
+      '& .how-details-heading > div': {
+        width: '100%',
+      },
       '& .how-details-heading p': {
         width: '100%',
         maxWidth: 'none',
