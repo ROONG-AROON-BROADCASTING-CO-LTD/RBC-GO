@@ -4913,6 +4913,7 @@ export const websiteSx: SxProps<Theme> = [
       display: 'block',
       width: '100%',
       height: 'auto',
+      aspectRatio: '1478 / 1108',
       objectFit: 'contain',
       filter: 'saturate(0.82) contrast(1.04)',
     },
@@ -4959,6 +4960,7 @@ export const websiteSx: SxProps<Theme> = [
       display: 'block',
       width: '100%',
       height: 'auto',
+      aspectRatio: '1440 / 1077',
       filter: 'saturate(0.9) contrast(1.03)',
     },
     '& .events-gallery-grid figcaption': {
@@ -5041,6 +5043,7 @@ export const websiteSx: SxProps<Theme> = [
       display: 'block',
       width: '100%',
       height: 'auto',
+      aspectRatio: '600 / 397',
       transition:
         'transform 600ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease',
     },
