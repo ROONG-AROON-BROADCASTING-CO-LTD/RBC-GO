@@ -5434,6 +5434,31 @@ export const websiteSx: SxProps<Theme> = [
       borderColor: 'rgb(153 255 24 / 42%)',
       background: 'rgb(153 255 24 / 3%)',
     },
+    '& .how-details-section': {
+      overflow: 'hidden',
+      border: '1px solid var(--line)',
+      borderRadius: '20px',
+    },
+    '& .how-details-section .how-details-heading': {
+      margin: '0',
+      padding: '34px 38px',
+    },
+    '& .how-details-section .journey-section': {
+      padding: '0',
+    },
+    '& .how-details-section .journey-columns': {
+      gap: '0',
+      borderTop: '1px solid var(--line)',
+    },
+    '& .how-details-section .journey-columns article': {
+      minHeight: '0',
+      border: '0',
+      borderRadius: '0',
+      padding: '34px 38px 38px',
+    },
+    '& .how-details-section .journey-columns article + article': {
+      borderLeft: '1px solid var(--line)',
+    },
     '& .eyebrow': {
       fontSize: '15px !important',
     },
@@ -5447,6 +5472,25 @@ export const websiteSx: SxProps<Theme> = [
         },
     },
     '@media (max-width: 767px)': {
+      '& .how-details-section': {
+        borderRadius: '16px',
+      },
+      '& .how-details-section .how-details-heading': {
+        padding: '26px 24px',
+      },
+      '& .how-details-section .journey-columns': {
+        gap: '0',
+      },
+      '& .how-details-section .journey-columns article, & .how-details-section .journey-columns article:last-child':
+        {
+          border: '0',
+          borderRadius: '0',
+          padding: '26px 24px 28px',
+        },
+      '& .how-details-section .journey-columns article + article': {
+        borderTop: '1px solid var(--line)',
+        borderLeft: '0',
+      },
       '& .tile-lime-orbit': {
         width: '180px',
       },
