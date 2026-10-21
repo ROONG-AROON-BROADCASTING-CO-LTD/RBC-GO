@@ -2396,7 +2396,7 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .home-hero-overlay': {
         background:
-          'linear-gradient(\n      0deg,\n      rgb(5 7 6 / 94%) 0%,\n      rgb(5 7 6 / 58%) 55%,\n      rgb(5 7 6 / 6%) 100%\n    )',
+          'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 92%) 12%, rgb(8 10 8 / 42%) 25%, transparent 42%), linear-gradient(90deg, rgb(0 0 0 / 88%) 0%, rgb(0 0 0 / 47%) 52%, transparent 100%)',
       },
     },
   },
@@ -4278,7 +4278,7 @@ export const websiteSx: SxProps<Theme> = [
         right: '0',
         bottom: '-3px',
         background:
-          'linear-gradient(90deg, rgb(0 0 0 / 88%), rgb(0 0 0 / 28%)), linear-gradient(0deg, #080a08 0%, transparent 65%)',
+          'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 92%) 12%, rgb(8 10 8 / 42%) 25%, transparent 42%), linear-gradient(90deg, rgb(0 0 0 / 88%) 0%, rgb(0 0 0 / 47%) 52%, transparent 100%)',
       },
       '& .help-callout .button': {
         minWidth: '0',
@@ -4364,7 +4364,7 @@ export const websiteSx: SxProps<Theme> = [
         height: '320px',
         zIndex: '0',
         background:
-          'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 84%) 22%, transparent 100%)',
+          'linear-gradient(0deg, #080a08 0%, rgb(8 10 8 / 92%) 12%, rgb(8 10 8 / 42%) 25%, transparent 42%), linear-gradient(90deg, rgb(0 0 0 / 88%) 0%, rgb(0 0 0 / 47%) 52%, transparent 100%)',
         pointerEvents: 'none',
       },
       '& .about-copy': {
