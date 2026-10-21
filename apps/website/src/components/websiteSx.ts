@@ -3179,7 +3179,9 @@ export const websiteSx: SxProps<Theme> = [
     '@media (max-width: 767px)': {
       '& .with-phones': {
         marginTop: '0',
-        paddingTop: '25px',
+      },
+      '& .how-details-heading': {
+        marginBottom: '25px',
       },
       '& .with-phones .journey-columns': {
         marginTop: '20px',
