@@ -4367,7 +4367,11 @@ export const websiteSx: SxProps<Theme> = [
         right: 'auto',
         top: 'auto',
         bottom: 'auto',
-        marginTop: '-48px',
+        // Keep About's title aligned with the shared mobile hero title line.
+        // The negative bottom margin removes the matching flow-space before
+        // the benefit cards without changing that visual title position.
+        transform: 'translateY(-48px)',
+        marginBottom: '-48px',
         padding: '333px 24px 40px',
       },
       "html[lang='th'] & .page-intro h1, html[lang='th'] & .fleet-intro h1, html[lang='th'] & .about-copy h1":
