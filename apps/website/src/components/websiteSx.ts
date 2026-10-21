@@ -4367,7 +4367,7 @@ export const websiteSx: SxProps<Theme> = [
         right: 'auto',
         top: 'auto',
         bottom: 'auto',
-        transform: 'translateY(-48px)',
+        marginTop: '-48px',
         padding: '333px 24px 40px',
       },
       "html[lang='th'] & .page-intro h1, html[lang='th'] & .fleet-intro h1, html[lang='th'] & .about-copy h1":
