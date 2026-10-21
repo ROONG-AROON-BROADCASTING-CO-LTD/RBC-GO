@@ -3,6 +3,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     include: ['packages/**/*.test.{ts,tsx}', 'apps/**/*.test.{ts,tsx}'],
+    passWithNoTests: true,
     setupFiles: ['./test/setup.ts'],
     coverage: {
       provider: 'v8',
