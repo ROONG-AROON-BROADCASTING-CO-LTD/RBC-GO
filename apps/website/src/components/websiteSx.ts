@@ -2853,6 +2853,9 @@ export const websiteSx: SxProps<Theme> = [
         margin: '0',
         padding: '58px 0 20px',
       },
+      '& .how-details-section': {
+        paddingTop: '58px',
+      },
     },
   },
   {
