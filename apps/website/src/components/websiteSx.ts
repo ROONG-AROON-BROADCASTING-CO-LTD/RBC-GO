@@ -5455,6 +5455,9 @@ export const websiteSx: SxProps<Theme> = [
       '& .tile-lime-orbit': {
         width: '180px',
       },
+      '& .page-about .about-benefits': {
+        paddingTop: '25px',
+      },
       '& .page-about .kronos-collaboration-copy': {
         width: '100%',
       },
