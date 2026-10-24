@@ -1,0 +1,380 @@
+.explorer {
+  margin-top: 12px;
+}
+.panels {
+  display: flex;
+  gap: 12px;
+  min-height: 480px;
+}
+.panel {
+  position: relative;
+  isolation: isolate;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 3px;
+  padding: 26px;
+  background: #141914;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  transition: flex 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.panel[data-active='true'] {
+  flex: 3.4;
+}
+.panel img {
+  object-fit: cover;
+  transition:
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 600ms;
+  filter: saturate(0.65) brightness(0.8);
+  z-index: -2;
+}
+.panel[data-active='true'] img {
+  filter: saturate(1) brightness(1);
+}
+.panel:hover img {
+  transform: scale(1.055);
+}
+.panelShade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, #000e, transparent 65%);
+}
+.panelNumber {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  font:
+    12px var(--font-inter),
+    sans-serif;
+  border-top: 1px solid #ffffff80;
+  padding-top: 10px;
+}
+.panelName {
+  position: absolute;
+  left: 26px;
+  right: 22px;
+  bottom: 36px;
+  font-size: clamp(17px, 1.6vw, 26px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.panel[data-active='true'] .panelName {
+  right: 85px;
+}
+.panelArrow {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #89d82a;
+  color: #102006;
+  bottom: 30px;
+  right: 24px;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transform: rotate(-45deg) scale(0.7);
+  transition:
+    opacity 300ms,
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.panel[data-active='true'] .panelArrow {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+.preview {
+  min-height: 88px;
+  padding: 24px 0;
+  border-bottom: 1px solid #30382d;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.preview p {
+  max-width: 620px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #b8c0b1;
+  animation: previewIn 400ms both;
+}
+.preview a {
+  display: inline-flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 14px;
+  color: #89d82a;
+  flex-shrink: 0;
+}
+.preview a svg {
+  transition: transform 250ms;
+}
+.preview a:hover svg {
+  transform: translateX(5px);
+}
+@keyframes previewIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.journeyHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+}
+.journeyHead h2 {
+  max-width: 680px;
+}
+.journeyHead a {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: #89d82a;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.journeyTrack {
+  position: relative;
+  margin-top: 60px;
+}
+.trackLine {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #30382d;
+}
+.trackLine > span {
+  display: block;
+  height: 100%;
+  background: #89d82a;
+  transform-origin: left;
+}
+.trackLine .verticalProgress {
+  display: none;
+  transform-origin: top;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 50px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.step {
+  position: relative;
+  padding-top: 45px;
+}
+.step::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 10px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #89d82a;
+  box-shadow: 0 0 0 7px #080a08;
+}
+.stepNumber {
+  display: block;
+  color: #89d82a;
+  font:
+    14px var(--font-inter),
+    sans-serif;
+  margin-bottom: 24px;
+}
+.step h3 {
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.step p {
+  color: #b8c0b1;
+  line-height: 1.85;
+  font-size: 16px;
+  max-width: 330px;
+}
+.closing {
+  position: relative;
+  isolation: isolate;
+  min-height: 540px;
+  padding: 100px 5.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+}
+.closingImage {
+  position: absolute;
+  inset: -8% 0;
+  z-index: -2;
+}
+.closingImage img {
+  object-fit: cover;
+  object-position: center 60%;
+}
+.closing::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: '';
+  background:
+    linear-gradient(90deg, #080a08ed, #080a0855 70%),
+    linear-gradient(0deg, #080a08, transparent 28%, transparent 75%, #080a08);
+}
+.closing > div:not(.closingImage) {
+  max-width: 670px;
+}
+.closing h2 {
+  font-size: clamp(34px, 4vw, 58px);
+}
+.closing p {
+  color: #c5d0bf;
+  line-height: 1.85;
+  max-width: 540px;
+  margin: 24px 0 30px;
+}
+@media (max-width: 1000px) {
+  .panels {
+    min-height: 420px;
+  }
+  .panel {
+    padding: 18px;
+  }
+  .panelName {
+    left: 18px;
+    font-size: 17px;
+  }
+  .panelNumber {
+    left: 18px;
+  }
+  .preview {
+    align-items: start;
+  }
+  .preview p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .panels {
+    flex-direction: column;
+    min-height: 0;
+    gap: 10px;
+  }
+  .panel {
+    flex: none;
+    width: 100%;
+    height: 92px;
+    transition: height 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .panel[data-active='true'] {
+    flex: none;
+    height: 330px;
+  }
+  .panelNumber {
+    top: 18px;
+    left: 18px;
+    padding: 0;
+    border: 0;
+  }
+  .panelName {
+    left: 54px;
+    bottom: 30px;
+    right: 18px;
+    font-size: 19px;
+  }
+  .panel[data-active='true'] .panelName {
+    left: 18px;
+  }
+  .panelArrow {
+    width: 42px;
+    height: 42px;
+    bottom: 24px;
+    right: 18px;
+  }
+  .preview {
+    flex-direction: column;
+    gap: 14px;
+    padding: 22px 0;
+    min-height: 125px;
+  }
+  .journeyHead {
+    display: block;
+  }
+  .journeyHead a {
+    margin-top: 24px;
+  }
+  .journeyTrack {
+    margin-top: 40px;
+  }
+  .trackLine {
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+  .trackLine > span {
+    height: 100%;
+  }
+  .trackLine .horizontalProgress {
+    display: none;
+  }
+  .trackLine .verticalProgress {
+    display: block;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .step {
+    padding: 0 0 0 32px;
+  }
+  .step::before {
+    top: 2px;
+  }
+  .stepNumber {
+    margin-bottom: 12px;
+  }
+  .step h3 {
+    font-size: 21px;
+  }
+  .step p {
+    font-size: 15px;
+  }
+  .closing {
+    min-height: 560px;
+    padding: 80px 24px;
+  }
+  .closingImage img {
+    object-position: 64% center;
+  }
+  .closing p {
+    font-size: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .explorer *,
+  .closing *,
+  .steps * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
