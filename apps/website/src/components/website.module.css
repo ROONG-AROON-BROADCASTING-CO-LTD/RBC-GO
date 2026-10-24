@@ -348,12 +348,12 @@
 }
 .heroMedia {
   position: absolute;
-  inset: 0;
+  /* Extra vertical canvas lets the image travel with the viewport without
+     exposing an edge. The image itself is never scaled during scrolling. */
+  inset: -8% 0;
   z-index: -2;
-  /* Preserve the original hero framing, without updating a large image on
-     every scroll frame. */
-  scale: 1.04;
-  transform-origin: center;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 .heroMedia > img {
   object-fit: cover;

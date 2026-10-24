@@ -3,7 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { motion, useReducedMotion } from 'motion/react';
+import { useRef } from 'react';
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from 'motion/react';
 import type { Page } from '../../data/landing';
 import { rentalCopy } from '../../data/rentals';
 import { rentalEase } from '../../components/interactive/WebsiteMotion';
@@ -14,6 +20,16 @@ const MotionLink = motion.create(Link);
 
 export function HeroSection({ th, page }: { th: boolean; page?: Page }) {
   const reduced = useReducedMotion();
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  });
+  // Match the journey image treatment: the image tracks vertically with the
+  // viewport, while its scale stays constant so scrolling never creates a
+  // zoom effect or forces per-frame image resampling.
+  const imageY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%']);
+  const mediaStyle = reduced ? undefined : { y: imageY };
   const c = rentalCopy(th ? 'th' : 'en');
   const pageHeroImages = {
     rides: '/images/rentals/hero-charter.png',
@@ -55,8 +71,8 @@ export function HeroSection({ th, page }: { th: boolean; page?: Page }) {
     <>
       {' '}
       {!page ? (
-        <section className={styles.hero}>
-          <div className={styles.heroMedia}>
+        <section className={styles.hero} ref={heroRef}>
+          <motion.div className={styles.heroMedia} style={mediaStyle}>
             <Image
               src="/images/rentals/hero-charter.png"
               alt={
@@ -68,7 +84,7 @@ export function HeroSection({ th, page }: { th: boolean; page?: Page }) {
               priority
               sizes="100vw"
             />
-          </div>
+          </motion.div>
           <div className={styles.heroShade} />
           <div className={styles.heroCopy}>
             <h1>
@@ -116,8 +132,8 @@ export function HeroSection({ th, page }: { th: boolean; page?: Page }) {
           </a>
         </section>
       ) : (
-        <section className={`${styles.hero} ${styles.pageHero}`}>
-          <div className={styles.heroMedia}>
+        <section className={`${styles.hero} ${styles.pageHero}`} ref={heroRef}>
+          <motion.div className={styles.heroMedia} style={mediaStyle}>
             <Image
               src={pageHeroImages[page]}
               alt=""
@@ -125,7 +141,7 @@ export function HeroSection({ th, page }: { th: boolean; page?: Page }) {
               priority
               sizes="100vw"
             />
-          </div>
+          </motion.div>
           <div className={styles.heroShade} />
           <div className={styles.heroCopy}>
             <h1 className={styles.pageTitle}>
