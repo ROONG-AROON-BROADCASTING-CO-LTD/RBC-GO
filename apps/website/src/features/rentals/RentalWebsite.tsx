@@ -13,6 +13,7 @@ import {
 import { RentalReveal, rentalEase } from './RentalMotion';
 import type { Page } from '../../data/landing';
 import { useWebsiteLanguage } from '../../components/layout/WebsiteLanguageProvider';
+import { WebsiteFooter } from '../../components/layout/WebsiteFooter';
 import { rentalCategories, rentalCopy } from './rentalContent';
 import styles from './rental.module.css';
 import { siteUrl } from '../../../app/site';
@@ -672,37 +673,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
             </Link>
           </RentalReveal>
         </main>
-        <footer className={styles.footer}>
-          <div>
-            <Link href="/" className={styles.brand}>
-              RBC <span>GO</span>
-            </Link>
-            <p>
-              <ThaiText>
-                {th
-                  ? 'หลากหลายการเช่า เพื่อทุกการเดินทาง'
-                  : 'More ways to rent. More ways to go.'}
-              </ThaiText>
-            </p>
-          </div>
-          <nav aria-label={th ? 'เมนูท้ายหน้า' : 'Footer navigation'}>
-            {c.nav.map((label, i) => (
-              <Link href={routes[i]} key={label}>
-                <ThaiText>{label}</ThaiText>
-              </Link>
-            ))}
-          </nav>
-          <div className={styles.footerBottom}>
-            <span>© {new Date().getFullYear()} RBC GO</span>
-            <span>
-              <ThaiText>
-                {th
-                  ? 'เว็บไซต์นำเสนอบริการ · เตรียมพบกับการจองออนไลน์'
-                  : 'Discover our services · Online booking coming soon'}
-              </ThaiText>
-            </span>
-          </div>
-        </footer>
+        <WebsiteFooter locale={language} page={page} />
       </div>
     </MotionConfig>
   );
