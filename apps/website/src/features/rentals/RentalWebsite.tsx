@@ -20,6 +20,13 @@ import { pageSeoCopy } from '../../../app/pageMetadata';
 import { Icon } from '../../components/ui/Icon';
 
 const routes = ['/rides', '/how-it-works', '/pricing', '/about', '/help'];
+const pageHeroImages = {
+  rides: '/images/rentals/hero.png',
+  'how-it-works': '/images/rentals/car.png',
+  pricing: '/images/rentals/aircraft.png',
+  about: '/images/rentals/yacht.png',
+  help: '/images/rentals/car.png',
+} satisfies Record<Page, string>;
 const MotionLink = motion.create(Link);
 
 function Arrow() {
@@ -298,18 +305,28 @@ export function RentalWebsite({ page }: { page?: Page }) {
               </div>
             </section>
           ) : (
-            <RentalReveal className={styles.pageIntro}>
-              <h1>{title}</h1>
-              <p>
-                {page === 'rides'
-                  ? c.collectionCopy
-                  : page === 'about'
-                    ? c.intro
-                    : th
-                      ? 'รายละเอียดที่ช่วยให้คุณเลือกบริการเช่าได้เหมาะกับการเดินทางของคุณ'
-                      : 'Helpful details to find the right rental for your plans.'}
-              </p>
-            </RentalReveal>
+            <section className={`${styles.hero} ${styles.pageHero}`}>
+              <Image
+                src={pageHeroImages[page]}
+                alt=""
+                fill
+                priority
+                sizes="100vw"
+              />
+              <div className={styles.heroShade} />
+              <RentalReveal className={styles.pageIntro}>
+                <h1>{title}</h1>
+                <p>
+                  {page === 'rides'
+                    ? c.collectionCopy
+                    : page === 'about'
+                      ? c.intro
+                      : th
+                        ? 'รายละเอียดที่ช่วยให้คุณเลือกบริการเช่าได้เหมาะกับการเดินทางของคุณ'
+                        : 'Helpful details to find the right rental for your plans.'}
+                </p>
+              </RentalReveal>
+            </section>
           )}
 
           {(!page || page === 'rides') && (
