@@ -127,6 +127,9 @@
   width: 100%;
   background: transparent;
 }
+.homeHeader .topbar {
+  background: #000;
+}
 .homeHeader.scrolled {
   position: fixed;
   background: #080a08;
