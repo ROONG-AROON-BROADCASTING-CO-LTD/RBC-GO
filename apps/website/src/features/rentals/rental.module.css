@@ -262,8 +262,9 @@
 .headerActions button:first-child {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   min-height: 40px;
+  padding-inline: 14px;
 }
 .headerActions button i {
   color: #aeb3a8;
