@@ -6,6 +6,7 @@ import { type Locale, type Page, text, pages } from '../../data/landing';
 import { referenceCopy } from '../../data/brandPages';
 import { InfoDialog } from '../interactive/Interactive';
 import { ThaiText } from '../ui/HeadingText';
+import { rentalCopy } from '../../features/rentals/rentalContent';
 function pageHref(page?: Page) {
   return page ? `/${page}` : '/';
 }
@@ -30,6 +31,7 @@ export function WebsiteFooter({
 }) {
   const t = text[locale];
   const c = referenceCopy(locale);
+  const rental = rentalCopy(locale);
   return (
     <footer className="site-footer">
       <motion.div {...reveal} className="footer-main">
@@ -59,13 +61,7 @@ export function WebsiteFooter({
             </h3>
             {pages.slice(0, 4).map((p, i) => (
               <Link key={p} href={pageHref(p)}>
-                <ThaiText>
-                  {i === 0
-                    ? locale === 'en'
-                      ? 'Motorcycle'
-                      : 'มอเตอร์ไซค์'
-                    : t.nav[i]}
-                </ThaiText>
+                <ThaiText>{rental.nav[i]}</ThaiText>
               </Link>
             ))}
           </nav>
@@ -74,7 +70,7 @@ export function WebsiteFooter({
               <ThaiText>{c.support}</ThaiText>
             </h3>
             <Link href="/help">
-              <ThaiText>{t.nav[4]}</ThaiText>
+              <ThaiText>{rental.nav[4]}</ThaiText>
             </Link>
             <Link href="/how-it-works#safety">
               <ThaiText>{c.safety}</ThaiText>
