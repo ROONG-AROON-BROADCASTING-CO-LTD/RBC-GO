@@ -9,7 +9,7 @@ export default defineConfig({
       reuseExistingServer: !process.env.CI,
     },
     {
-      command: 'pnpm dev:customer',
+      command: 'pnpm --filter @stackbuild/customer web',
       url: 'http://localhost:5183',
       reuseExistingServer: !process.env.CI,
     },

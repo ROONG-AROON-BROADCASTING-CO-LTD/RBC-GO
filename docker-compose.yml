@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: apps/customer/Dockerfile
       args:
-        VITE_API_URL: ${VITE_API_URL:-http://localhost:8081/api/v1}
+        EXPO_PUBLIC_API_URL: ${EXPO_PUBLIC_API_URL:-http://localhost:8081/api/v1}
     ports: ['127.0.0.1:5183:8080']
     restart: unless-stopped
   admin:

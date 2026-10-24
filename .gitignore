@@ -16,3 +16,6 @@ test-results/
 .next-dev/
 CODEX_TEST_AUDIT.md
 design-qa.md
+apps/customer/.expo/
+apps/customer/android/
+apps/customer/ios/

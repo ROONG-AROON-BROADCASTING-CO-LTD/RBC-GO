@@ -4,22 +4,22 @@ Reference: SuperBlackCoffee commit `6e4d793f844611272f28cac93b334624340ef712`, v
 
 RBC GO follows the reference workspace and tooling conventions while retaining its mobility domain.
 
-| Location                           | Responsibility                                         |
-| ---------------------------------- | ------------------------------------------------------ |
-| `apps/website/app`                 | Next.js routes, layout and SEO                         |
-| `apps/website/src/components`      | Website components including Navbar                    |
-| `apps/website/src/data`            | Website content                                        |
-| `apps/website/src/sections`        | Reusable website sections                              |
-| `apps/website/app/pageMetadata.ts` | Page SEO metadata                                      |
-| `apps/admin/src`                   | React administration application                       |
-| `apps/customer/src`                | React mobile customer application                      |
-| `apps/api/cmd/api`                 | Go API entry point                                     |
-| `apps/api/internal`                | Mobility repository, services, router and IoT adapters |
-| `packages/management/src`          | Shared management client                               |
-| `packages/types/src`               | Shared business types                                  |
-| `packages/ui/src`                  | Shared UI and theme                                    |
-| `packages/ui/src/components/icons` | Shared animated icons                                  |
-| `docker/nginx-spa.conf`            | Shared Vite production server                          |
+| Location                           | Responsibility                                           |
+| ---------------------------------- | -------------------------------------------------------- |
+| `apps/website/app`                 | Next.js routes, layout and SEO                           |
+| `apps/website/src/components`      | Website components including Navbar                      |
+| `apps/website/src/data`            | Website content                                          |
+| `apps/website/src/sections`        | Reusable website sections                                |
+| `apps/website/app/pageMetadata.ts` | Page SEO metadata                                        |
+| `apps/admin/src`                   | React administration application                         |
+| `apps/customer/src`                | React Native customer application (Expo / iOS / Android) |
+| `apps/api/cmd/api`                 | Go API entry point                                       |
+| `apps/api/internal`                | Mobility repository, services, router and IoT adapters   |
+| `packages/management/src`          | Shared management client                                 |
+| `packages/types/src`               | Shared business types                                    |
+| `packages/ui/src`                  | Shared UI and theme                                      |
+| `packages/ui/src/components/icons` | Shared animated icons                                    |
+| `docker/nginx-spa.conf`            | Shared Vite production server                            |
 
 Add registry icons using `packages/ui/components.json`. Store them as PascalCase `*Icon.tsx` files in `packages/ui/src/components/icons`, retain their registry source comment, export them from `packages/ui/src/components/icons/index.ts` via `@stackbuild/ui/icons`, and reuse across applications.
 

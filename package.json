@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "concurrently -k -n customer,api,admin,website \"pnpm dev:customer\" \"pnpm dev:api\" \"pnpm dev:admin\" \"pnpm dev:website\"",
     "dev:customer": "pnpm --filter @stackbuild/customer dev",
+    "dev:customer:web": "pnpm --filter @stackbuild/customer web",
+    "dev:customer:ios": "pnpm --filter @stackbuild/customer ios",
+    "dev:customer:android": "pnpm --filter @stackbuild/customer android",
     "dev:admin": "pnpm --filter @stackbuild/admin dev",
     "dev:website": "pnpm --filter @stackbuild/website dev",
     "dev:api": "cd apps/api && if [ -f ./.env ]; then set -a; . ./.env; set +a; fi; go run ./cmd/api",
@@ -44,7 +47,7 @@
     "@vitest/coverage-v8": "4.1.11"
   },
   "engines": {
-    "node": ">=22.12.0",
+    "node": ">=22.13.0",
     "pnpm": ">=10"
   }
 }
