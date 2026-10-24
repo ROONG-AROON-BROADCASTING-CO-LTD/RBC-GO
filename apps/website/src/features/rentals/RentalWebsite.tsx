@@ -299,9 +299,6 @@ export function RentalWebsite({ page }: { page?: Page }) {
             </section>
           ) : (
             <RentalReveal className={styles.pageIntro}>
-              <span className={styles.sectionLabel}>
-                RBC GO / {c.nav[routes.indexOf(`/${page}`)]}
-              </span>
               <h1>{title}</h1>
               <p>
                 {page === 'rides'
