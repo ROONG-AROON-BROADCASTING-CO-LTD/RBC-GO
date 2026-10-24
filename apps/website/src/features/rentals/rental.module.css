@@ -322,23 +322,38 @@
       transparent 85%
     );
 }
-.heroTransition {
-  --section-background: #fff;
-  height: 120px;
-  background: linear-gradient(
-    180deg,
-    #080a08 0%,
-    #242624 18%,
-    #777977 46%,
-    #d7d8d6 76%,
-    var(--section-background) 100%
-  );
-}
-.heroTransitionGuide {
-  --section-background: #fafbf8;
-}
-.heroTransition + .guide {
+.hero + section {
+  background: #080a08;
+  color: #f7f8f4;
   border-top: 0;
+}
+.hero
+  + section
+  :is(
+    .sectionLabel,
+    .sectionHeading > p,
+    .guide p,
+    .about p,
+    .pricingRows p,
+    .faq p
+  ),
+.hero + .reading > p {
+  color: #b8c0b1;
+}
+.hero + section :is(.pricingRows > div, .faq details, .guide li) {
+  border-color: #30382d;
+}
+.hero + section .notice {
+  background: #172510;
+  color: #dce7d4;
+}
+.hero + .reading {
+  max-width: none;
+}
+.hero + .reading > * {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .heroCopy {
   padding: 70px 5.5% 120px;

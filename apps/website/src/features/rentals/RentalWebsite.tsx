@@ -329,11 +329,6 @@ export function RentalWebsite({ page }: { page?: Page }) {
             </section>
           )}
 
-          <div
-            aria-hidden="true"
-            className={`${styles.heroTransition}${page === 'how-it-works' ? ` ${styles.heroTransitionGuide}` : ''}`}
-          />
-
           {(!page || page === 'rides') && (
             <section className={styles.collection} id="categories">
               {!page && (
