@@ -571,9 +571,10 @@
   color: #929b8c;
 }
 .pageHero {
-  min-height: 540px;
-  height: calc(78svh - 112px);
-  max-height: 780px;
+  /* Internal pages use the same image canvas as the home hero. */
+  min-height: 680px;
+  height: calc(90svh - 112px);
+  max-height: 940px;
 }
 .pageIntro {
   width: 100%;
@@ -884,9 +885,9 @@
     flex-direction: column;
   }
   .pageHero {
-    min-height: 570px;
-    height: calc(82svh - 106px);
-    max-height: 740px;
+    min-height: 690px;
+    height: calc(94svh - 106px);
+    max-height: 850px;
   }
   .pageIntro {
     padding: 100px 24px 105px;
