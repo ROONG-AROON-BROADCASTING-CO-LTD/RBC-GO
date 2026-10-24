@@ -18,6 +18,7 @@ import styles from './rental.module.css';
 import { siteUrl } from '../../../app/site';
 import { pageSeoCopy } from '../../../app/pageMetadata';
 import { Icon } from '../../components/ui/Icon';
+import { HeadingText } from '../../components/ui/HeadingText';
 
 const routes = ['/rides', '/how-it-works', '/pricing', '/about', '/help'];
 const pageHeroImages = {
@@ -280,7 +281,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
                           ease: rentalEase,
                         }}
                       >
-                        {line}
+                        <HeadingText>{line}</HeadingText>
                       </motion.span>
                     </span>
                   ))}
@@ -315,7 +316,9 @@ export function RentalWebsite({ page }: { page?: Page }) {
               />
               <div className={styles.heroShade} />
               <RentalReveal className={styles.pageIntro}>
-                <h1>{title}</h1>
+                <h1>
+                  <HeadingText phrases={th}>{title}</HeadingText>
+                </h1>
                 <p>
                   {page === 'rides'
                     ? c.collectionCopy
@@ -339,7 +342,9 @@ export function RentalWebsite({ page }: { page?: Page }) {
                         ? 'การเดินทางที่คุณเลือกได้'
                         : 'EXPLORE THE POSSIBILITIES'}
                     </span>
-                    <h2>{c.collection}</h2>
+                    <h2>
+                      <HeadingText>{c.collection}</HeadingText>
+                    </h2>
                   </div>
                   <p>{c.collectionCopy}</p>
                 </div>
@@ -393,7 +398,9 @@ export function RentalWebsite({ page }: { page?: Page }) {
                         <span>0{i + 1}</span>
                       </div>
                       <div className={styles.categoryTitle}>
-                        <h3>{th ? item.th : item.en}</h3>
+                        <h3>
+                          <HeadingText>{th ? item.th : item.en}</HeadingText>
+                        </h3>
                         <Arrow />
                       </div>
                       <p>{th ? item.thCopy : item.enCopy}</p>
@@ -424,7 +431,9 @@ export function RentalWebsite({ page }: { page?: Page }) {
                     <span className={styles.sectionLabel}>
                       {item.en.toUpperCase()}
                     </span>
-                    <h2>{th ? item.th : item.en}</h2>
+                    <h2>
+                      <HeadingText>{th ? item.th : item.en}</HeadingText>
+                    </h2>
                     <p>{th ? item.thDetail : item.enDetail}</p>
                     <ul>
                       {(th ? item.note : item.enNotes).map((note) => (
@@ -447,7 +456,9 @@ export function RentalWebsite({ page }: { page?: Page }) {
                 <span className={styles.sectionLabel}>
                   {th ? 'วิธีการเช่า' : 'RENTAL GUIDE'}
                 </span>
-                <h2>{c.guideTitle}</h2>
+                <h2>
+                  <HeadingText>{c.guideTitle}</HeadingText>
+                </h2>
               </div>
               <ol>
                 {c.steps.map(([label, copy], i) => (
@@ -463,7 +474,9 @@ export function RentalWebsite({ page }: { page?: Page }) {
                     }}
                   >
                     <span>0{i + 1}</span>
-                    <h3>{label}</h3>
+                    <h3>
+                      <HeadingText>{label}</HeadingText>
+                    </h3>
                     <p>{copy}</p>
                   </motion.li>
                 ))}
@@ -474,9 +487,11 @@ export function RentalWebsite({ page }: { page?: Page }) {
           {page === 'how-it-works' && (
             <section className={styles.reading}>
               <h2>
-                {th
-                  ? 'เตรียมให้พร้อม เพื่อทริปที่ราบรื่น'
-                  : 'A little preparation goes a long way.'}
+                <HeadingText>
+                  {th
+                    ? 'เตรียมให้พร้อม เพื่อทริปที่ราบรื่น'
+                    : 'A little preparation goes a long way.'}
+                </HeadingText>
               </h2>
               <p>
                 {th
@@ -489,9 +504,11 @@ export function RentalWebsite({ page }: { page?: Page }) {
           {page === 'pricing' && (
             <section className={styles.reading}>
               <h2>
-                {th
-                  ? 'ค่าเช่าที่เหมาะกับรูปแบบการเดินทาง'
-                  : 'Rental details shaped around your plans.'}
+                <HeadingText>
+                  {th
+                    ? 'ค่าเช่าที่เหมาะกับรูปแบบการเดินทาง'
+                    : 'Rental details shaped around your plans.'}
+                </HeadingText>
               </h2>
               <p>
                 {th
@@ -501,7 +518,9 @@ export function RentalWebsite({ page }: { page?: Page }) {
               <div className={styles.pricingRows}>
                 {rentalCategories.map((item) => (
                   <div key={item.id}>
-                    <h3>{th ? item.th : item.en}</h3>
+                    <h3>
+                      <HeadingText>{th ? item.th : item.en}</HeadingText>
+                    </h3>
                     <p>
                       {th ? item.note.join(' · ') : item.enNotes.join(' · ')}
                     </p>
@@ -533,9 +552,11 @@ export function RentalWebsite({ page }: { page?: Page }) {
               <div>
                 <span className={styles.sectionLabel}>ABOUT RBC GO</span>
                 <h2>
-                  {th
-                    ? 'หนึ่งแบรนด์ หลายวิธีเดินทาง'
-                    : 'One destination for more ways to go.'}
+                  <HeadingText>
+                    {th
+                      ? 'หนึ่งแบรนด์ หลายวิธีเดินทาง'
+                      : 'One destination for more ways to go.'}
+                  </HeadingText>
                 </h2>
                 <p>
                   {th
@@ -597,7 +618,9 @@ export function RentalWebsite({ page }: { page?: Page }) {
           <RentalReveal className={styles.final}>
             <div>
               <span className={styles.sectionLabel}>YOUR NEXT JOURNEY</span>
-              <h2>{c.finalTitle}</h2>
+              <h2>
+                <HeadingText>{c.finalTitle}</HeadingText>
+              </h2>
               <p>{c.finalCopy}</p>
             </div>
             <Link

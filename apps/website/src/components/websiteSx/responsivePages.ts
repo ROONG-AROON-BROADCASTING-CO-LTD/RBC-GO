@@ -613,6 +613,9 @@ export const responsivePagesSx = [
     },
     '& .event-detail-copy h1': {
       maxWidth: '680px',
+      textWrap: 'balance',
+      wordBreak: 'normal',
+      overflowWrap: 'normal',
       margin: '16px 0',
       fontSize: 'clamp(58px, 5vw, 76px)',
       fontWeight: 600,
@@ -697,9 +700,9 @@ export const responsivePagesSx = [
     },
     '@media (max-width: 767px)': {
       '& .event-detail-copy h1': {
-        fontSize: 'clamp(40px, 10vw, 50px)',
+        fontSize: 'clamp(28px, 7.3vw, 36px)',
         fontWeight: 600,
-        lineHeight: 1.16,
+        lineHeight: 1.4,
         letterSpacing: '0.005em',
       },
     },
