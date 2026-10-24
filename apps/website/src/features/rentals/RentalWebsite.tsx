@@ -11,6 +11,7 @@ import {
   useSpring,
 } from 'motion/react';
 import { RentalReveal, rentalEase } from './RentalMotion';
+import { RentalAppGuide } from './RentalAppGuide';
 import type { Page } from '../../data/landing';
 import { useWebsiteLanguage } from '../../components/layout/WebsiteLanguageProvider';
 import { WebsiteFooter } from '../../components/layout/WebsiteFooter';
@@ -489,7 +490,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
             </div>
           )}
 
-          {(!page || page === 'how-it-works') && (
+          {!page && (
             <RentalReveal className={styles.guide} id="safety">
               <div>
                 <span className={styles.sectionLabel}>
@@ -524,6 +525,8 @@ export function RentalWebsite({ page }: { page?: Page }) {
               </ol>
             </RentalReveal>
           )}
+
+          {page === 'how-it-works' && <RentalAppGuide th={th} />}
 
           {page === 'how-it-works' && (
             <section className={styles.reading}>
