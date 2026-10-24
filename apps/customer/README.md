@@ -16,7 +16,9 @@ pnpm --filter @stackbuild/customer web
 
 The first command starts Metro on port 5183. Scan its QR code with a compatible Expo Go version, or open an iOS Simulator / Android Emulator. Native development builds can be generated with `pnpm --filter @stackbuild/customer exec expo run:ios` or `expo run:android`; Xcode / Android Studio are required respectively.
 
-Set `EXPO_PUBLIC_API_URL` in `apps/customer/.env` to your API's `/api/v1` URL. On a physical device, use the development computer's LAN IP; `localhost` refers to the device. When unset, Android uses `10.0.2.2:8081`, while iOS Simulator and web use `localhost:8081`. Public variables are bundled into the app and must not contain secrets. Production API URLs should use HTTPS.
+The app is currently a self-contained UI prototype. It does not call an API or collect payment details. Inventory, prices, payment methods and the confirmation number are illustrative, and state resets when the app restarts.
+
+Select a category and vehicle, choose pickup/return dates and time, review the calculated total, and confirm the sample booking. Returning to an earlier step preserves the selection. Starting again from the success screen resets the flow. Yacht and aircraft categories show their own pickup locations.
 
 ## Verification and builds
 
@@ -26,4 +28,4 @@ pnpm --filter @stackbuild/customer typecheck
 pnpm build:customer
 ```
 
-`build` exports JavaScript bundles for iOS, Android and web into `dist`; it does not create a signed IPA or APK. Use Expo native build tooling with your own application identifiers and signing credentials when preparing store releases. Docker serves only the web preview. The welcome screen and API status retry are implemented; booking, authentication and payment are not enabled.
+`build` exports JavaScript bundles for iOS, Android and web into `dist`; it does not create a signed IPA or APK. Use Expo native build tooling with your own application identifiers and signing credentials when preparing store releases. Docker serves only the web preview. Authentication, live availability, real reservations and payments are not enabled.

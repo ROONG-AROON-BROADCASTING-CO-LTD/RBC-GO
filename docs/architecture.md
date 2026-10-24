@@ -3,7 +3,7 @@
 ## Applications
 
 - Website: crawlable Next.js public content and mobile-only customer entry.
-- Customer: React Native application using Expo for iOS and Android, with a web preview for CI and Docker. The current welcome screen checks API connectivity; authentication, reservations and payments remain unconfigured.
+- Customer: React Native application using Expo for iOS and Android, with a web preview for CI and Docker. The current offline UI prototype covers vehicle selection, date selection, a calculated booking summary and sample confirmation; authentication, real reservations and payments remain unconfigured.
 - Admin: React operations surface for vehicles, parking zones, device health, wallet ledger and support.
 - API: Gin HTTP boundary; persistent repositories own money and trip state.
 - PostgreSQL: future wallets, immutable ledger entries, trips, vehicle state, zones, device identities and audit events.
