@@ -158,10 +158,11 @@ export function RentalAppGuide({ th }: { th: boolean }) {
               <div className={styles.status}>
                 <span>9:41</span>
                 <i />
+                <span>▂▄▆ ▰</span>
               </div>
               <div className={styles.appBrand}>
                 RBC <b>GO</b>
-                <span>●</span>
+                <span className={styles.avatar}>P</span>
               </div>
               <div className={styles.progress}>
                 {[0, 1, 2].map((n) => (
@@ -169,13 +170,19 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                 ))}
               </div>
               <div className={styles.screen}>
-                <small>0{index + 1} / 03</small>
+                <div className={styles.screenNav}>
+                  <span>‹</span>
+                  <small>{th ? 'การจองของคุณ' : 'Your reservation'}</small>
+                  <small>0{index + 1} / 03</small>
+                </div>
                 <h3>{title}</h3>
                 {index === 0 ? (
                   <>
                     <div className={styles.search}>
                       ⌕　
-                      {th ? 'คุณอยากเดินทางแบบไหน?' : 'Where will you go next?'}
+                      {th
+                        ? 'กรุงเทพฯ · รับรถที่สาขา'
+                        : 'Bangkok · Branch pickup'}
                     </div>
                     <div className={styles.tabs}>
                       <motion.b
@@ -211,7 +218,7 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                         width={480}
                         height={300}
                       />
-                      <span>EXPLORE THE ROAD</span>
+                      <span>{th ? 'พร้อมให้เช่า' : 'Available'}</span>
                       <motion.i {...tap(0, 1.35)} />
                       <motion.b
                         className={styles.chosen}
@@ -226,23 +233,44 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                     </motion.div>
                     <div className={styles.row}>
                       <strong>
-                        {th
-                          ? 'รถยนต์สำหรับทริปของคุณ'
-                          : 'A car for your next trip'}
+                        {th ? 'Premium Electric SUV' : 'Premium Electric SUV'}
                       </strong>
-                      <b>↗</b>
+                      <b className={styles.rating}>★ 4.9</b>
                     </div>
                     <p>
                       {th
-                        ? 'อิสระทุกเส้นทาง ในแบบที่คุณเลือก'
-                        : 'Make every road your own.'}
+                        ? '5 ที่นั่ง  ·  อัตโนมัติ  ·  พลังงานไฟฟ้า'
+                        : '5 seats  ·  Automatic  ·  Electric'}
                     </p>
+                    <div className={styles.priceLine}>
+                      <strong>
+                        ฿1,800 <small>/ {th ? 'วัน' : 'day'}</small>
+                      </strong>
+                      <span>✓ {th ? 'รวมประกันพื้นฐาน' : 'Basic cover'}</span>
+                    </div>
+                    <div className={styles.secondaryCar}>
+                      <Image
+                        src="/images/heroes/rides-hero.png"
+                        alt=""
+                        width={100}
+                        height={70}
+                      />
+                      <div>
+                        <strong>Electric Motorcycle</strong>
+                        <small>
+                          {th ? 'คล่องตัวสำหรับทุกวัน' : 'Made for city days'}
+                        </small>
+                      </div>
+                      <strong>
+                        ฿350<small>/{th ? 'วัน' : 'day'}</small>
+                      </strong>
+                    </div>
                     <motion.div
                       className={styles.pill}
                       variants={{ play: { scale: reduced ? 1 : [1, 0.95, 1] } }}
                       transition={timing(0, 2.2)}
                     >
-                      {th ? 'ดูรายละเอียดรถ' : 'View vehicle details'}　→
+                      {th ? 'เลือกรถคันนี้' : 'Select this vehicle'}　→
                       <motion.i {...tap(0, 2.15)} />
                     </motion.div>
                   </>
@@ -250,7 +278,14 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                   <>
                     <div className={styles.field}>
                       <small>{th ? 'สถานที่รับรถ' : 'Pickup location'}</small>
-                      <strong>⌖　{th ? 'กรุงเทพมหานคร' : 'Bangkok'}</strong>
+                      <strong>
+                        ⌖　{th ? 'สาขาสุขุมวิท กรุงเทพฯ' : 'Sukhumvit, Bangkok'}
+                      </strong>
+                      <small>
+                        {th
+                          ? 'รับและคืนรถที่สาขาเดียวกัน'
+                          : 'Return to the same location'}
+                      </small>
                     </div>
                     <div className={styles.calendar}>
                       <div className={styles.row}>
@@ -263,7 +298,10 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                         {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((d, i) => (
                           <small key={i}>{d}</small>
                         ))}
-                        {Array.from({ length: 28 }, (_, n) => (
+                        {Array.from({ length: 6 }, (_, n) => (
+                          <span key={`blank-${n}`} />
+                        ))}
+                        {Array.from({ length: 30 }, (_, n) => (
                           <motion.span
                             key={n}
                             variants={
@@ -292,6 +330,12 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                           </motion.span>
                         ))}
                       </div>
+                    </div>
+                    <div className={styles.duration}>
+                      ◷　
+                      {th
+                        ? 'ระยะเวลาเช่า 3 วัน · รับ–คืนเวลา 10:00'
+                        : '3-day rental · Pickup & return at 10:00'}
                     </div>
                     <div className={styles.datePair}>
                       <div>
@@ -326,7 +370,7 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                       variants={{ play: { scale: reduced ? 1 : [1, 0.95, 1] } }}
                       transition={timing(1, 2.2)}
                     >
-                      {th ? 'ถัดไป' : 'Continue'}　→
+                      {th ? 'ตรวจสอบการจอง' : 'Review booking'}　→
                       <motion.i {...tap(1, 2.15)} />
                     </motion.div>
                   </>
@@ -340,20 +384,29 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                         height={90}
                       />
                       <div>
-                        <strong>{th ? 'ทริปของคุณ' : 'Your journey'}</strong>
+                        <strong>Premium Electric SUV</strong>
                         <small>13–16 NOV · Bangkok</small>
+                        <small>
+                          {th ? 'สาขาสุขุมวิท · 10:00' : 'Sukhumvit · 10:00'}
+                        </small>
                       </div>
                     </div>
                     <div className={styles.receipt}>
                       <div className={styles.row}>
-                        <span>{th ? 'ระยะเวลาเช่า' : 'Rental period'}</span>
-                        <strong>{th ? '3 วัน' : '3 days'}</strong>
+                        <span>
+                          {th
+                            ? 'ค่าเช่า ฿1,800 × 3 วัน'
+                            : 'Rental ฿1,800 × 3 days'}
+                        </span>
+                        <strong>฿5,400</strong>
                       </div>
                       <div className={styles.row}>
-                        <span>{th ? 'รายละเอียดค่าเช่า' : 'Rental price'}</span>
-                        <span>
-                          {th ? 'ตามรายการที่เลือก' : 'Per selected vehicle'}
-                        </span>
+                        <span>{th ? 'ค่าบริการ' : 'Service fee'}</span>
+                        <strong>฿300</strong>
+                      </div>
+                      <div className={`${styles.row} ${styles.total}`}>
+                        <strong>{th ? 'ยอดรวม' : 'Total'}</strong>
+                        <strong>฿5,700</strong>
                       </div>
                     </div>
                     <small>{th ? 'วิธีชำระเงิน' : 'Payment method'}</small>
@@ -370,7 +423,10 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                     >
                       <span>◉</span>
                       <strong>
-                        {th ? 'บัตรเครดิต / เดบิต' : 'Credit / debit card'}
+                        <span>
+                          {th ? 'บัตรเครดิต / เดบิต' : 'Credit / debit card'}
+                          <small>VISA ···· 4242</small>
+                        </span>
                       </strong>
                       <span>▰</span>
                       <motion.i {...tap(2, 0.55)} />
@@ -382,30 +438,49 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                     </div>
                     <p className={styles.terms}>
                       {th
-                        ? 'ตรวจสอบราคาและเงื่อนไขก่อนยืนยันการจอง'
-                        : 'Review the price and terms before confirming.'}
+                        ? '✓ ยอมรับเงื่อนไขการเช่าและนโยบายการยกเลิก'
+                        : '✓ Accept rental terms and cancellation policy'}
                     </p>
                     <motion.div
                       className={styles.pill}
                       variants={{ play: { scale: reduced ? 1 : [1, 0.95, 1] } }}
                       transition={timing(2, 1.4)}
                     >
-                      {th ? 'ยืนยันและชำระเงิน' : 'Confirm and pay'}　→
+                      {th ? 'ชำระเงิน' : 'Pay'} ฿5,700　→
                       <motion.i {...tap(2, 1.35)} />
                     </motion.div>
                     <motion.div
                       className={styles.confirmation}
                       variants={{
-                        idle: { opacity: 0, scale: 0.9 },
-                        play: { opacity: 1, scale: 1 },
+                        idle: { opacity: 0, y: 18, scale: 0.98 },
+                        play: { opacity: 1, y: 0, scale: 1 },
                       }}
                       transition={timing(2, 2.4)}
                     >
                       <b>✓</b>
-                      <span>
+                      <h4>{th ? 'จองสำเร็จแล้ว!' : 'You’re all booked!'}</h4>
+                      <p>
                         {th
-                          ? 'พร้อมสำหรับการเดินทาง'
-                          : 'Ready for your journey'}
+                          ? 'การเดินทางครั้งต่อไปพร้อมแล้ว'
+                          : 'Your next journey is ready.'}
+                      </p>
+                      <div className={styles.ticket}>
+                        <small>BOOKING ID</small>
+                        <strong>RBC-026184</strong>
+                        <hr />
+                        <strong>Premium Electric SUV</strong>
+                        <span>13–16 NOV 2026 · 10:00</span>
+                        <span>
+                          {th ? 'สาขาสุขุมวิท กรุงเทพฯ' : 'Sukhumvit, Bangkok'}
+                        </span>
+                        <hr />
+                        <div className={styles.row}>
+                          <span>{th ? 'ชำระแล้ว' : 'Paid'}</span>
+                          <strong>฿5,700</strong>
+                        </div>
+                      </div>
+                      <span className={styles.bookingLink}>
+                        {th ? 'ดูรายละเอียดการจอง' : 'View booking details'}　→
                       </span>
                     </motion.div>
                   </>
@@ -426,8 +501,8 @@ export function RentalAppGuide({ th }: { th: boolean }) {
       </ol>
       <p className={styles.note}>
         {th
-          ? 'ภาพตัวอย่างขั้นตอนการเช่า · ระบบจองและชำระเงินยังไม่เปิดให้บริการ'
-          : 'Illustrative rental flow · Online booking and payment are not yet available.'}
+          ? 'ตัวอย่างหน้าจอและราคาสมมติสำหรับสาธิตขั้นตอน · ระบบจองและชำระเงินยังไม่เปิดให้บริการ'
+          : 'Illustrative screens and sample prices · Online booking and payment are not yet available.'}
       </p>
     </section>
   );
