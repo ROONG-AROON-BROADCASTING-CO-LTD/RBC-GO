@@ -213,11 +213,13 @@
   object-fit: cover;
 }
 .navigation {
+  position: absolute;
+  left: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: clamp(18px, 2vw, 34px);
-  margin: 0 auto;
+  transform: translateX(-50%);
   font-size: 13px;
   font-weight: 500;
 }
@@ -252,6 +254,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-left: auto;
 }
 .headerActions button,
 .headerStart {
@@ -746,7 +749,9 @@
 }
 @media (max-width: 1100px) {
   .navigation {
+    position: static;
     display: none;
+    transform: none;
   }
   .headerStart {
     display: none;
