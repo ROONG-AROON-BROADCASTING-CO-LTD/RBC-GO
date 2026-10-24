@@ -308,12 +308,37 @@
   z-index: -1;
   background:
     linear-gradient(
+      0deg,
+      #080a08 0%,
+      #080a08 4%,
+      #080a08e8 20%,
+      #080a0860 70%,
+      transparent 100%
+    ),
+    linear-gradient(
       90deg,
       rgb(0 0 0 / 76%),
       rgb(0 0 0 / 30%) 52%,
       transparent 85%
-    ),
-    linear-gradient(0deg, #080a08, transparent 32%);
+    );
+}
+.heroTransition {
+  --section-background: #fff;
+  height: 120px;
+  background: linear-gradient(
+    180deg,
+    #080a08 0%,
+    #242624 18%,
+    #777977 46%,
+    #d7d8d6 76%,
+    var(--section-background) 100%
+  );
+}
+.heroTransitionGuide {
+  --section-background: #fafbf8;
+}
+.heroTransition + .guide {
+  border-top: 0;
 }
 .heroCopy {
   padding: 70px 5.5% 120px;
@@ -772,15 +797,6 @@
   }
   .hero > img {
     object-position: 62% center;
-  }
-  .heroShade {
-    background: linear-gradient(
-      0deg,
-      #080a08 0%,
-      #080a08e8 20%,
-      #080a0860 70%,
-      transparent
-    );
   }
   .heroCopy {
     padding: 160px 24px 105px;
