@@ -1,18 +1,76 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
-import { motion, useInView, useReducedMotion } from 'motion/react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
+import {
+  motion,
+  useAnimationControls,
+  useInView,
+  useReducedMotion,
+} from 'motion/react';
 import { HeadingText, ThaiText } from '../../components/ui/HeadingText';
 import { rentalEase } from './RentalMotion';
 import styles from './appGuide.module.css';
 
+function ReplayingPhone({
+  children,
+  label,
+  wide,
+  reduced,
+}: {
+  children: ReactNode;
+  label: string;
+  wide: boolean;
+  reduced: boolean | null;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const visible = useInView(ref, { amount: 0.45 });
+  const controls = useAnimationControls();
+  useEffect(() => {
+    if (!visible) {
+      controls.stop();
+      return;
+    }
+    let cancelled = false;
+    controls.set('idle');
+    void controls.start('play');
+    if (reduced) return;
+    const timer = window.setInterval(
+      async () => {
+        await controls.start('fade');
+        if (cancelled) return;
+        controls.set('idle');
+        void controls.start('play');
+      },
+      wide ? 11500 : 5000,
+    );
+    return () => {
+      cancelled = true;
+      window.clearInterval(timer);
+      controls.stop();
+    };
+  }, [visible, wide, reduced, controls]);
+  return (
+    <div ref={ref} className={styles.phone} role="img" aria-label={label}>
+      <motion.div
+        initial="idle"
+        animate={controls}
+        variants={{
+          idle: { opacity: reduced ? 1 : 0 },
+          play: { opacity: 1, transition: { duration: reduced ? 0 : 0.4 } },
+          fade: { opacity: 0, transition: { duration: 0.35 } },
+        }}
+      >
+        {children}
+      </motion.div>
+      <div className={styles.homeIndicator} />
+    </div>
+  );
+}
+
 export function RentalAppGuide({ th }: { th: boolean }) {
   const reduced = useReducedMotion();
   const [wide, setWide] = useState(false);
-  const sequenceRef = useRef<HTMLOListElement>(null);
-  const visible = useInView(sequenceRef, { amount: 'some' });
-  const [cycle, setCycle] = useState(0);
   useEffect(() => {
     const query = window.matchMedia('(min-width: 761px)');
     const update = () => setWide(query.matches);
@@ -20,16 +78,6 @@ export function RentalAppGuide({ th }: { th: boolean }) {
     query.addEventListener('change', update);
     return () => query.removeEventListener('change', update);
   }, []);
-  useEffect(() => {
-    if (!visible || reduced) return;
-    // The desktop sequence finishes at 9.25s, then holds the success state
-    // for 2.25s. Mobile screens run locally and hold for the same duration.
-    const interval = window.setInterval(
-      () => setCycle((current) => current + 1),
-      wide ? 11500 : 5000,
-    );
-    return () => window.clearInterval(interval);
-  }, [visible, reduced, wide]);
   const timing = (step: number, delay: number) => ({
     delay: reduced ? 0 : (wide ? step * 3.2 : 0) + delay,
     duration: reduced ? 0 : 0.45,
@@ -89,7 +137,7 @@ export function RentalAppGuide({ th }: { th: boolean }) {
           </ThaiText>
         </p>
       </div>
-      <ol className={styles.steps} ref={sequenceRef}>
+      <ol className={styles.steps}>
         {steps.map(([title, copy], index) => (
           <motion.li
             key={title}
@@ -102,14 +150,10 @@ export function RentalAppGuide({ th }: { th: boolean }) {
               ease: rentalEase,
             }}
           >
-            <motion.div
-              key={`${index}-${cycle}`}
-              className={styles.phone}
-              initial="idle"
-              whileInView="play"
-              viewport={{ once: true, amount: 0.45 }}
-              role="img"
-              aria-label={`${th ? 'ภาพตัวอย่างแอป' : 'App preview'}: ${title}`}
+            <ReplayingPhone
+              wide={wide}
+              reduced={reduced}
+              label={`${th ? 'ภาพตัวอย่างแอป' : 'App preview'}: ${title}`}
             >
               <div className={styles.status}>
                 <span>9:41</span>
@@ -367,8 +411,7 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                   </>
                 )}
               </div>
-              <div className={styles.homeIndicator} />
-            </motion.div>
+            </ReplayingPhone>
             <div className={styles.caption}>
               <span>0{index + 1}</span>
               <h3>
