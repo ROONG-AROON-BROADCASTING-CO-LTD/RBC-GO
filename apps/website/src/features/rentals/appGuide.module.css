@@ -352,3 +352,34 @@
     text-align: center;
   }
 }
+.tap {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: calc(50% - 12px);
+  top: calc(50% - 12px);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #ffffff55;
+  box-shadow: 0 0 0 7px #ffffff15;
+  pointer-events: none;
+  z-index: 3;
+}
+.tabs b,
+.days > span,
+.payment,
+.pill {
+  position: relative;
+}
+.chosen {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: #89d82a;
+  color: #102006;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+}

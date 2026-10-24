@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { HeadingText, ThaiText } from '../../components/ui/HeadingText';
 import { rentalEase } from './RentalMotion';
@@ -8,6 +9,28 @@ import styles from './appGuide.module.css';
 
 export function RentalAppGuide({ th }: { th: boolean }) {
   const reduced = useReducedMotion();
+  const [wide, setWide] = useState(false);
+  useEffect(() => {
+    const query = window.matchMedia('(min-width: 761px)');
+    const update = () => setWide(query.matches);
+    update();
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
+  const timing = (step: number, delay: number) => ({
+    delay: reduced ? 0 : (wide ? step * 3.2 : 0) + delay,
+    duration: reduced ? 0 : 0.45,
+    ease: rentalEase,
+  });
+  const tap = (step: number, delay: number) => ({
+    initial: { opacity: 0, scale: 0.5 },
+    variants: {
+      play: { opacity: reduced ? 0 : [0, 1, 0], scale: [0.5, 1, 1.8] },
+    },
+    transition: timing(step, delay),
+    className: styles.tap,
+    'aria-hidden': true as const,
+  });
   const steps = th
     ? [
         [
@@ -66,8 +89,11 @@ export function RentalAppGuide({ th }: { th: boolean }) {
               ease: rentalEase,
             }}
           >
-            <div
+            <motion.div
               className={styles.phone}
+              initial="idle"
+              whileInView="play"
+              viewport={{ once: true, amount: 0.45 }}
               role="img"
               aria-label={`${th ? 'ภาพตัวอย่างแอป' : 'App preview'}: ${title}`}
             >
@@ -94,11 +120,33 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                       {th ? 'คุณอยากเดินทางแบบไหน?' : 'Where will you go next?'}
                     </div>
                     <div className={styles.tabs}>
-                      <b>{th ? 'รถยนต์' : 'Cars'}</b>
+                      <motion.b
+                        variants={{
+                          idle: {
+                            backgroundColor: '#30392b',
+                            color: '#b8c0b1',
+                          },
+                          play: {
+                            backgroundColor: '#89d82a',
+                            color: '#102006',
+                          },
+                        }}
+                        transition={timing(0, 0.4)}
+                      >
+                        {th ? 'รถยนต์' : 'Cars'}
+                        <motion.i {...tap(0, 0.3)} />
+                      </motion.b>
                       <span>{th ? 'มอเตอร์ไซค์' : 'Motorcycles'}</span>
                       <span>{th ? 'เรือยอชต์' : 'Yachts'}</span>
                     </div>
-                    <div className={styles.vehicle}>
+                    <motion.div
+                      className={styles.vehicle}
+                      variants={{
+                        idle: { opacity: 0.4, scale: 0.97 },
+                        play: { opacity: 1, scale: 1 },
+                      }}
+                      transition={timing(0, 0.7)}
+                    >
                       <Image
                         src="/images/rentals/car.png"
                         alt=""
@@ -106,7 +154,18 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                         height={300}
                       />
                       <span>EXPLORE THE ROAD</span>
-                    </div>
+                      <motion.i {...tap(0, 1.35)} />
+                      <motion.b
+                        className={styles.chosen}
+                        variants={{
+                          idle: { opacity: 0, scale: 0.6 },
+                          play: { opacity: 1, scale: 1 },
+                        }}
+                        transition={timing(0, 1.6)}
+                      >
+                        ✓
+                      </motion.b>
+                    </motion.div>
                     <div className={styles.row}>
                       <strong>
                         {th
@@ -120,9 +179,14 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                         ? 'อิสระทุกเส้นทาง ในแบบที่คุณเลือก'
                         : 'Make every road your own.'}
                     </p>
-                    <div className={styles.pill}>
+                    <motion.div
+                      className={styles.pill}
+                      variants={{ play: { scale: reduced ? 1 : [1, 0.95, 1] } }}
+                      transition={timing(0, 2.2)}
+                    >
                       {th ? 'ดูรายละเอียดรถ' : 'View vehicle details'}　→
-                    </div>
+                      <motion.i {...tap(0, 2.15)} />
+                    </motion.div>
                   </>
                 ) : index === 1 ? (
                   <>
@@ -142,32 +206,71 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                           <small key={i}>{d}</small>
                         ))}
                         {Array.from({ length: 28 }, (_, n) => (
-                          <span
+                          <motion.span
                             key={n}
-                            className={
-                              n >= 12 && n <= 15 ? styles.selected : ''
+                            variants={
+                              n >= 12 && n <= 15
+                                ? {
+                                    idle: {
+                                      backgroundColor: '#1d231b',
+                                      color: '#edf2e9',
+                                    },
+                                    play: {
+                                      backgroundColor: '#89d82a',
+                                      color: '#102006',
+                                    },
+                                  }
+                                : undefined
                             }
+                            transition={timing(
+                              1,
+                              n === 12 ? 0.5 : n === 15 ? 1.3 : 1.5,
+                            )}
                           >
                             {n + 1}
-                          </span>
+                            {(n === 12 || n === 15) && (
+                              <motion.i {...tap(1, n === 12 ? 0.4 : 1.2)} />
+                            )}
+                          </motion.span>
                         ))}
                       </div>
                     </div>
                     <div className={styles.datePair}>
                       <div>
                         <small>{th ? 'รับรถ' : 'Pickup'}</small>
-                        <strong>13 NOV</strong>
+                        <motion.strong
+                          variants={{
+                            idle: { opacity: 0 },
+                            play: { opacity: 1 },
+                          }}
+                          transition={timing(1, 0.7)}
+                        >
+                          13 NOV
+                        </motion.strong>
                         <span>10:00</span>
                       </div>
                       <div>
                         <small>{th ? 'คืนรถ' : 'Return'}</small>
-                        <strong>16 NOV</strong>
+                        <motion.strong
+                          variants={{
+                            idle: { opacity: 0 },
+                            play: { opacity: 1 },
+                          }}
+                          transition={timing(1, 1.5)}
+                        >
+                          16 NOV
+                        </motion.strong>
                         <span>10:00</span>
                       </div>
                     </div>
-                    <div className={styles.pill}>
+                    <motion.div
+                      className={styles.pill}
+                      variants={{ play: { scale: reduced ? 1 : [1, 0.95, 1] } }}
+                      transition={timing(1, 2.2)}
+                    >
                       {th ? 'ถัดไป' : 'Continue'}　→
-                    </div>
+                      <motion.i {...tap(1, 2.15)} />
+                    </motion.div>
                   </>
                 ) : (
                   <>
@@ -196,13 +299,24 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                       </div>
                     </div>
                     <small>{th ? 'วิธีชำระเงิน' : 'Payment method'}</small>
-                    <div className={styles.payment}>
+                    <motion.div
+                      className={styles.payment}
+                      variants={{
+                        idle: { borderColor: '#384131' },
+                        play: {
+                          borderColor: '#89d82a',
+                          backgroundColor: '#89d82a12',
+                        },
+                      }}
+                      transition={timing(2, 0.7)}
+                    >
                       <span>◉</span>
                       <strong>
                         {th ? 'บัตรเครดิต / เดบิต' : 'Credit / debit card'}
                       </strong>
                       <span>▰</span>
-                    </div>
+                      <motion.i {...tap(2, 0.55)} />
+                    </motion.div>
                     <div className={styles.payment}>
                       <span>○</span>
                       <strong>QR Payment</strong>
@@ -213,15 +327,21 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                         ? 'ตรวจสอบราคาและเงื่อนไขก่อนยืนยันการจอง'
                         : 'Review the price and terms before confirming.'}
                     </p>
-                    <div className={styles.pill}>
+                    <motion.div
+                      className={styles.pill}
+                      variants={{ play: { scale: reduced ? 1 : [1, 0.95, 1] } }}
+                      transition={timing(2, 1.4)}
+                    >
                       {th ? 'ยืนยันและชำระเงิน' : 'Confirm and pay'}　→
-                    </div>
+                      <motion.i {...tap(2, 1.35)} />
+                    </motion.div>
                     <motion.div
                       className={styles.confirmation}
-                      initial={reduced ? false : { opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.55, duration: 0.5 }}
+                      variants={{
+                        idle: { opacity: 0, scale: 0.9 },
+                        play: { opacity: 1, scale: 1 },
+                      }}
+                      transition={timing(2, 2.4)}
                     >
                       <b>✓</b>
                       <span>
@@ -234,7 +354,7 @@ export function RentalAppGuide({ th }: { th: boolean }) {
                 )}
               </div>
               <div className={styles.homeIndicator} />
-            </div>
+            </motion.div>
             <div className={styles.caption}>
               <span>0{index + 1}</span>
               <h3>
