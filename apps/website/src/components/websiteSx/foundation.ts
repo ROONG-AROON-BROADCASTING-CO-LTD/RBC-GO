@@ -266,7 +266,7 @@ export const foundationSx = [
   },
   {
     '& .locale-switch i': {
-      color: '#51554c',
+      color: '#aeb3a8',
       fontStyle: 'normal',
       fontSize: '12px',
       lineHeight: '12px',

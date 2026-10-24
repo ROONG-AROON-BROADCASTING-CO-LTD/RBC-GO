@@ -253,13 +253,13 @@
   min-height: 40px;
 }
 .headerActions button i {
-  color: #73786f;
+  color: #aeb3a8;
   font-style: normal;
 }
 .languageActive {
   color: var(--accent);
 }
-.headerStart {
+.site .headerStart {
   border-color: var(--accent);
   background: var(--accent);
   color: #080a08;
@@ -268,7 +268,7 @@
     background 180ms ease,
     transform 180ms ease;
 }
-.headerStart:hover {
+.site .headerStart:hover {
   background: #a1ee44;
   transform: translateY(-1px);
 }
@@ -440,7 +440,7 @@
   font:
     12px var(--font-inter),
     sans-serif;
-  background: #0005;
+  background: #080a08e6;
   border-radius: 50%;
   padding: 9px;
 }
