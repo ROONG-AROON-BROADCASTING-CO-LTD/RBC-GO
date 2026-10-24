@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { type Locale, type Page, text, pages } from '../../data/landing';
 import { referenceCopy } from '../../data/brandPages';
 import { InfoDialog } from '../interactive/Interactive';
+import { ThaiText } from '../ui/HeadingText';
 function pageHref(page?: Page) {
   return page ? `/${page}` : '/';
 }
@@ -46,34 +47,46 @@ export function WebsiteFooter({
             </span>
           </Link>
           <p>
-            {c.footer[0]}
+            <ThaiText>{c.footer[0]}</ThaiText>
             <br />
-            {c.footer[1]}
+            <ThaiText>{c.footer[1]}</ThaiText>
           </p>
         </div>
         <div className="footer-links">
           <nav aria-label="Explore">
-            <h3>{c.explore}</h3>
+            <h3>
+              <ThaiText>{c.explore}</ThaiText>
+            </h3>
             {pages.slice(0, 4).map((p, i) => (
               <Link key={p} href={pageHref(p)}>
-                {i === 0
-                  ? locale === 'en'
-                    ? 'Motorcycle'
-                    : 'มอเตอร์ไซค์'
-                  : t.nav[i]}
+                <ThaiText>
+                  {i === 0
+                    ? locale === 'en'
+                      ? 'Motorcycle'
+                      : 'มอเตอร์ไซค์'
+                    : t.nav[i]}
+                </ThaiText>
               </Link>
             ))}
           </nav>
           <nav aria-label="Support">
-            <h3>{c.support}</h3>
-            <Link href="/help">{t.nav[4]}</Link>
-            <Link href="/how-it-works#safety">{c.safety}</Link>
+            <h3>
+              <ThaiText>{c.support}</ThaiText>
+            </h3>
+            <Link href="/help">
+              <ThaiText>{t.nav[4]}</ThaiText>
+            </Link>
+            <Link href="/how-it-works#safety">
+              <ThaiText>{c.safety}</ThaiText>
+            </Link>
             <InfoDialog locale={locale} kind="support">
               {c.contact}
             </InfoDialog>
           </nav>
           <nav aria-label="Legal">
-            <h3>{c.legal}</h3>
+            <h3>
+              <ThaiText>{c.legal}</ThaiText>
+            </h3>
             {[c.terms, c.privacy, c.cookies].map((item) => (
               <InfoDialog key={item} locale={locale} kind="policy">
                 {item}
@@ -84,7 +97,9 @@ export function WebsiteFooter({
       </motion.div>
       <motion.div {...reveal} className="footer-bottom">
         <span>© {new Date().getFullYear()} RBC GO</span>
-        <span>{t.coming}</span>
+        <span>
+          <ThaiText>{t.coming}</ThaiText>
+        </span>
       </motion.div>
     </footer>
   );

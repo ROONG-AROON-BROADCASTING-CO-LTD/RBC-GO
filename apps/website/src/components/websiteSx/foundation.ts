@@ -4,6 +4,18 @@ import type { SxProps, Theme } from '@mui/material/styles';
 // Keep this module's position in websiteSx.ts when adding or moving rules.
 export const foundationSx = [
   {
+    // Thai needs browser-approved break points: never force a glyph-level
+    // break, but still allow text components to wrap at their word markers.
+    '& :is(p, a, button, label, summary, li, h1, h2, h3, .eyebrow)': {
+      wordBreak: 'normal',
+      overflowWrap: 'normal',
+      hyphens: 'none',
+    },
+    '& :is(.button, .mobile-menu a, .desktop-nav a)': {
+      whiteSpace: 'normal',
+    },
+  },
+  {
     '& .icon': {
       display: 'inline-flex',
       alignItems: 'center',

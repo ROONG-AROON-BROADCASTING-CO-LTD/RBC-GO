@@ -18,7 +18,7 @@ import styles from './rental.module.css';
 import { siteUrl } from '../../../app/site';
 import { pageSeoCopy } from '../../../app/pageMetadata';
 import { Icon } from '../../components/ui/Icon';
-import { HeadingText } from '../../components/ui/HeadingText';
+import { HeadingText, ThaiText } from '../../components/ui/HeadingText';
 
 const routes = ['/rides', '/how-it-works', '/pricing', '/about', '/help'];
 const pageHeroImages = {
@@ -80,6 +80,14 @@ export function RentalWebsite({ page }: { page?: Page }) {
             : th
               ? 'ทุกคำถาม ก่อนออกเดินทาง'
               : 'A little clarity before you go.';
+  const pageIntroCopy =
+    page === 'rides'
+      ? c.collectionCopy
+      : page === 'about'
+        ? c.intro
+        : th
+          ? 'รายละเอียดที่ช่วยให้คุณเลือกบริการเช่าได้เหมาะกับการเดินทางของคุณ'
+          : 'Helpful details to find the right rental for your plans.';
   const faq = th
     ? [
         [
@@ -155,9 +163,11 @@ export function RentalWebsite({ page }: { page?: Page }) {
         >
           <div className={styles.topbar}>
             <span>
-              {th
-                ? 'การเดินทางที่คุณเลือกได้ · ทุกแผนของคุณ · ทุกโอกาส'
-                : 'Choose your way to go · Every plan · Every occasion'}
+              <ThaiText>
+                {th
+                  ? 'การเดินทางที่คุณเลือกได้ · ทุกแผนของคุณ · ทุกโอกาส'
+                  : 'Choose your way to go · Every plan · Every occasion'}
+              </ThaiText>
             </span>
             <div
               className={styles.topbarContact}
@@ -204,7 +214,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
                 aria-current={page === undefined ? 'page' : undefined}
                 onClick={() => setMenuOpen(false)}
               >
-                {th ? 'หน้าแรก' : 'Home'}
+                <ThaiText>{th ? 'หน้าแรก' : 'Home'}</ThaiText>
               </Link>
               {c.nav.map((label, i) => (
                 <Link
@@ -215,13 +225,13 @@ export function RentalWebsite({ page }: { page?: Page }) {
                   }
                   onClick={() => setMenuOpen(false)}
                 >
-                  {label}
+                  <ThaiText>{label}</ThaiText>
                 </Link>
               ))}
             </nav>
             <div className={styles.headerActions}>
               <Link className={styles.headerStart} href="/how-it-works">
-                {th ? 'เริ่มต้นเช่า' : 'Start renting'}
+                <ThaiText>{th ? 'เริ่มต้นเช่า' : 'Start renting'}</ThaiText>
               </Link>
               <button
                 onClick={toggleLanguage}
@@ -291,7 +301,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.7, delay: 0.3, ease: rentalEase }}
                 >
-                  {c.intro}
+                  <ThaiText>{c.intro}</ThaiText>
                 </motion.p>
                 <MotionLink
                   initial={reduced ? false : { y: 14, opacity: 0 }}
@@ -300,7 +310,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
                   className={styles.primary}
                   href="/rides"
                 >
-                  {c.explore}
+                  <ThaiText>{c.explore}</ThaiText>
                   <Arrow />
                 </MotionLink>
               </div>
@@ -320,13 +330,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
                   <HeadingText phrases={th}>{title}</HeadingText>
                 </h1>
                 <p>
-                  {page === 'rides'
-                    ? c.collectionCopy
-                    : page === 'about'
-                      ? c.intro
-                      : th
-                        ? 'รายละเอียดที่ช่วยให้คุณเลือกบริการเช่าได้เหมาะกับการเดินทางของคุณ'
-                        : 'Helpful details to find the right rental for your plans.'}
+                  <ThaiText>{pageIntroCopy}</ThaiText>
                 </p>
               </RentalReveal>
             </section>
@@ -338,15 +342,19 @@ export function RentalWebsite({ page }: { page?: Page }) {
                 <div className={styles.sectionHeading}>
                   <div>
                     <span className={styles.sectionLabel}>
-                      {th
-                        ? 'การเดินทางที่คุณเลือกได้'
-                        : 'EXPLORE THE POSSIBILITIES'}
+                      <ThaiText>
+                        {th
+                          ? 'การเดินทางที่คุณเลือกได้'
+                          : 'EXPLORE THE POSSIBILITIES'}
+                      </ThaiText>
                     </span>
                     <h2>
                       <HeadingText>{c.collection}</HeadingText>
                     </h2>
                   </div>
-                  <p>{c.collectionCopy}</p>
+                  <p>
+                    <ThaiText>{c.collectionCopy}</ThaiText>
+                  </p>
                 </div>
               )}
               {page === 'rides' && (
@@ -363,7 +371,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
                       aria-pressed={category === item.id}
                       onClick={() => setCategory(item.id)}
                     >
-                      {th ? item.th : item.en}
+                      <ThaiText>{th ? item.th : item.en}</ThaiText>
                     </button>
                   ))}
                 </div>
@@ -403,11 +411,15 @@ export function RentalWebsite({ page }: { page?: Page }) {
                         </h3>
                         <Arrow />
                       </div>
-                      <p>{th ? item.thCopy : item.enCopy}</p>
+                      <p>
+                        <ThaiText>{th ? item.thCopy : item.enCopy}</ThaiText>
+                      </p>
                     </MotionLink>
                   ))}
               </div>
-              <p className={styles.caption}>{c.disclaimer}</p>
+              <p className={styles.caption}>
+                <ThaiText>{c.disclaimer}</ThaiText>
+              </p>
             </section>
           )}
 
@@ -434,14 +446,20 @@ export function RentalWebsite({ page }: { page?: Page }) {
                     <h2>
                       <HeadingText>{th ? item.th : item.en}</HeadingText>
                     </h2>
-                    <p>{th ? item.thDetail : item.enDetail}</p>
+                    <p>
+                      <ThaiText>{th ? item.thDetail : item.enDetail}</ThaiText>
+                    </p>
                     <ul>
                       {(th ? item.note : item.enNotes).map((note) => (
-                        <li key={note}>{note}</li>
+                        <li key={note}>
+                          <ThaiText>{note}</ThaiText>
+                        </li>
                       ))}
                     </ul>
                     <Link className={styles.textLink} href="/how-it-works">
-                      {th ? 'เตรียมตัวก่อนเช่า' : 'Plan your rental'}
+                      <ThaiText>
+                        {th ? 'เตรียมตัวก่อนเช่า' : 'Plan your rental'}
+                      </ThaiText>
                       <Arrow />
                     </Link>
                   </div>
@@ -454,7 +472,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
             <RentalReveal className={styles.guide} id="safety">
               <div>
                 <span className={styles.sectionLabel}>
-                  {th ? 'วิธีการเช่า' : 'RENTAL GUIDE'}
+                  <ThaiText>{th ? 'วิธีการเช่า' : 'RENTAL GUIDE'}</ThaiText>
                 </span>
                 <h2>
                   <HeadingText>{c.guideTitle}</HeadingText>
@@ -477,7 +495,9 @@ export function RentalWebsite({ page }: { page?: Page }) {
                     <h3>
                       <HeadingText>{label}</HeadingText>
                     </h3>
-                    <p>{copy}</p>
+                    <p>
+                      <ThaiText>{copy}</ThaiText>
+                    </p>
                   </motion.li>
                 ))}
               </ol>
@@ -494,9 +514,11 @@ export function RentalWebsite({ page }: { page?: Page }) {
                 </HeadingText>
               </h2>
               <p>
-                {th
-                  ? 'ตรวจสอบเอกสารผู้เช่า ใบขับขี่หรือข้อกำหนดผู้โดยสาร เงื่อนไขรับ–คืน และสิ่งที่รวมในบริการ เรือยอชต์และเครื่องบินอาจมีข้อกำหนดเรื่องเส้นทาง สภาพอากาศ และผู้ให้บริการเพิ่มเติม'
-                  : 'Review renter documents, licence or passenger requirements, handover details and service inclusions. Yacht and aircraft charters may have additional route, weather and operator requirements.'}
+                <ThaiText>
+                  {th
+                    ? 'ตรวจสอบเอกสารผู้เช่า ใบขับขี่หรือข้อกำหนดผู้โดยสาร เงื่อนไขรับ–คืน และสิ่งที่รวมในบริการ เรือยอชต์และเครื่องบินอาจมีข้อกำหนดเรื่องเส้นทาง สภาพอากาศ และผู้ให้บริการเพิ่มเติม'
+                    : 'Review renter documents, licence or passenger requirements, handover details and service inclusions. Yacht and aircraft charters may have additional route, weather and operator requirements.'}
+                </ThaiText>
               </p>
             </section>
           )}
@@ -511,9 +533,11 @@ export function RentalWebsite({ page }: { page?: Page }) {
                 </HeadingText>
               </h2>
               <p>
-                {th
-                  ? 'แต่ละประเภทมีรูปแบบการเช่าแตกต่างกัน เราจึงให้ความสำคัญกับรายละเอียดราคาและเงื่อนไขของแต่ละรายการ แทนการใช้ราคาเดียวกับทุกบริการ'
-                  : 'Each category has its own rental structure. Review the price and terms for the individual service you choose.'}
+                <ThaiText>
+                  {th
+                    ? 'แต่ละประเภทมีรูปแบบการเช่าแตกต่างกัน เราจึงให้ความสำคัญกับรายละเอียดราคาและเงื่อนไขของแต่ละรายการ แทนการใช้ราคาเดียวกับทุกบริการ'
+                    : 'Each category has its own rental structure. Review the price and terms for the individual service you choose.'}
+                </ThaiText>
               </p>
               <div className={styles.pricingRows}>
                 {rentalCategories.map((item) => (
@@ -522,15 +546,19 @@ export function RentalWebsite({ page }: { page?: Page }) {
                       <HeadingText>{th ? item.th : item.en}</HeadingText>
                     </h3>
                     <p>
-                      {th ? item.note.join(' · ') : item.enNotes.join(' · ')}
+                      <ThaiText>
+                        {th ? item.note.join(' · ') : item.enNotes.join(' · ')}
+                      </ThaiText>
                     </p>
                   </div>
                 ))}
               </div>
               <p className={styles.notice}>
-                {th
-                  ? 'ยังไม่มีการประกาศอัตราค่าเช่าหรือเปิดรับชำระเงินบนเว็บไซต์นี้'
-                  : 'Rental rates have not yet been published. This website does not currently accept payments.'}
+                <ThaiText>
+                  {th
+                    ? 'ยังไม่มีการประกาศอัตราค่าเช่าหรือเปิดรับชำระเงินบนเว็บไซต์นี้'
+                    : 'Rental rates have not yet been published. This website does not currently accept payments.'}
+                </ThaiText>
               </p>
             </section>
           )}
@@ -559,17 +587,21 @@ export function RentalWebsite({ page }: { page?: Page }) {
                   </HeadingText>
                 </h2>
                 <p>
-                  {th
-                    ? 'RBC GO นำเสนอทางเลือกการเช่ายานพาหนะที่หลากหลาย ตั้งแต่การใช้ชีวิตในเมือง การเดินทางบนถนน ทริปพักผ่อนทางทะเล ไปจนถึงการเดินทางทางอากาศ'
-                    : 'RBC GO brings together vehicle rental categories for city life, road trips, time at sea and travel by air.'}
+                  <ThaiText>
+                    {th
+                      ? 'RBC GO นำเสนอทางเลือกการเช่ายานพาหนะที่หลากหลาย ตั้งแต่การใช้ชีวิตในเมือง การเดินทางบนถนน ทริปพักผ่อนทางทะเล ไปจนถึงการเดินทางทางอากาศ'
+                      : 'RBC GO brings together vehicle rental categories for city life, road trips, time at sea and travel by air.'}
+                  </ThaiText>
                 </p>
                 <p>
-                  {th
-                    ? 'เราเริ่มต้นจากความต้องการของการเดินทาง ให้คุณสำรวจประเภทบริการ เปรียบเทียบสิ่งที่เหมาะกับแผน และเข้าใจรายละเอียดก่อนตัดสินใจเช่า'
-                    : 'Start with what your journey needs. Explore the categories, consider your plans and understand the details before choosing a rental.'}
+                  <ThaiText>
+                    {th
+                      ? 'เราเริ่มต้นจากความต้องการของการเดินทาง ให้คุณสำรวจประเภทบริการ เปรียบเทียบสิ่งที่เหมาะกับแผน และเข้าใจรายละเอียดก่อนตัดสินใจเช่า'
+                      : 'Start with what your journey needs. Explore the categories, consider your plans and understand the details before choosing a rental.'}
+                  </ThaiText>
                 </p>
                 <Link className={styles.textLink} href="/rides">
-                  {c.explore}
+                  <ThaiText>{c.explore}</ThaiText>
                   <Arrow />
                 </Link>
               </div>
@@ -579,7 +611,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
           {page === 'help' && (
             <section className={styles.reading}>
               <label className={styles.search}>
-                {th ? 'ค้นหาคำถาม' : 'Search questions'}
+                <ThaiText>{th ? 'ค้นหาคำถาม' : 'Search questions'}</ThaiText>
                 <input
                   type="search"
                   value={query}
@@ -598,8 +630,12 @@ export function RentalWebsite({ page }: { page?: Page }) {
                   )
                   .map(([q, a]) => (
                     <details key={q}>
-                      <summary>{q}</summary>
-                      <p>{a}</p>
+                      <summary>
+                        <ThaiText>{q}</ThaiText>
+                      </summary>
+                      <p>
+                        <ThaiText>{a}</ThaiText>
+                      </p>
                     </details>
                   ))}
               </div>
@@ -607,9 +643,11 @@ export function RentalWebsite({ page }: { page?: Page }) {
                 `${q} ${a}`.toLowerCase().includes(query.toLowerCase()),
               ) && (
                 <p role="status">
-                  {th
-                    ? 'ไม่พบคำถามที่ตรงกัน ลองใช้คำค้นอื่น'
-                    : 'No matching questions. Try another search.'}
+                  <ThaiText>
+                    {th
+                      ? 'ไม่พบคำถามที่ตรงกัน ลองใช้คำค้นอื่น'
+                      : 'No matching questions. Try another search.'}
+                  </ThaiText>
                 </p>
               )}
             </section>
@@ -621,13 +659,15 @@ export function RentalWebsite({ page }: { page?: Page }) {
               <h2>
                 <HeadingText>{c.finalTitle}</HeadingText>
               </h2>
-              <p>{c.finalCopy}</p>
+              <p>
+                <ThaiText>{c.finalCopy}</ThaiText>
+              </p>
             </div>
             <Link
               className={styles.primary}
               href={page === 'rides' ? '/how-it-works' : '/rides'}
             >
-              {page === 'rides' ? c.nav[1] : c.explore}
+              <ThaiText>{page === 'rides' ? c.nav[1] : c.explore}</ThaiText>
               <Arrow />
             </Link>
           </RentalReveal>
@@ -638,24 +678,28 @@ export function RentalWebsite({ page }: { page?: Page }) {
               RBC <span>GO</span>
             </Link>
             <p>
-              {th
-                ? 'หลากหลายการเช่า เพื่อทุกการเดินทาง'
-                : 'More ways to rent. More ways to go.'}
+              <ThaiText>
+                {th
+                  ? 'หลากหลายการเช่า เพื่อทุกการเดินทาง'
+                  : 'More ways to rent. More ways to go.'}
+              </ThaiText>
             </p>
           </div>
           <nav aria-label={th ? 'เมนูท้ายหน้า' : 'Footer navigation'}>
             {c.nav.map((label, i) => (
               <Link href={routes[i]} key={label}>
-                {label}
+                <ThaiText>{label}</ThaiText>
               </Link>
             ))}
           </nav>
           <div className={styles.footerBottom}>
             <span>© {new Date().getFullYear()} RBC GO</span>
             <span>
-              {th
-                ? 'เว็บไซต์นำเสนอบริการ · เตรียมพบกับการจองออนไลน์'
-                : 'Discover our services · Online booking coming soon'}
+              <ThaiText>
+                {th
+                  ? 'เว็บไซต์นำเสนอบริการ · เตรียมพบกับการจองออนไลน์'
+                  : 'Discover our services · Online booking coming soon'}
+              </ThaiText>
             </span>
           </div>
         </footer>

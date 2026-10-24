@@ -21,6 +21,14 @@
 .site p {
   margin: 0;
 }
+.site :is(p, a, button, label, summary, li, .sectionLabel) {
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+.site :is(button, .headerStart, .textLink, .primary) {
+  white-space: normal;
+}
 .site :is(h1, h2, h3) {
   word-break: normal;
   overflow-wrap: normal;

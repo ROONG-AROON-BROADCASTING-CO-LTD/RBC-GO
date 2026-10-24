@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { type Locale, type Page, pages, text } from '../../data/landing';
 import { referenceCopy } from '../../data/brandPages';
 import { Icon } from '../ui/Icon';
+import { ThaiText } from '../ui/HeadingText';
 
 type WebsiteNavProps = {
   locale: Locale;
@@ -48,9 +49,11 @@ export function WebsiteNav({
     >
       <div className="site-topbar">
         <span>
-          {locale === 'en'
-            ? 'Electric journeys · A brighter city · Every ride'
-            : 'การเดินทางด้วยพลังงานไฟฟ้า · เพื่อเมืองที่ดีขึ้น · ทุกการเดินทาง'}
+          <ThaiText>
+            {locale === 'en'
+              ? 'Electric journeys · A brighter city · Every ride'
+              : 'การเดินทางด้วยพลังงานไฟฟ้า · เพื่อเมืองที่ดีขึ้น · ทุกการเดินทาง'}
+          </ThaiText>
         </span>
         <div
           className="topbar-contact"
@@ -117,7 +120,7 @@ export function WebsiteNav({
           aria-label={locale === 'en' ? 'Main navigation' : 'เมนูหลัก'}
         >
           <Link aria-current={page === undefined ? 'page' : undefined} href="/">
-            {locale === 'en' ? 'Home' : 'หน้าแรก'}
+            <ThaiText>{locale === 'en' ? 'Home' : 'หน้าแรก'}</ThaiText>
           </Link>
           {pages.map((item, index) => (
             <Link
@@ -125,18 +128,20 @@ export function WebsiteNav({
               key={item}
               href={pageHref(item)}
             >
-              {index === 0
-                ? locale === 'en'
-                  ? 'Motorcycle'
-                  : 'มอเตอร์ไซค์'
-                : t.nav[index]}
+              <ThaiText>
+                {index === 0
+                  ? locale === 'en'
+                    ? 'Motorcycle'
+                    : 'มอเตอร์ไซค์'
+                  : t.nav[index]}
+              </ThaiText>
             </Link>
           ))}
         </nav>
 
         <div className="header-right">
           <Link className="button lime header-start" href="/how-it-works">
-            {c.getStarted}
+            <ThaiText>{c.getStarted}</ThaiText>
           </Link>
           <button
             className="locale-switch"
@@ -179,7 +184,7 @@ export function WebsiteNav({
               aria-current={page === undefined ? 'page' : undefined}
               onClick={() => setOpen(false)}
             >
-              {locale === 'en' ? 'Home' : 'หน้าแรก'}
+              <ThaiText>{locale === 'en' ? 'Home' : 'หน้าแรก'}</ThaiText>
               <Icon kind="arrow" />
             </Link>
             {pages.map((item, index) => (
@@ -189,7 +194,7 @@ export function WebsiteNav({
                 aria-current={page === item ? 'page' : undefined}
                 onClick={() => setOpen(false)}
               >
-                {t.nav[index]}
+                <ThaiText>{t.nav[index]}</ThaiText>
                 <Icon kind="arrow" />
               </Link>
             ))}

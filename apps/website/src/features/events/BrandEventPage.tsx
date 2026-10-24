@@ -6,6 +6,7 @@ import type { BrandEvent } from '../../data/brandEvents';
 import { WebsiteFooter } from '../../components/layout/WebsiteFooter';
 import { WebsiteNav } from '../../components/layout/WebsiteNav';
 import { useWebsiteLanguage } from '../../components/layout/WebsiteLanguageProvider';
+import { HeadingText, ThaiText } from '../../components/ui/HeadingText';
 
 const reveal = {
   initial: { opacity: 0, y: 28 },
@@ -36,10 +37,18 @@ export function BrandEventPage({ event }: { event: BrandEvent }) {
       <main id="main" className="event-page">
         <section className="event-detail-hero" aria-labelledby="event-title">
           <motion.div {...reveal} className="event-detail-copy">
-            <span className="eyebrow">{label}</span>
-            <time>{c.date}</time>
-            <h1 id="event-title">{c.title}</h1>
-            <p>{c.detail}</p>
+            <span className="eyebrow">
+              <ThaiText>{label}</ThaiText>
+            </span>
+            <time>
+              <ThaiText phrases>{c.date}</ThaiText>
+            </time>
+            <h1 id="event-title">
+              <HeadingText>{c.title}</HeadingText>
+            </h1>
+            <p>
+              <ThaiText>{c.detail}</ThaiText>
+            </p>
           </motion.div>
           <motion.figure
             {...reveal}
@@ -61,12 +70,18 @@ export function BrandEventPage({ event }: { event: BrandEvent }) {
           aria-labelledby="event-gallery-title"
         >
           <motion.div {...reveal} className="event-detail-gallery-heading">
-            <span className="eyebrow">{galleryLabel}</span>
-            <h2 id="event-gallery-title">{c.title}</h2>
+            <span className="eyebrow">
+              <ThaiText>{galleryLabel}</ThaiText>
+            </span>
+            <h2 id="event-gallery-title">
+              <HeadingText>{c.title}</HeadingText>
+            </h2>
             <p>
-              {locale === 'en'
-                ? `${event.images.length} photographs from this KRONOS event.`
-                : `ภาพกิจกรรม KRONOS จำนวน ${event.images.length} ภาพ`}
+              <ThaiText>
+                {locale === 'en'
+                  ? `${event.images.length} photographs from this KRONOS event.`
+                  : `ภาพกิจกรรม KRONOS จำนวน ${event.images.length} ภาพ`}
+              </ThaiText>
             </p>
           </motion.div>
           <div className="event-detail-gallery-grid">
