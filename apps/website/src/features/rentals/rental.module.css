@@ -94,31 +94,72 @@
 .header {
   position: relative;
   z-index: 20;
-  min-height: 88px;
-  padding: 20px 5.5%;
-  display: flex;
-  align-items: center;
-  gap: 38px;
   background: #080a08;
   color: #fff;
 }
+.topbar {
+  min-height: 32px;
+  padding: 0 5.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #ffffff14;
+  color: #aeb3a8;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.topbarContact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.topbarContact a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+.topbarContact a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+.navbar {
+  position: relative;
+  min-height: 80px;
+  padding: 16px 5.5%;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
 .brand {
-  font-family: var(--font-inter), sans-serif;
-  font-size: 31px;
-  font-weight: 750;
-  letter-spacing: -0.07em;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-family: var(--font-inter), var(--font-google-sans-thai), sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
   white-space: nowrap;
 }
-.brand span {
-  color: var(--accent);
+.brand img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .navigation {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 28px;
-  margin-left: auto;
-  font-size: 14px;
+  justify-content: center;
+  gap: clamp(18px, 2vw, 34px);
+  margin: 0 auto;
+  font-size: 13px;
+  font-weight: 500;
 }
 .navigation a {
   padding: 8px 0;
@@ -134,14 +175,28 @@
   align-items: center;
   gap: 14px;
 }
-.headerActions button {
+.headerActions button,
+.headerStart {
   color: #fff;
   border: 1px solid #41463e;
   padding: 9px 12px;
-  border-radius: 6px;
+  border-radius: 9px;
   background: transparent;
   cursor: pointer;
   font-size: 12px;
+}
+.headerStart {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #080a08;
+  font-weight: 700;
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+.headerStart:hover {
+  background: #a1ee44;
+  transform: translateY(-1px);
 }
 .headerActions .menu {
   display: none;
@@ -154,7 +209,7 @@
 .hero {
   position: relative;
   min-height: 680px;
-  height: calc(90svh - 88px);
+  height: calc(90svh - 112px);
   max-height: 940px;
   isolation: isolate;
   color: #fff;
@@ -551,11 +606,33 @@
 }
 @media (max-width: 1100px) {
   .navigation {
-    gap: 16px;
-    font-size: 12px;
+    display: none;
   }
-  .header {
-    gap: 22px;
+  .headerStart {
+    display: none;
+  }
+  .headerActions .menu {
+    display: block;
+  }
+  .navigation.open {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 0;
+    right: 0;
+    z-index: 5;
+    margin: 0;
+    padding: 24px 5.5%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    background: #080a08;
+    border-top: 1px solid #ffffff26;
+    border-bottom: 1px solid #ffffff26;
+    font-size: 16px;
+  }
+  .navigation.open a {
+    padding: 12px 0;
   }
   .categoryGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -569,39 +646,35 @@
   }
 }
 @media (max-width: 767px) {
-  .header {
+  .topbar {
+    min-height: 32px;
+    padding: 0 24px;
+  }
+  .topbar > span {
+    display: none;
+  }
+  .topbarContact {
+    margin-left: auto;
+  }
+  .navbar {
     min-height: 74px;
-    padding: 18px 24px;
+    padding: 14px 24px;
+    gap: 14px;
   }
   .brand {
-    font-size: 28px;
+    font-size: 22px;
+  }
+  .brand img {
+    width: 42px;
+    height: 42px;
   }
   .headerActions {
     margin-left: auto;
   }
-  .headerActions .menu {
-    display: block;
-  }
-  .navigation {
-    display: none;
-  }
-  .navigation.open {
-    display: flex;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #080a08;
-    padding: 24px;
-    flex-direction: column;
-    align-items: stretch;
-    font-size: 16px;
-    border-top: 1px solid #ffffff26;
-  }
   .hero {
     min-height: 690px;
     max-height: 850px;
-    height: calc(94svh - 74px);
+    height: calc(94svh - 106px);
     align-items: flex-end;
   }
   .hero > img {

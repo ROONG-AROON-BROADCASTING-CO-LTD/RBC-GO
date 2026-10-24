@@ -126,41 +126,91 @@ export function RentalWebsite({ page }: { page?: Page }) {
           aria-hidden="true"
         />
         <header className={styles.header}>
-          <Link href="/" className={styles.brand} aria-label="RBC GO home">
-            RBC <span>GO</span>
-          </Link>
-          <nav
-            className={`${styles.navigation} ${menuOpen ? styles.open : ''}`}
-            aria-label={th ? 'เมนูหลัก' : 'Main navigation'}
-          >
-            {c.nav.map((label, i) => (
+          <div className={styles.topbar}>
+            <span>
+              {th
+                ? 'การเดินทางที่คุณเลือกได้ · ทุกแผนของคุณ · ทุกโอกาส'
+                : 'Choose your way to go · Every plan · Every occasion'}
+            </span>
+            <div
+              className={styles.topbarContact}
+              aria-label={th ? 'ช่องทางติดต่อ' : 'Contact channels'}
+            >
+              {[
+                [
+                  'Instagram',
+                  'https://www.instagram.com/rbc_go_go',
+                  'instagram.svg',
+                ],
+                ['YouTube', 'https://youtube.com/@RBCGO', 'youtube.svg'],
+                ['TikTok', 'https://tiktok.com/@rbc_go', 'tiktok.svg'],
+              ].map(([label, href, icon]) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                >
+                  <Image src={`/icons/${icon}`} alt="" width={16} height={16} />
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className={styles.navbar}>
+            <Link href="/" className={styles.brand} aria-label="RBC GO home">
+              <Image
+                src="/images/brand/rbc-go-logo.jpeg"
+                alt=""
+                width={46}
+                height={46}
+                priority
+              />
+              <span>RBC GO</span>
+            </Link>
+            <nav
+              className={`${styles.navigation} ${menuOpen ? styles.open : ''}`}
+              aria-label={th ? 'เมนูหลัก' : 'Main navigation'}
+            >
               <Link
-                key={routes[i]}
-                href={routes[i]}
-                aria-current={
-                  page && `/${page}` === routes[i] ? 'page' : undefined
-                }
+                href="/"
+                aria-current={page === undefined ? 'page' : undefined}
                 onClick={() => setMenuOpen(false)}
               >
-                {label}
+                {th ? 'หน้าแรก' : 'Home'}
               </Link>
-            ))}
-          </nav>
-          <div className={styles.headerActions}>
-            <button
-              onClick={toggleLanguage}
-              aria-label={th ? 'เปลี่ยนเป็นภาษาอังกฤษ' : 'Switch to Thai'}
-            >
-              {th ? 'TH / EN' : 'EN / TH'}
-            </button>
-            <button
-              className={styles.menu}
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={th ? 'เปิดเมนู' : 'Toggle menu'}
-              aria-expanded={menuOpen}
-            >
-              ☰
-            </button>
+              {c.nav.map((label, i) => (
+                <Link
+                  key={routes[i]}
+                  href={routes[i]}
+                  aria-current={
+                    page && `/${page}` === routes[i] ? 'page' : undefined
+                  }
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {label}
+                </Link>
+              ))}
+            </nav>
+            <div className={styles.headerActions}>
+              <Link className={styles.headerStart} href="/how-it-works">
+                {th ? 'เริ่มต้นเช่า' : 'Start renting'}
+              </Link>
+              <button
+                onClick={toggleLanguage}
+                aria-label={th ? 'เปลี่ยนเป็นภาษาอังกฤษ' : 'Switch to Thai'}
+              >
+                {th ? 'TH / EN' : 'EN / TH'}
+              </button>
+              <button
+                className={styles.menu}
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label={th ? 'เปิดเมนู' : 'Toggle menu'}
+                aria-expanded={menuOpen}
+              >
+                ☰
+              </button>
+            </div>
           </div>
         </header>
         <main id="main" className={styles.main}>
