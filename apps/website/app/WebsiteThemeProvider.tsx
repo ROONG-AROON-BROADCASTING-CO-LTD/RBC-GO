@@ -20,7 +20,7 @@ const theme = createTheme({
     background: { default: '#050706', paper: '#141614' },
   },
   typography: {
-    fontFamily: 'var(--font-ibm-plex-sans-thai), var(--font-inter), sans-serif',
+    fontFamily: 'var(--font-google-sans-thai), var(--font-inter), sans-serif',
     button: { textTransform: 'none', letterSpacing: 0 },
   },
 });

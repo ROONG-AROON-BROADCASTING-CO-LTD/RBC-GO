@@ -25,6 +25,11 @@ const ibmPlexSansThai = localFont({
   variable: '--font-ibm-plex-sans-thai',
   display: 'swap',
 });
+const googleSansThai = localFont({
+  src: './fonts/GoogleSans-VariableFont_GRAD,opsz,wght.ttf',
+  variable: '--font-google-sans-thai',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -59,7 +64,7 @@ export default async function RootLayout({
   return (
     <html
       lang={language}
-      className={`${inter.variable} ${ibmPlexSansThai.variable}`}
+      className={`${inter.variable} ${ibmPlexSansThai.variable} ${googleSansThai.variable}`}
     >
       <body>
         <AppRouterCacheProvider>

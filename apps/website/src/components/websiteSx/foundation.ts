@@ -228,7 +228,7 @@ export const foundationSx = [
       border: '1px solid #000',
       borderRadius: '10px',
       background: 'rgb(255 255 255 / 3%)',
-      fontFamily: 'var(--font-ibm-plex-sans-thai), sans-serif',
+      fontFamily: 'var(--font-google-sans-thai), sans-serif',
       fontSize: '12px',
       fontWeight: '600',
       color: '#9e9f98',
