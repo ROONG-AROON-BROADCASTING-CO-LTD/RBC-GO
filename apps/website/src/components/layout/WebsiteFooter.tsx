@@ -6,7 +6,7 @@ import { type Locale, type Page, text, pages } from '../../data/landing';
 import { referenceCopy } from '../../data/brandPages';
 import { InfoDialog } from '../interactive/Interactive';
 import { ThaiText } from '../ui/HeadingText';
-import { rentalCopy } from '../../features/rentals/rentalContent';
+import { rentalCopy } from '../../data/rentals';
 function pageHref(page?: Page) {
   return page ? `/${page}` : '/';
 }

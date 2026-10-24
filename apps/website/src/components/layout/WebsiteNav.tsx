@@ -1,205 +1,126 @@
 'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { type Locale, type Page, pages, text } from '../../data/landing';
-import { referenceCopy } from '../../data/brandPages';
+import type { Locale, Page } from '../../data/landing';
+import { rentalCopy } from '../../data/rentals';
 import { Icon } from '../ui/Icon';
 import { ThaiText } from '../ui/HeadingText';
-
-type WebsiteNavProps = {
-  locale: Locale;
-  page?: Page;
-  onLanguageChange: (locale: Locale) => void;
-};
-
-function pageHref(page?: Page) {
-  return page ? `/${page}` : '/';
-}
-
+import styles from '../website.module.css';
+const routes = ['/rides', '/how-it-works', '/pricing', '/about', '/help'];
 export function WebsiteNav({
   locale,
   page,
   onLanguageChange,
-}: WebsiteNavProps) {
-  const [open, setOpen] = useState(false);
+}: {
+  locale: Locale;
+  page?: Page;
+  onLanguageChange: (locale: Locale) => void;
+}) {
+  const th = locale === 'th';
+  const c = rentalCopy(locale);
+  const toggleLanguage = () => onLanguageChange(th ? 'en' : 'th');
+  const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const t = text[locale];
-  const c = referenceCopy(locale);
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 0);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
-    const previousOverflow = document.body.style.overflow;
-    if (open) document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [open]);
 
   return (
     <header
-      className={`site-header${isScrolled ? ' is-scrolled' : ''}${open ? ' is-menu-open' : ''}`}
+      className={`${styles.header} ${styles.overlayHeader}${isScrolled ? ` ${styles.scrolled}` : ''}${menuOpen ? ` ${styles.menuOpen}` : ''}`}
     >
-      <div className="site-topbar">
+      <div className={styles.topbar}>
         <span>
           <ThaiText>
-            {locale === 'en'
-              ? 'Electric journeys · A brighter city · Every ride'
-              : 'การเดินทางด้วยพลังงานไฟฟ้า · เพื่อเมืองที่ดีขึ้น · ทุกการเดินทาง'}
+            {th
+              ? 'การเดินทางที่คุณเลือกได้ · ทุกแผนของคุณ · ทุกโอกาส'
+              : 'Choose your way to go · Every plan · Every occasion'}
           </ThaiText>
         </span>
         <div
-          className="topbar-contact"
-          aria-label={locale === 'en' ? 'Contact channels' : 'ช่องทางติดต่อ'}
+          className={styles.topbarContact}
+          aria-label={th ? 'ช่องทางติดต่อ' : 'Contact channels'}
         >
-          <a
-            href="https://www.instagram.com/rbc_go_go"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Instagram"
-          >
-            <Image
-              src="/icons/instagram.svg"
-              alt="Instagram"
-              width={15}
-              height={15}
-            />
-          </a>
-          <a
-            href="https://youtube.com/@RBCGO"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="YouTube"
-          >
-            <Image
-              src="/icons/youtube.svg"
-              alt="YouTube"
-              width={15}
-              height={15}
-            />
-          </a>
-          <a
-            href="https://tiktok.com/@rbc_go"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="TikTok"
-          >
-            <Image
-              src="/icons/tiktok.svg"
-              alt="TikTok"
-              width={15}
-              height={15}
-            />
-          </a>
+          {[
+            [
+              'Instagram',
+              'https://www.instagram.com/rbc_go_go',
+              'instagram.svg',
+            ],
+            ['YouTube', 'https://youtube.com/@RBCGO', 'youtube.svg'],
+            ['TikTok', 'https://tiktok.com/@rbc_go', 'tiktok.svg'],
+          ].map(([label, href, icon]) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={label}
+            >
+              <Image src={`/icons/${icon}`} alt="" width={16} height={16} />
+            </a>
+          ))}
         </div>
       </div>
-      <div className="site-nav">
-        <Link className="brand" href="/" aria-label="RBC GO home">
+      <div className={styles.navbar}>
+        <Link href="/" className={styles.brand} aria-label="RBC GO home">
           <Image
-            className="brand-logo"
             src="/images/brand/rbc-go-logo.jpeg"
-            alt="RBC GO"
-            width={72}
-            height={72}
+            alt=""
+            width={46}
+            height={46}
             priority
           />
-          <span className="brand-name" lang="en">
-            RBC GO
-          </span>
+          <span>RBC GO</span>
         </Link>
-
         <nav
-          className="desktop-nav"
-          aria-label={locale === 'en' ? 'Main navigation' : 'เมนูหลัก'}
+          className={`${styles.navigation} ${menuOpen ? styles.open : ''}`}
+          aria-label={th ? 'เมนูหลัก' : 'Main navigation'}
         >
-          <Link aria-current={page === undefined ? 'page' : undefined} href="/">
-            <ThaiText>{locale === 'en' ? 'Home' : 'หน้าแรก'}</ThaiText>
+          <Link
+            href="/"
+            aria-current={page === undefined ? 'page' : undefined}
+            onClick={() => setMenuOpen(false)}
+          >
+            <ThaiText>{th ? 'หน้าแรก' : 'Home'}</ThaiText>
           </Link>
-          {pages.map((item, index) => (
+          {c.nav.map((label, i) => (
             <Link
-              aria-current={page === item ? 'page' : undefined}
-              key={item}
-              href={pageHref(item)}
+              key={routes[i]}
+              href={routes[i]}
+              aria-current={
+                page && `/${page}` === routes[i] ? 'page' : undefined
+              }
+              onClick={() => setMenuOpen(false)}
             >
-              <ThaiText>
-                {index === 0
-                  ? locale === 'en'
-                    ? 'Motorcycle'
-                    : 'มอเตอร์ไซค์'
-                  : t.nav[index]}
-              </ThaiText>
+              <ThaiText>{label}</ThaiText>
             </Link>
           ))}
         </nav>
-
-        <div className="header-right">
-          <Link className="button lime header-start" href="/how-it-works">
-            <ThaiText>{c.getStarted}</ThaiText>
+        <div className={styles.headerActions}>
+          <Link className={styles.headerStart} href="/how-it-works">
+            <ThaiText>{th ? 'เริ่มต้นเช่า' : 'Start renting'}</ThaiText>
           </Link>
           <button
-            className="locale-switch"
-            type="button"
-            aria-label={locale === 'en' ? 'Change language' : 'เปลี่ยนภาษา'}
-            onClick={() => onLanguageChange(locale === 'th' ? 'en' : 'th')}
+            onClick={toggleLanguage}
+            aria-label={th ? 'เปลี่ยนเป็นภาษาอังกฤษ' : 'Switch to Thai'}
           >
-            <span className={locale === 'th' ? 'active' : ''} lang="th">
-              TH
-            </span>
+            <span className={th ? styles.languageActive : ''}>TH</span>
             <i>/</i>
-            <span className={locale === 'en' ? 'active' : ''} lang="en">
-              EN
-            </span>
+            <span className={!th ? styles.languageActive : ''}>EN</span>
           </button>
           <button
-            className="menu-toggle"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            onClick={() => setOpen(!open)}
+            className={styles.menu}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={th ? 'เปิดเมนู' : 'Toggle menu'}
+            aria-expanded={menuOpen}
           >
             <Icon
-              animateOnHover={false}
-              animationState={open ? 'animate' : 'normal'}
-              animationTrigger={open}
               kind="menu"
+              animateOnHover={false}
+              animationState={menuOpen ? 'animate' : 'normal'}
+              animationTrigger={menuOpen}
             />
           </button>
         </div>
-
-        {open && (
-          <nav
-            id="mobile-menu"
-            className="mobile-menu"
-            aria-label="Mobile navigation"
-          >
-            <Link
-              href="/"
-              aria-current={page === undefined ? 'page' : undefined}
-              onClick={() => setOpen(false)}
-            >
-              <ThaiText>{locale === 'en' ? 'Home' : 'หน้าแรก'}</ThaiText>
-              <Icon kind="arrow" />
-            </Link>
-            {pages.map((item, index) => (
-              <Link
-                key={item}
-                href={pageHref(item)}
-                aria-current={page === item ? 'page' : undefined}
-                onClick={() => setOpen(false)}
-              >
-                <ThaiText>{t.nav[index]}</ThaiText>
-                <Icon kind="arrow" />
-              </Link>
-            ))}
-          </nav>
-        )}
       </div>
     </header>
   );

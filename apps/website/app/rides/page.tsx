@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { RentalWebsite } from '../../src/features/rentals/RentalWebsite';
+import { BrandPages } from '../../src/features/brand/BrandPages';
 import { pageMetadata } from '../pageMetadata';
 
 export const metadata: Metadata = pageMetadata('th', 'rides');
 
 export default function Rides() {
-  return <RentalWebsite page="rides" />;
+  return <BrandPages page="rides" />;
 }

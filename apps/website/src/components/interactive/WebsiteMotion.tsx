@@ -4,7 +4,7 @@ import { motion, useReducedMotion, type HTMLMotionProps } from 'motion/react';
 
 export const rentalEase = [0.16, 1, 0.3, 1] as const;
 
-export function RentalReveal({
+export function WebsiteReveal({
   children,
   ...props
 }: HTMLMotionProps<'section'>) {

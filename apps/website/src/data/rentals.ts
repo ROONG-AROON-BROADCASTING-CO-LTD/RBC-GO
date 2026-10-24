@@ -1,4 +1,4 @@
-import type { Locale } from '../../data/landing';
+import type { Locale } from './landing';
 
 export const rentalCategories = [
   {
