@@ -35,16 +35,20 @@ export function ThaiText({ children, phrases = false }: ThaiTextProps) {
     }
   }
 
-  return words.map((word, index) => (
-    <Fragment key={index}>
-      {word.trim() ? (
-        <span style={{ whiteSpace: 'nowrap' }}>{word}</span>
-      ) : (
-        word
-      )}
-      {index < words.length - 1 && <wbr />}
-    </Fragment>
-  ));
+  return (
+    <span>
+      {words.map((word, index) => (
+        <Fragment key={index}>
+          {word.trim() ? (
+            <span style={{ whiteSpace: 'nowrap' }}>{word}</span>
+          ) : (
+            word
+          )}
+          {index < words.length - 1 && <wbr />}
+        </Fragment>
+      ))}
+    </span>
+  );
 }
 
 export function HeadingText(props: ThaiTextProps) {
