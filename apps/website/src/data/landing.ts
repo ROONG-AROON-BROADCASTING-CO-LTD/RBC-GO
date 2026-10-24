@@ -26,7 +26,7 @@ export const text: Record<Locale, Content> = {
   en: {
     nav: ['Our motorcycle', 'How it works', 'Pricing', 'About', 'Help'],
     description:
-      'A prepaid, mobile-first electric motorcycle service for Bangkok.',
+      'Explore electric motorcycle, car, yacht and aircraft rentals with RBC GO.',
     coming: 'COMING SOON IN BANGKOK',
     meet: 'Meet the motorcycle',
     how: 'See how it works',
@@ -99,7 +99,7 @@ export const text: Record<Locale, Content> = {
       'ช่วยเหลือ',
     ],
     description:
-      'บริการมอเตอร์ไซค์ไฟฟ้าแบบเติมเงิน ออกแบบเพื่อมือถือสำหรับกรุงเทพฯ',
+      'สำรวจบริการเช่ามอเตอร์ไซค์ไฟฟ้า รถยนต์ เรือยอชต์ และเครื่องบินกับ RBC GO',
     coming: 'เตรียมพบกันเร็ว ๆ นี้ที่กรุงเทพฯ',
     meet: 'รู้จักมอเตอร์ไซค์',
     how: 'ดูวิธีใช้งาน',

@@ -37,18 +37,18 @@ export function WebsiteDocumentMetadata() {
     const titles =
       language === 'en'
         ? [
-            'Electric motorcycle for Bangkok',
-            'RBC GO electric motorcycle',
-            'How RBC GO works',
-            'RBC GO pricing',
+            'Motorcycle, car, yacht and aircraft rentals',
+            'Explore vehicle rentals',
+            'Rental guide',
+            'Rental pricing and details',
             'About RBC GO',
             'RBC GO help and FAQs',
           ]
         : [
-            'มอเตอร์ไซค์ไฟฟ้าสำหรับกรุงเทพฯ',
-            'มอเตอร์ไซค์ไฟฟ้า RBC GO',
-            'วิธีใช้งาน RBC GO',
-            'ค่าบริการ RBC GO',
+            'เช่ามอเตอร์ไซค์ไฟฟ้า รถยนต์ เรือยอชต์ และเครื่องบิน',
+            'สำรวจยานพาหนะให้เช่า',
+            'วิธีการเช่า',
+            'ข้อมูลค่าเช่าและเงื่อนไข',
             'เกี่ยวกับ RBC GO',
             'ช่วยเหลือและคำถามที่พบบ่อย - RBC GO',
           ];

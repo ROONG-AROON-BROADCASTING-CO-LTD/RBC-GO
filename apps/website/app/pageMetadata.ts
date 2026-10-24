@@ -10,54 +10,54 @@ export function pageMetadata(locale: Locale, page?: Page): Metadata {
     locale === 'en'
       ? {
           home: [
-            'Electric motorcycle for Bangkok',
-            'RBC GO is a prepaid, mobile-first electric motorcycle service designed for simple city journeys in Bangkok.',
+            'Motorcycle, car, yacht and aircraft rentals',
+            'Explore rental services by road, sea and air with RBC GO. Electric motorcycles, cars, yachts and aircraft for your travel plans.',
           ],
           rides: [
-            'RBC GO electric motorcycle',
-            'Explore the RBC GO electric motorcycle, its city-ready design and the details built for everyday riding.',
+            'Explore vehicle rentals',
+            'Discover electric motorcycle, car, yacht and aircraft rental categories and the details to consider for each journey.',
           ],
           'how-it-works': [
-            'How RBC GO works',
-            'Learn how to top up, scan a motorcycle and complete an easy electric journey with RBC GO.',
+            'Rental guide',
+            'Choose your vehicle category, prepare your travel details and review rental requirements.',
           ],
           pricing: [
-            'RBC GO pricing',
-            'Understand how distance-based pricing, prepaid balance and trip summaries work with RBC GO.',
+            'Rental pricing and details',
+            'Understand the rental duration, locations, inclusions and terms to review before renting a vehicle.',
           ],
           about: [
             'About RBC GO',
-            'Discover the idea behind RBC GO and our vision for cleaner, simpler urban travel in Bangkok.',
+            'Discover RBC GO and a wider choice of rental services for journeys by road, sea and air.',
           ],
           help: [
             'RBC GO help and FAQs',
-            'Find clear answers about RBC GO availability, cards, pricing, riding and service support.',
+            'Find answers about rental categories, availability, pricing, required documents and service terms.',
           ],
         }
       : {
           home: [
-            'มอเตอร์ไซค์ไฟฟ้าสำหรับกรุงเทพฯ',
-            'RBC GO บริการมอเตอร์ไซค์ไฟฟ้าแบบเติมเงิน ออกแบบเพื่อการเดินทางในเมืองที่ง่ายขึ้นสำหรับกรุงเทพฯ',
+            'เช่ามอเตอร์ไซค์ไฟฟ้า รถยนต์ เรือยอชต์ และเครื่องบิน',
+            'RBC GO รวมทางเลือกการเช่าสำหรับการเดินทางบนถนน กลางทะเล และบนท้องฟ้า เลือกบริการให้เหมาะกับทุกโอกาส',
           ],
           rides: [
-            'มอเตอร์ไซค์ไฟฟ้า RBC GO',
-            'รู้จักมอเตอร์ไซค์ไฟฟ้า RBC GO ดีไซน์เพื่อการเดินทางในเมืองและรายละเอียดที่คิดมาเพื่อการใช้งานทุกวัน',
+            'สำรวจยานพาหนะให้เช่า',
+            'เลือกบริการเช่ามอเตอร์ไซค์ไฟฟ้า รถยนต์ เรือยอชต์ และเครื่องบิน พร้อมรายละเอียดสำหรับวางแผนการเดินทาง',
           ],
           'how-it-works': [
-            'วิธีใช้งาน RBC GO',
-            'เรียนรู้วิธีเติมเงิน สแกนมอเตอร์ไซค์ และเริ่มต้นการเดินทางด้วย RBC GO อย่างง่ายดาย',
+            'วิธีการเช่า',
+            'เลือกประเภทยานพาหนะ เตรียมรายละเอียดทริป และตรวจสอบเงื่อนไขก่อนเช่า',
           ],
           pricing: [
-            'ค่าบริการ RBC GO',
-            'ทำความเข้าใจค่าบริการตามระยะทาง ยอดเงินแบบเติมล่วงหน้า และสรุปการเดินทางของ RBC GO',
+            'ข้อมูลค่าเช่าและเงื่อนไข',
+            'รายละเอียดระยะเวลา สถานที่ บริการที่รวม และเงื่อนไขที่ควรตรวจสอบก่อนเช่ายานพาหนะ',
           ],
           about: [
             'เกี่ยวกับ RBC GO',
-            'รู้จักแนวคิดและวิสัยทัศน์ของ RBC GO เพื่อการเดินทางในเมืองที่สะอาดและง่ายขึ้นในกรุงเทพฯ',
+            'รู้จัก RBC GO กับทางเลือกการเช่าที่ครอบคลุมทั้งบนถนน กลางทะเล และบนท้องฟ้า',
           ],
           help: [
             'ช่วยเหลือและคำถามที่พบบ่อย - RBC GO',
-            'ค้นหาคำตอบเกี่ยวกับบริการ บัตร ค่าบริการ การใช้งาน และการเดินทางด้วย RBC GO',
+            'คำถามเกี่ยวกับบริการเช่า ราคา เอกสาร ความพร้อมให้บริการ และเงื่อนไขการเช่า RBC GO',
           ],
         };
   const key = page ?? 'home';
@@ -67,18 +67,18 @@ export function pageMetadata(locale: Locale, page?: Page): Metadata {
       ? [
           'RBC GO',
           'electric motorcycle',
-          'electric mobility',
-          'Bangkok transport',
-          'QR ride',
-          'prepaid motorcycle service',
+          'car rental',
+          'yacht charter',
+          'aircraft charter',
+          'vehicle rentals',
         ]
       : [
           'RBC GO',
           'มอเตอร์ไซค์ไฟฟ้า',
-          'การเดินทางในเมือง',
-          'กรุงเทพฯ',
-          'สแกน QR',
-          'บริการมอเตอร์ไซค์แบบเติมเงิน',
+          'เช่ารถยนต์',
+          'เช่าเรือยอชต์',
+          'เช่าเครื่องบิน',
+          'เช่ายานพาหนะ',
         ];
   const pageUrl = pageHref(page);
   const fullTitle = `RBC GO - ${title}`;
