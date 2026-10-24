@@ -37,6 +37,61 @@
   height: 24px;
   flex-shrink: 0;
 }
+.scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform-origin: left;
+  z-index: 100;
+  pointer-events: none;
+}
+.titleMask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.titleMask > span {
+  display: block;
+}
+.category {
+  display: block;
+}
+.primary svg,
+.textLink svg,
+.categoryTitle svg {
+  transition: transform 240ms ease;
+}
+.primary:hover svg,
+.textLink:hover svg,
+.category:hover .categoryTitle svg {
+  transform: translateX(5px);
+}
+.filters button {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+}
+.filters button:active {
+  transform: scale(0.96);
+}
+.faq details[open] > p {
+  animation: rentalAnswerIn 300ms ease both;
+}
+@keyframes rentalAnswerIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .header {
   position: relative;
   z-index: 20;
@@ -683,8 +738,12 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .scrollProgress {
+    display: none;
+  }
   .site * {
     transition: none !important;
+    animation: none !important;
     scroll-behavior: auto !important;
   }
 }
