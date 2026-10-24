@@ -122,6 +122,15 @@
 .header.menuOpen {
   overflow: visible;
 }
+.homeHeader {
+  position: absolute;
+  width: 100%;
+  background: transparent;
+}
+.homeHeader.scrolled {
+  position: fixed;
+  background: #080a08;
+}
 .topbar {
   height: 32px;
   min-height: 32px;
@@ -282,6 +291,9 @@
   background: #080a08;
   display: flex;
   align-items: center;
+}
+.homeHeader + .main .hero {
+  height: 90svh;
 }
 .hero > img {
   object-fit: cover;
@@ -748,6 +760,9 @@
     max-height: 850px;
     height: calc(94svh - 106px);
     align-items: flex-end;
+  }
+  .homeHeader + .main .hero {
+    height: 94svh;
   }
   .hero > img {
     object-position: 62% center;

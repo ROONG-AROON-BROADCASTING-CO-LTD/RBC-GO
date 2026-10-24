@@ -143,7 +143,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
           aria-hidden="true"
         />
         <header
-          className={`${styles.header}${isScrolled ? ` ${styles.scrolled}` : ''}${menuOpen ? ` ${styles.menuOpen}` : ''}`}
+          className={`${styles.header}${page === undefined ? ` ${styles.homeHeader}` : ''}${isScrolled ? ` ${styles.scrolled}` : ''}${menuOpen ? ` ${styles.menuOpen}` : ''}`}
         >
           <div className={styles.topbar}>
             <span>
