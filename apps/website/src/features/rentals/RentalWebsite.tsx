@@ -63,24 +63,26 @@ export function RentalWebsite({ page }: { page?: Page }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [category, setCategory] = useState('all');
-  const title =
+  const pageTitleLines =
     page === 'rides'
-      ? c.collection
+      ? th
+        ? ['เลือกวิธีเดินทาง', 'ของคุณ']
+        : ['Find your way', 'to go']
       : page === 'how-it-works'
         ? th
-          ? 'เช่าอย่างไร ให้ตรงกับแผนของคุณ'
-          : 'Your rental, step by step.'
+          ? ['เช่าอย่างไร', 'ให้ตรงกับแผนของคุณ']
+          : ['Your rental,', 'step by step.']
         : page === 'pricing'
           ? th
-            ? 'รู้รายละเอียด ก่อนเริ่มเดินทาง'
-            : 'Know the details. Enjoy the journey.'
+            ? ['รู้รายละเอียด', 'ก่อนเริ่มเดินทาง']
+            : ['Know the details.', 'Enjoy the journey.']
           : page === 'about'
             ? th
-              ? 'มากกว่าจุดหมาย คือวิธีที่คุณเลือกไป'
-              : 'More ways to move. More ways to live.'
+              ? ['มากกว่าจุดหมาย', 'คือวิธีที่คุณเลือกไป']
+              : ['More ways to move.', 'More ways to live.']
             : th
-              ? 'ทุกคำถาม ก่อนออกเดินทาง'
-              : 'A little clarity before you go.';
+              ? ['ทุกคำถาม', 'ก่อนออกเดินทาง']
+              : ['A little clarity', 'before you go.'];
   const pageIntroCopy =
     page === 'rides'
       ? c.collectionCopy
@@ -327,16 +329,22 @@ export function RentalWebsite({ page }: { page?: Page }) {
               />
               <div className={styles.heroShade} />
               <div className={styles.heroCopy}>
-                <h1>
-                  <span className={styles.titleMask}>
-                    <motion.span
-                      initial={reduced ? false : { y: '110%', opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.95, ease: rentalEase }}
-                    >
-                      <HeadingText phrases={th}>{title}</HeadingText>
-                    </motion.span>
-                  </span>
+                <h1 className={styles.pageTitle}>
+                  {pageTitleLines.map((line, index) => (
+                    <span className={styles.titleMask} key={line}>
+                      <motion.span
+                        initial={reduced ? false : { y: '110%', opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                          duration: 0.95,
+                          delay: index * 0.14,
+                          ease: rentalEase,
+                        }}
+                      >
+                        <HeadingText phrases={th}>{line}</HeadingText>
+                      </motion.span>
+                    </span>
+                  ))}
                 </h1>
                 <motion.p
                   initial={reduced ? false : { y: 18, opacity: 0 }}
