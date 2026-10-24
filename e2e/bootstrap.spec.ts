@@ -44,13 +44,15 @@ test('Website language switch keeps the current URL stable', async ({
 }) => {
   await page.goto('/');
 
-  await page.locator('button.locale-switch').click();
+  await page.getByRole('button', { name: 'เปลี่ยนเป็นภาษาอังกฤษ' }).click();
 
   await expect(page).toHaveURL('http://localhost:5185/');
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-  await expect(page).toHaveTitle('RBC GO - Electric motorcycle for Bangkok');
+  await expect(page).toHaveTitle(
+    'RBC GO - Motorcycle, car, yacht and aircraft rentals',
+  );
   await expect(
-    page.getByRole('heading', { name: 'Go beyond the everyday.' }),
+    page.getByRole('heading', { name: 'Your journey. Your choice.' }),
   ).toBeVisible();
   await expect
     .poll(() =>

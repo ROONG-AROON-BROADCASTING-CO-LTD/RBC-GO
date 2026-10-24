@@ -40,6 +40,16 @@ export function RentalWebsite({ page }: { page?: Page }) {
   const { language, toggleLanguage } = useWebsiteLanguage();
   const th = language === 'th';
   const c = rentalCopy(language);
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'RBC GO',
+    url: 'http://localhost:5185/',
+    description: th
+      ? 'RBC GO รวมทางเลือกการเช่าสำหรับการเดินทางบนถนน กลางทะเล และบนท้องฟ้า'
+      : 'RBC GO brings together rental options for journeys by road, sea and air.',
+    inLanguage: language,
+  };
   const [menuOpen, setMenuOpen] = useState(false);
   const [category, setCategory] = useState('all');
   const title =
@@ -154,6 +164,12 @@ export function RentalWebsite({ page }: { page?: Page }) {
           </div>
         </header>
         <main id="main" className={styles.main}>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(schema).replace(/</g, '\\u003c'),
+            }}
+          />
           {!page ? (
             <section className={styles.hero}>
               <Image
