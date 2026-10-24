@@ -218,19 +218,6 @@
   background: #a1ee44;
   transform: translateY(-2px);
 }
-.heroBottom {
-  position: absolute;
-  bottom: 32px;
-  left: 5.5%;
-  right: 5.5%;
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #ffffff40;
-  padding-top: 18px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: #d5dacd;
-}
 .collection,
 .guide,
 .reading,
@@ -639,16 +626,6 @@
   .heroCopy p {
     font-size: 16px;
     margin: 22px 0 28px;
-  }
-  .heroBottom {
-    left: 24px;
-    right: 24px;
-    bottom: 24px;
-    font-size: 10px;
-    gap: 15px;
-  }
-  .heroBottom span:last-child {
-    text-align: right;
   }
   .collection,
   .guide,

@@ -220,14 +220,6 @@ export function RentalWebsite({ page }: { page?: Page }) {
                   <Arrow />
                 </MotionLink>
               </div>
-              <div className={styles.heroBottom}>
-                <span>ROAD · SEA · SKY</span>
-                <span>
-                  {th
-                    ? 'ทุกโอกาส มีการเดินทางที่ใช่'
-                    : 'A way to go for every occasion'}
-                </span>
-              </div>
             </section>
           ) : (
             <RentalReveal className={styles.pageIntro}>
