@@ -122,15 +122,15 @@
 .header.menuOpen {
   overflow: visible;
 }
-.homeHeader {
+.overlayHeader {
   position: fixed;
   width: 100%;
   background: transparent;
 }
-.homeHeader .topbar {
+.overlayHeader .topbar {
   background: #000;
 }
-.homeHeader.scrolled {
+.overlayHeader.scrolled {
   background: #080a08;
 }
 .topbar {
@@ -294,7 +294,7 @@
   display: flex;
   align-items: center;
 }
-.homeHeader + .main .hero {
+.overlayHeader + .main .hero {
   height: 90svh;
 }
 .hero > img {
@@ -767,7 +767,7 @@
     height: calc(94svh - 106px);
     align-items: flex-end;
   }
-  .homeHeader + .main .hero {
+  .overlayHeader + .main .hero {
     height: 94svh;
   }
   .hero > img {
