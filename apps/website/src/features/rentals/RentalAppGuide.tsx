@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { motion, useReducedMotion } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useInView, useReducedMotion } from 'motion/react';
 import { HeadingText, ThaiText } from '../../components/ui/HeadingText';
 import { rentalEase } from './RentalMotion';
 import styles from './appGuide.module.css';
@@ -10,6 +10,9 @@ import styles from './appGuide.module.css';
 export function RentalAppGuide({ th }: { th: boolean }) {
   const reduced = useReducedMotion();
   const [wide, setWide] = useState(false);
+  const sequenceRef = useRef<HTMLOListElement>(null);
+  const visible = useInView(sequenceRef, { amount: 'some' });
+  const [cycle, setCycle] = useState(0);
   useEffect(() => {
     const query = window.matchMedia('(min-width: 761px)');
     const update = () => setWide(query.matches);
@@ -17,6 +20,16 @@ export function RentalAppGuide({ th }: { th: boolean }) {
     query.addEventListener('change', update);
     return () => query.removeEventListener('change', update);
   }, []);
+  useEffect(() => {
+    if (!visible || reduced) return;
+    // The desktop sequence finishes at 9.25s, then holds the success state
+    // for 2.25s. Mobile screens run locally and hold for the same duration.
+    const interval = window.setInterval(
+      () => setCycle((current) => current + 1),
+      wide ? 11500 : 5000,
+    );
+    return () => window.clearInterval(interval);
+  }, [visible, reduced, wide]);
   const timing = (step: number, delay: number) => ({
     delay: reduced ? 0 : (wide ? step * 3.2 : 0) + delay,
     duration: reduced ? 0 : 0.45,
@@ -76,7 +89,7 @@ export function RentalAppGuide({ th }: { th: boolean }) {
           </ThaiText>
         </p>
       </div>
-      <ol className={styles.steps}>
+      <ol className={styles.steps} ref={sequenceRef}>
         {steps.map(([title, copy], index) => (
           <motion.li
             key={title}
@@ -90,6 +103,7 @@ export function RentalAppGuide({ th }: { th: boolean }) {
             }}
           >
             <motion.div
+              key={`${index}-${cycle}`}
               className={styles.phone}
               initial="idle"
               whileInView="play"
