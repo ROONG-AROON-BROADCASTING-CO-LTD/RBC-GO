@@ -326,14 +326,26 @@ export function RentalWebsite({ page }: { page?: Page }) {
                 sizes="100vw"
               />
               <div className={styles.heroShade} />
-              <RentalReveal className={styles.pageIntro}>
+              <div className={`${styles.heroCopy} ${styles.pageIntro}`}>
                 <h1>
-                  <HeadingText phrases={th}>{title}</HeadingText>
+                  <span className={styles.titleMask}>
+                    <motion.span
+                      initial={reduced ? false : { y: '110%', opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.95, ease: rentalEase }}
+                    >
+                      <HeadingText phrases={th}>{title}</HeadingText>
+                    </motion.span>
+                  </span>
                 </h1>
-                <p>
+                <motion.p
+                  initial={reduced ? false : { y: 18, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.7, delay: 0.3, ease: rentalEase }}
+                >
                   <ThaiText>{pageIntroCopy}</ThaiText>
-                </p>
-              </RentalReveal>
+                </motion.p>
+              </div>
             </section>
           )}
 
