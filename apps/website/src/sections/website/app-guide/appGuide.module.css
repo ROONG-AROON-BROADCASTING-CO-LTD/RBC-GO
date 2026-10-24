@@ -31,19 +31,91 @@
   min-width: 0;
 }
 .phone {
-  max-width: 310px;
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 350 / 716;
   margin: 0 auto;
-  border: 1px solid #50574b;
-  border-radius: 40px;
-  padding: 16px 16px 23px;
-  background: #141814;
+  position: relative;
+}
+.phoneHardware {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 716px;
+  transform-origin: top left;
+  border: 2px solid #969896;
+  border-radius: 54px;
+  background: #030403;
   box-shadow:
     0 28px 70px #0008,
-    inset 0 0 0 5px #20251e;
+    inset 0 0 0 2px #343634;
   color: #edf2e9;
-  height: 716px;
+}
+.phoneScreen {
+  position: absolute;
+  inset: 8px;
+  border-radius: 44px;
   overflow: hidden;
-  position: relative;
+  background: #141814;
+}
+.phoneContent {
+  padding: 16px 8px 23px;
+}
+.island {
+  position: absolute;
+  top: 9px;
+  left: calc(50% - 44px);
+  width: 88px;
+  height: 26px;
+  border-radius: 20px;
+  background: #000;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 7px;
+  pointer-events: none;
+}
+.island span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 65% 35%,
+    #304e78 0%,
+    #102135 30%,
+    #020509 70%
+  );
+  box-shadow: 0 0 0 2px #0a0b0d;
+}
+.sideButtons,
+.powerButton {
+  position: absolute;
+  width: 3px;
+  background: linear-gradient(90deg, #555, #c4c5c4, #555);
+}
+.sideButtons {
+  left: -4px;
+  top: 150px;
+  height: 47px;
+  border-radius: 2px 0 0 2px;
+  box-shadow: 0 58px 0 #898b89;
+}
+.sideButtons::before {
+  position: absolute;
+  top: -42px;
+  height: 22px;
+  width: 3px;
+  background: #898b89;
+  content: '';
+  border-radius: 2px 0 0 2px;
+}
+.powerButton {
+  right: -4px;
+  top: 202px;
+  height: 76px;
+  border-radius: 0 2px 2px 0;
 }
 .status {
   display: flex;
@@ -53,14 +125,6 @@
   font:
     600 10px Arial,
     sans-serif;
-}
-.status i {
-  width: 70px;
-  height: 18px;
-  border-radius: 20px;
-  background: #030503;
-  position: absolute;
-  left: calc(50% - 35px);
 }
 .appBrand {
   font:
@@ -114,7 +178,7 @@
   gap: 12px;
   align-items: center;
   font-size: 10px;
-  margin: 18px 0;
+  margin: 14px 0;
 }
 .tabs b {
   padding: 7px 12px;
@@ -126,11 +190,11 @@
   color: #b8c0b1;
 }
 .vehicle {
-  height: 133px;
+  height: 120px;
   overflow: hidden;
   border-radius: 12px;
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 .vehicle img {
   width: 100%;
@@ -344,9 +408,6 @@
   .steps {
     gap: 22px;
   }
-  .phone {
-    padding-inline: 12px;
-  }
 }
 @media (max-width: 760px) {
   .guide {
@@ -430,7 +491,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 14px 0 18px;
+  margin: 10px 0 14px;
   gap: 7px;
 }
 .priceLine strong {

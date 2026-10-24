@@ -24,6 +24,16 @@ function ReplayingPhone({
   reduced: boolean | null;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+    const observer = new ResizeObserver(([entry]) => {
+      setScale(entry.contentRect.width / 350);
+    });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
   const visible = useInView(ref, { amount: 0.45 });
   const controls = useAnimationControls();
   useEffect(() => {
@@ -52,18 +62,31 @@ function ReplayingPhone({
   }, [visible, wide, reduced, controls]);
   return (
     <div ref={ref} className={styles.phone} role="img" aria-label={label}>
-      <motion.div
-        initial="idle"
-        animate={controls}
-        variants={{
-          idle: { opacity: reduced ? 1 : 0 },
-          play: { opacity: 1, transition: { duration: reduced ? 0 : 0.4 } },
-          fade: { opacity: 0, transition: { duration: 0.35 } },
-        }}
+      <div
+        className={styles.phoneHardware}
+        style={{ transform: `scale(${scale})` }}
       >
-        {children}
-      </motion.div>
-      <div className={styles.homeIndicator} />
+        <span className={styles.sideButtons} aria-hidden="true" />
+        <span className={styles.powerButton} aria-hidden="true" />
+        <div className={styles.phoneScreen}>
+          <div className={styles.island} aria-hidden="true">
+            <span />
+          </div>
+          <motion.div
+            className={styles.phoneContent}
+            initial="idle"
+            animate={controls}
+            variants={{
+              idle: { opacity: reduced ? 1 : 0 },
+              play: { opacity: 1, transition: { duration: reduced ? 0 : 0.4 } },
+              fade: { opacity: 0, transition: { duration: 0.35 } },
+            }}
+          >
+            {children}
+          </motion.div>
+          <div className={styles.homeIndicator} />
+        </div>
+      </div>
     </div>
   );
 }
@@ -157,7 +180,6 @@ export function RentalAppGuide({ th }: { th: boolean }) {
             >
               <div className={styles.status}>
                 <span>9:41</span>
-                <i />
                 <span>▂▄▆ ▰</span>
               </div>
               <div className={styles.appBrand}>
