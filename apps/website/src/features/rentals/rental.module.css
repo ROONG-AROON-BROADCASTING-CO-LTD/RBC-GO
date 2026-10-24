@@ -546,6 +546,11 @@
   height: calc(90svh - 112px);
   max-height: 940px;
 }
+.pageHero .heroCopy {
+  /* Match home copy's responsive block height so its heading starts on the
+     exact same vertical line even though internal pages omit the CTA. */
+  min-height: clamp(496px, calc(424px + 9.375vw), 559px);
+}
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -829,6 +834,9 @@
     min-height: 690px;
     height: calc(94svh - 106px);
     max-height: 850px;
+  }
+  .pageHero .heroCopy {
+    min-height: clamp(532px, calc(550px - 4.1vw), 537px);
   }
   .site h2 {
     font-size: clamp(24px, 6.4vw, 30px);

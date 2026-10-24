@@ -326,7 +326,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
                 sizes="100vw"
               />
               <div className={styles.heroShade} />
-              <div className={`${styles.heroCopy} ${styles.pageIntro}`}>
+              <div className={styles.heroCopy}>
                 <h1>
                   <span className={styles.titleMask}>
                     <motion.span
