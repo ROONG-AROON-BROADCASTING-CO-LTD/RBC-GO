@@ -100,7 +100,7 @@ export function BrandEventPage({ event }: { event: BrandEvent }) {
           </div>
         </section>
       </main>
-      <WebsiteFooter locale={locale} page="about" />
+      <WebsiteFooter locale={locale} />
     </MotionConfig>
   );
 }

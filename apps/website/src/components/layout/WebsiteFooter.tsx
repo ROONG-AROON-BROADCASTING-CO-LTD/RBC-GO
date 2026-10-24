@@ -2,9 +2,9 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { type Locale, type Page, text, pages } from '../../data/landing';
-import { referenceCopy } from '../../data/brandPages';
-import { InfoDialog } from '../interactive/Interactive';
+import { type Locale, type Page, pages } from '../../data/landing';
+import { websiteCopy } from '../../data/website';
+import { InfoDialog } from '../interactive/InfoDialog';
 import { ThaiText } from '../ui/HeadingText';
 import { rentalCopy } from '../../data/rentals';
 function pageHref(page?: Page) {
@@ -22,15 +22,8 @@ const reveal = {
   },
 };
 
-export function WebsiteFooter({
-  locale,
-  page,
-}: {
-  locale: Locale;
-  page?: Page;
-}) {
-  const t = text[locale];
-  const c = referenceCopy(locale);
+export function WebsiteFooter({ locale }: { locale: Locale }) {
+  const c = websiteCopy(locale);
   const rental = rentalCopy(locale);
   return (
     <footer className="site-footer">
@@ -94,7 +87,7 @@ export function WebsiteFooter({
       <motion.div {...reveal} className="footer-bottom">
         <span>© {new Date().getFullYear()} RBC GO</span>
         <span>
-          <ThaiText>{t.coming}</ThaiText>
+          <ThaiText>{c.coming}</ThaiText>
         </span>
       </motion.div>
     </footer>

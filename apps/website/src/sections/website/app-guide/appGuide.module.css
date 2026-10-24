@@ -210,10 +210,6 @@
 .days small {
   color: #9da995;
 }
-.days .selected {
-  background: #89d82a;
-  color: #102006;
-}
 .datePair {
   display: grid;
   grid-template-columns: 1fr 1fr;

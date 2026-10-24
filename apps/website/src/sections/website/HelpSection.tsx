@@ -1,11 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'motion/react';
 import type { Page } from '../../data/landing';
 
-import { Arrow } from '../../components/ui/Arrow';
-import { HeadingText, ThaiText } from '../../components/ui/HeadingText';
+import { ThaiText } from '../../components/ui/HeadingText';
 import styles from '../../components/website.module.css';
 
 export function HelpSection({ th, page }: { th: boolean; page?: Page }) {

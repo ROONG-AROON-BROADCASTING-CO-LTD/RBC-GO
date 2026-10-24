@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 
-import { motion } from 'motion/react';
 import type { Page } from '../../data/landing';
 import { rentalCopy } from '../../data/rentals';
 import { WebsiteReveal } from '../../components/interactive/WebsiteMotion';

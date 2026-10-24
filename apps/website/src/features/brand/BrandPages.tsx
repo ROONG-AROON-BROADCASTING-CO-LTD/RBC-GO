@@ -55,7 +55,7 @@ export function BrandPages({ page }: { page?: Page }) {
           <HelpSection th={th} page={page} />
           <ClosingSection th={th} page={page} />
         </main>
-        <WebsiteFooter locale={language} page={page} />
+        <WebsiteFooter locale={language} />
       </div>
     </MotionConfig>
   );

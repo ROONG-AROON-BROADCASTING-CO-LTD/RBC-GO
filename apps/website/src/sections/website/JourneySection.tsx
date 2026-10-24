@@ -7,7 +7,6 @@ import {
   WebsiteReveal,
   rentalEase,
 } from '../../components/interactive/WebsiteMotion';
-import { Arrow } from '../../components/ui/Arrow';
 import { HeadingText, ThaiText } from '../../components/ui/HeadingText';
 import styles from '../../components/website.module.css';
 
