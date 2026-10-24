@@ -23,7 +23,12 @@ export function WebsiteNav({
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 0);
+    const onScroll = () => {
+      const y = Math.max(0, window.scrollY);
+      // Separate entry and exit thresholds prevent tiny scroll/bounce changes
+      // near the top from repeatedly reversing the header transition.
+      setIsScrolled((previous) => (previous ? y > 8 : y > 32));
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
