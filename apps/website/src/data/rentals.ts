@@ -69,7 +69,7 @@ export const rentalCategories = [
   },
   {
     id: 'aircraft',
-    image: '/images/rentals/aircraft.png',
+    image: '/images/rentals/aircraft-charter.png',
     en: 'Aircraft',
     th: 'เครื่องบิน',
     enCopy: 'Go beyond. Make the journey your own.',

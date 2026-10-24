@@ -68,7 +68,10 @@
 .titleMask {
   display: block;
   overflow: hidden;
-  padding-bottom: 0.14em;
+  /* Thai leading vowels and tone marks can extend above the line box. Keep
+     the reveal mask roomy without moving the final heading layout. */
+  margin-top: -0.12em;
+  padding: 0.12em 0 0.14em;
 }
 .titleMask > span {
   display: block;
@@ -463,10 +466,6 @@
   background: #121712;
 }
 .sectionHeading {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 50px;
   margin-bottom: 36px;
 }
 .sectionLabel {
@@ -484,8 +483,9 @@
   letter-spacing: -0.025em;
   line-height: 1.3;
 }
-.sectionHeading > p {
-  max-width: 410px;
+.sectionHeadingCopy {
+  max-width: 560px;
+  margin: 20px 0 0;
   font-size: 16px;
   line-height: 1.75;
   color: var(--muted);
@@ -794,7 +794,7 @@
     display: block;
     margin-bottom: 28px;
   }
-  .sectionHeading > p {
+  .sectionHeadingCopy {
     margin-top: 20px;
     font-size: 15px;
   }

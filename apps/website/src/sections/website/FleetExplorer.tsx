@@ -42,7 +42,6 @@ export function FleetExplorer({ th }: { th: boolean }) {
               sizes="(max-width: 767px) 90vw, 65vw"
             />
             <span className={styles.panelShade} />
-            <span className={styles.panelNumber}>0{index + 1}</span>
             <span className={styles.panelName}>
               <ThaiText>{th ? item.th : item.en}</ThaiText>
             </span>

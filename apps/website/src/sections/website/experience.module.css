@@ -44,16 +44,6 @@
   z-index: -1;
   background: linear-gradient(0deg, #000e, transparent 65%);
 }
-.panelNumber {
-  position: absolute;
-  top: 26px;
-  left: 26px;
-  font:
-    12px var(--font-inter),
-    sans-serif;
-  border-top: 1px solid #ffffff80;
-  padding-top: 10px;
-}
 .panelName {
   position: absolute;
   left: 26px;
@@ -261,9 +251,6 @@
     left: 18px;
     font-size: 17px;
   }
-  .panelNumber {
-    left: 18px;
-  }
   .preview {
     align-items: start;
   }
@@ -286,12 +273,6 @@
   .panel[data-active='true'] {
     flex: none;
     height: 330px;
-  }
-  .panelNumber {
-    top: 18px;
-    left: 18px;
-    padding: 0;
-    border: 0;
   }
   .panelName {
     left: 54px;

@@ -30,9 +30,9 @@ export function HeroSection({ th, page }: { th: boolean; page?: Page }) {
   const mediaStyle = reduced ? undefined : { y: imageY, scale: imageScale };
   const c = rentalCopy(th ? 'th' : 'en');
   const pageHeroImages = {
-    rides: '/images/rentals/hero.png',
+    rides: '/images/rentals/hero-charter.png',
     'how-it-works': '/images/rentals/car.png',
-    pricing: '/images/rentals/aircraft.png',
+    pricing: '/images/rentals/aircraft-charter.png',
     about: '/images/rentals/yacht.png',
     help: '/images/rentals/car.png',
   } satisfies Record<Page, string>;
@@ -72,7 +72,7 @@ export function HeroSection({ th, page }: { th: boolean; page?: Page }) {
         <section className={styles.hero} ref={heroRef}>
           <motion.div className={styles.heroMedia} style={mediaStyle}>
             <Image
-              src="/images/rentals/hero.png"
+              src="/images/rentals/hero-charter.png"
               alt={
                 th
                   ? 'รถยนต์ มอเตอร์ไซค์ไฟฟ้า เรือยอชต์ และเครื่องบินสำหรับการเดินทาง'

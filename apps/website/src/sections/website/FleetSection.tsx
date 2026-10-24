@@ -38,10 +38,10 @@ export function FleetSection({ th, page }: { th: boolean; page?: Page }) {
                 <h2>
                   <HeadingText>{c.collection}</HeadingText>
                 </h2>
+                <p className={styles.sectionHeadingCopy}>
+                  <ThaiText>{c.collectionCopy}</ThaiText>
+                </p>
               </div>
-              <p>
-                <ThaiText>{c.collectionCopy}</ThaiText>
-              </p>
             </div>
           )}
           {page === 'rides' && (
