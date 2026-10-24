@@ -101,6 +101,7 @@ export function WebsiteNav({
             onClick={() => setMenuOpen(false)}
           >
             <ThaiText>{th ? 'หน้าแรก' : 'Home'}</ThaiText>
+            <Icon kind="arrow" className={styles.mobileMenuArrow} />
           </Link>
           {c.nav.map((label, i) => (
             <Link
@@ -112,6 +113,7 @@ export function WebsiteNav({
               onClick={() => setMenuOpen(false)}
             >
               <ThaiText>{label}</ThaiText>
+              <Icon kind="arrow" className={styles.mobileMenuArrow} />
             </Link>
           ))}
         </nav>
@@ -120,6 +122,7 @@ export function WebsiteNav({
             <ThaiText>{th ? 'เริ่มต้นเช่า' : 'Start renting'}</ThaiText>
           </Link>
           <button
+            className={styles.languageToggle}
             onClick={toggleLanguage}
             aria-label={th ? 'เปลี่ยนเป็นภาษาอังกฤษ' : 'Switch to Thai'}
           >
