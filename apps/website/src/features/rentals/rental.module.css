@@ -92,23 +92,54 @@
   }
 }
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 20;
+  height: 112px;
   background: #080a08;
   color: #fff;
+  overflow: hidden;
+  transition:
+    height 180ms ease,
+    background-color 180ms ease,
+    backdrop-filter 180ms ease;
+}
+.header.scrolled {
+  height: 80px;
+  background: rgb(8 10 8 / 94%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.header.scrolled .topbar {
+  min-height: 0;
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  border-bottom-color: transparent;
+  pointer-events: none;
+}
+.header.menuOpen {
+  overflow: visible;
 }
 .topbar {
+  height: 32px;
   min-height: 32px;
   padding: 0 5.5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  border-bottom: 1px solid #ffffff14;
+  border-bottom: 1px solid #ffffff1f;
   color: #aeb3a8;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.02em;
+  transition:
+    height 180ms ease,
+    opacity 140ms ease,
+    border-color 140ms ease,
+    padding 180ms ease;
 }
 .topbarContact {
   display: flex;
@@ -162,13 +193,28 @@
   font-weight: 500;
 }
 .navigation a {
+  position: relative;
   padding: 8px 0;
-  border-bottom: 1px solid transparent;
+  color: #ddd;
+  transition: color 200ms ease;
+}
+.navigation a::after {
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  content: '';
+  transition: width 220ms ease;
 }
 .navigation a:hover,
 .navigation a[aria-current] {
   color: var(--accent);
-  border-color: currentColor;
+}
+.navigation a:hover::after,
+.navigation a[aria-current]::after {
+  width: 100%;
 }
 .headerActions {
   display: flex;
@@ -185,6 +231,19 @@
   cursor: pointer;
   font-size: 12px;
 }
+.headerActions button:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+}
+.headerActions button i {
+  color: #73786f;
+  font-style: normal;
+}
+.languageActive {
+  color: var(--accent);
+}
 .headerStart {
   border-color: var(--accent);
   background: var(--accent);
@@ -200,6 +259,13 @@
 }
 .headerActions .menu {
   display: none;
+  width: 40px;
+  justify-content: center;
+  padding: 7px;
+}
+.headerActions .menu svg {
+  width: 22px;
+  height: 22px;
 }
 .site .main {
   max-width: none;
@@ -646,6 +712,12 @@
   }
 }
 @media (max-width: 767px) {
+  .header {
+    height: 106px;
+  }
+  .header.scrolled {
+    height: 74px;
+  }
   .topbar {
     min-height: 32px;
     padding: 0 24px;

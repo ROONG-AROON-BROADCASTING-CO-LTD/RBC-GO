@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   motion,
   MotionConfig,
@@ -17,6 +17,7 @@ import { rentalCategories, rentalCopy } from './rentalContent';
 import styles from './rental.module.css';
 import { siteUrl } from '../../../app/site';
 import { pageSeoCopy } from '../../../app/pageMetadata';
+import { Icon } from '../../components/ui/Icon';
 
 const routes = ['/rides', '/how-it-works', '/pricing', '/about', '/help'];
 const MotionLink = motion.create(Link);
@@ -51,6 +52,7 @@ export function RentalWebsite({ page }: { page?: Page }) {
     inLanguage: language,
   };
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [category, setCategory] = useState('all');
   const title =
     page === 'rides'
@@ -117,6 +119,21 @@ export function RentalWebsite({ page }: { page?: Page }) {
       ];
   const [query, setQuery] = useState('');
 
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 0);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    if (menuOpen) document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [menuOpen]);
+
   return (
     <MotionConfig reducedMotion="user">
       <div className={styles.site}>
@@ -125,7 +142,9 @@ export function RentalWebsite({ page }: { page?: Page }) {
           style={{ scaleX: progress }}
           aria-hidden="true"
         />
-        <header className={styles.header}>
+        <header
+          className={`${styles.header}${isScrolled ? ` ${styles.scrolled}` : ''}${menuOpen ? ` ${styles.menuOpen}` : ''}`}
+        >
           <div className={styles.topbar}>
             <span>
               {th
@@ -200,7 +219,9 @@ export function RentalWebsite({ page }: { page?: Page }) {
                 onClick={toggleLanguage}
                 aria-label={th ? 'เปลี่ยนเป็นภาษาอังกฤษ' : 'Switch to Thai'}
               >
-                {th ? 'TH / EN' : 'EN / TH'}
+                <span className={th ? styles.languageActive : ''}>TH</span>
+                <i>/</i>
+                <span className={!th ? styles.languageActive : ''}>EN</span>
               </button>
               <button
                 className={styles.menu}
@@ -208,7 +229,12 @@ export function RentalWebsite({ page }: { page?: Page }) {
                 aria-label={th ? 'เปิดเมนู' : 'Toggle menu'}
                 aria-expanded={menuOpen}
               >
-                ☰
+                <Icon
+                  kind="menu"
+                  animateOnHover={false}
+                  animationState={menuOpen ? 'animate' : 'normal'}
+                  animationTrigger={menuOpen}
+                />
               </button>
             </div>
           </div>
