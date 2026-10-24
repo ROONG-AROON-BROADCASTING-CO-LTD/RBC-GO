@@ -350,7 +350,10 @@
   position: absolute;
   inset: 0;
   z-index: -2;
-  will-change: transform;
+  /* Preserve the original hero framing, without updating a large image on
+     every scroll frame. */
+  scale: 1.04;
+  transform-origin: center;
 }
 .heroMedia > img {
   object-fit: cover;
