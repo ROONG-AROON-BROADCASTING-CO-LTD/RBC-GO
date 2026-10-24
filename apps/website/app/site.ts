@@ -4,4 +4,4 @@ export const siteUrl = new URL(
 export const indexable =
   process.env.SEO_ALLOW_INDEXING === 'true' && siteUrl.protocol === 'https:';
 export const description =
-  'RBC GO บริการมอเตอร์ไซค์ไฟฟ้าแบบเติมเงิน สแกน QR และเดินทางโดยคิดค่าบริการตามระยะทาง';
+  'RBC GO รวมทางเลือกการเช่ามอเตอร์ไซค์ไฟฟ้า รถยนต์ เรือยอชต์ และเครื่องบิน สำหรับทุกวันและทุกโอกาส';

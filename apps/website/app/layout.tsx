@@ -29,7 +29,7 @@ const ibmPlexSansThai = localFont({
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: 'RBC GO - มอเตอร์ไซค์ไฟฟ้าเพื่อการเดินทางในเมือง',
+    default: 'RBC GO - เช่ามอเตอร์ไซค์ไฟฟ้า รถยนต์ เรือยอชต์ และเครื่องบิน',
     template: 'RBC GO - %s',
   },
   robots: { index: indexable, follow: indexable },

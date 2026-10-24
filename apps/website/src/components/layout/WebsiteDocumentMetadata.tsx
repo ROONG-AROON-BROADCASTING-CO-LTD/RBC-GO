@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo } from 'react';
 import { usePathname } from 'next/navigation';
-import { type Page, text } from '../../data/landing';
+import { type Page } from '../../data/landing';
+import { pageSeoCopy } from '../../../app/pageMetadata';
 import { useWebsiteLanguage } from './WebsiteLanguageProvider';
 
 const pageByPath: Record<string, Page | undefined> = {
@@ -33,44 +34,20 @@ export function WebsiteDocumentMetadata() {
   const pathname = usePathname();
   const { language } = useWebsiteLanguage();
   const copy = useMemo(() => {
-    const page = pageByPath[pathname];
-    const titles =
-      language === 'en'
-        ? [
-            'Motorcycle, car, yacht and aircraft rentals',
-            'Explore vehicle rentals',
-            'Rental guide',
-            'Rental pricing and details',
-            'About RBC GO',
-            'RBC GO help and FAQs',
-          ]
-        : [
-            'เช่ามอเตอร์ไซค์ไฟฟ้า รถยนต์ เรือยอชต์ และเครื่องบิน',
-            'สำรวจยานพาหนะให้เช่า',
-            'วิธีการเช่า',
-            'ข้อมูลค่าเช่าและเงื่อนไข',
-            'เกี่ยวกับ RBC GO',
-            'ช่วยเหลือและคำถามที่พบบ่อย - RBC GO',
-          ];
-    const title =
-      titles[
-        page
-          ? ['rides', 'how-it-works', 'pricing', 'about', 'help'].indexOf(
-              page,
-            ) + 1
-          : 0
-      ];
-
-    return { title, description: text[language].description };
+    if (!Object.hasOwn(pageByPath, pathname)) return null;
+    return pageSeoCopy(language, pageByPath[pathname]);
   }, [language, pathname]);
 
   useEffect(() => {
+    if (!copy) return;
     const applyMetadata = () => {
       const title = `RBC GO - ${copy.title}`;
       document.title = title;
       setMeta('name', 'description', copy.description);
       setMeta('property', 'og:title', title);
       setMeta('property', 'og:description', copy.description);
+      setMeta('name', 'twitter:title', title);
+      setMeta('name', 'twitter:description', copy.description);
       setMeta('property', 'og:locale', language === 'en' ? 'en_US' : 'th_TH');
     };
 

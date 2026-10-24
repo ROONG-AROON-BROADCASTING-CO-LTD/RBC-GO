@@ -15,6 +15,8 @@ import type { Page } from '../../data/landing';
 import { useWebsiteLanguage } from '../../components/layout/WebsiteLanguageProvider';
 import { rentalCategories, rentalCopy } from './rentalContent';
 import styles from './rental.module.css';
+import { siteUrl } from '../../../app/site';
+import { pageSeoCopy } from '../../../app/pageMetadata';
 
 const routes = ['/rides', '/how-it-works', '/pricing', '/about', '/help'];
 const MotionLink = motion.create(Link);
@@ -44,10 +46,8 @@ export function RentalWebsite({ page }: { page?: Page }) {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'RBC GO',
-    url: 'http://localhost:5185/',
-    description: th
-      ? 'RBC GO รวมทางเลือกการเช่าสำหรับการเดินทางบนถนน กลางทะเล และบนท้องฟ้า'
-      : 'RBC GO brings together rental options for journeys by road, sea and air.',
+    url: siteUrl.toString(),
+    description: pageSeoCopy(language, page).description,
     inLanguage: language,
   };
   const [menuOpen, setMenuOpen] = useState(false);

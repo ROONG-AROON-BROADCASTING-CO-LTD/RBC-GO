@@ -5,7 +5,7 @@ import { type Locale, type Page } from '../src/data/landing';
 function pageHref(page?: Page) {
   return page ? `/${page}` : '/';
 }
-export function pageMetadata(locale: Locale, page?: Page): Metadata {
+export function pageSeoCopy(locale: Locale, page?: Page) {
   const seo =
     locale === 'en'
       ? {
@@ -62,6 +62,11 @@ export function pageMetadata(locale: Locale, page?: Page): Metadata {
         };
   const key = page ?? 'home';
   const [title, description] = seo[key];
+  return { title, description };
+}
+
+export function pageMetadata(locale: Locale, page?: Page): Metadata {
+  const { title, description } = pageSeoCopy(locale, page);
   const keywords =
     locale === 'en'
       ? [
