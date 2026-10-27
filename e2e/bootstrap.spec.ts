@@ -52,7 +52,7 @@ test('Website language switch keeps the current URL stable', async ({
     'RBC GO - Motorcycle, car, yacht and aircraft rentals',
   );
   await expect(
-    page.getByRole('heading', { name: 'Your journey. Your choice.' }),
+    page.getByRole('heading', { name: 'Find your next journey. Your way.' }),
   ).toBeVisible();
   await expect
     .poll(() =>
