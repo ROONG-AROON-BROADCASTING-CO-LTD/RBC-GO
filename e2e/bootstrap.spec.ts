@@ -44,7 +44,8 @@ test('Website language switch keeps the current URL stable', async ({
 }) => {
   await page.goto('/');
 
-  await page.getByRole('button', { name: 'เปลี่ยนเป็นภาษาอังกฤษ' }).click();
+  await page.getByRole('button', { name: 'เลือกภาษา' }).click();
+  await page.getByRole('menuitemradio', { name: 'English' }).click();
 
   await expect(page).toHaveURL('http://localhost:5185/');
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
