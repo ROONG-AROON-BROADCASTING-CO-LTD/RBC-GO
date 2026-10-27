@@ -186,9 +186,6 @@
   padding: 7px;
   scroll-margin-top: 85px;
 }
-.searchBox:focus-within {
-  border-color: #6485ff;
-}
 .searchBox input {
   min-width: 0;
   flex: 1;
@@ -199,6 +196,9 @@
   padding: 8px 16px;
   font: inherit;
   font-size: 16px;
+}
+.searchBox input:focus-visible {
+  outline: none;
 }
 .searchBox input::placeholder {
   color: #8f9098;
@@ -221,7 +221,7 @@
 }
 .shortcuts {
   display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
   margin-top: 16px;
 }
@@ -266,7 +266,7 @@
   scroll-margin-top: 85px;
 }
 .railSection {
-  margin: 0 0 32px;
+  margin: 0 0 44px;
 }
 .sectionHead {
   display: flex;
@@ -276,7 +276,6 @@
   min-height: 40px;
 }
 .theme .sectionHead h2,
-.theme .benefits > h2,
 .theme .owner > h2 {
   font-size: 29px;
   font-weight: 750;
@@ -330,7 +329,7 @@
   display: none;
 }
 .poster {
-  flex: 0 0 240px;
+  flex: 0 0 calc((100% - 48px) / 4);
   min-width: 0;
   scroll-snap-align: start;
 }
@@ -370,11 +369,17 @@
   height: 18px;
 }
 .serviceCard {
-  flex: 0 0 295px;
+  flex: 0 0 calc((100% - 64px) / 4.2);
+  min-width: 255px;
   border: 1px solid #303035;
   border-radius: 17px;
   overflow: hidden;
   scroll-snap-align: start;
+  background: #030303;
+  transition: border-color 180ms;
+}
+.serviceCard:hover {
+  border-color: #61616a;
 }
 .cardImage {
   position: relative;
@@ -384,6 +389,26 @@
 }
 .cardBody {
   padding: 14px 16px 16px;
+}
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 7px;
+}
+.cardMeta svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+.cardTags .tag {
+  margin-top: 0;
 }
 .theme .cardBody h3 {
   font-size: 16px;
@@ -396,13 +421,6 @@
   font-size: 14px;
   line-height: 1.55;
 }
-.tags {
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
-  margin-top: 12px;
-}
-.tags span,
 .tag {
   padding: 3px 8px;
   border: 1px solid #323238;
@@ -414,37 +432,6 @@
 .tag {
   display: inline-block;
   margin-top: 12px;
-}
-.charterCard {
-  flex-basis: calc(50% - 8px);
-}
-.charterCard .cardImage {
-  aspect-ratio: 2.2;
-}
-.benefits {
-  margin: 64px 0 32px;
-}
-.benefits > div {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 28px;
-}
-.benefits article > svg {
-  color: #6485ff;
-  width: 30px;
-  height: 30px;
-  margin-bottom: 12px;
-}
-.theme .benefits h3 {
-  font-size: 19px;
-  margin-bottom: 8px;
-  font-weight: 750;
-}
-.theme .benefits p {
-  font-size: 14px;
-  color: #b5b5bc;
-  line-height: 1.6;
 }
 .owner {
   margin: 40px 0 80px;
@@ -653,9 +640,6 @@
     padding: 9px 2px;
     border-radius: 16px;
   }
-  .shortcuts:not(.expanded) button:nth-child(n + 8):not(:last-child) {
-    display: none;
-  }
   .shortcuts span {
     font-size: 11px;
   }
@@ -676,7 +660,6 @@
     min-height: 28px;
   }
   .theme .sectionHead h2,
-  .theme .benefits > h2,
   .theme .owner > h2 {
     font-size: 21px;
     letter-spacing: -0.4px;
@@ -709,19 +692,6 @@
   }
   .serviceCard {
     flex-basis: 280px;
-  }
-  .charterCard {
-    flex-basis: 310px;
-  }
-  .charterCard .cardImage {
-    aspect-ratio: 1.65;
-  }
-  .benefits {
-    margin-top: 40px;
-  }
-  .benefits > div {
-    grid-template-columns: 1fr;
-    gap: 28px;
   }
   .owner {
     margin-bottom: 48px;

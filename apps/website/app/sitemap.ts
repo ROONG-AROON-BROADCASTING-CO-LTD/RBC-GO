@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { siteUrl } from './site';
 import { pages } from '../src/data/landing';
 import { brandEvents } from '../src/data/brandEvents';
+import { rentalCategories } from '../src/data/rentals';
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = ['', ...pages].map((page) => ({
     url: new URL(page ? `/${page}` : '/', siteUrl).toString(),
@@ -14,5 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...eventPages];
+  const rentalPages = rentalCategories.map(({ id }) => ({
+    url: new URL(`/rides/${id}`, siteUrl).toString(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+  return [...staticPages, ...rentalPages, ...eventPages];
 }

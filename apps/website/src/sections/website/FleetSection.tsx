@@ -71,9 +71,9 @@ export function FleetSection({ th, page }: { th: boolean; page?: Page }) {
                     </li>
                   ))}
                 </ul>
-                <Link className={styles.textLink} href="/how-it-works">
+                <Link className={styles.textLink} href={`/rides/${item.id}`}>
                   <ThaiText>
-                    {th ? 'เตรียมตัวก่อนเช่า' : 'Plan your rental'}
+                    {th ? 'ดูรายละเอียดบริการ' : 'View service details'}
                   </ThaiText>
                   <Arrow />
                 </Link>

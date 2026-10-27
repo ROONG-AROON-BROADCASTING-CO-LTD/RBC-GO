@@ -8,11 +8,9 @@ import { FleetSection } from '../../sections/website/FleetSection';
 import { InformationSection } from '../../sections/website/InformationSection';
 import { HelpSection } from '../../sections/website/HelpSection';
 import { ClosingSection } from '../../sections/website/ClosingSection';
-import {
-  DiscoveryNav,
-  DiscoveryFooter,
-  RentalDiscoveryPage,
-} from '../../sections/website/RentalDiscoveryPage';
+import { DiscoveryNav } from '../../sections/website/DiscoveryNav';
+import { DiscoveryFooter } from '../../sections/website/DiscoveryFooter';
+import { RentalDiscoveryPage } from '../../sections/website/RentalDiscoveryPage';
 import discovery from '../../sections/website/rentalDiscoveryPage.module.css';
 import { siteUrl } from '../../../app/site';
 import { pageSeoCopy } from '../../../app/pageMetadata';

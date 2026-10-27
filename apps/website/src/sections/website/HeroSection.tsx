@@ -32,11 +32,11 @@ export function HeroSection({ th, page }: { th: boolean; page?: Page }) {
   const mediaStyle = reduced ? undefined : { y: imageY };
   const c = rentalCopy(th ? 'th' : 'en');
   const pageHeroImages = {
-    rides: '/images/rentals/hero-charter.png',
-    'how-it-works': '/images/rentals/car.png',
+    rides: '/images/rentals/marina-services.png',
+    'how-it-works': '/images/rentals/rental-planning.png',
     pricing: '/images/rentals/aircraft-charter.png',
     about: '/images/rentals/yacht.png',
-    help: '/images/rentals/car.png',
+    help: '/images/rentals/travel-support.png',
   } satisfies Record<Page, string>;
   const pageTitleLines =
     page === 'rides'

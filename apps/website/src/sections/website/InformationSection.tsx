@@ -137,7 +137,7 @@ export function InformationSection({ th, page }: { th: boolean; page?: Page }) {
           </div>
         </WebsiteReveal>
       )}
-      {(!page || page === 'rides' || page === 'about') && (
+      {page === 'about' && (
         <WebsiteReveal className={styles.reading} id="car-owners">
           <span className={styles.sectionLabel}>FOR CAR OWNERS</span>
           <h2>

@@ -1,0 +1,155 @@
+.page {
+  background: #000;
+  color: #f4f4f6;
+}
+.hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  padding: 160px max(24px, calc((100vw - 1260px) / 2)) 64px;
+  isolation: isolate;
+}
+.hero > img {
+  object-fit: cover;
+  z-index: -2;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #000 0%, #0006 70%, #0005);
+  z-index: -1;
+}
+.heroCopy {
+  max-width: 720px;
+}
+.heroCopy h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.5;
+  margin: 20px 0 12px;
+}
+.heroCopy a {
+  color: #d0d0d8;
+}
+.heroCopy p {
+  font-size: 20px;
+}
+.content {
+  width: min(1260px, calc(100% - 48px));
+  margin: auto;
+  padding: 24px 0 64px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 64px;
+  align-items: start;
+}
+.page section h2,
+.aside h2 {
+  font-size: 26px;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+.content section {
+  margin-bottom: 48px;
+}
+.page p,
+.page li {
+  color: #bdbdc7;
+  line-height: 1.9;
+  overflow-wrap: break-word;
+}
+.steps {
+  padding-left: 24px;
+}
+.steps li {
+  padding: 10px 0 10px 10px;
+}
+.steps li::marker {
+  color: #6485ff;
+  font-weight: 700;
+}
+.aside {
+  border: 1px solid #303035;
+  border-radius: 20px;
+  padding: 28px;
+  position: sticky;
+  top: 100px;
+  background: #0b0b0e;
+}
+.aside ul {
+  padding-left: 20px;
+  margin-bottom: 24px;
+}
+.aside li {
+  margin-bottom: 12px;
+}
+.link {
+  display: block;
+  color: #8ca3ff;
+  margin-top: 20px;
+  line-height: 1.7;
+}
+.page details {
+  border-bottom: 1px solid #28282e;
+  padding: 20px 0;
+}
+.page summary {
+  cursor: pointer;
+  font-weight: 650;
+  line-height: 1.8;
+}
+.page details p {
+  margin-top: 14px;
+}
+.related {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.related > a {
+  border: 1px solid #303035;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.thumbnail {
+  position: relative;
+  aspect-ratio: 1.65;
+}
+.thumbnail img {
+  object-fit: cover;
+}
+.related h3 {
+  margin: 18px 18px 8px;
+  font-size: 20px;
+}
+.related p {
+  margin: 0 18px 20px;
+}
+@media (max-width: 700px) {
+  .hero {
+    min-height: 430px;
+    padding-bottom: 40px;
+  }
+  .heroCopy p {
+    font-size: 17px;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .aside {
+    position: static;
+    margin-bottom: 48px;
+    padding: 24px;
+  }
+  .related {
+    grid-template-columns: 1fr;
+  }
+  .page section h2,
+  .aside h2 {
+    font-size: 23px;
+  }
+}
