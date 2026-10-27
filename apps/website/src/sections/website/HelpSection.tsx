@@ -11,7 +11,19 @@ export function HelpSection({ th, page }: { th: boolean; page?: Page }) {
     ? [
         [
           'RBC GO มีบริการเช่าอะไรบ้าง?',
-          'เว็บไซต์นำเสนอการเช่ามอเตอร์ไซค์ไฟฟ้า รถยนต์ เรือยอชต์ และเครื่องบิน โดยรายละเอียดและความพร้อมของแต่ละบริการจะประกาศเมื่อเปิดให้จอง',
+          'มี 4 รูปแบบ: มอเตอร์ไซค์ไฟฟ้าให้เช่าตามสถานี รถยนต์ที่เจ้าของนำมาฝากให้ RBC GO ปล่อยเช่า เรือยอชต์เหมาลำ และเครื่องบินเหมาลำ รายละเอียดพื้นที่และความพร้อมจะประกาศเมื่อเปิดบริการ',
+        ],
+        [
+          'มอเตอร์ไซค์ไฟฟ้ารับและคืนที่ไหน?',
+          'รับรถผ่านจุดสถานีที่ให้บริการ โดยตรวจสอบรถว่างและเงื่อนไขสถานีคืนรถก่อนใช้งาน รายชื่อสถานี พื้นที่ให้บริการ และกติกาการคืนรถจะประกาศก่อนเปิดบริการ',
+        ],
+        [
+          'มีรถว่าง นำมาฝากปล่อยเช่าได้ไหม?',
+          'เจ้าของรถยนต์ที่ไม่ได้ใช้งานสามารถนำรถมาฝากให้ RBC GO ปล่อยเช่าได้ โดยแจ้งข้อมูลรถและช่วงเวลาที่ว่าง เพื่อพิจารณาความเหมาะสมและตกลงเรื่องส่วนแบ่งรายได้ ประกัน การดูแลรถ และความรับผิดชอบก่อนเข้าร่วม',
+        ],
+        [
+          'เรือยอชต์และเครื่องบินเช่าแบบไหน?',
+          'เป็นการเช่าแบบเหมาลำสำหรับกลุ่มของคุณ ระบุวันเดินทาง เส้นทาง จำนวนผู้โดยสาร และบริการที่ต้องการ เพื่อดูตัวเลือกและรายละเอียดราคา โดยขึ้นอยู่กับความพร้อมและการยืนยันจากผู้ให้บริการ',
         ],
         [
           'ตอนนี้จองและชำระเงินได้หรือยัง?',
@@ -33,7 +45,19 @@ export function HelpSection({ th, page }: { th: boolean; page?: Page }) {
     : [
         [
           'What can I rent with RBC GO?',
-          'Explore electric motorcycles, cars, yachts and aircraft. Details and availability for each service will be published when bookings open.',
+          'Our four services are station-based electric motorcycle rentals, cars entrusted to RBC GO by their owners, private yacht charters and private aircraft charters. Locations and availability will be announced when services open.',
+        ],
+        [
+          'Where do I pick up and return an electric motorcycle?',
+          'Use a service station and check bike availability and return-station rules before riding. Station locations, service areas and return requirements will be announced before launch.',
+        ],
+        [
+          'Can I entrust my unused car to RBC GO for rental?',
+          'Yes. Owners can share vehicle details and available dates for review. Revenue sharing, insurance, vehicle care and responsibilities must be agreed before the car joins the service.',
+        ],
+        [
+          'How do yacht and aircraft rentals work?',
+          'Both are private whole-vessel or whole-aircraft charters for your group. Share your dates, itinerary, passenger numbers and preferred services to review options and pricing, subject to availability and operator confirmation.',
         ],
         [
           'Can I book and pay now?',

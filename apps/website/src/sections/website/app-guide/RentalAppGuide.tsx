@@ -148,15 +148,15 @@ export function RentalAppGuide({ th }: { th: boolean }) {
         <h2 id="app-guide-title">
           <HeadingText>
             {th
-              ? 'เช่าง่าย ๆ ผ่านมือถือของคุณ'
-              : 'Your next journey. Just a few taps.'}
+              ? 'ตัวอย่างการเช่ารถยนต์ผ่านมือถือ'
+              : 'A preview of renting a car on your phone.'}
           </HeadingText>
         </h2>
         <p>
           <ThaiText>
             {th
-              ? 'เลือก วางแผน และพร้อมออกเดินทาง ในไม่กี่ขั้นตอน'
-              : 'Find your fit, plan the details and get ready to go.'}
+              ? 'ดูขั้นตอนเลือกรถ เลือกวัน และยืนยันการจอง ส่วนมอเตอร์ไซค์ใช้จุดสถานี และเรือกับเครื่องบินเป็นบริการเหมาลำตามรายละเอียดทริป'
+              : 'Preview car selection, dates and booking confirmation. Motorcycles use service stations; yacht and aircraft charters are arranged around your itinerary.'}
           </ThaiText>
         </p>
       </div>

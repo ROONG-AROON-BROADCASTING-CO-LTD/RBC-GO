@@ -4,4 +4,4 @@ export const siteUrl = new URL(
 export const indexable =
   process.env.SEO_ALLOW_INDEXING === 'true' && siteUrl.protocol === 'https:';
 export const description =
-  'RBC GO รวมทางเลือกการเช่ามอเตอร์ไซค์ไฟฟ้า รถยนต์ เรือยอชต์ และเครื่องบิน สำหรับทุกวันและทุกโอกาส';
+  'RBC GO มอเตอร์ไซค์ไฟฟ้าตามสถานี ฝากรถยนต์ปล่อยเช่า เรือยอชต์เหมาลำ และเครื่องบินเหมาลำ สำหรับทุกแผนการเดินทาง';

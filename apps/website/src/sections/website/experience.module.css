@@ -53,34 +53,9 @@
   font-weight: 500;
   line-height: 1.5;
 }
-.panel[data-active='true'] .panelName {
-  right: 85px;
-}
-.panelArrow {
-  position: absolute;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #89d82a;
-  color: #102006;
-  bottom: 30px;
-  right: 24px;
-  display: grid;
-  place-items: center;
-  opacity: 0;
-  transform: rotate(-45deg) scale(0.7);
-  transition:
-    opacity 300ms,
-    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.panel[data-active='true'] .panelArrow {
-  opacity: 1;
-  transform: rotate(0) scale(1);
-}
 .preview {
   min-height: 88px;
   padding: 24px 0;
-  border-bottom: 1px solid #30382d;
   display: flex;
   gap: 30px;
   justify-content: space-between;
@@ -282,12 +257,6 @@
   }
   .panel[data-active='true'] .panelName {
     left: 18px;
-  }
-  .panelArrow {
-    width: 42px;
-    height: 42px;
-    bottom: 24px;
-    right: 18px;
   }
   .preview {
     flex-direction: column;

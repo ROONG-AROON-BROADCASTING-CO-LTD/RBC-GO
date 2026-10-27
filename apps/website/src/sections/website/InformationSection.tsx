@@ -18,6 +18,26 @@ export function InformationSection({ th, page }: { th: boolean; page?: Page }) {
       {' '}
       {page === 'how-it-works' && (
         <section className={styles.reading}>
+          <span className={styles.sectionLabel}>FOUR WAYS TO GO</span>
+          <h2>
+            <HeadingText>
+              {th
+                ? 'บริการต่างกัน เริ่มต้นต่างกัน'
+                : 'Four services. Four ways to get started.'}
+            </HeadingText>
+          </h2>
+          <div className={styles.pricingRows}>
+            {rentalCategories.map((item) => (
+              <div key={item.id}>
+                <h3>
+                  <HeadingText>{th ? item.th : item.en}</HeadingText>
+                </h3>
+                <p>
+                  <ThaiText>{th ? item.thDetail : item.enDetail}</ThaiText>
+                </p>
+              </div>
+            ))}
+          </div>
           <h2>
             <HeadingText>
               {th
@@ -46,8 +66,8 @@ export function InformationSection({ th, page }: { th: boolean; page?: Page }) {
           <p>
             <ThaiText>
               {th
-                ? 'แต่ละประเภทมีรูปแบบการเช่าแตกต่างกัน เราจึงให้ความสำคัญกับรายละเอียดราคาและเงื่อนไขของแต่ละรายการ แทนการใช้ราคาเดียวกับทุกบริการ'
-                : 'Each category has its own rental structure. Review the price and terms for the individual service you choose.'}
+                ? 'มอเตอร์ไซค์ไฟฟ้าดูอัตราใช้งานและเงื่อนไขสถานี รถยนต์ดูค่าเช่าและเงื่อนไขของรถแต่ละคัน ส่วนเรือยอชต์และเครื่องบินดูราคาเหมาลำตามเส้นทาง ระยะเวลา และบริการที่เลือก'
+                : 'For motorcycles, review usage rates and station rules. For cars, review the rate and terms for each vehicle. Yacht and aircraft charter prices depend on the itinerary, duration and selected services.'}
             </ThaiText>
           </p>
           <div className={styles.pricingRows}>
@@ -77,7 +97,7 @@ export function InformationSection({ th, page }: { th: boolean; page?: Page }) {
         <WebsiteReveal className={styles.about}>
           <div className={styles.aboutImage}>
             <Image
-              src="/images/rentals/hero.png"
+              src="/images/rentals/hero-charter.png"
               alt={
                 th
                   ? 'การเดินทางหลากหลายรูปแบบกับ RBC GO'
@@ -99,8 +119,8 @@ export function InformationSection({ th, page }: { th: boolean; page?: Page }) {
             <p>
               <ThaiText>
                 {th
-                  ? 'RBC GO นำเสนอทางเลือกการเช่ายานพาหนะที่หลากหลาย ตั้งแต่การใช้ชีวิตในเมือง การเดินทางบนถนน ทริปพักผ่อนทางทะเล ไปจนถึงการเดินทางทางอากาศ'
-                  : 'RBC GO brings together vehicle rental categories for city life, road trips, time at sea and travel by air.'}
+                  ? 'RBC GO รวมบริการ 4 รูปแบบไว้ด้วยกัน: มอเตอร์ไซค์ไฟฟ้าให้เช่าตามสถานี รถยนต์ที่เจ้าของนำมาฝากปล่อยเช่า เรือยอชต์เหมาลำ และเครื่องบินเหมาลำ ให้แต่ละการเดินทางมีทางเลือกที่เหมาะกับคุณ'
+                  : 'RBC GO brings together four services: station-based electric motorcycle rentals, cars entrusted to us by their owners, private yacht charters and private aircraft charters.'}
               </ThaiText>
             </p>
             <p>
@@ -115,6 +135,38 @@ export function InformationSection({ th, page }: { th: boolean; page?: Page }) {
               <Arrow />
             </Link>
           </div>
+        </WebsiteReveal>
+      )}
+      {(!page || page === 'rides' || page === 'about') && (
+        <WebsiteReveal className={styles.reading} id="car-owners">
+          <span className={styles.sectionLabel}>FOR CAR OWNERS</span>
+          <h2>
+            <HeadingText>
+              {th
+                ? 'มีรถว่าง ให้เราช่วยปล่อยเช่า'
+                : 'Have an unused car? Let us help rent it out.'}
+            </HeadingText>
+          </h2>
+          <p>
+            <ThaiText>
+              {th
+                ? 'หากคุณมีรถยนต์ที่ไม่ได้ใช้งาน สามารถนำมาฝากกับ RBC GO เพื่อปล่อยเช่าให้ผู้ที่ต้องการรถสำหรับการเดินทาง เริ่มจากแจ้งข้อมูลรถและช่วงเวลาที่รถว่าง จากนั้นตรวจสอบความเหมาะสมและตกลงเงื่อนไขก่อนนำรถเข้าร่วมบริการ'
+                : 'If your car is sitting unused, you can entrust it to RBC GO for rental. Start with your vehicle details and available dates, then review eligibility and agree on the terms before listing it.'}
+            </ThaiText>
+          </p>
+          <p>
+            <ThaiText>
+              {th
+                ? 'รายละเอียดส่วนแบ่งรายได้ ประกัน การดูแลรถ การส่งมอบ และความรับผิดชอบ จะระบุในข้อตกลงสำหรับเจ้าของรถก่อนเข้าร่วม'
+                : 'Revenue sharing, insurance, vehicle care, handover and responsibilities will be set out in the owner agreement before you join.'}
+            </ThaiText>
+          </p>
+          <Link className={styles.textLink} href="/help">
+            <ThaiText>
+              {th ? 'คำถามสำหรับเจ้าของรถ' : 'Questions for car owners'}
+            </ThaiText>
+            <Arrow />
+          </Link>
         </WebsiteReveal>
       )}
     </>

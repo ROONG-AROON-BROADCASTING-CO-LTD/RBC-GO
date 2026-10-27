@@ -54,17 +54,6 @@
   height: 24px;
   flex-shrink: 0;
 }
-.scrollProgress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--accent);
-  transform-origin: left;
-  z-index: 100;
-  pointer-events: none;
-}
 .titleMask {
   display: block;
   overflow: hidden;
@@ -406,9 +395,6 @@
   line-height: 1.28;
   letter-spacing: -0.03em;
 }
-.heroCopy h1 .titleMask:nth-child(2) {
-  color: var(--accent);
-}
 .scrollCue {
   position: absolute;
   bottom: 30px;
@@ -498,7 +484,6 @@
 }
 .journey {
   padding: 100px 5.5% 120px;
-  border-top: 1px solid var(--border);
 }
 .detailImage img,
 .aboutImage img {
@@ -922,9 +907,6 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .scrollProgress {
-    display: none;
-  }
   .site * {
     transition: none !important;
     animation: none !important;

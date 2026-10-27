@@ -11,15 +11,15 @@ export function pageSeoCopy(locale: Locale, page?: Page) {
       ? {
           home: [
             'Motorcycle, car, yacht and aircraft rentals',
-            'Explore rental services by road, sea and air with RBC GO. Electric motorcycles, cars, yachts and aircraft for your travel plans.',
+            'Explore station-based electric motorcycle rentals, owner-supplied rental cars, and private yacht and aircraft charters. Entrust your unused car to RBC GO for rental.',
           ],
           rides: [
             'Explore vehicle rentals',
-            'Discover electric motorcycle, car, yacht and aircraft rental categories and the details to consider for each journey.',
+            'Find station-based electric motorcycles, cars entrusted by their owners, yacht charters and aircraft charters, with details for renters and car owners.',
           ],
           'how-it-works': [
             'Rental guide',
-            'Choose your vehicle category, prepare your travel details and review rental requirements.',
+            'Learn how station-based motorcycle rentals, owner-supplied car rentals and private yacht and aircraft charters work.',
           ],
           pricing: [
             'Rental pricing and details',
@@ -37,15 +37,15 @@ export function pageSeoCopy(locale: Locale, page?: Page) {
       : {
           home: [
             'เช่ามอเตอร์ไซค์ไฟฟ้า รถยนต์ เรือยอชต์ และเครื่องบิน',
-            'RBC GO รวมทางเลือกการเช่าสำหรับการเดินทางบนถนน กลางทะเล และบนท้องฟ้า เลือกบริการให้เหมาะกับทุกโอกาส',
+            'RBC GO มอเตอร์ไซค์ไฟฟ้าให้เช่าตามสถานี รถยนต์จากเจ้าของที่ฝากปล่อยเช่า เรือยอชต์เหมาลำ และเครื่องบินเหมาลำ พร้อมข้อมูลสำหรับเจ้าของรถ',
           ],
           rides: [
             'สำรวจยานพาหนะให้เช่า',
-            'เลือกบริการเช่ามอเตอร์ไซค์ไฟฟ้า รถยนต์ เรือยอชต์ และเครื่องบิน พร้อมรายละเอียดสำหรับวางแผนการเดินทาง',
+            'สำรวจมอเตอร์ไซค์ไฟฟ้าตามสถานี รถยนต์ที่เจ้าของฝากปล่อยเช่า เรือยอชต์เหมาลำ และเครื่องบินเหมาลำ พร้อมรายละเอียดแต่ละบริการ',
           ],
           'how-it-works': [
             'วิธีการเช่า',
-            'เลือกประเภทยานพาหนะ เตรียมรายละเอียดทริป และตรวจสอบเงื่อนไขก่อนเช่า',
+            'รู้จักวิธีเช่ามอเตอร์ไซค์ไฟฟ้าตามสถานี การเช่าและฝากรถยนต์ปล่อยเช่า รวมถึงการเช่าเรือยอชต์และเครื่องบินแบบเหมาลำ',
           ],
           pricing: [
             'ข้อมูลค่าเช่าและเงื่อนไข',
@@ -72,6 +72,8 @@ export function pageMetadata(locale: Locale, page?: Page): Metadata {
       ? [
           'RBC GO',
           'electric motorcycle',
+          'station-based motorcycle rental',
+          'rent out your car',
           'car rental',
           'yacht charter',
           'aircraft charter',
@@ -80,9 +82,11 @@ export function pageMetadata(locale: Locale, page?: Page): Metadata {
       : [
           'RBC GO',
           'มอเตอร์ไซค์ไฟฟ้า',
+          'เช่ามอเตอร์ไซค์ตามสถานี',
+          'ฝากรถปล่อยเช่า',
           'เช่ารถยนต์',
-          'เช่าเรือยอชต์',
-          'เช่าเครื่องบิน',
+          'เช่าเรือยอชต์เหมาลำ',
+          'เช่าเครื่องบินเหมาลำ',
           'เช่ายานพาหนะ',
         ];
   const pageUrl = pageHref(page);

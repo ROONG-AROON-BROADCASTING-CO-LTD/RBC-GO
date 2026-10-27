@@ -1,0 +1,774 @@
+.theme {
+  background: #000;
+  color: #f4f4f6;
+  --accent: #003cff;
+}
+.theme a:focus-visible,
+.theme button:focus-visible,
+.theme input:focus-visible {
+  outline: 2px solid #6485ff;
+  outline-offset: 4px;
+}
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 10px 12px;
+  color: #fff;
+  transition: background 200ms;
+}
+.solid {
+  background: #000e;
+  backdrop-filter: blur(12px);
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: 850;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+.logo img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+.desktopNav {
+  display: flex;
+  gap: 32px;
+  margin-left: auto;
+  font-size: 15px;
+  font-weight: 650;
+}
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header a {
+  text-decoration: none;
+}
+.softButton,
+.blueButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 18px;
+  border: 0;
+  border-radius: 30px;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+.softButton {
+  background: #27292c;
+  color: #fff;
+}
+.theme .blueButton {
+  background: #003cff;
+  color: #fff;
+}
+.roundButton,
+.language {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: #27292c;
+  color: #fff;
+  cursor: pointer;
+}
+.roundButton svg {
+  width: 23px;
+  height: 23px;
+}
+.language {
+  background: transparent;
+  width: 40px;
+  padding: 4px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+}
+.flag {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(
+    #a51931 0 16.67%,
+    #fff 16.67% 33.33%,
+    #2d2a4a 33.33% 66.67%,
+    #fff 66.67% 83.33%,
+    #a51931 83.33%
+  );
+}
+.menuButton {
+  display: none;
+}
+.drawer {
+  position: fixed;
+  inset: 64px 0 0;
+  z-index: 49;
+  background: #000;
+  padding: 25px;
+  overflow-y: auto;
+}
+.drawer a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 20px 0;
+  border-bottom: 1px solid #27292c;
+  font-size: 21px;
+}
+.drawer svg {
+  width: 20px;
+}
+.page {
+  background: #000;
+  color: #f4f4f6;
+}
+.hero {
+  position: relative;
+  min-height: 600px;
+  isolation: isolate;
+  padding: 204px 24px 43px;
+}
+.heroImage {
+  object-fit: cover;
+  object-position: center 55%;
+  z-index: -2;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, #000 0%, #0002 65%, #0004);
+}
+.heroContent {
+  width: min(100%, 846px);
+  margin: auto;
+}
+.hero h1 {
+  margin: 0 0 32px;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 750;
+  line-height: 1.45;
+  letter-spacing: -1px;
+}
+.searchPanel {
+  padding: 16px;
+  border: 1px solid #26282b;
+  background: #191b1bd9;
+  border-radius: 26px;
+}
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #303238;
+  border-radius: 40px;
+  background: #070809;
+  padding: 7px;
+  scroll-margin-top: 85px;
+}
+.searchBox:focus-within {
+  border-color: #6485ff;
+}
+.searchBox input {
+  min-width: 0;
+  flex: 1;
+  outline: none;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  padding: 8px 16px;
+  font: inherit;
+  font-size: 16px;
+}
+.searchBox input::placeholder {
+  color: #8f9098;
+}
+.searchBox button {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  background: #003cff;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+}
+.searchBox svg {
+  width: 26px;
+  height: 26px;
+}
+.shortcuts {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+.shortcuts button {
+  min-height: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  background: #08090a;
+  color: #fff;
+  border-radius: 16px;
+  padding: 10px 4px;
+  cursor: pointer;
+  transition:
+    background 180ms,
+    border-color 180ms;
+}
+.shortcuts button:hover,
+.shortcuts button[aria-pressed='true'] {
+  border-color: #003cff;
+  background: #071137;
+}
+.shortcuts svg {
+  width: 26px;
+  height: 26px;
+}
+.shortcuts span {
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: center;
+}
+.content {
+  width: min(1260px, calc(100% - 48px));
+  margin: 0 auto;
+  padding-top: 24px;
+}
+.resultAnchor {
+  scroll-margin-top: 85px;
+}
+.railSection {
+  margin: 0 0 32px;
+}
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  min-height: 40px;
+}
+.theme .sectionHead h2,
+.theme .benefits > h2,
+.theme .owner > h2 {
+  font-size: 29px;
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: -0.6px;
+}
+.theme .sectionHead > a,
+.textButton {
+  color: #6485ff;
+  font-size: 15px;
+  white-space: nowrap;
+}
+.railActions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+.railActions button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  display: grid;
+  place-items: center;
+  background: #003cff;
+  color: #fff;
+  cursor: pointer;
+}
+.railActions button:disabled {
+  background: #18191c;
+  color: #53555b;
+  cursor: default;
+}
+.railActions button:first-child svg {
+  transform: rotate(180deg);
+}
+.railActions svg {
+  width: 16px;
+  height: 16px;
+}
+.rail {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 8px;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
+.poster {
+  flex: 0 0 240px;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+.posterImage {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #16171b;
+}
+.posterImage img,
+.cardImage img {
+  object-fit: cover;
+  transition: transform 300ms;
+}
+.poster:hover img,
+.serviceCard:hover img {
+  transform: scale(1.025);
+}
+.theme .poster h3 {
+  margin: 14px 0 6px;
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+.theme .poster p {
+  display: flex;
+  gap: 5px;
+  align-items: start;
+  color: #b5b5bc;
+  font-size: 14px;
+  line-height: 1.45;
+  margin-bottom: 4px;
+}
+.poster p svg {
+  width: 16px;
+  height: 18px;
+}
+.serviceCard {
+  flex: 0 0 295px;
+  border: 1px solid #303035;
+  border-radius: 17px;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+.cardImage {
+  position: relative;
+  aspect-ratio: 1.65;
+  overflow: hidden;
+  background: #16171b;
+}
+.cardBody {
+  padding: 14px 16px 16px;
+}
+.theme .cardBody h3 {
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.45;
+  margin-bottom: 5px;
+}
+.theme .cardBody p {
+  color: #b5b5bc;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.tags span,
+.tag {
+  padding: 3px 8px;
+  border: 1px solid #323238;
+  border-radius: 20px;
+  color: #c3c3ca;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.tag {
+  display: inline-block;
+  margin-top: 12px;
+}
+.charterCard {
+  flex-basis: calc(50% - 8px);
+}
+.charterCard .cardImage {
+  aspect-ratio: 2.2;
+}
+.benefits {
+  margin: 64px 0 32px;
+}
+.benefits > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 28px;
+}
+.benefits article > svg {
+  color: #6485ff;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 12px;
+}
+.theme .benefits h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+  font-weight: 750;
+}
+.theme .benefits p {
+  font-size: 14px;
+  color: #b5b5bc;
+  line-height: 1.6;
+}
+.owner {
+  margin: 40px 0 80px;
+  scroll-margin-top: 80px;
+}
+.ownerPanel {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  border: 1px solid #303035;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.ownerImage {
+  position: relative;
+  min-height: 410px;
+}
+.ownerImage img {
+  object-fit: cover;
+}
+.ownerCopy {
+  padding: 54px 40px;
+  align-self: center;
+}
+.theme .ownerCopy h2 {
+  font-size: 28px;
+  font-weight: 750;
+}
+.ownerCopy ul {
+  padding-left: 22px;
+  margin: 16px 0 28px;
+  color: #b5b5bc;
+  font-size: 14px;
+  line-height: 2;
+}
+.theme .ownerCopy p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 12px max(24px, calc((100% - 1280px) / 2)) 28px;
+}
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 1.1fr 1.1fr 0.7fr;
+  gap: 50px;
+  padding: 0 0 70px;
+}
+.theme .footerGrid h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 3px 0 24px;
+}
+.footerGrid > div > a:not(.logo) {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+.theme .footerGrid p {
+  font-size: 14px;
+  margin-top: 24px;
+  color: #b5b5bc;
+}
+.footerBottom {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  color: #92929a;
+  font-size: 12px;
+}
+.footerBottom div {
+  display: flex;
+  gap: 24px;
+  color: #dddde4;
+}
+.results {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.theme .resultCount {
+  color: #b5b5bc;
+  margin: 0 0 16px;
+  font-size: 14px;
+}
+.textButton {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+.empty {
+  padding: 60px 0;
+  color: #b5b5bc;
+}
+.internal {
+  background: #000;
+}
+@media (max-width: 1000px) {
+  .desktopNav {
+    gap: 16px;
+  }
+  .header {
+    gap: 16px;
+  }
+  .ownerNav {
+    display: none;
+  }
+  .headerActions {
+    margin-left: auto;
+  }
+  .hero h1 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 700px) {
+  .header {
+    padding: 12px;
+    gap: 12px;
+  }
+  .logo {
+    font-size: 23px;
+  }
+  .logo img {
+    width: 25px;
+    height: 25px;
+  }
+  .desktopNav,
+  .desktopSearch,
+  .exploreNav {
+    display: none;
+  }
+  .menuButton {
+    display: grid;
+  }
+  .roundButton {
+    width: 32px;
+    height: 32px;
+  }
+  .roundButton svg {
+    width: 20px;
+    height: 20px;
+  }
+  .language {
+    width: 32px;
+    height: 32px;
+  }
+  .flag {
+    width: 20px;
+    height: 20px;
+  }
+  .softButton {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+  .hero {
+    padding: 128px 16px 20px;
+    min-height: 414px;
+  }
+  .hero h1 {
+    text-align: left;
+    font-size: 29px;
+    font-weight: 750;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.7px;
+    max-width: 360px;
+  }
+  .heroImage {
+    object-position: 55% center;
+  }
+  .searchPanel {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+  .searchBox {
+    padding: 5px;
+    gap: 0;
+  }
+  .searchBox input {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  .searchBox button {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+  }
+  .searchBox svg {
+    width: 20px;
+    height: 20px;
+  }
+  .shortcuts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 16px;
+  }
+  .shortcuts button {
+    min-height: 70px;
+    padding: 9px 2px;
+    border-radius: 16px;
+  }
+  .shortcuts:not(.expanded) button:nth-child(n + 8):not(:last-child) {
+    display: none;
+  }
+  .shortcuts span {
+    font-size: 11px;
+  }
+  .shortcuts svg {
+    width: 25px;
+    height: 25px;
+  }
+  .content {
+    width: calc(100% - 24px);
+    padding-top: 0;
+  }
+  .railSection {
+    margin-bottom: 28px;
+  }
+  .sectionHead {
+    gap: 12px;
+    margin-bottom: 16px;
+    min-height: 28px;
+  }
+  .theme .sectionHead h2,
+  .theme .benefits > h2,
+  .theme .owner > h2 {
+    font-size: 21px;
+    letter-spacing: -0.4px;
+  }
+  .sectionHead > a,
+  .textButton {
+    margin-left: auto;
+    font-size: 13px !important;
+  }
+  .railActions {
+    display: none;
+  }
+  .rail {
+    margin-right: -12px;
+    padding-right: 12px;
+    gap: 12px;
+  }
+  .poster {
+    flex-basis: 164px;
+  }
+  .posterImage {
+    aspect-ratio: 164 / 232;
+  }
+  .theme .poster h3 {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .theme .poster p {
+    font-size: 12px;
+  }
+  .serviceCard {
+    flex-basis: 280px;
+  }
+  .charterCard {
+    flex-basis: 310px;
+  }
+  .charterCard .cardImage {
+    aspect-ratio: 1.65;
+  }
+  .benefits {
+    margin-top: 40px;
+  }
+  .benefits > div {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .owner {
+    margin-bottom: 48px;
+  }
+  .ownerPanel {
+    grid-template-columns: 1fr;
+  }
+  .ownerImage {
+    min-height: 235px;
+  }
+  .ownerCopy {
+    padding: 26px 22px;
+  }
+  .theme .ownerCopy h2 {
+    font-size: 24px;
+  }
+  .footer {
+    padding: 0 20px 24px;
+  }
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+    padding-bottom: 40px;
+  }
+  .footerGrid > div:first-child {
+    grid-column: 1 / -1;
+  }
+  .footerBottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .results {
+    grid-template-columns: 1fr;
+  }
+  .resultAnchor {
+    scroll-margin-top: 80px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .posterImage img,
+  .cardImage img,
+  .header,
+  .shortcuts button {
+    transition: none;
+  }
+  .poster:hover img,
+  .serviceCard:hover img {
+    transform: none;
+  }
+}

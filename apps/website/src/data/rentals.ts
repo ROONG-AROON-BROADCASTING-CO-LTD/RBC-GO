@@ -6,20 +6,20 @@ export const rentalCategories = [
     image: '/images/heroes/rides-hero.png',
     en: 'Electric motorcycles',
     th: 'มอเตอร์ไซค์ไฟฟ้า',
-    enCopy: 'Move through the city at your own pace.',
-    thCopy: 'คล่องตัวในเมือง ให้ทุกวันเดินทางได้ในแบบของคุณ',
+    enCopy: 'Find a station. Pick up a bike. Get moving.',
+    thCopy: 'เลือกสถานีใกล้คุณ รับรถแล้วเดินทางต่อ',
     enDetail:
-      'For everyday journeys and exploring the city. Choose a rental period that suits your plans and review the riding requirements before you book.',
+      'Station-based electric motorcycle rentals for everyday city travel. Find a service station, check bike availability and review the pickup and return station requirements before riding.',
     thDetail:
-      'สำหรับการเดินทางประจำวันและสำรวจเมือง เลือกระยะเวลาเช่าให้เหมาะกับแผนของคุณ และตรวจสอบเงื่อนไขการขับขี่ก่อนจอง',
+      'เช่ามอเตอร์ไซค์ไฟฟ้าผ่านจุดสถานีสำหรับการเดินทางในเมือง เลือกสถานีที่สะดวก ตรวจสอบรถที่พร้อมใช้งาน และดูเงื่อนไขสถานีรับ–คืนก่อนเริ่มเดินทาง',
     note: [
       'ใบขับขี่และเงื่อนไขผู้ขับขี่',
-      'จุดรับ–คืนและระยะเวลาเช่า',
+      'สถานีที่ให้บริการ รถว่าง และเงื่อนไขรับ–คืน',
       'อุปกรณ์และแนวทางใช้งาน',
     ],
     enNotes: [
       'Licence and rider requirements',
-      'Pickup, return and rental period',
+      'Service stations, bike availability and return rules',
       'Equipment and riding guidance',
     ],
   },
@@ -28,20 +28,20 @@ export const rentalCategories = [
     image: '/images/rentals/car.png',
     en: 'Cars',
     th: 'รถยนต์',
-    enCopy: 'A city visit. A road trip. Your next destination.',
-    thCopy: 'จากวันทำงานถึงโรดทริป เลือกการเดินทางที่ลงตัว',
+    enCopy: 'Rent a car. Or put your unused car to work.',
+    thCopy: 'เช่ารถสำหรับทริป หรือฝากรถที่ไม่ได้ใช้ให้เราปล่อยเช่า',
     enDetail:
-      'Make room for business trips, weekends away and journeys together. Vehicle type, pickup location and rental duration shape your choice.',
+      'RBC GO connects renters with cars entrusted to us by their owners. Renters choose a car for their trip; owners with an unused car can entrust it to RBC GO for rental, subject to vehicle review and an agreed set of terms.',
     thDetail:
-      'ตอบโจทย์ทั้งทริปธุรกิจ วันพักผ่อน และการเดินทางร่วมกัน เลือกประเภทรถ จุดรับรถ และระยะเวลาเช่าที่เหมาะกับคุณ',
+      'RBC GO เชื่อมผู้เช่ากับรถที่เจ้าของนำมาฝากปล่อยเช่า ผู้เช่าเลือกรถให้เหมาะกับทริป ส่วนเจ้าของที่มีรถว่างไม่ได้ใช้งาน สามารถนำรถมาฝากให้ RBC GO ปล่อยเช่าได้ โดยตรวจสอบรถและตกลงเงื่อนไขร่วมกันก่อน',
     note: [
-      'ประเภทรถและจำนวนผู้โดยสาร',
-      'สถานที่รับ–คืนรถ',
+      'ผู้เช่า: เลือกรถ วันเช่า และจุดรับ–คืน',
+      'เจ้าของรถ: ฝากรถที่ไม่ได้ใช้งานกับ RBC GO',
       'ประกัน เงินประกัน และเงื่อนไข',
     ],
     enNotes: [
-      'Vehicle type and passengers',
-      'Pickup and return locations',
+      'Renters: choose a car, dates and handover location',
+      'Owners: entrust your unused car to RBC GO',
       'Insurance, deposit and terms',
     ],
   },
@@ -50,12 +50,12 @@ export const rentalCategories = [
     image: '/images/rentals/yacht.png',
     en: 'Yachts',
     th: 'เรือยอชต์',
-    enCopy: 'Take your time. Discover a different horizon.',
-    thCopy: 'เปลี่ยนวันธรรมดา ให้เป็นช่วงเวลาดี ๆ กลางทะเล',
+    enCopy: 'A private yacht charter for your whole group.',
+    thCopy: 'เช่าเรือยอชต์เหมาลำ จัดทริปส่วนตัวสำหรับกลุ่มของคุณ',
     enDetail:
-      'Plan a private escape, a celebration or a day on the water. Your route, group size and time aboard help define the right experience.',
+      'Charter an entire yacht for your group, whether for a private escape, celebration or day at sea. Plan your route, departure marina, guest numbers and time aboard, then review the crew and services included in your charter.',
     thDetail:
-      'สำหรับทริปส่วนตัว การเฉลิมฉลอง หรือวันพักผ่อนกลางทะเล วางเส้นทาง จำนวนผู้ร่วมเดินทาง และช่วงเวลาบนเรือให้เข้ากับโอกาสของคุณ',
+      'เช่าเรือยอชต์แบบเหมาลำสำหรับกลุ่มของคุณ เหมาะกับทริปพักผ่อน งานฉลอง และโอกาสพิเศษ เลือกเส้นทาง ท่าเรือ จำนวนผู้ร่วมทริป และระยะเวลา พร้อมตรวจสอบลูกเรือและบริการที่รวมในแต่ละแพ็กเกจ',
     note: [
       'เส้นทางและท่าเรือต้นทาง',
       'จำนวนผู้โดยสารและระยะเวลาทริป',
@@ -72,12 +72,12 @@ export const rentalCategories = [
     image: '/images/rentals/aircraft-charter.png',
     en: 'Aircraft',
     th: 'เครื่องบิน',
-    enCopy: 'Go beyond. Make the journey your own.',
-    thCopy: 'อีกระดับของการเดินทาง เพื่อแผนที่เป็นของคุณ',
+    enCopy: 'Private aircraft charter around your travel plans.',
+    thCopy: 'เช่าเครื่องบินเหมาลำ วางเที่ยวบินสำหรับกลุ่มของคุณ',
     enDetail:
-      'Explore private charter for business and personal travel. Routes, passenger numbers and flight requirements determine the available options.',
+      'Charter an entire aircraft for business or private group travel. Share your origin, destination, dates, passenger numbers and baggage needs to find a suitable charter, subject to aircraft availability and operator confirmation.',
     thDetail:
-      'สำรวจการเช่าเหมาลำสำหรับการเดินทางธุรกิจและทริปส่วนตัว โดยพิจารณาเส้นทาง จำนวนผู้โดยสาร และรายละเอียดเที่ยวบินประกอบการเลือก',
+      'เช่าเครื่องบินแบบเหมาลำสำหรับทริปธุรกิจหรือการเดินทางส่วนตัวของกลุ่มคุณ ระบุต้นทาง ปลายทาง วันเดินทาง จำนวนผู้โดยสาร และสัมภาระ เพื่อเลือกลำที่เหมาะสม โดยขึ้นอยู่กับความพร้อมและการยืนยันจากผู้ให้บริการ',
     note: [
       'ต้นทาง ปลายทาง และวันเดินทาง',
       'จำนวนผู้โดยสารและสัมภาระ',
@@ -107,8 +107,8 @@ export function rentalCopy(locale: Locale) {
       ? ['ทุกการเดินทาง', 'เลือกได้ในแบบคุณ']
       : ['Your journey.', 'Your choice.'],
     intro: th
-      ? 'มอเตอร์ไซค์ไฟฟ้า รถยนต์ เรือยอชต์ และเครื่องบิน ค้นหาการเช่าที่เหมาะกับทุกวันและทุกโอกาสของคุณ'
-      : 'Electric motorcycles, cars, yachts and aircraft. Explore rentals for everyday plans and extraordinary occasions.',
+      ? 'มอเตอร์ไซค์ไฟฟ้าตามสถานี รถยนต์จากเจ้าของที่ฝากปล่อยเช่า พร้อมเรือยอชต์และเครื่องบินแบบเหมาลำ เลือกบริการให้เข้ากับแผนของคุณ'
+      : 'Station-based electric motorcycles, owner-supplied car rentals, and private yacht and aircraft charters. Choose the service that fits your plans.',
     explore: th ? 'สำรวจบริการเช่า' : 'Explore rentals',
     collection: th ? 'เลือกวิธีเดินทางของคุณ' : 'Find your way to go',
     collectionCopy: th
@@ -121,11 +121,11 @@ export function rentalCopy(locale: Locale) {
       ? [
           [
             'เลือกสิ่งที่ใช่',
-            'สำรวจประเภทยานพาหนะและรูปแบบการเช่าที่เหมาะกับทริป',
+            'เลือกมอเตอร์ไซค์ตามสถานี รถยนต์ หรือเรือและเครื่องบินเหมาลำ',
           ],
           [
             'วางรายละเอียด',
-            'กำหนดวัน สถานที่ จำนวนผู้เดินทาง และบริการที่ต้องการ',
+            'ดูสถานีรับ–คืน หรือกำหนดวัน เส้นทาง และจำนวนผู้ร่วมทริป',
           ],
           [
             'พร้อมออกเดินทาง',
@@ -135,11 +135,11 @@ export function rentalCopy(locale: Locale) {
       : [
           [
             'Find your fit',
-            'Explore vehicle categories and rental options for your journey.',
+            'Choose station-based bikes, a rental car, or a yacht or aircraft charter.',
           ],
           [
             'Plan the details',
-            'Choose your dates, locations, group size and preferred services.',
+            'Check service stations or plan your dates, itinerary and group size.',
           ],
           [
             'Get ready to go',
@@ -151,8 +151,5 @@ export function rentalCopy(locale: Locale) {
       ? 'เลือกยานพาหนะให้เข้ากับชีวิต ไม่ว่าจะเป็นการเดินทางใกล้ ๆ หรือประสบการณ์ครั้งพิเศษ'
       : 'A short trip or a special occasion. Find the vehicle that fits your life.',
     details: th ? 'ดูรายละเอียด' : 'Explore category',
-    disclaimer: th
-      ? 'ภาพใช้ประกอบการนำเสนอบริการ รุ่น ราคา พื้นที่ และความพร้อมให้เช่าจะระบุในรายละเอียดบริการเมื่อเปิดให้จอง'
-      : 'Images illustrate the service categories. Models, prices, locations and availability will be listed when bookings open.',
   };
 }

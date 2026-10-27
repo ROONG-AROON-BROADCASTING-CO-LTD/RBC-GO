@@ -23,7 +23,7 @@ export default function OpenGraphImage() {
         Your journey. Your choice. Road. Sea. Sky.
       </div>
       <div style={{ color: '#FFFFFF', fontSize: 26, marginTop: 24 }}>
-        Electric motorcycles · Cars · Yachts · Aircraft
+        Station bikes · Owner cars · Yacht & aircraft charters
       </div>
     </div>,
     size,
