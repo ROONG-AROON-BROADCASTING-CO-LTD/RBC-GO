@@ -4,10 +4,10 @@
 }
 .hero {
   position: relative;
-  min-height: 520px;
+  min-height: 510px;
   display: flex;
   align-items: flex-end;
-  padding: 160px max(24px, calc((100vw - 1260px) / 2)) 64px;
+  padding: 148px max(24px, calc((100vw - 1260px) / 2)) 58px;
   isolation: isolate;
 }
 .hero > img {
@@ -15,141 +15,429 @@
   z-index: -2;
 }
 .hero::after {
-  content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, #000 0%, #0006 70%, #0005);
   z-index: -1;
+  background: linear-gradient(0deg, #000 0%, #0004 68%, #0008);
+  content: '';
 }
 .heroCopy {
-  max-width: 720px;
+  max-width: 680px;
+}
+.heroCopy > a {
+  color: #d2d3da;
 }
 .heroCopy h1 {
-  font-size: clamp(36px, 5vw, 64px);
-  line-height: 1.5;
-  margin: 20px 0 12px;
-}
-.heroCopy a {
-  color: #d0d0d8;
+  margin: 18px 0 8px;
+  font-size: clamp(38px, 5vw, 66px);
+  line-height: 1.3;
+  letter-spacing: -0.035em;
 }
 .heroCopy p {
+  max-width: 620px;
+  margin: 0;
   font-size: 20px;
+  line-height: 1.7;
 }
 .content {
   width: min(1260px, calc(100% - 48px));
   margin: auto;
-  padding: 24px 0 64px;
+  padding: 42px 0 76px;
 }
-.layout {
+.content h2 {
+  margin: 0 0 16px;
+  font-size: clamp(25px, 2.2vw, 34px);
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+.content p,
+.content li {
+  color: #bfc0c8;
+  line-height: 1.85;
+}
+.intro {
+  width: min(700px, 100%);
+  margin: 0 0 86px;
+}
+.intro p {
+  margin: 0;
+  font-size: 19px;
+}
+
+/* Motorcycle: a direct station-to-ride path rather than a card section. */
+.stationJourney {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
-  gap: 64px;
+  grid-template-columns: minmax(0, 0.85fr) minmax(380px, 1.15fr);
+  gap: 80px;
   align-items: start;
+  margin-bottom: 100px;
+  padding: 48px 0;
+  border-top: 1px solid #2d2f36;
+  border-bottom: 1px solid #2d2f36;
 }
-.page section h2,
-.aside h2 {
-  font-size: 26px;
+.stationJourney > div {
+  position: sticky;
+  top: 110px;
+}
+.stationJourney > div p {
+  margin: 0;
+}
+.stationJourney ol {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.stationJourney li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 66px 1fr;
+  gap: 18px;
+  min-height: 112px;
+  padding-bottom: 24px;
+}
+.stationJourney li:not(:last-child)::before {
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  left: 16px;
+  width: 1px;
+  background: #5a5d66;
+  content: '';
+}
+.stationJourney li span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid #6485ff;
+  border-radius: 50%;
+  color: #9eb0ff;
+  font-size: 12px;
+  font-weight: 800;
+}
+.stationJourney li p {
+  margin: 3px 0 0;
+  color: #f5f5f7;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+/* Cars: one practical handover surface. */
+.handover {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 34px 72px;
+  margin-bottom: 100px;
+  padding: 42px 48px 46px;
+  border-radius: 24px;
+  background: #15161a;
+}
+.handoverCopy p {
+  margin: 0;
+}
+.handover ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 22px;
+  margin: 3px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.handover li {
+  display: flex;
+  gap: 10px;
+  color: #f1f1f4;
   line-height: 1.5;
-  margin: 0 0 20px;
 }
-.content section {
-  margin-bottom: 48px;
+.handover li span {
+  display: inline-grid;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 6px;
+  background: #003cff;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
 }
-.page p,
-.page li {
-  color: #bdbdc7;
-  line-height: 1.9;
-  overflow-wrap: break-word;
-}
-.steps {
-  padding-left: 24px;
-}
-.steps li {
-  padding: 10px 0 10px 10px;
-}
-.steps li::marker {
-  color: #6485ff;
+.handover > a {
+  grid-column: 1 / -1;
+  width: fit-content;
+  color: #9eb0ff;
   font-weight: 700;
 }
-.aside {
-  border: 1px solid #303035;
-  border-radius: 20px;
-  padding: 28px;
-  position: sticky;
-  top: 100px;
-  background: #0b0b0e;
+
+/* Yacht: a horizontal trip sequence with open space around it. */
+.itinerary {
+  margin-bottom: 100px;
+  padding: 12px 0 42px;
+  border-bottom: 1px solid #2d2f36;
 }
-.aside ul {
+.itineraryHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.itineraryHeading p {
+  max-width: 490px;
+  margin: 0;
+}
+.itinerary ol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.itinerary li {
+  position: relative;
+  padding-top: 44px;
+}
+.itinerary li:not(:last-child)::before {
+  position: absolute;
+  top: 14px;
+  right: -14px;
+  left: 34px;
+  height: 1px;
+  background: #62646c;
+  content: '';
+}
+.itinerary li span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f4f4f6;
+  color: #09090b;
+  font-size: 13px;
+  font-weight: 800;
+}
+.itinerary li p {
+  max-width: 280px;
+  margin: 0;
+  color: #f4f4f6;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+/* Aircraft: a concise brief with a non-geographic route sketch. */
+.flightBrief {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(380px, 1.1fr);
+  gap: 64px;
+  align-items: center;
+  margin-bottom: 100px;
+  padding: 44px 0;
+  border-top: 1px solid #2d2f36;
+  border-bottom: 1px solid #2d2f36;
+}
+.flightBrief p {
+  margin: 0 0 22px;
+}
+.flightBrief ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
   padding-left: 20px;
-  margin-bottom: 24px;
 }
-.aside li {
-  margin-bottom: 12px;
+.routeSketch {
+  min-height: 230px;
+  padding: 28px;
+  border-radius: 24px;
+  background: #101115;
+  color: #6485ff;
 }
-.link {
-  display: block;
-  color: #8ca3ff;
-  margin-top: 20px;
-  line-height: 1.7;
+.routeSketch svg {
+  width: 100%;
+  height: 100%;
 }
-.page details {
-  border-bottom: 1px solid #28282e;
+
+.faqBlock {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 72px;
+  margin-bottom: 82px;
+}
+.faqBlock > div > p {
+  margin: 0;
+}
+.faqBlock details {
+  border-top: 1px solid #303138;
   padding: 20px 0;
 }
-.page summary {
+.faqBlock details:last-of-type {
+  border-bottom: 1px solid #303138;
+}
+.faqBlock summary {
   cursor: pointer;
-  font-weight: 650;
-  line-height: 1.8;
+  color: #f4f4f6;
+  font-size: 18px;
+  font-weight: 700;
 }
-.page details p {
-  margin-top: 14px;
+.faqBlock details p {
+  margin: 14px 0 0;
 }
-.related {
+.faqBlock a,
+.nextStep > div:last-child > a:not(:first-child) {
+  display: inline-block;
+  margin-top: 18px;
+  color: #9eb0ff;
+  font-weight: 700;
+}
+
+.nextStep {
+  display: flex;
+  justify-content: space-between;
+  gap: 36px;
+  margin-bottom: 96px;
+  padding: 42px 0;
+  border-top: 1px solid #2d2f36;
+  border-bottom: 1px solid #2d2f36;
+}
+.nextStep h2 {
+  font-size: 24px;
+}
+.nextStep ul {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  gap: 7px;
+  margin: 0;
+  padding-left: 20px;
 }
-.related > a {
-  border: 1px solid #303035;
-  border-radius: 18px;
-  overflow: hidden;
+.nextStep > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.thumbnail {
+.nextStep > div:last-child > a:first-child {
+  margin: 0;
+}
+
+.related {
+  padding-top: 2px;
+}
+.related > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.related a {
   position: relative;
-  aspect-ratio: 1.65;
+  display: flex;
+  min-height: 265px;
+  align-items: end;
+  overflow: hidden;
+  border-radius: 18px;
+  isolation: isolate;
+  color: #fff;
 }
-.thumbnail img {
+.related a::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, #000d, transparent 70%);
+  content: '';
+}
+.related img {
   object-fit: cover;
+  z-index: -2;
+  transition: transform 220ms ease;
 }
-.related h3 {
-  margin: 18px 18px 8px;
-  font-size: 20px;
+.related a:hover img {
+  transform: scale(1.04);
 }
-.related p {
-  margin: 0 18px 20px;
+.related span {
+  padding: 20px;
+  font-size: 21px;
+  font-weight: 800;
 }
-@media (max-width: 700px) {
+
+@media (max-width: 800px) {
   .hero {
     min-height: 430px;
-    padding-bottom: 40px;
+    padding-bottom: 42px;
   }
   .heroCopy p {
     font-size: 17px;
   }
-  .layout {
-    grid-template-columns: 1fr;
-    gap: 0;
+  .content {
+    width: min(100% - 32px, 1260px);
+    padding-top: 30px;
   }
-  .aside {
+  .intro {
+    margin-bottom: 56px;
+  }
+  .stationJourney,
+  .flightBrief,
+  .faqBlock {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    margin-bottom: 62px;
+  }
+  .stationJourney > div {
     position: static;
-    margin-bottom: 48px;
-    padding: 24px;
   }
-  .related {
+  .handover {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-bottom: 62px;
+    padding: 28px 24px;
+  }
+  .handover ul {
     grid-template-columns: 1fr;
   }
-  .page section h2,
-  .aside h2 {
-    font-size: 23px;
+  .itinerary {
+    margin-bottom: 62px;
+  }
+  .itineraryHeading {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .itineraryHeading p {
+    margin-top: 10px;
+  }
+  .itinerary ol {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .itinerary li {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 14px;
+    padding: 0;
+  }
+  .itinerary li:not(:last-child)::before {
+    top: 30px;
+    right: auto;
+    bottom: -18px;
+    left: 14px;
+    width: 1px;
+    height: auto;
+  }
+  .itinerary li p {
+    max-width: none;
+  }
+  .routeSketch {
+    min-height: 180px;
+  }
+  .nextStep {
+    display: grid;
+    margin-bottom: 62px;
+    padding: 30px 0;
+  }
+  .related > div {
+    grid-template-columns: 1fr;
+  }
+  .related a {
+    min-height: 220px;
   }
 }

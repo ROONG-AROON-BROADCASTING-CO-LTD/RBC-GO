@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Symbol, type SymbolName } from './DiscoverySymbol';
 import { Rail } from './DiscoveryRail';
 import { rentalCategories } from '../../data/rentals';
@@ -24,6 +24,19 @@ export function RentalDiscoveryPage({ th }: { th: boolean }) {
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState('all');
   const [searched, setSearched] = useState(false);
+  useEffect(() => {
+    const nextQuery = new URLSearchParams(window.location.search)
+      .get('q')
+      ?.trim();
+    if (!nextQuery) return;
+    setQuery(nextQuery);
+    setSearched(true);
+    requestAnimationFrame(() =>
+      document
+        .getElementById('rental-results')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+    );
+  }, []);
   const results = rentalCategories.filter(
     (item) =>
       (selected === 'all' || item.id === selected) &&
