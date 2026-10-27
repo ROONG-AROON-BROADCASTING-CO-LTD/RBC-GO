@@ -73,7 +73,9 @@ export function DiscoveryNav({
             onClick={() => onLanguageChange(th ? 'en' : 'th')}
             aria-label={th ? 'เปลี่ยนเป็นภาษาอังกฤษ' : 'Switch to Thai'}
           >
-            {th ? <span className={styles.flag} /> : 'EN'}
+            <span
+              className={`${styles.flag} ${th ? styles.thaiFlag : styles.englishFlag}`}
+            />
           </button>
           <Link
             className={`${styles.softButton} ${styles.ownerNav}`}

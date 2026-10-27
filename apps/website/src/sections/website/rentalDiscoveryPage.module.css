@@ -113,6 +113,30 @@
     #a51931 83.33%
   );
 }
+.englishFlag {
+  background:
+    linear-gradient(90deg, transparent 42%, #fff 42% 58%, transparent 58%),
+    linear-gradient(0deg, transparent 42%, #fff 42% 58%, transparent 58%),
+    linear-gradient(90deg, transparent 46%, #cf142b 46% 54%, transparent 54%),
+    linear-gradient(0deg, transparent 46%, #cf142b 46% 54%, transparent 54%),
+    linear-gradient(
+      32deg,
+      transparent 43%,
+      #fff 43% 49%,
+      transparent 49% 51%,
+      #fff 51% 57%,
+      transparent 57%
+    ),
+    linear-gradient(
+      -32deg,
+      transparent 43%,
+      #fff 43% 49%,
+      transparent 49% 51%,
+      #fff 51% 57%,
+      transparent 57%
+    ),
+    #1f3c88;
+}
 .menuButton {
   display: none;
 }
