@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo } from 'react';
 import { usePathname } from 'next/navigation';
-import { type Page } from '../../data/landing';
+import { type Page } from '../../data/navigation';
 import { pageSeoCopy } from '../../../app/pageMetadata';
 import { useWebsiteLanguage } from './WebsiteLanguageProvider';
 

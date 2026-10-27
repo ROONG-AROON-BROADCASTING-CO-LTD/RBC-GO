@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { rentalCategories } from '../../data/rentals';
-import styles from './rentalDiscoveryPage.module.css';
+import { rentalCategories } from '../../../data/rentals';
+import styles from '../../../styles/discovery.module.css';
 export function DiscoveryFooter({ th }: { th: boolean }) {
   return (
     <footer className={styles.footer}>

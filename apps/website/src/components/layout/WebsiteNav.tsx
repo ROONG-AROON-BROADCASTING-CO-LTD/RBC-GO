@@ -2,11 +2,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import type { Locale, Page } from '../../data/landing';
+import type { Locale, Page } from '../../data/navigation';
 import { rentalCopy } from '../../data/rentals';
 import { Icon } from '../ui/Icon';
 import { ThaiText } from '../ui/HeadingText';
-import styles from '../website.module.css';
+import styles from '../../styles/website.module.css';
 const routes = ['/rides', '/how-it-works', '/pricing', '/about', '/help'];
 export function WebsiteNav({
   locale,

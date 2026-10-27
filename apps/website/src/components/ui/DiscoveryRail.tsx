@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Symbol } from './DiscoverySymbol';
-import styles from './rentalDiscoveryPage.module.css';
+import styles from '../../styles/discovery.module.css';
 export function Rail({
   title,
   href = '/rides',

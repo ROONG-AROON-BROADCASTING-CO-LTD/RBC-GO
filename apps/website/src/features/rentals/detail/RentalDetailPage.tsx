@@ -2,14 +2,14 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useWebsiteLanguage } from '../../components/layout/WebsiteLanguageProvider';
-import { rentalCategories } from '../../data/rentals';
-import { DiscoveryFooter } from './DiscoveryFooter';
-import { DiscoveryNav } from './DiscoveryNav';
-import discovery from './rentalDiscoveryPage.module.css';
+import { useWebsiteLanguage } from '../../../components/layout/WebsiteLanguageProvider';
+import { rentalCategories, type RentalCategoryId } from '../../../data/rentals';
+import { DiscoveryFooter } from '../../../components/layout/discovery/DiscoveryFooter';
+import { DiscoveryNav } from '../../../components/layout/discovery/DiscoveryNav';
+import discovery from '../../../styles/discovery.module.css';
 import styles from './rentalDetail.module.css';
 
-type Category = (typeof rentalCategories)[number]['id'];
+type Category = RentalCategoryId;
 
 const guides: Record<
   Category,

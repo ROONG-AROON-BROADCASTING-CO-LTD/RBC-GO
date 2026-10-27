@@ -2,7 +2,7 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { type Locale, type Page, pages } from '../../data/landing';
+import { type Locale, type Page, pages } from '../../data/navigation';
 import { websiteCopy } from '../../data/website';
 import { InfoDialog } from '../interactive/InfoDialog';
 import { ThaiText } from '../ui/HeadingText';

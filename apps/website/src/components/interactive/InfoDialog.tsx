@@ -2,7 +2,7 @@
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { useRef } from 'react';
-import type { Locale } from '../../data/landing';
+import type { Locale } from '../../data/navigation';
 import { websiteCopy } from '../../data/website';
 import { Icon } from '../ui/Icon';
 export function InfoDialog({

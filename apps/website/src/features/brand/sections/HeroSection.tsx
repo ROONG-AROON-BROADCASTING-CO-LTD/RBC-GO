@@ -10,12 +10,12 @@ import {
   useScroll,
   useTransform,
 } from 'motion/react';
-import type { Page } from '../../data/landing';
-import { rentalCopy } from '../../data/rentals';
-import { rentalEase } from '../../components/interactive/WebsiteMotion';
-import { Arrow } from '../../components/ui/Arrow';
-import { HeadingText, ThaiText } from '../../components/ui/HeadingText';
-import styles from '../../components/website.module.css';
+import type { Page } from '../../../data/navigation';
+import { rentalCopy } from '../../../data/rentals';
+import { rentalEase } from '../../../components/interactive/WebsiteMotion';
+import { Arrow } from '../../../components/ui/Arrow';
+import { HeadingText, ThaiText } from '../../../components/ui/HeadingText';
+import styles from '../../../styles/website.module.css';
 const MotionLink = motion.create(Link);
 
 export function HeroSection({ th, page }: { th: boolean; page?: Page }) {

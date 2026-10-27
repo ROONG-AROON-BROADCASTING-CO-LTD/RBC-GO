@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { siteUrl } from './site';
-import { type Locale, type Page } from '../src/data/landing';
+import { type Locale, type Page } from '../src/data/navigation';
 
 function pageHref(page?: Page) {
   return page ? `/${page}` : '/';

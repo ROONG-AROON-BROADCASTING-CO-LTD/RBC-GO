@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { siteUrl } from './site';
-import { pages } from '../src/data/landing';
+import { pages } from '../src/data/navigation';
 import { brandEvents } from '../src/data/brandEvents';
 import { rentalCategories } from '../src/data/rentals';
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -8,8 +8,8 @@ import {
   useInView,
   useReducedMotion,
 } from 'motion/react';
-import { HeadingText, ThaiText } from '../../../components/ui/HeadingText';
-import { rentalEase } from '../../../components/interactive/WebsiteMotion';
+import { HeadingText, ThaiText } from '../../components/ui/HeadingText';
+import { rentalEase } from '../../components/interactive/WebsiteMotion';
 import styles from './appGuide.module.css';
 
 function ReplayingPhone({

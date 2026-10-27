@@ -5,10 +5,10 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { websiteBaseline } from './websiteBaseline';
-import { websiteSx } from '../src/components/websiteSx';
+import { websiteSx } from '../src/styles/websiteSx';
 import { WebsiteLanguageProvider } from '../src/components/layout/WebsiteLanguageProvider';
 import { WebsiteDocumentMetadata } from '../src/components/layout/WebsiteDocumentMetadata';
-import type { Locale } from '../src/data/landing';
+import type { Locale } from '../src/data/navigation';
 
 const theme = createTheme({
   components: {

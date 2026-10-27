@@ -1,4 +1,4 @@
-import type { Locale } from './landing';
+import type { Locale } from './navigation';
 
 export type BrandEvent = {
   slug: string;

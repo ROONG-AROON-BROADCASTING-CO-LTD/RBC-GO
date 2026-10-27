@@ -3,12 +3,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import type { Page } from '../../data/landing';
-import { rentalCopy, rentalCategories } from '../../data/rentals';
-import { WebsiteReveal } from '../../components/interactive/WebsiteMotion';
-import { Arrow } from '../../components/ui/Arrow';
-import { HeadingText, ThaiText } from '../../components/ui/HeadingText';
-import styles from '../../components/website.module.css';
+import type { Page } from '../../../data/navigation';
+import { rentalCopy, rentalCategories } from '../../../data/rentals';
+import { WebsiteReveal } from '../../../components/interactive/WebsiteMotion';
+import { Arrow } from '../../../components/ui/Arrow';
+import { HeadingText, ThaiText } from '../../../components/ui/HeadingText';
+import styles from '../../../styles/website.module.css';
 
 export function InformationSection({ th, page }: { th: boolean; page?: Page }) {
   const c = rentalCopy(th ? 'th' : 'en');

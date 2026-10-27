@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { rentalCategories } from '../../data/rentals';
-import { Arrow } from '../../components/ui/Arrow';
-import { ThaiText } from '../../components/ui/HeadingText';
+import { rentalCategories } from '../../../data/rentals';
+import { Arrow } from '../../../components/ui/Arrow';
+import { ThaiText } from '../../../components/ui/HeadingText';
 import styles from './rentalDiscovery.module.css';
 
 const modes = [

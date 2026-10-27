@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { rentalCategories } from '../../../src/data/rentals';
-import { RentalDetailPage } from '../../../src/sections/website/RentalDetailPage';
+import { RentalDetailPage } from '../../../src/features/rentals/detail/RentalDetailPage';
 
 type Props = { params: Promise<{ category: string }> };
 

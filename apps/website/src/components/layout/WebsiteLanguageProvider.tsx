@@ -9,7 +9,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import type { Locale } from '../../data/landing';
+import type { Locale } from '../../data/navigation';
 import { languageCookieName } from '../../data/language';
 
 type WebsiteLanguageContextValue = {

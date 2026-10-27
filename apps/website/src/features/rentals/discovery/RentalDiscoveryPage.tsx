@@ -3,10 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Symbol, type SymbolName } from './DiscoverySymbol';
-import { Rail } from './DiscoveryRail';
-import { rentalCategories } from '../../data/rentals';
-import styles from './rentalDiscoveryPage.module.css';
+import {
+  Symbol,
+  type SymbolName,
+} from '../../../components/ui/DiscoverySymbol';
+import { Rail } from '../../../components/ui/DiscoveryRail';
+import { rentalCategories } from '../../../data/rentals';
+import styles from '../../../styles/discovery.module.css';
 
 const shortcuts: { icon: SymbolName; th: string; en: string; id: string }[] = [
   {

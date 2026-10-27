@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import type { Page } from '../../data/landing';
+import type { Page } from '../../../data/navigation';
 
-import { ThaiText } from '../../components/ui/HeadingText';
-import styles from '../../components/website.module.css';
+import { ThaiText } from '../../../components/ui/HeadingText';
+import styles from '../../../styles/website.module.css';
 
 export function HelpSection({ th, page }: { th: boolean; page?: Page }) {
   const faq = th

@@ -1,4 +1,4 @@
-import type { Locale } from './landing';
+import type { Locale } from './navigation';
 const copy = {
   en: {
     footer: ['Electric journeys.', 'A brighter city.'],
